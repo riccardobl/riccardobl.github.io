@@ -1,0 +1,102 @@
+#   CLOUDFLARE_WORKER_NAME = "comments"
+#   CLOUDFLARE_WORKER_URL = "https://comments.rblb.workers.dev"
+#   CLOUDFLARE_USER_ID="XXXX"
+#   CLOUDFLARE_API_KEY="XXXX"
+#   SITE_URL="https://riccardobl.github.io"
+#   BOT_TOKEN  a personal access token that will be used when creating GitHub issues. https://github.com/settings/tokens/new?scopes=public_repo
+#   CLIENT_ID The client id to be used in the GitHub OAuth web application flow https://developer.github.com/v3/oauth/#web-application-flow
+#   CLIENT_SECRET The client secret for the OAuth web application flow
+#   STATE_PASSWORD 32 character password for encrypting state in request headers/cookies.
+name: Build
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  buildUtterancesFrontend:
+    runs-on: ubuntu-18.04    
+    steps:
+      - name: Clone repo
+        run: |
+          git clone --depth 1 https://github.com/riccardobl-mirrors/utterances.git .
+      - name: Prepare
+        run: |
+          yarn install
+      - name: Configure
+        run: 
+          echo "export const UTTERANCES_API = '${{ secrets.CLOUDFLARE_WORKER_URL }}'; ">src/utterances-api.ts
+          echo "{\"origins\":[\"${{ secrets.SITE_URL }}\"]}"          
+      - name: Build
+        run: |
+          yarn build
+          rm dist/CNAME || true
+          touch dist/.nojekyll
+      - name: Upload dist
+        uses: actions/upload-artifact@master
+        with:
+          name: utterances-frontend
+          path: dist 
+
+
+  buildUtterancesBackend:
+    runs-on: ubuntu-18.04    
+    steps: 
+    - name: Clone repo
+      run: |
+        git clone --depth 1 https://github.com/riccardobl-mirrors/utterances-oauth.git .
+    - name: Prepare
+      run: |
+        yarn install
+    - name: Configure
+      run: |
+        echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" > .env
+        echo "CLIENT_ID=${{ secrets.CLIENT_ID }}" >> .env
+        echo "CLIENT_SECRET=${{ secrets.CLIENT_SECRET }}" >> .env
+        echo "STATE_PASSWORD=${{ secrets.STATE_PASSWORD }}" >> .env
+        echo "ORIGINS=${{ secrets.SITE_URL }}" >> .env
+    - name: Build
+      run: |
+        yarn build
+    - name: Deploy
+      run: |
+        curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_USER_ID }}/workers/scripts/${{ secrets.CLOUDFLARE_WORKER_NAME }}" \
+        -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
+        -H "Content-Type: application/javascript" \
+        --data @dist/index.js
+  
+  build:
+    runs-on: ubuntu-18.04    
+    needs: [buildUtterancesFrontend]
+    steps: 
+    - name: Clone repo
+      run: |
+        git config --global user.name "GithubActions"
+        git config --global user.email "actions@robot.frk.wf"
+        git clone --single-branch  --recurse-submodules  --branch master https://github.com/${GITHUB_REPOSITORY}.git project
+        git clone --no-checkout --single-branch --branch gh-pages https://github.com/${GITHUB_REPOSITORY}.git generated    
+    - name: Get utterances frontend
+      uses: actions/download-artifact@master
+      with:
+        name:  utterances-frontend
+        path: project/static/utterances
+    - name: Build
+      run: |
+        cd project
+        HEADLESS=1 ./make.sh         
+    - name: Deploy     
+      run: |
+        shopt -s dotglob
+        cp -Rf project/public/* generated/
+        cd generated
+        git add *
+        git commit -m "Update data - `date`"        
+        header=$(echo -n "ad-m:${{ secrets.GITHUB_TOKEN }}" | base64)
+        (git -c http.extraheader="AUTHORIZATION: basic $header" push origin gh-pages --force || true)
+        exit 0
+
+
+
+                                        
+
+        
