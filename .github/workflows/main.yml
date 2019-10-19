@@ -11,7 +11,7 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - project
 
 jobs:
   buildUtterancesFrontend:
@@ -22,16 +22,50 @@ jobs:
           git clone --depth 1 https://github.com/riccardobl-mirrors/utterances.git .
       - name: Prepare
         run: |
+          sed -i 's/parcel build/parcel build --no-minify/g' package.json
           yarn install
       - name: Configure
-        run: 
-          echo "export const UTTERANCES_API = '${{ secrets.CLOUDFLARE_WORKER_URL }}'; ">src/utterances-api.ts
-          echo "{\"origins\":[\"${{ secrets.SITE_URL }}\"]}"          
+        run: |
+          set -o xtrace
+          echo "export const UTTERANCES_API = '${{ secrets.CLOUDFLARE_WORKER_URL }}'; " > src/utterances-api.ts
+          escaped_siteurl=$(echo "${{ secrets.SITE_URL }}" | sed 's/\./\\\./g')
+          doubleescaped_siteurl=$(echo "${escaped_siteurl}" | sed 's/\\/\\\\\\/g' | sed 's#/#\\\\/#g' )
+          sed -i "s|https://utteranc\\.es|$escaped_siteurl|g" src/client.ts
+          sed -i "s|http://localhost:4000|$escaped_siteurl|g" src/client.ts
+          sed -i "s|https:\\\\/\\\\/utteranc\\\\\.es|$doubleescaped_siteurl|g" src/client.ts
+          sed -i "s|https://utteranc\\.es|$escaped_siteurl|g"  src/configuration-component.ts 
+          sed -i "s|https://utteranc\\.es|$escaped_siteurl|g"   src/index.html          
+          echo "{\"origins\":[\"${{ secrets.SITE_URL }}\"]}" > utterances.json   
+          cp -Rf src/stylesheets/themes/photon-dark src/stylesheets/themes/custom
+          echo '$gray-000: #0c0c0d; 
+          $gray-100: #0c0c0d;
+          $gray-200: #2a2a2e;
+          $gray-300: #38383d;
+          $gray-400: #4a4a4f;
+          $gray-600: #737373;
+          $gray-700: #b1b1b3;
+          $bg-white: darken($gray-200, 3%);
+          $bg-gray: $gray-200;
+          $bg-gray-light: darken($bg-gray, 5%);
+          $border-gray: $gray-300;
+          $border-gray-dark: $border-gray;
+          $text-gray: #d3d3d3;
+          $text-gray-dark: #d3d3d3;
+          $text-blue: #a7d129;
+          $bg-blue-light: #2c2c2c;
+          $black-fade-15: rgba(#fff, 0.15);
+          $black-fade-30: rgba(#fff, 0.3);
+          $button-normal: #2c2c2c;
+          $button-hover: #2c2c2c;
+          $button-pressed: #2c2c2c' > src/stylesheets/themes/custom/variables.scss
       - name: Build
         run: |
           yarn build
           rm dist/CNAME || true
-          touch dist/.nojekyll
+          rm dist/browserconfig.*
+          rm -R dist/icons
+          rm dist/favicon-*
+          rm dist/index.html
       - name: Upload dist
         uses: actions/upload-artifact@master
         with:
@@ -47,6 +81,7 @@ jobs:
         git clone --depth 1 https://github.com/riccardobl-mirrors/utterances-oauth.git .
     - name: Prepare
       run: |
+       sed -i 's/parcel build/parcel build --no-minify/g' package.json
         yarn install
     - name: Configure
       run: |
@@ -73,27 +108,30 @@ jobs:
       run: |
         git config --global user.name "GithubActions"
         git config --global user.email "actions@robot.frk.wf"
-        git clone --single-branch  --recurse-submodules  --branch master https://github.com/${GITHUB_REPOSITORY}.git project
-        git clone --no-checkout --single-branch --branch gh-pages https://github.com/${GITHUB_REPOSITORY}.git generated    
+        git clone --single-branch  --depth 1 --recurse-submodules  --branch project https://github.com/${GITHUB_REPOSITORY}.git project
+        git clone --no-checkout --single-branch --branch master https://github.com/${GITHUB_REPOSITORY}.git generated    
     - name: Get utterances frontend
       uses: actions/download-artifact@master
       with:
         name:  utterances-frontend
-        path: project/static/utterances
+        path: generated/
     - name: Build
       run: |
         cd project
-        HEADLESS=1 ./make.sh         
+        # HEADLESS=1 ./make.sh         
+        mkdir -p public
+        echo "1" > public/.nojekyll
+        echo "alive `date`">public/index.html
     - name: Deploy     
       run: |
         shopt -s dotglob
         cp -Rf project/public/* generated/
         cd generated
-        git add *
+        git add .
         git commit -m "Update data - `date`"        
         header=$(echo -n "ad-m:${{ secrets.GITHUB_TOKEN }}" | base64)
-        (git -c http.extraheader="AUTHORIZATION: basic $header" push origin gh-pages --force || true)
-        exit 0
+        set +e
+        (git -c http.extraheader="AUTHORIZATION: basic $header" push origin master --force )
 
 
 
