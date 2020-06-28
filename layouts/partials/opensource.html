@@ -1,0 +1,17 @@
+<h1>My Opensource Contributions</h1>
+<h2>I create and contribute to opensource projects</h2>
+<section class="list showcase ">
+
+    
+
+    {{ $paginator := .Paginator }}
+    {{ $filter := slice "opensource-contrib" }}
+    {{ $pages := (where  .Site.Pages  "Params.tags"  "intersect" $filter )}}
+    {{ range $pages | shuffle  }}
+    {{ partial "articlePreview.html" . }}
+    {{ end }}
+
+</section>
+<h3>
+    <a target="__blank" href="https://github.com/riccardobl">See more...</a>
+</h3>

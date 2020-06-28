@@ -1,0 +1,30 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Riccardo Balbo"
+paginate=9
+summarylength = 20
+enableRobotsTXT = true
+
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  favicon = ""
+  description = ""
+  youtube = "https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw"
+  github = "https://github.com/riccardobl"
+  header = "/images/header.webp"
+  email="riccardo0blb@gmail.com"
+  twitter="rblb_"
+  custom_css = ["/css/style.css"]
+  custom_js=["/js/script.js"]
+  discord_user="rblb#9882"
+
+[taxonomies]
+  tag = "tags"
+
+[outputs]
+  taxonomy = ["HTML", "JSON"]

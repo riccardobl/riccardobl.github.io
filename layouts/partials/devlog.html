@@ -1,0 +1,17 @@
+
+    <h1>Misc / DevLog</h1>
+    <h2>A fine collection of EVERYTHING. A sneak peek at things in the making.</h2>
+
+    <section class="list">
+        {{ $filter := slice "devlog" }}
+        {{ $pages := (where  .Site.Pages  "Params.tags"  "intersect" $filter )}}
+        {{ range first 3 $pages  }}
+        {{ partial "articlePreview.html" . }}
+        {{ end }}
+    </section>
+
+    <h3>
+        {{ with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" "devlog") }}
+        <a href="{{ .RelPermalink }}">See more...</a>
+        {{ end }}
+    </h3>

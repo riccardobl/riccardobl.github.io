@@ -1,0 +1,35 @@
+    <nav class="socials">
+
+
+    {{ with .Param "youtube" }}
+    <a class="social youtube" href="{{ . }}" target="_blank"  title="Youtube link" rel="noopener noreferrer" aria-label="follow on Youtube——Opens in a new window">
+    </a>
+    {{ end }} 
+
+
+    {{ with .Param "github" }}
+    <a class="social github" href="{{ . }}" target="_blank" title="Github link" rel="noopener noreferrer" aria-label="follow on Github——Opens in a new window">
+    </a> 
+    {{ end }}
+
+    {{ with .Param "discord" }}
+    <a class="social discord" href="{{ . }}" target="_blank"  title="Discord link" rel="noopener noreferrer"  >
+    </a> 
+    {{ end }}
+
+
+    {{ with .Param "twitter" }}
+    <a class="social twitter"  target="_blank" href="https://twitter.com/{{ . }}"   title="Twitter link" rel="noopener noreferrer"  >
+    </a> 
+    {{ end }}
+
+    {{ with .Param "email" }}
+    <a class="social email" href="javascript:alert('{{ . }}')"   title="Email" rel="noopener noreferrer">
+    </a> 
+    {{ end }}
+
+    {{ with .Param "discord_user" }}
+    <a class="social discord" href="javascript:alert('{{ . }}')"   title="Discord link" rel="noopener noreferrer"  >
+    </a> 
+    {{ end }}
+</nav>

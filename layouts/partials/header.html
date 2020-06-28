@@ -1,0 +1,12 @@
+<img class="optional" src='{{  .Param "github" }}.png'>
+<h1><a id="siteTitle" href="/"> {{ .Site.Title }}</a></h1>
+<p>
+<br />
+I make games.
+<br />
+But also software, websites and 3d models.
+<br />
+<br />
+</p>
+    {{ partialCached "socials.html" . }}
+{{ partial "menu.html" . }}

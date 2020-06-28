@@ -1,0 +1,8 @@
+public/
+**/node_modules/
+.local-env
+**/generated/
+resources/
+*.log
+*~
+static/images/devlog/auto/

@@ -1,0 +1,5 @@
+{
+  "responseTitle":"{{ block "title" . }}{{ .Site.Title }} {{ with .Params.Title }} | {{ . }}{{ end }}{{ end }}",
+  "apiVersion":"1.0",
+  {{ block "main" . }}{{ end }} 
+}

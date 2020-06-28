@@ -1,0 +1,6 @@
+
+{{ define "main" }}
+"response":"articles",
+{{ partial "articlesList.json" . }}
+{{ end }}
+
