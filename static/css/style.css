@@ -200,7 +200,7 @@ header nav .toggleContent{
     display:none!important;
 
 }
-@media only screen and (max-width: 1000px),only  screen and (orientation:portrait){
+@media only screen and (max-width: 1200px),only  screen and (orientation:portrait){
     body > main{
         padding:0.5rem;
     }
