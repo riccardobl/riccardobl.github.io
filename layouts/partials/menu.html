@@ -16,7 +16,7 @@
       {{ end }}
       <a rel="noopener noreferrer" href="https://github.com/riccardobl?tab=repositories" target="_blank">Opensource Repos</a>
 
-    <b>jMonkeyEngine plugins</b>
+    <b><a href="/posts/jmonkeyengine/">jMonkeyEngine plugins</a></b>
       {{ $paginator := .Paginator }}
       {{ $filter := slice "jmonkeyengine" "jmonkeyengine3" }}
       {{ $pages := (where  .Site.Pages  "Params.tags"  "intersect" $filter )}}

@@ -82,19 +82,22 @@ const Utils = {
 
 
 
-        const ctrls = document.createElement("h2");
+        const ctrls = document.createElement("nav");
+        ctrls.classList.add("h");
+
         const appendCtrl = function (el) {
             // if (ctrls.innerHTML != "") {
             //     ctrls.innerHTML += " | ";
             // }
             ctrls.append(el);
         };
+        
         if (options.sourceUrl) {
             const a = document.createElement("a");
             a.setAttribute("rel", "noopener noreferrer");
             a.setAttribute("target", "_blank");
             a.setAttribute("href", options.sourceUrl);
-            a.innerHTML = '<i class="fab fa-github"></i> Source Code';
+            a.innerHTML = '<i class="fab fa-github"></i> Source';
             appendCtrl(a);
         }
         if (options.fullscreenUrl) {
@@ -104,14 +107,14 @@ const Utils = {
             a.innerHTML = '<i class="fas fa-expand"></i> Fullscreen</a>';
             appendCtrl(a);
         }
-        ctrls.querySelectorAll("a").forEach((el) => {
-            el.style.padding = "2rem";
-            el.style.whiteSpace="nowrap";
-            el.style.display="inline-block";
-            el.style.margin="1rem";
-            el.style.padding="0rem";
-        });
-        ctrls.style.textAlign = "center";
+        // ctrls.querySelectorAll("a").forEach((el) => {
+        //     el.style.padding = "2rem";
+        //     el.style.whiteSpace="nowrap";
+        //     el.style.display="inline-block";
+        //     el.style.margin="1rem";
+        //     el.style.padding="0rem";
+        // });
+        // ctrls.style.textAlign = "center";
 
         p.before(ctrls);
 

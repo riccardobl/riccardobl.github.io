@@ -136,8 +136,13 @@ module.exports=class DropboxFetcher {
             };
             if(firstImg)options.cover=firstImg;
 
+            
             const article=new Article(options);
-            article.setBody(readme);
+            article.setBody(readme+`
+                     <nav  class="h">
+                        <a rel="noopener noreferrer" href="`+repo.html_url+ `" target="_blank"><i class="fab fa-github"></i> Github page</a>
+                    </nav>
+            `);
             article.write(user+"-"+repo.name,"oscontrib");
         }
 
