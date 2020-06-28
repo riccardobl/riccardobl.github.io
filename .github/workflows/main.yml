@@ -2,7 +2,14 @@
 #   CLOUDFLARE_WORKER_URL = "https://comments.rblb.workers.dev"
 #   CLOUDFLARE_USER_ID="XXXX"
 #   CLOUDFLARE_API_KEY="XXXX"
-#   SITE_URL="https://riccardobl.github.io"
+#   CLOUDFLARE_ZONE="XXXX"
+#   SHADERTOY_KEY= "XXXX"
+#   YOUTUBE_KEY= "XXXX"
+#   TWITTER_CONSUMER_KEY= "XXXX"
+#   TWITTER_CONSUMER_SECRET= "XXXX"
+#   TWITTER_ACCESS_TOKEN_KEY= "XXXX"
+#   TWITTER_ACCESS_TOKEN_SECRET= "XXXX"
+#   DROPBOX_APIKEY= "XXXX"
 #   BOT_TOKEN  a personal access token that will be used when creating GitHub issues. https://github.com/settings/tokens/new?scopes=public_repo
 #   CLIENT_ID The client id to be used in the GitHub OAuth web application flow https://developer.github.com/v3/oauth/#web-application-flow
 #   CLIENT_SECRET The client secret for the OAuth web application flow
@@ -155,8 +162,11 @@ jobs:
         set +e
         (git -c http.extraheader="AUTHORIZATION: basic $header" push origin master --force )
 
-
-
-                                        
+    - name: Purge Cloudflare Cache
+      shell: bash
+      run: |
+        curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE }}/purge_cache" \
+        -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
+        -H "Content-Type: application/json"  --data '{"purge_everything":true}' 
 
         
