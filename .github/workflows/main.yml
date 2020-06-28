@@ -129,6 +129,9 @@ jobs:
         git config --global user.email "actions@robot.frk.wf"
         git clone --single-branch  --depth 1 --recurse-submodules  --branch project https://github.com/${GITHUB_REPOSITORY}.git project
         git clone --no-checkout --single-branch --branch master https://github.com/${GITHUB_REPOSITORY}.git generated    
+        cd generated
+        git reset --hard `git rev-list --max-parents=0 HEAD`
+        cd ..
     - name: Get utterances frontend
       uses: actions/download-artifact@master
       with:
