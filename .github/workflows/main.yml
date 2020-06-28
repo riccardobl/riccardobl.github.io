@@ -9,6 +9,8 @@
 #   STATE_PASSWORD 32 character password for encrypting state in request headers/cookies.
 name: Build
 on:
+  schedule:
+    - cron: "0 1 * * *"
   push:
     branches:
       - project
@@ -138,7 +140,8 @@ jobs:
         NO_CONTAINER=1 HEADLESS=1 ./make.sh         
         mkdir -p public
         echo "1" > public/.nojekyll
-    - name: Deploy     
+    - name: Deploy   
+      shell: bash  
       run: |
         shopt -s dotglob
         cp -Rf project/public/* generated/
