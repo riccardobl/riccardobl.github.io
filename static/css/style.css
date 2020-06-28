@@ -216,6 +216,10 @@ header nav .toggleContent{
         display:none!important;
     }
 
+    header nav.socials > *{
+        display:inline-block!important;
+    }
+
     header nav .toggleContent{
         font-size:3rem;
 
@@ -906,7 +910,6 @@ progress#pageLoadingProgress{
 
 
 progress#pageLoadingProgress[value], progress#pageLoadingProgress::-webkit-progress-bar  {
-    /* Reset the default appearance */
     -webkit-appearance: none;
      appearance: none;
      -moz-appearance: none;
