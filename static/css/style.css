@@ -200,55 +200,7 @@ header nav .toggleContent{
     display:none!important;
 
 }
-@media only screen and (max-width: 1200px),only  screen and (orientation:portrait){
-    body > main{
-        padding:0.5rem;
-    }
-    body{
-        flex-direction: column;;
-    }
-  
-    header nav .toggleContent{
-        display:block!important;
-    
-    }
-    header nav > * {
-        display:none!important;
-    }
 
-    header nav.socials > *{
-        display:inline-block!important;
-    }
-
-    header nav .toggleContent{
-        font-size:3rem;
-
-    }
-    section.list article{
-
-        width:90%!important;
-        min-width:90%!important;
-    }
-    body > header > *{
-        z-index:3;
-    }
-    body > header > *{
-        margin:0.1rem!important;
-    }
-
-
-
-    body > header img{
-
-        position:absolute;
-        z-index:2;
-        right:-8vmax;    
-        top:-8vmax;    
-        height:30vmax;    
-        width:30vmax;    
-    }
-  
-}
 body > main > h1,
 body > main > h2,
 body > main > h3 {
@@ -426,14 +378,15 @@ section.icons article i{
    
 
     padding:0.5rem;
-    padding-bottom:0;
-    padding-top:2rem;
+    padding-bottom:2rem;
+    padding-top:1rem;
     /* 
     position:absolute;
     left:0;
     top:0; */
     
 }
+
 section.icons article i::before{
     width:5rem;
     height:5rem;
@@ -958,4 +911,90 @@ article nav.h{
     display: grid;
     grid-auto-columns: 1fr;
     grid-auto-flow: column;
+}
+
+@media only screen and (max-width: 1200px),only  screen and (orientation:portrait){
+
+    body > main{
+        padding:0;
+        margin:0;
+        width:96%;
+        margin:auto;
+        margin-top:2%;
+    }
+
+    body,section.list {
+        flex-direction: column;;
+    }
+
+    header nav .toggleContent{
+        display:block!important;    
+    }
+
+    header nav > * {
+        display:none!important;
+    }
+
+    header nav.socials > *{
+        display:inline-block!important;
+    }
+
+    header nav .toggleContent{
+        font-size:3rem;
+    }
+    
+    section.list article{
+        margin-left:0;
+        margin-right: 0;
+        width:100%!important;
+        min-width:100%!important;
+    }
+
+    body > header > *{
+        z-index:3;
+          margin:0.1rem!important;
+    }
+
+
+
+    body > header img{
+
+        position:absolute;
+        z-index:2;
+        right:-8vmax;    
+        top:-8vmax;    
+        height:30vmax;    
+        width:30vmax;    
+    }
+
+    section.icons article{
+        padding:0!important;
+        height:auto;
+        overflow:hidden;
+        width:auto;
+    
+    }
+    section.icons article i{
+        display:none;
+
+        
+    }
+    section.icons article i:before{
+        display:none;
+
+
+    }
+
+    section.icons article h2{
+        padding:0;
+        margin:1rem;
+        
+        font-size: 1.1rem!important;
+
+    }
+    body > main > hr{
+        margin-top:2rem;
+        margin-bottom:2rem;
+        
+    }
 }
