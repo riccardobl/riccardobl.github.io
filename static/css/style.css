@@ -876,6 +876,9 @@ progress#pageLoadingProgress[value], progress#pageLoadingProgress::-webkit-progr
         background:var(--highlightFg);
     }
 
+article img {
+    max-width: 100%;
+}
 
 article nav{
     text-align: center;
