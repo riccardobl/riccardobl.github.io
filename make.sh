@@ -20,7 +20,12 @@ groupUID=`id -g`
 
 if [ "$CMD" = "" ];
 then
-    export CMD="`echo \"(cd generator&&npm install&&cd ..)&&(nodejs generator/main.js)&&hugo $@\"`"
+    export CMD="hugo $@"
+fi
+
+if [ "$SKIP_PREGEN" = "" ];
+then
+    export CMD="(cd generator&&npm install&&cd ..)&&(nodejs generator/main.js)&&$CMD"
 fi
 
 if [ "$ARGS" = "" ];
