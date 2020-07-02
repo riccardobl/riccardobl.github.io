@@ -11,11 +11,11 @@ async function main() {
     const dropbox=new DropboxFetcher(process.env.DROPBOX_APIKEY);
     process.env.DROPBOX_FOLDERS.split(",").forEach((f)=>dropbox.fetch(f));
 
-    const youtube=new YoutubeFetcher(
-        process.env.YOUTUBE_CHANNEL,
-        process.env.YOUTUBE_KEY
-    );
-    youtube.fetch();
+    // const youtube=new YoutubeFetcher(
+    //     process.env.YOUTUBE_CHANNEL,
+    //     process.env.YOUTUBE_KEY
+    // );
+    // youtube.fetch();
 
     const shadertoy=new ShadertoyFetcher(
         process.env.SHADERTOY_USER,
