@@ -108,10 +108,29 @@ jobs:
         -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
         -H "Content-Type: application/javascript" \
         --data @dist/index.js
+
+  fetch:
+    runs-on:  ubuntu-18.04
+    steps:
+    - name: Clone repo
+      run: |
+          git config --global user.name "GithubActions"
+          git config --global user.email "actions@robot.frk.wf"
+          git clone --single-branch  --depth 1 --recurse-submodules  --branch project https://github.com/${GITHUB_REPOSITORY}.git project
+    - name: Render p5js images
+      run: |
+          cd project
+          chmod 777 -Rf .
+          HEADLESS=1 ./renderp5js.sh
+    - name: Upload project
+      uses: actions/upload-artifact@master
+      with:
+        name: project
+        path: ./project
   
   build:
     runs-on: ubuntu-18.04    
-    needs: [buildUtterancesFrontend]
+    needs: [buildUtterancesFrontend,fetch]
     container:
       image: riccardoblb/buildenvs:hugo
     env:
@@ -130,15 +149,19 @@ jobs:
       DROPBOX_APIKEY: ${{ secrets.DROPBOX_APIKEY }}
 
     steps: 
-    - name: Clone repo
+    - name: Get project
+      uses: actions/download-artifact@master
+      with:
+        name:  project
+        path: ./project
+    - name: Prepare dist dir
       run: |
-        git config --global user.name "GithubActions"
-        git config --global user.email "actions@robot.frk.wf"
-        git clone --single-branch  --depth 1 --recurse-submodules  --branch project https://github.com/${GITHUB_REPOSITORY}.git project
-        git clone --no-checkout --single-branch --branch master https://github.com/${GITHUB_REPOSITORY}.git generated    
-        cd generated
-        git reset --hard `git rev-list --max-parents=0 HEAD`
-        cd ..
+          git config --global user.name "GithubActions"
+          git config --global user.email "actions@robot.frk.wf"
+          git clone --no-checkout --single-branch --branch master https://github.com/${GITHUB_REPOSITORY}.git generated    
+          cd generated
+          git reset --hard `git rev-list --max-parents=0 HEAD`
+          cd ..
     - name: Get utterances frontend
       uses: actions/download-artifact@master
       with:
@@ -147,6 +170,7 @@ jobs:
     - name: Build
       run: |
         cd project
+        chmod +x ./make.sh
         NO_CONTAINER=1 HEADLESS=1 ./make.sh         
         mkdir -p public
         echo "1" > public/.nojekyll

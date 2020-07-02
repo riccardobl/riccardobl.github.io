@@ -6,3 +6,4 @@ resources/
 *.log
 *~
 static/images/devlog/auto/
+*.p5js.js.png

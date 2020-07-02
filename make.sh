@@ -79,6 +79,7 @@ fi
 set -x
 if [ "$NO_CONTAINER" = "" ];
 then
+    ./renderp5js.sh
     $RUNTIME run  -v"$PWD:$PWD" $ENV_FILE $RUN_AS -w $PWD $ARGS --rm $IMAGE bash -c  "$CMD"
 else
     eval "$CMD"

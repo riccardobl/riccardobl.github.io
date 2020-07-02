@@ -4,7 +4,7 @@ title = "Riccardo Balbo"
 paginate=9
 summarylength = 20
 enableRobotsTXT = true
-
+ignoreErrors = ["error-output-taxonomy"]
 
 [sitemap]
   changefreq = "monthly"
@@ -12,7 +12,7 @@ enableRobotsTXT = true
   filename = "sitemap.xml"
 
 [params]
-  favicon = ""
+  favicon = "favicon.p5js.js.png"
   description = ""
   youtube = "https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw"
   github = "https://github.com/riccardobl"
@@ -28,3 +28,4 @@ enableRobotsTXT = true
 
 [outputs]
   taxonomy = ["HTML", "JSON"]
+
