@@ -12,7 +12,7 @@ ignoreErrors = ["error-output-taxonomy"]
   filename = "sitemap.xml"
 
 [params]
-  favicon = "favicon.p5js.js.png"
+  favicon = "favicon.p5img.js.png"
   description = ""
   youtube = "https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw"
   github = "https://github.com/riccardobl"

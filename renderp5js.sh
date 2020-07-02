@@ -41,4 +41,4 @@ function render() {
 }
 export -f render
 
-find $(pwd)  -type f -name "*.p5js.js" -exec /bin/bash -c 'render "$0"' {} \;
+find $(pwd)  -type f -name "*.p5img.js" -exec /bin/bash -c 'render "$0"' {} \;
