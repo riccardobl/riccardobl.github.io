@@ -109,7 +109,7 @@ jobs:
         -H "Content-Type: application/javascript" \
         --data @dist/index.js
 
-  fetch:
+  preBuild:
     runs-on:  ubuntu-18.04
     steps:
     - name: Clone repo
@@ -130,7 +130,7 @@ jobs:
   
   build:
     runs-on: ubuntu-18.04    
-    needs: [buildUtterancesFrontend,fetch]
+    needs: [buildUtterancesFrontend,preBuild]
     container:
       image: riccardoblb/buildenvs:hugo
     env:
