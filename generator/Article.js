@@ -1,5 +1,4 @@
 const Fs=require("fs");
-const mkdirp = require('mkdirp');
 module.exports=class Article {
     
     constructor(options){
@@ -62,7 +61,7 @@ module.exports=class Article {
 
     write(uid,typesuffix){
         const root="content/posts/generated/";
-        mkdirp.sync(root);
+        Fs.mkdirSync(root,{recursive:true});
         Fs.writeFileSync(root + uid + "-"+typesuffix+".html", this.generateHtml());
     }
 }

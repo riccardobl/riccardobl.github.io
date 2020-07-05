@@ -25,7 +25,7 @@ fi
 
 if [ "$SKIP_PREGEN" = "" ];
 then
-    export CMD="(cd generator&&npm install&&cd ..)&&(nodejs generator/main.js)&&$CMD"
+    export CMD="(cd generator&&npm --verbose install&&cd ..)&&(nodejs generator/main.js)&&$CMD"
 fi
 
 if [ "$ARGS" = "" ];
@@ -73,13 +73,20 @@ fi
 ENV_FILE=""
 if [ -f ".local-env" ];
 then
+    if [ "$NO_CONTAINER" != "" ];
+    then    
+          export $(cat .local-env | xargs)
+    fi
     ENV_FILE="--env-file=.local-env"
 fi
 
 set -x
 if [ "$NO_CONTAINER" = "" ];
 then
-    ./renderp5js.sh
+    if [ "$NO_P5RENDER" != "" ];
+    then
+        ./renderp5js.sh
+    fi
     $RUNTIME run  -v"$PWD:$PWD" $ENV_FILE $RUN_AS -w $PWD $ARGS --rm $IMAGE bash -c  "$CMD"
 else
     eval "$CMD"

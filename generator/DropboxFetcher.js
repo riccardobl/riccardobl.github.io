@@ -1,6 +1,7 @@
 const fetch = require("node-fetch");
 const Dropbox=require("dropbox").Dropbox;
 const Article=require("./Article.js");
+const ImageUtils=require("./ImageUtils.js");
 
 module.exports=class DropboxFetcher {
     constructor(token){
@@ -65,13 +66,15 @@ module.exports=class DropboxFetcher {
             
             let res=await this.list("/"+tag+"/");
             console.log(res);
-            res.forEach(e=>{
+            for(let i in res){
+                const e=res[i];
                 if(e.path.endsWith(".png")||e.path.endsWith(".jpg")){
+                    let coverImg=await ImageUtils.getPreviewImage(e.url);
                     const article=new Article({
                             title:e.name,
                             hidetitle:false,
                             date:e.date,
-                            cover:e.url,
+                            cover:coverImg,
                             summary:" ",
                             summarytitle:" ",
                             tags:[
@@ -89,7 +92,7 @@ module.exports=class DropboxFetcher {
                     `);
                     article.write(e.hash,"devlog-img")
                 }
-            });
+            }
 
         }catch(e){
             console.error("Cannot fetch dropbox",e);

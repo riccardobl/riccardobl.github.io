@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
 const Article=require("./Article.js");
+const ImageUtils=require("./ImageUtils.js");
 
 module.exports=class  {
     constructor(chanId,key){
@@ -34,6 +35,7 @@ module.exports=class  {
         console.log(vids);
         return vids;
     }
+    
 
     async fetch(){
         try{
@@ -43,7 +45,7 @@ module.exports=class  {
                 const article=new Article({
                     title:vid.title,
                     date:vid.publishedAt,
-                    ytcover: "https://www.youtube.com/embed/"+ vid.id ,
+                    ytcover: await ImageUtils.getPreviewImage("https://www.youtube.com/embed/"+ vid.id ),
                     summary:" ",
                     summarytitle:" ",
                     tags:[
