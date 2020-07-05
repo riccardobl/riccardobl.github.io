@@ -45,7 +45,7 @@ module.exports=class  {
                 const article=new Article({
                     title:vid.title,
                     date:vid.publishedAt,
-                    ytcover: await ImageUtils.getPreviewImage("https://www.youtube.com/embed/"+ vid.id ),
+                    ytcover: "https://www.youtube.com/embed/"+ vid.id ,
                     summary:" ",
                     summarytitle:" ",
                     tags:[

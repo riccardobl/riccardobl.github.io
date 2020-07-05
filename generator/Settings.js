@@ -13,7 +13,7 @@ const Settings={
     TWITTER_USER:"",
     TWITTER_FILTER:"",
     GITHUB_ACCOUNTS:"",
-    IMAGE_PREVIEWS_MAX_SIZE:512,
+    IMAGE_PREVIEWS_MAX_SIZE:2048,
     IMAGE_PREVIEWS_FORMAT:"webp",
     ROOTDIR:Path.resolve(__dirname,"../")
 }
