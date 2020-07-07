@@ -83,7 +83,7 @@ fi
 set -x
 if [ "$NO_CONTAINER" = "" ];
 then
-    if [ "$NO_P5RENDER" != "" ];
+    if [ "$NO_P5RENDER" = "" ];
     then
         ./renderp5js.sh
     fi
