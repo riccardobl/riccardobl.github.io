@@ -5,8 +5,11 @@ const DropboxFetcher =require("./DropboxFetcher.js");
 const ShadertoyFetcher =require("./ShadertoyFetcher.js");
 const TwitterFetcher =require("./TwitterFetcher.js");
 const GithubFetcher =require("./GithubFetcher.js");
+const AvatarFetcher =require("./AvatarFetcher.js");
 
 async function main() {
+    const avatar=new AvatarFetcher();
+    avatar.fetch();
 
     const dropbox=new DropboxFetcher(Settings.DROPBOX_APIKEY);
     Settings.DROPBOX_FOLDERS.split(",").forEach((f)=>dropbox.fetch(f));
