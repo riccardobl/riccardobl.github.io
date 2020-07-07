@@ -18,7 +18,7 @@ const Settings={
     IMAGE_PREVIEWS_MAX_SIZE:2048, // deprecated
     OPTIMIZED_IMAGE_MAX_SIZE:2048,
     IMAGE_PREVIEWS_FORMAT:"webp",
-    OPTIMIZED_IMAGE_FORMAT:"webp'",
+    OPTIMIZED_IMAGE_FORMAT:"webp",
     ROOTDIR:Path.resolve(__dirname,"../"),
     config:{}
 }
