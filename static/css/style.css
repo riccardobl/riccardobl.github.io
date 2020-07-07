@@ -160,7 +160,8 @@ body >  header{
     align-items: center;
     text-align: center;
     padding:2rem;
-    min-width:20vw;
+    width:16vw;
+    min-width: 20rem;
 
 }
 
@@ -177,8 +178,11 @@ body >  header >  h1 {
 }
 
 body >  header   img {
-    height:10vmax;    
-    width:10vmax;    
+    height:10vw;    
+    width:10vw;    
+    min-width: 10rem;
+    min-height: 10rem;
+
     border-radius:100%;
     background:var(--background);
     border:0.4rem double var(--highlightFg);
@@ -193,7 +197,8 @@ body > main{
     width:100%;
     height:100%;
     position:relative;
-    padding:1rem;
+    padding-top:2%;
+    padding-bottom:2%;
 
 }
 header nav .toggleContent{
@@ -300,6 +305,15 @@ section article{
  
     width:100%;
     padding-top:3rem;
+    
+    margin:0;
+    width:96%;
+    margin:auto;
+
+}
+section.list article{
+    margin:0;
+    padding:1rem;
 }
 
 section.pagination{
@@ -338,6 +352,7 @@ section.list {
     0 0  0.1rem var(--background2),
     0 0  0.1rem var(--background2),
     0 0  0.1rem var(--background2);
+    position:relative;
     
 }
 
@@ -527,14 +542,14 @@ section.list article{
     transform: rotate(0deg);
     filter: brightness(100%);
     cursor: pointer;
-    width:30%;
-    min-width:22rem;
+    width:32%;
+    margin:0.5%;
 
     min-height:15rem;
     max-width:100%;
-        margin:0.5rem;
-   padding:0.5rem;
-        padding-top:1.5rem;
+        /* margin:0.5rem; */
+   /* padding:0.5rem; */
+        /* padding-top:1.5rem; */
         display:flex;
     flex-direction: column;
 
@@ -602,13 +617,23 @@ section.list article:hover{
     display:block;
 
 }
+
+
+nav.tags > a,nav.tags > a:visited,nav.tags > a:hover{
+    background-color:var(--highlightFg);
+    color:var(--background2)!important;
+    padding:0.3rem; 
+    margin:0.2rem;
+
+    border-radius: 0.3rem;
+    border: 0.1rem dashed var(--background2);
+    z-index:10;
+    display:inline-block;
+    font-weight: bold;;
+}
+
 main > nav.tags {
     margin:4rem;
-}
-main > nav.tags a,
-main > nav.tags a:hover,
-main > nav.tags a:visited{
-    margin:0.5rem;
 }
 section > article > nav.tags{
     text-align: right;
@@ -624,17 +649,7 @@ section article > time{
     font-weight: bold;
 }
 
-nav.tags > a,nav.tags > a:visited,nav.tags > a:hover{
-    background-color:var(--highlightFg);
-    color:var(--background2)!important;
-    padding:0.3rem;
-    margin:0;
-    border-radius: 0.3rem;
-    border: 0.1rem dashed var(--background2);
-    z-index:10;
-    display:inline-block;
-    font-weight: bold;;
-}
+
 
 section.list article > nav > a {
     pointer-events: none;
@@ -919,11 +934,7 @@ article nav.h{
 @media only screen and (max-width: 1200px),only  screen and (orientation:portrait){
 
     body > main{
-        padding:0;
-        margin:0;
-        width:96%;
-        margin:auto;
-        margin-top:2%;
+
     }
 
     body,section.list {
@@ -999,5 +1010,9 @@ article nav.h{
         margin-top:2rem;
         margin-bottom:2rem;
         
+    }
+    body >  header{
+
+        width:100%;
     }
 }
