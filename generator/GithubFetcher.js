@@ -138,11 +138,20 @@ module.exports=class DropboxFetcher {
 
             
             const article=new Article(options);
-            article.setBody(readme+`
-                     <nav  class="h">
-                        <a rel="noopener noreferrer" href="`+repo.html_url+ `" target="_blank"><i class="fab fa-github"></i> Github page</a>
-                    </nav>
-            `);
+            let body=readme+`
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="`+repo.html_url+ `" target="_blank"><i class="fab fa-github"></i> Github page</a>
+            `;
+            console.log("Home page",repo.homepage);
+            if(repo.homepage){
+                body+=`
+                <a rel="noopener noreferrer" href="`+repo.homepage+ `" target="_blank">
+                <i class="fas fa-home"></i> Homepage</a>
+                `;
+            }
+            body+=` </nav>`;
+            article.setBody(body);
+
             article.write(user+"-"+repo.name,"oscontrib");
         }
 
