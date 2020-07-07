@@ -7,3 +7,4 @@ resources/
 *~
 static/images/devlog/auto/
 *.p5img.js.png
+static/images/avatar.webp

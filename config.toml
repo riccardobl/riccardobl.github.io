@@ -12,6 +12,8 @@ ignoreErrors = ["error-output-taxonomy"]
   filename = "sitemap.xml"
 
 [params]
+  avatar="https://github.com/riccardobl.png"
+  avatarCache="/images/avatar.webp"
   favicon = "favicon.p5img.js.png"
   description = ""
   youtube = "https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw"

@@ -7,9 +7,19 @@ const Crypto = require('crypto');
 
 const ImageUtils={
 
+    getPreviewBuffer:async function(url,scale){// deprecated
+        return this.getOptimizedBuffer(url,scale);
+    },
 
-    getPreviewBuffer:async function(url,scale){
+    getPreviewImage:async function(url,scale){// deprecated
+        return this.getOptimizedmage(url,scale);
+    },
+
+    getOptimizedBuffer:async function(url,scale,format){
+        if(!scale)scale=Settings.OPTIMIZED_IMAGE_MAX_SIZE;
         if(!scale)scale=Settings.IMAGE_PREVIEWS_MAX_SIZE;
+        if(!format)format=Settings.OPTIMIZED_IMAGE_FORMAT;
+        if(!format)format=Settings.IMAGE_PREVIEWS_FORMAT;
         let res=await fetch(url);
         res=await  res.buffer();
         return await sharp( res )
@@ -20,24 +30,38 @@ const ImageUtils={
 
 
             })
-            .toFormat(Settings.IMAGE_PREVIEWS_FORMAT).toBuffer();   
+            .toFormat(format).toBuffer();   
     },
 
-    getPreviewImage:async function(url,scale){
-        const relFolder="images/generated/preview";
-        const relFile=relFolder+"/"+Crypto.createHash('sha1').update(url).digest('hex')+"."+Settings.IMAGE_PREVIEWS_FORMAT;
+    getOptimizedmage:async function(url,scale,destFile){
+        let fileExt=null;
+        let relFolder=null;
+        let fileName=null;
+
+        if(destFile){
+            if(destFile.startsWith("/"))destFile=destFile.substring(1);
+            relFolder=Path.dirname(destFile);
+            fileName=Path.basename(destFile);
+            fileExt=Path.extname(destFile).substring(1);
+        }
+
+        if(!fileExt)fileExt=Settings.OPTIMIZED_IMAGE_FORMAT;
+        if(!fileExt)fileExt=Settings.IMAGE_PREVIEWS_FORMAT;
+
+        if(!fileName)fileName=Crypto.createHash('sha1').update(url).digest('hex')+"."+fileExt;
+        
+        if(!relFolder) relFolder="images/generated/preview";
+
+        const relFile=relFolder+"/"+fileName;
 
         const absFolder=Path.resolve(Settings.ROOTDIR,"static",relFolder);
-        console.log("mkdir recursive",absFolder);
         Fs.mkdirSync(absFolder, { recursive: true });
 
         const absFile=Path.resolve(Settings.ROOTDIR,"static",relFile);
 
-
-        // const destFile=Path.resolve(destPath,);
         console.log("Save",url,"preview in ",absFile,"(",relFile,")");
 
-        const data=await ImageUtils.getPreviewBuffer(url,scale);
+        const data=await ImageUtils.getOptimizedBuffer(url,scale,fileExt);
         Fs.writeFileSync(absFile,data);
 
 
