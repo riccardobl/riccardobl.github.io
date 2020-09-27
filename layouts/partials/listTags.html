@@ -1,3 +1,4 @@
+<h1>Tags</h1>
 <nav class="tags">
     {{ range $key, $value := .Site.Taxonomies.tags }}
     <a href="/tags/{{ $key  }}">#{{ $key  }}</a>

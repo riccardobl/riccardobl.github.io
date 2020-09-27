@@ -34,6 +34,7 @@ module.exports = class {
             tags.push("shadertoy");
             for (let j in data.tags) tags.push(data.tags[j]);
             tags.push("devlog");
+            tags.push("media");
             tags.push("misc");
 
             const coverImg=await ImageUtils.getPreviewImage("https://www.shadertoy.com/media/shaders/" + shaderId + ".jpg");

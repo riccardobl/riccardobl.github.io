@@ -1,12 +1,10 @@
-<img class="optional" src='{{  .Param "avatarCache" }}'>
-<h1><a id="siteTitle" href="/"> {{ .Site.Title }}</a></h1>
-<p>
-<br />
-I make games.
-<br />
-But also software, websites and 3d models.
+<!-- <img class="optional" src='{{  .Param "avatarCache" }}'> -->
+<t><a id="siteTitle" href="/"> {{ .Site.Title }}</a></t>
+<span id="bio">
+I'm Riccardo Balbo, this is my personal website, mostly related to gamedev. 
 <br />
 <br />
-</p>
-    {{ partialCached "socials.html" . }}
+Feel free to get in touch for anything within the limit of common sense. 
+</span>
+{{ partial "socials.html" . }}
 {{ partial "menu.html" . }}

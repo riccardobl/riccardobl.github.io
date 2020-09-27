@@ -1,8 +1,7 @@
 <nav class="vmenu">
     <div class="toggleContent"></div>
     <b><a href="/">Home</a></b>
-      <a href="/tags/devlog">Misc / Devlog</a>
-      <b><a href="/tags/highlighted">Highlighted Projects</a></b>
+    <a href="/tags/devlog">Devlog</a>
 
       {{ $paginator := .Paginator }}
       {{ $filter := slice "highlighted" }}
@@ -16,7 +15,7 @@
       {{ end }}
       <a rel="noopener noreferrer" href="https://github.com/riccardobl?tab=repositories" target="_blank">Opensource Repos</a>
 
-    <b><a href="/posts/jmonkeyengine/">jMonkeyEngine plugins</a></b>
+    <b><a href="/posts/jmonkeyengine/">jMonkeyEngine</a></b>
       {{ $paginator := .Paginator }}
       {{ $filter := slice "jmonkeyengine" "jmonkeyengine3" }}
       {{ $pages := (where  .Site.Pages  "Params.tags"  "intersect" $filter )}}

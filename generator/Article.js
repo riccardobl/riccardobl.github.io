@@ -8,6 +8,7 @@ module.exports=class Article {
             // ytcover:"",
             // cover:"",
             hidetitle:false,
+            author: "Riccardo Balbo",
 
             tags:[],
             draft:false,

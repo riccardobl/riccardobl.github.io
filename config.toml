@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Riccardo Balbo"
+title = "RBLB"
 paginate=9
 summarylength = 20
 enableRobotsTXT = true
@@ -29,5 +29,7 @@ ignoreErrors = ["error-output-taxonomy"]
   tag = "tags"
 
 [outputs]
-  taxonomy = ["HTML", "JSON"]
+  home = ["HTML"]
+  taxonomy = ["HTML","JSON"]
+  term=["HTML","JSON"]
 

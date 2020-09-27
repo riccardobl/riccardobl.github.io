@@ -1,0 +1,16 @@
+
+<a target="_blank" href="{{ .Params.tweetUrl }}">
+
+<article  
+class="tweet"
+>
+<div style=" {{ if .Params.cover }} background-image:url(' {{ .Params.cover }}'); {{end}} '" 
+ class="cover"></div>
+ <i class="twitterLogo"></i>
+<!-- <img height="100%" src="/fontawesome/svgs/brands/twitter.svg" class="twitterLogo" /> -->
+<p>
+  {{  .Params.summary | plainify | safeHTML | truncate 70  }} {{ if .Truncated }} …{{end}}
+   <br /><i>- {{.Params.author}}  {{ .Date.Format "02 January 2006" }}</i>
+        <!-- {{ .Params.summary }} -->
+  </p>
+</article></a>

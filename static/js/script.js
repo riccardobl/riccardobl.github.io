@@ -130,6 +130,9 @@ window.addEventListener("load", function () {
         PROGRESS_BAR_INTERVAL=null;
     }
 });
+
+
+
 PROGRESS_BAR_INTERVAL=setInterval(function(){
     const bar=document.getElementById("pageLoadingProgress");
     if(!bar)return;

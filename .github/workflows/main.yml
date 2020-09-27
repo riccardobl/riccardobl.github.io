@@ -137,8 +137,7 @@ jobs:
       SHADERTOY_USER: rblb
       YOUTUBE_CHANNEL: UCh_H0NPkra9GZU_KFC5eVbw
       GITHUB_ACCOUNTS: riccardobl,jmePhonon,f3b
-      TWITTER_USER: rblb_
-      TWITTER_FILTER: devlog
+      TWITTER_COLLECTION:  ${{ secrets.TWITTER_COLLECTION }}
       DROPBOX_FOLDERS: devlog
       SHADERTOY_KEY: ${{ secrets.SHADERTOY_KEY }}
       YOUTUBE_KEY: ${{ secrets.YOUTUBE_KEY }}

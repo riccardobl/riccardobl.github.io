@@ -80,6 +80,7 @@ module.exports=class DropboxFetcher {
                             tags:[
                                 "screenshot",
                                 tag,
+                                "media",
                                 "misc"
                             ]
 

@@ -32,7 +32,7 @@ async function main() {
         Settings.TWITTER_ACCESS_TOKEN_KEY,
         Settings.TWITTER_ACCESS_TOKEN_SECRET
     );
-    twitter.fetch(Settings.TWITTER_USER, Settings.TWITTER_FILTER.split(","));
+    twitter.fetch(Settings.TWITTER_COLLECTION);
 
     const github=new GithubFetcher();
     Settings.GITHUB_ACCOUNTS.split(",").forEach((a)=>github.fetch(a));

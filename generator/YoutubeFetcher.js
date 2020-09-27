@@ -42,19 +42,25 @@ module.exports=class  {
             const vids=await this.getVideos();
             for(let i in vids){
                 const vid=vids[i];
+                const embedUrl= "https://www.youtube-nocookie.com/embed/"+ vid.id
                 const article=new Article({
                     title:vid.title,
                     date:vid.publishedAt,
-                    ytcover: "https://www.youtube.com/embed/"+ vid.id ,
+                    ytcover: embedUrl ,
                     summary:" ",
                     summarytitle:" ",
                     tags:[
                         "video",
+                        "media",
                         "devlog",
                         "misc"
                     ]
                 });
-
+                article.setBody(`
+                <br />            
+                <iframe width="560" height="315" src="`+embedUrl+`" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <br /><br />
+            `);
             article.write(vid.id,"devlog-yt")
          }
             

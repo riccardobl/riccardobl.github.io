@@ -20,7 +20,7 @@ class='{{ if  (or (isset .Params "cover") (isset .Params "ytcover")) }} cover {{
         {{ end }}
         <p>
         {{ if .Params.summary }}
-        {{ .Params.summary }}
+        {{ .Params.summary | truncate 200}}
         {{ else }}
         {{ .Summary | plainify | safeHTML }} {{ if .Truncated }} … 
         <a class="readMore" href="{{ .RelPermalink }}">Read

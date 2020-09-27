@@ -1,6 +1,4 @@
-
-{{ define "main" }}
-"response":"articles",
-{{ partial "articlesList.json" . }}
-{{ end }}
-
+{
+    "response":"articles",
+    {{ partial "articlesList.json" . }}
+}
