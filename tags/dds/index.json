@@ -1,0 +1,132 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-09-22 20:36:55 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-ddswriter-oscontrib/",
+
+        
+        "title":"DDSWriter",
+        
+
+        
+        
+        "summary":"DDSWriter is a command-line utility and java library to write compressed and uncompressed DDS.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "compression"
+        
+              , 
+             "dds"
+        
+              , 
+             "dxt"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "mipmaps"
+        
+              , 
+             "rgtc"
+        
+              , 
+             "s3tc"
+        
+              , 
+             "mit"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2019-10-28 20:53:48 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jcubemapassembler-oscontrib/",
+
+        
+        "title":"JCubemapAssembler",
+        
+
+        
+        
+        "summary":"JCubemapAssembler is a java application that can be used to assemble six separate face images into a single cubemap and export it as a dds file. ",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "cubemap"
+        
+              , 
+             "dds"
+        
+              , 
+             "java"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

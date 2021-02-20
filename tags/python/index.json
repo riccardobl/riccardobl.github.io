@@ -1,0 +1,126 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2021-01-13 17:55:26 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/",
+
+        
+        "title":"blender_effekseer_addon",
+        
+
+        
+        
+        "summary":"Blender 2.8+ addon that renders effekseer effects in blender's viewport.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "blender"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "particles"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-11-27 16:01:23 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-f3b-oscontrib/",
+
+        
+        "title":"f3b",
+        
+
+        
+        
+        "summary":"A special purpose exchange format designed for Blender and jMonkeyEngine  ",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "blender"
+        
+              , 
+             "exchange-format"
+        
+              , 
+             "f3b"
+        
+              , 
+             "hacktoberfest"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

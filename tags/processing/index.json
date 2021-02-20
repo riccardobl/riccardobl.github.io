@@ -1,0 +1,69 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-07-02 07:43:10 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-p5js-docker-renderer-oscontrib/",
+
+        
+        "title":"p5js-docker-renderer",
+        
+
+        
+        
+        "summary":"A docker image that uses nodejs puppeteer and mesa software rendering to render p5js sketches into pngs.",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "nodejs"
+        
+              , 
+             "p5js"
+        
+              , 
+             "processing"
+        
+              , 
+             "puppeteer"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

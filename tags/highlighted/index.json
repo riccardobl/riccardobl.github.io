@@ -1,0 +1,153 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"images/jmonkeyengine.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-08-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/jmonkeyengine/",
+
+        
+        "title":"jMonkeyEngine",
+        
+
+        
+        
+        "summary":"jMonkeyEngine is an OpenGL+Java 3d game engine to which i contribute as core developer.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "highlighted"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/fpenguin.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/fleeingpenguin/",
+
+        
+        "title":"Fleeing Penguin",
+        
+
+        
+        
+        "summary":"A small 2d game made in p5js and webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "p5js"
+        
+              , 
+             "webgl"
+        
+              , 
+             "game"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "highlighted"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/pong.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/pong/",
+
+        
+        "title":"Pong (?)",
+        
+
+        
+        
+        "summary":"An overly complex raytraced pong game.",
+    
+        
+
+        "tags":[
+        
+             
+             "shadertoy"
+        
+              , 
+             "glsl"
+        
+              , 
+             "game"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "highlighted"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

@@ -1,0 +1,126 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-09-17 14:48:14 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-simplessrshader-oscontrib/",
+
+        
+        "title":"SimpleSSRShader",
+        
+
+        
+        
+        "summary":"Just some barebone Screen space reflections shader",
+    
+        
+
+        "tags":[
+        
+             
+             "GLSL"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "glsl"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "shader"
+        
+              , 
+             "ssr"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-01-31 11:53:44 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/",
+
+        
+        "title":"jme-shader-OcclusionParallaxMapping",
+        
+
+        
+        
+        "summary":"OcclusionParallaxMapping for jMonkeyEngine",
+    
+        
+
+        "tags":[
+        
+             
+             "GLSL"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "glsl"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "occlusion"
+        
+              , 
+             "parallax"
+        
+              , 
+             "shader"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

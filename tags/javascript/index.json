@@ -1,0 +1,162 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2021-01-06 13:01:16 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-scwdronerunner-oscontrib/",
+
+        
+        "title":"ScwDroneRunner",
+        
+
+        
+        
+        "summary":"Spawns a drone runner on demand on Scaleway.",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "continuous-delivery"
+        
+              , 
+             "continuous-integration"
+        
+              , 
+             "drone"
+        
+              , 
+             "scaleway"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-07-02 07:43:10 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-p5js-docker-renderer-oscontrib/",
+
+        
+        "title":"p5js-docker-renderer",
+        
+
+        
+        
+        "summary":"A docker image that uses nodejs puppeteer and mesa software rendering to render p5js sketches into pngs.",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "nodejs"
+        
+              , 
+             "p5js"
+        
+              , 
+             "processing"
+        
+              , 
+             "puppeteer"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-30 06:16:51 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fleeingpenguin-oscontrib/",
+
+        
+        "title":"fleeingpenguin",
+        
+
+        
+        
+        "summary":"A small game made with p5js+webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "game"
+        
+              , 
+             "p5js"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

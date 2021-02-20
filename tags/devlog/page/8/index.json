@@ -1,0 +1,63 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"/tags/devlog/page/7/index.json",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"https://www.youtube-nocookie.com/embed/2pOs7VjPLOg" ,
+        
+
+        "date":"2018-05-29 12:55:10 +0000 UTC",
+        
+        "url":"/posts/generated/2pos7vjplog-devlog-yt/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "video"
+        
+              , 
+             "media"
+        
+              , 
+             "devlog"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

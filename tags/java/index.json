@@ -1,0 +1,465 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2021-01-20 08:50:55 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-igui-oscontrib/",
+
+        
+        "title":"jme-igui",
+        
+
+        
+        
+        "summary":"A minimalistic immediate gui for jmonkeyengine",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2021-01-16 02:41:19 +0000 UTC",
+        
+        "url":"/posts/generated/jmephonon-jmephonon-oscontrib/",
+
+        
+        "title":"jmePhonon",
+        
+
+        
+        
+        "summary":"Steam Audio (phonon) implementation for jMonkeyEngine. ",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "spatial-audio"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2021-01-10 09:40:00 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-effekseernative-oscontrib/",
+
+        
+        "title":"jme-effekseerNative",
+        
+
+        
+        
+        "summary":"This is a library that uses EffekseerForMultiLanguages to load and render effects made with Effekseer in jme.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "particles"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-12-18 14:42:02 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/",
+
+        
+        "title":"FPSDEMO-jMonkeyEngine",
+        
+
+        
+        
+        "summary":"An FPS demo made with jMonkeyEngine",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "demo"
+        
+              , 
+             "fps"
+        
+              , 
+             "game"
+        
+              , 
+             "hacktoberfest"
+        
+              , 
+             "jmonkeyengine"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-09-22 20:36:55 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-ddswriter-oscontrib/",
+
+        
+        "title":"DDSWriter",
+        
+
+        
+        
+        "summary":"DDSWriter is a command-line utility and java library to write compressed and uncompressed DDS.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "compression"
+        
+              , 
+             "dds"
+        
+              , 
+             "dxt"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "mipmaps"
+        
+              , 
+             "rgtc"
+        
+              , 
+             "s3tc"
+        
+              , 
+             "mit"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"images/jmonkeyengine.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-08-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/jmonkeyengine/",
+
+        
+        "title":"jMonkeyEngine",
+        
+
+        
+        
+        "summary":"jMonkeyEngine is an OpenGL+Java 3d game engine to which i contribute as core developer.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "highlighted"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-01-31 11:53:10 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/",
+
+        
+        "title":"jme3-bullet-vhacd",
+        
+
+        
+        
+        "summary":"This is a library that uses java bindings for Khaled Mamou's V-HACD to decompose concave meshes into hull-shapes in jmonkey engine.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "bullet"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine3"
+        
+              , 
+             "vhacd"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-01-30 12:04:59 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-v-hacd-java-bindings-oscontrib/",
+
+        
+        "title":"v-hacd-java-bindings",
+        
+
+        
+        
+        "summary":"Java bindings for V-HACD (https://github.com/kmammou/v-hacd)",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "bullet"
+        
+              , 
+             "java"
+        
+              , 
+             "java-bindings"
+        
+              , 
+             "jna"
+        
+              , 
+             "vhacd"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2019-10-28 20:53:48 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jcubemapassembler-oscontrib/",
+
+        
+        "title":"JCubemapAssembler",
+        
+
+        
+        
+        "summary":"JCubemapAssembler is a java application that can be used to assemble six separate face images into a single cubemap and export it as a dds file. ",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "cubemap"
+        
+              , 
+             "dds"
+        
+              , 
+             "java"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

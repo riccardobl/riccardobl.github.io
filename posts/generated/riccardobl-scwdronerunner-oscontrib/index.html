@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | ScwDroneRunner</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.77.0" />
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.p5img.js.png" type="image/x-icon" />
+  
+
+  
+
+</head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+<header > 
+<t><a id="siteTitle" href="/"> RBLB</a></t>
+<span id="bio">
+I'm Riccardo Balbo, this is my personal website, mostly related to gamedev. 
+<br />
+<br />
+Feel free to get in touch for anything within the limit of common sense. 
+</span>
+    <nav class="socials">
+
+
+    
+    <a class="social youtube" href="https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw" target="_blank"  title="Youtube link" rel="noopener noreferrer" aria-label="follow on Youtube——Opens in a new window">
+    </a>
+     
+
+
+    
+    <a class="social github" href="https://github.com/riccardobl" target="_blank" title="Github link" rel="noopener noreferrer" aria-label="follow on Github——Opens in a new window">
+    </a> 
+    
+
+    
+
+
+    
+    <a class="social twitter"  target="_blank" href="https://twitter.com/i/user/1260924338632564739"   title="Twitter link" rel="noopener noreferrer"  >
+    </a> 
+    
+
+    
+    <a class="social email" href="javascript:alert('riccardo0blb@gmail.com')"   title="Email" rel="noopener noreferrer">
+    </a> 
+    
+
+
+</nav>
+
+<nav class="vmenu">
+    <div class="toggleContent"></div>
+    <b><a href="/">Home</a></b>
+    <a href="/tags/devlog">Devlog</a>
+
+      
+      
+      
+      
+      
+       <a href="/posts/jmonkeyengine/">jMonkeyEngine</a>
+      
+      
+      
+       <a href="/posts/fleeingpenguin/">Fleeing Penguin</a>
+      
+      
+      
+       <a href="/posts/pong/">Pong (?)</a>
+      
+      
+      <a rel="noopener noreferrer" href="https://github.com/riccardobl?tab=repositories" target="_blank">Opensource Repos</a>
+
+    <b><a href="/posts/jmonkeyengine/">jMonkeyEngine</a></b>
+      
+      
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-igui-oscontrib/">jme-igui</a>
+      
+      
+      
+      <a href="/posts/generated/jmephonon-jmephonon-oscontrib/">jmePhonon</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-effekseernative-oscontrib/">jme-effekseerNative</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/">FPSDEMO-jMonkeyEngin …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-f3b-oscontrib/">f3b</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-ddswriter-oscontrib/">DDSWriter</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-simplessrshader-oscontrib/">SimpleSSRShader</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/">jme-shader-Occlusion …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/">jme3-bullet-vhacd</a>
+      
+      
+</nav></header>
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <h1 id="ondemand-drone-runner-provisioner-for-scaleway">Ondemand Drone Runner provisioner for Scaleway</h1>
+<p>This script spawns a drone runner instance on scaleway when needed and destroys it when all the builds are complete or after a fixed timeout.</p>
+<p><strong>WARNING</strong> this is a proof of concept yada yada, don't use it in production, you know the drill. Actually this is what i use on my CI configuration, but i didn't put the effort to test it properly, so if you use this and it bills you extra resources/doesn't clean after itself, don't complain to me.</p>
+<h2 id="usage-prebuilt-image-from-dockerhub">Usage: Prebuilt image from dockerhub</h2>
+<p>The script is configured using env variables</p>
+<pre><code class="language-bash">docker run -d 
+--read-only \
+--name=droneprov \
+--restart=always \
+-e DRONE_URL="DRONE_CI_URL (without scheme - eg. ci.example.org , not https://ci.example.org (https is always implied))" \
+-e DRONE_RPC_SECRET="DRONE_RPC_SECRET" \
+-e DRONE_TOKEN="DRONE_PERSONAL_TOKEN" \
+-e SCW_ACCESS_KEY="SCALEWAY_ACCESS_KEY" \
+-e SCW_SECRET_KEY="SCALEWAY_SECRET_KEY" \
+-e SCW_ORG="SCALEWAY_ORGANIZATION_TOKEN" \
+-e SCW_REGION="fr-par-1"
+riccardoblb/scwdronerunner</code></pre>
+<p>for the full list, see <a href="https://github.com/riccardobl/ScwDroneRunner/blob/master/Dockerfile">Dockerfile</a></p>
+<h2 id="manual-build-and-run-needs-bash-and-nodejs-or-docker">Manual: Build and run (needs bash and nodejs or docker)</h2>
+<ol>
+<li>Rename <code>run.config.template</code>  in <code>run.config.sh</code></li>
+<li>Configure <code>run.config.sh</code> with your access tokens</li>
+<li>Run <code>./run.sh</code></li>
+<li>????</li>
+<li>Profit</li>
+</ol>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/riccardobl/ScwDroneRunner" target="_blank"><i class="fab fa-github"></i> Github page</a>
+             </nav>
+
+
+    <time datetime="2021-01-06 13:01:16 &#43;0000 UTC">06 January 2021</time>
+
+<nav class="tags">
+
+    
+        <a class="JavaScript" href="/tags/javascript/">#JavaScript</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="continuous-delivery" href="/tags/continuous-delivery/">#continuous-delivery</a>
+    
+
+    
+        <a class="continuous-integration" href="/tags/continuous-integration/">#continuous-integration</a>
+    
+
+    
+        <a class="drone" href="/tags/drone/">#drone</a>
+    
+
+    
+        <a class="scaleway" href="/tags/scaleway/">#scaleway</a>
+    
+
+    
+        <a class="bsd-3-clause" href="/tags/bsd-3-clause/">#bsd-3-clause</a>
+    
+
+</nav>
+      
+
+      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>

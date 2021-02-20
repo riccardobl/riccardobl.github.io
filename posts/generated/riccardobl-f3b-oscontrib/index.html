@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | f3b</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.77.0" />
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.p5img.js.png" type="image/x-icon" />
+  
+
+  
+
+</head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+<header > 
+<t><a id="siteTitle" href="/"> RBLB</a></t>
+<span id="bio">
+I'm Riccardo Balbo, this is my personal website, mostly related to gamedev. 
+<br />
+<br />
+Feel free to get in touch for anything within the limit of common sense. 
+</span>
+    <nav class="socials">
+
+
+    
+    <a class="social youtube" href="https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw" target="_blank"  title="Youtube link" rel="noopener noreferrer" aria-label="follow on Youtube——Opens in a new window">
+    </a>
+     
+
+
+    
+    <a class="social github" href="https://github.com/riccardobl" target="_blank" title="Github link" rel="noopener noreferrer" aria-label="follow on Github——Opens in a new window">
+    </a> 
+    
+
+    
+
+
+    
+    <a class="social twitter"  target="_blank" href="https://twitter.com/i/user/1260924338632564739"   title="Twitter link" rel="noopener noreferrer"  >
+    </a> 
+    
+
+    
+    <a class="social email" href="javascript:alert('riccardo0blb@gmail.com')"   title="Email" rel="noopener noreferrer">
+    </a> 
+    
+
+
+</nav>
+
+<nav class="vmenu">
+    <div class="toggleContent"></div>
+    <b><a href="/">Home</a></b>
+    <a href="/tags/devlog">Devlog</a>
+
+      
+      
+      
+      
+      
+       <a href="/posts/jmonkeyengine/">jMonkeyEngine</a>
+      
+      
+      
+       <a href="/posts/fleeingpenguin/">Fleeing Penguin</a>
+      
+      
+      
+       <a href="/posts/pong/">Pong (?)</a>
+      
+      
+      <a rel="noopener noreferrer" href="https://github.com/riccardobl?tab=repositories" target="_blank">Opensource Repos</a>
+
+    <b><a href="/posts/jmonkeyengine/">jMonkeyEngine</a></b>
+      
+      
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-igui-oscontrib/">jme-igui</a>
+      
+      
+      
+      <a href="/posts/generated/jmephonon-jmephonon-oscontrib/">jmePhonon</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-effekseernative-oscontrib/">jme-effekseerNative</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/">FPSDEMO-jMonkeyEngin …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-f3b-oscontrib/">f3b</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-ddswriter-oscontrib/">DDSWriter</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-simplessrshader-oscontrib/">SimpleSSRShader</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/">jme-shader-Occlusion …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/">jme3-bullet-vhacd</a>
+      
+      
+</nav></header>
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <h1 id="f3b">F3b</h1>
+<h3 id="a-simple-blender2jmonkey-exchange-format">A simple blender2jmonkey exchange format.</h3>
+<p>This is  a special purpose format that has only one goal: export scenes from blender and import them in <a href="https://github.com/jMonkeyEngine/jmonkeyengine">jMonkeyEngine</a> as closely as possible with the lowest possible effort.</p>
+<p>This is not an alternative to <a href="https://www.khronos.org/gltf/">glTF</a> or other general purpose formats, since its features are specifically designed for  <a href="https://github.com/jMonkeyEngine/jmonkeyengine">jMonkeyEngine</a>  and blender, however being based on protobuf allows it to be easily adaptable and extendable.</p>
+<p>The  <a href="https://github.com/jMonkeyEngine/jmonkeyengine">jMonkeyEngine</a>  importer comes with an experimental animation system designed around java8 functional interfaces.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>RigidBodies </li>
+<li>Physics Joints  (only generic joints for now)</li>
+<li>Custom materials (mappable with the use of group nodes in blender)</li>
+<li>jME PBR material</li>
+<li>Spatial animations with f3banimations</li>
+<li>Bone animations with f3banimations </li>
+<li>Optional Automatic DDS conversion and compression on export</li>
+<li>Support for shared mesh/materials (eg. Duplicated-Linked)</li>
+<li>Automatic triangulation</li>
+<li>Tangents export</li>
+<li>Autosmooth normals support</li>
+<li><a href="https://github.com/riccardobl/jme3-bullet-vhacd">VHACD</a> decomposition</li>
+</ul>
+<h2 id="install-in-blender">Install in blender</h2>
+<h3 id="install-addon">Install addon</h3>
+<ol>
+<li>Go to the release page</li>
+<li>Download io_scene_f3b.zip</li>
+<li>Download f3b_nodes.blend.zip</li>
+<li>In blender Edit -&gt; Preferences -&gt; Addons</li>
+<li>Click Install</li>
+<li>Select  io_scene_f3b.zip</li>
+<li>Enable the addon</li>
+</ol>
+<h3 id="install-material-nodes">Install material nodes</h3>
+<ol>
+<li>Go to the release page</li>
+<li>Download f3b_nodes.blend.zip</li>
+<li>Extract f3b_nodes.blend.zip</li>
+<li>In blender File -&gt; Append</li>
+<li>Select f3b_nodes.blend</li>
+<li>Append: Materials -&gt; Nodes . This will append the custom nodes used in f3b materials.</li>
+<li>Save the startup file: File -&gt; Defaults -&gt; Save startup file</li>
+<li>Now everytime you open blender it will have a Nodes material containing all the f3b nodes, skip point 7 if you don't want this </li>
+</ol>
+<h2 id="install-in-jmonkeyengine">Install in jMonkeyEngine</h2>
+<ol>
+<li>Add the repo<pre><code class="language-gradle">repositories {
+ maven { url  "https://dl.bintray.com/riccardo/f3b"  }
+ maven { url "http://dl.bintray.com/riccardo/v-hacd" }
+ maven { url "https://jitpack.io" }    
+}</code></pre>
+</li>
+<li>Add the dependencies<pre><code class="language-gradle">dependencies{
+ implementation "com.github.riccardobl:jme3-bullet-vhacd:1.0.2"
+ implementation "wf.frk.f3b:jme_f3b:0.9"
+}</code></pre>
+</li>
+</ol>
+<h2 id="local-build">Local build</h2>
+<ol>
+<li><p>Build (skip tests)</p>
+<pre><code class="language-console">gradle build -xtest</code></pre>
+</li>
+<li><p>Copy blender_f3b in blender's addon folder (or create a symlink)</p>
+</li>
+<li><p>Optional: install maven artifacts</p>
+<pre><code class="language-console">gradle install -xtest</code></pre>
+</li>
+</ol>
+<h2 id="usage">Usage</h2>
+<pre><code class="language-java">
+// Initialize the loader (call this only once!)
+F3bLoader.init(assetManager);
+
+// load a model
+Spatial loaded=loadModel(assetManager,bulletAppState,rootNode,"mymodel.f3b");
+// loaded.soSomething();
+
+// load another model
+Spatial loaded2=loadModel(assetManager,bulletAppState,rootNode,"mysecondNode.f3b");
+
+
+void loadModel(
+        AssetManager assetManager,
+        BulletAppState bulletAppState,
+        Node rootNode, 
+        String myModel
+){
+
+    // Define what/how to load
+    F3bKey modelKey=new F3bKey("myModel.f3b");
+    modelKey.usePhysics(new BulletPhysicsLoader()); // enable physics loader
+    modelKey.useEnhancedRigidbodies(true); // improved rigidbody handling
+    // ... more settings ...
+
+    // Prepare runtime loader
+    F3bRuntimeLoader rloader=F3bRuntimeLoader.instance();
+    rloader.attachSceneTo(rootNode); // where to attach the scene
+    rloader.attachLightsTo(rootNode); // where to attach the lights
+    rloader.attachPhysicsTo(bulletAppState.getPhysicsSpace()); // where to attach the physics
+
+    // Load!
+    Spatial loaded=rloader.load(assetManager, modelKey);
+
+    // `loaded` and its lights are already attach to the rootNode by the runtime loader
+
+    return loaded;
+}
+</code></pre>
+<h2 id="development-notes">Development notes</h2>
+<p>Some IDEs can't load protobuf subprojects, so you might need to run  <code>gradle build -x test</code>  once before importing this project, and everytime the f3b format definition is changed, this command will build and generate the missing java files in the protobuf subproject.</p>
+<h2 id="f3b-animations">F3b Animations</h2>
+<p>Animated models imported with f3b use the f3banimations system, a simple animation system built around java8 functional interface.
+This is a quick rundown, better documentation will be written at a later time</p>
+<ul>
+<li>The system is channel based, newer channels are blended on top of older channels. </li>
+<li>In bone animations: Only animated bones influence the animation.</li>
+<li>There is a blending function specified when swapping the current channel animation, that will blend between the old and new animation</li>
+<li>There is a blending function to blend inbetween channels</li>
+<li>There is a time function to define speed, looping, direction etc. of the animation.</li>
+<li>In bone animations: When importing a model, if it has an armature, the current pose is loaded as a looping <code>_pose</code> animation with lowest possible priority (first channel)</li>
+<li>When using AnimationGroupControl to control the animations (recommented!) a set of channel is created to match the NLA strips in blender, that will be used by default if no channel is specified when playing an animation. Meaning you can just play the animations and they will be blended in the same order that they are blended if you enable their nla strips in blender</li>
+</ul>
+<p>Usage:</p>
+<pre><code class="language-java">AnimationGroupControl c=AnimationGroupControl.of(spatial);
+// spatial: A spatial that has animations somewhere. It doesn't need to be exactly the spatial that has the animations, it can be a parent.
+//          Multiple children can be animated at the same time. It is not recommented and you shouldn't do it, but you could generate an 
+//          AnimationGroupControl out of the rootNode and control all the scene from it. AnimationGroupControl.of() caches the generated control
+//          meaning you can call it multiple times on the same spatial and it will always return the same.
+
+// Set animation
+// This will play with the same priority specified by the order of nla strips in blender
+c.setAction("idle",TimeFunction.newLooping(() -&gt; 1f /*speed*/),BlendingFunction.newSimple(() -&gt; 1f /* replace the old animation immediately */));
+</code></pre>
+<p>That's all. You can look at the <code>wf.frk.f3banimation.blending.*</code> for a list of default blending/time functions or create your own.</p>
+<h2 id="license">License</h2>
+<p>BSD 3-Clause License</p>
+<p>Copyright (c) 2020, Riccardo Balbo
+All rights reserved.</p>
+<p>See <a href="https://github.com/riccardobl/f3b/blob/master/LICENSE">LICENSE</a> for the full license details.</p>
+<hr>
+<p>This product uses the following thirdparty libraries, released under the specified licenses:</p>
+<p>PROTOBUF2: <a href="https://github.com/protocolbuffers/protobuf/blob/master/LICENSE">LICENSE</a></p>
+<p>Log4J2: <a href="https://logging.apache.org/log4j/2.x/license.html">Apache License, Version 2.0</a></p>
+<p>V-HACD: <a href="https://github.com/kmammou/v-hacd/blob/master/LICENSE">BSD 3-Clause "New" or "Revised" License</a></p>
+<hr>
+<p>The code was originally forked from <a href="https://github.com/xbuf">xbuf</a> (Xbuf is licensed under public domain)</p>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/riccardobl/f3b" target="_blank"><i class="fab fa-github"></i> Github page</a>
+             </nav>
+
+
+    <time datetime="2020-11-27 16:01:23 &#43;0000 UTC">27 November 2020</time>
+
+<nav class="tags">
+
+    
+        <a class="Python" href="/tags/python/">#Python</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="blender" href="/tags/blender/">#blender</a>
+    
+
+    
+        <a class="exchange-format" href="/tags/exchange-format/">#exchange-format</a>
+    
+
+    
+        <a class="f3b" href="/tags/f3b/">#f3b</a>
+    
+
+    
+        <a class="hacktoberfest" href="/tags/hacktoberfest/">#hacktoberfest</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+    
+        <a class="other" href="/tags/other/">#other</a>
+    
+
+</nav>
+      
+
+      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>
