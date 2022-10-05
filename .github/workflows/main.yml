@@ -14,7 +14,6 @@
 #   CLIENT_ID The client id to be used in the GitHub OAuth web application flow https://developer.github.com/v3/oauth/#web-application-flow
 #   CLIENT_SECRET The client secret for the OAuth web application flow
 #   STATE_PASSWORD 32 character password for encrypting state in request headers/cookies.
-
 name: Build
 on:
   schedule:
