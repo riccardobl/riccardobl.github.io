@@ -2,7 +2,7 @@
   "dependencies": {
     "btoa": "^1.2.1",
     "dropbox": "^5.2.1",
-    "jsdom": "^15.2.1",
+    "jsdom": "^16.5.0",
     "marked": "^4.0.10",
     "node-fetch": "^2.6.7",
     "sharp": "^0.30.5",
