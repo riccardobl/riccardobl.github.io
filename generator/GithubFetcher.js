@@ -84,7 +84,7 @@ module.exports=class DropboxFetcher {
             let readme = await this.guessAndGet(rawUrl, "README", ["md", "txt", "html", ""]);
             if (readme) {
         
-              if (readme[1] == "md") readme[0] = marked(readme[0]);
+              if (readme[1] == "md") readme[0] = marked.parse(readme[0]);
         
               const dom = JSDOM.fragment("<div>" + readme[0] + "</div>");
               dom.querySelectorAll("a").forEach(function (el) {
