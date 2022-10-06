@@ -109,12 +109,12 @@
                         
                         viewerContainer.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
                     });
-                    SKY_ID++;
-                    return true;
                 }
             }
 
-            return false;
+            SKY_ID++;
+
+            return SKY_ID<32;
             
 
           
