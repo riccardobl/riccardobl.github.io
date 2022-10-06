@@ -25,7 +25,7 @@ fi
 
 if [ "$SKIP_PREGEN" = "" ];
 then
-    export CMD="(cd generator&&npm --verbose install&&cd ..)&&(nodejs generator/main.js)&&$CMD"
+    export CMD="(cd generator&&npm --verbose install&&cd ..)&&(node generator/main.js)&&$CMD"
 fi
 
 if [ "$ARGS" = "" ];
