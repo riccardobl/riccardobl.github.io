@@ -621,11 +621,11 @@ section.list.showcase{
     }
 }
 
-section.list article,section.tweetlist article,section.full article{
+/* section.list article,section.tweetlist article,section.full article{
     animation-name: appear;
     animation-duration: 0.4s;
     animation-timing-function: linear;
-}
+} */
 
 section.list article{
     transition: 0.6s transform,0.6s filter;
