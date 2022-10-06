@@ -120,7 +120,7 @@ jobs:
       run: |
           cd project
           chmod 777 -Rf .
-          HEADLESS=1 ./renderp5js.sh
+          # HEADLESS=1 ./renderp5js.sh
     - name: Upload project
       uses: actions/upload-artifact@master
       with:
