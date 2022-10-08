@@ -12,7 +12,8 @@
             text-align: center;
             background-color: rgb(32, 32, 32);
             color:rgb(124, 124, 124);
-
+            width:100vw;
+            height:100vh;
         }
         #skies{
             flex-wrap: wrap;
@@ -51,6 +52,17 @@
             max-width:80vw;
             max-height:100vh;
         }
+        #viewer.fullscreen{
+            width:100vw;
+            height:100vh;
+            max-width:100vw;
+            max-height:100vh;
+            margin:0;
+            padding:0;
+            position:fixed;
+            top:0;
+            left:0;
+        }
     </style>
     <script>
         var SKY_ID=1;
@@ -63,66 +75,70 @@
             }
         }
 
-        async function loadSky(){
+        async function loadSky(SKY_ID,fullscreen){
             const skyPath=`./sky${SKY_ID}`
-            const previews=[`${skyPath}/preview.png`,`${skyPath}/env.png`,`${skyPath}/pz.png`];
-            for(let preview of previews){
-                if(await exists(preview)){
-                    const container=document.querySelector("#skies");
+            const action = async (fullscreen) => {
+                const isCube = await exists(`${skyPath}/px.png`);
+                const viewerContainer = document.querySelector('#viewer');
+                viewerContainer.innerHTML = "";
 
-                    const previewEl = document.createElement("img");
-                    previewEl.src=preview;
-
-                    
-                    const caption=document.createElement("figcaption");
-                    caption.innerText=`Sky ${SKY_ID}`;
-
-                    const figureEl=document.createElement("figure");
-                    figureEl.appendChild(previewEl);
-                    figureEl.appendChild(caption);
-                    container.appendChild(figureEl);
-
-                    previewEl.addEventListener("click", async () => {
-                        const isCube = await exists(`${skyPath}/px.png`);
-                        const viewerContainer = document.querySelector('#viewer');
-                        viewerContainer.innerHTML = "";
-
-                        if (isCube) {
-                            const viewer = new PhotoSphereViewer.Viewer({
-                                container: viewerContainer,
-                                adapter: PhotoSphereViewer.CubemapAdapter,
-                                panorama: {
-                                    left: `${skyPath}/px.png`,
-                                    front: `${skyPath}/nz.png`,
-                                    right: `${skyPath}/nx.png`,
-                                    back: `${skyPath}/pz.png`,
-                                    top: `${skyPath}/ny.png`,
-                                    bottom: `${skyPath}/py.png`,
-                                },
-                            });
-                        } else {
-                            const viewer = new PhotoSphereViewer.Viewer({
-                                container: viewerContainer,
-                                panorama: `${skyPath}/env.png`,
-                            });
-                        }
-                        
-                        viewerContainer.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+                let viewer;
+                if (isCube) {
+                    viewer = new PhotoSphereViewer.Viewer({
+                        container: viewerContainer,
+                        adapter: PhotoSphereViewer.CubemapAdapter,
+                        panorama: {
+                            left: `${skyPath}/px.png`,
+                            front: `${skyPath}/nz.png`,
+                            right: `${skyPath}/nx.png`,
+                            back: `${skyPath}/pz.png`,
+                            top: `${skyPath}/ny.png`,
+                            bottom: `${skyPath}/py.png`,
+                        },
                     });
-                    break;
+                } else {
+                    viewer = new PhotoSphereViewer.Viewer({
+                        container: viewerContainer,
+                        panorama: `${skyPath}/env.png`,
+                    });
                 }
-            }
+                
+                
+                if (fullscreen) viewerContainer.classList.add("fullscreen");
+                else viewerContainer.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+            };
 
-            SKY_ID++;
+            if (fullscreen) {
+                await action(fullscreen);
+                setTimeout(()=>{
+                    window.dispatchEvent(new Event('resize'));
+                },100);
+            } else {
+                const previews = [`${skyPath}/preview.png`, `${skyPath}/env.png`, `${skyPath}/pz.png`];
+                for (let preview of previews) {
+                    if (await exists(preview)) {
+                        const container = document.querySelector("#skies");
+                        const previewEl = document.createElement("img");
+                        previewEl.src = preview;
+                        const caption = document.createElement("figcaption");
+                        caption.innerText = `Sky ${SKY_ID}`;
+                        const figureEl = document.createElement("figure");
+                        figureEl.appendChild(previewEl);
+                        figureEl.appendChild(caption);
+                        container.appendChild(figureEl);
+                        previewEl.addEventListener("click", ()=>action());
+                        break;
 
-            return SKY_ID<32;
-            
+                    }
 
-          
+                }
+            }          
         }
 
         async function loadSkies(){
-            if(await loadSky()){
+            if(SKY_ID<32){
+                await loadSky(SKY_ID);
+                SKY_ID++;
                 setTimeout(loadSkies,100);
             }
 
@@ -131,7 +147,12 @@
         function main(){
             const container=document.querySelector("#skies");
             container.innerHTML="";
-            loadSkies();
+            const hash = window.location.hash?window.location.hash.substring(1):"";
+            if(hash!=""){
+                loadSky(hash,true);
+            }else{
+                loadSkies();
+            }
         }
 
 
