@@ -23,7 +23,7 @@ on:
       - project
 jobs:
   buildUtterancesFrontend:
-    runs-on: ubuntu-18.04    
+    runs-on: ubuntu-latest   
     steps:
       - name: Clone repo
         run: |
@@ -82,7 +82,7 @@ jobs:
 
 
   buildUtterancesBackend:
-    runs-on: ubuntu-18.04    
+    runs-on: ubuntu-latest   
     steps: 
     - name: Clone repo
       run: |
@@ -128,7 +128,7 @@ jobs:
         path: ./project
   
   build:
-    runs-on: ubuntu-18.04    
+    runs-on: ubuntu-latest   
     needs: [buildUtterancesFrontend,preBuild]
     container:
       image: riccardoblb/buildenvs:hugo
