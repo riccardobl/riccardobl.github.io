@@ -23,6 +23,7 @@ on:
       - project
 jobs:
   buildUtterancesFrontend:
+    if: false
     runs-on: ubuntu-latest   
     steps:
       - name: Clone repo
@@ -82,6 +83,7 @@ jobs:
 
 
   buildUtterancesBackend:
+    if: false
     runs-on: ubuntu-latest   
     steps: 
     - name: Clone repo
@@ -129,7 +131,7 @@ jobs:
   
   build:
     runs-on: ubuntu-latest   
-    needs: [buildUtterancesFrontend,preBuild]
+    needs: [preBuild]
     container:
       image: riccardoblb/buildenvs:hugo
     env:
@@ -161,6 +163,7 @@ jobs:
           git reset --hard `git rev-list --max-parents=0 HEAD`
           cd ..
     - name: Get utterances frontend
+      if: false
       uses: actions/download-artifact@master
       with:
         name:  utterances-frontend
