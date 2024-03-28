@@ -1,0 +1,243 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-01-25 00:13:45 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fleeingpenguin-oscontrib/",
+
+        
+        "title":"fleeingpenguin",
+        
+
+        
+        
+        "summary":"A small game made with p5js+webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "game"
+        
+              , 
+             "p5js"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2023-12-21 15:31:52 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/",
+
+        
+        "title":"FPSDEMO-jMonkeyEngine",
+        
+
+        
+        
+        "summary":"An FPS demo made with jMonkeyEngine",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "demo"
+        
+              , 
+             "fps"
+        
+              , 
+             "game"
+        
+              , 
+             "hacktoberfest"
+        
+              , 
+             "jmonkeyengine"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/fpenguin.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/fleeingpenguin/",
+
+        
+        "title":"Fleeing Penguin",
+        
+
+        
+        
+        "summary":"A small 2d game made in p5js and webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "p5js"
+        
+              , 
+             "webgl"
+        
+              , 
+             "game"
+        
+              , 
+             "gamedev"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/pong.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/pong/",
+
+        
+        "title":"Pong (?)",
+        
+
+        
+        
+        "summary":"An overly complex raytraced pong game.",
+    
+        
+
+        "tags":[
+        
+             
+             "shadertoy"
+        
+              , 
+             "glsl"
+        
+              , 
+             "game"
+        
+              , 
+             "gamedev"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/generated/preview/181d7fa9124359c3c496df7d70dc609cfe9c2ec7.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-05-18 18:11:12 +0000 UTC",
+        
+        "url":"/posts/generated/wdjbzw-shadertoy/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "shadertoy"
+        
+              , 
+             "game"
+        
+              , 
+             "devlog"
+        
+              , 
+             "media"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

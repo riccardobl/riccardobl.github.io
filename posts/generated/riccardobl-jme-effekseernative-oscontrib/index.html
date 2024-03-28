@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | jme-effekseerNative</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.p5img.js.png" type="image/x-icon" />
+  
+
+  
+
+</head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+<header > 
+<t><a id="siteTitle" href="/"> RBLB</a></t>
+<span id="bio">
+I'm Riccardo Balbo, this is my personal website, mostly related to gamedev. 
+<br />
+<br />
+Feel free to get in touch for anything within the limit of common sense. 
+</span>
+    <nav class="socials">
+
+
+    
+    <a class="social youtube" href="https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw" target="_blank"  title="Youtube link" rel="noopener noreferrer" aria-label="follow on Youtube——Opens in a new window">
+    </a>
+     
+
+
+    
+    <a class="social github" href="https://github.com/riccardobl" target="_blank" title="Github link" rel="noopener noreferrer" aria-label="follow on Github——Opens in a new window">
+    </a> 
+    
+
+    
+
+
+    
+    <a class="social twitter"  target="_blank" href="https://twitter.com/i/user/1260924338632564739"   title="Twitter link" rel="noopener noreferrer"  >
+    </a> 
+    
+
+    
+    <a class="social email" href="javascript:alert('riccardo0blb@gmail.com')"   title="Email" rel="noopener noreferrer">
+    </a> 
+    
+
+
+</nav>
+
+<nav class="vmenu">
+    <div class="toggleContent"></div>
+    <b><a href="/">Home</a></b>
+    <a href="/tags/devlog">Devlog</a>
+
+      
+      
+      
+      
+      
+       <a href="/posts/anser/">Anser</a>
+      
+      
+      
+       <a href="/posts/jmonkeyengine/">jMonkeyEngine</a>
+      
+      
+      <a rel="noopener noreferrer" href="https://github.com/riccardobl?tab=repositories" target="_blank">Opensource Repos</a>
+
+    <b><a href="/posts/jmonkeyengine/">jMonkeyEngine</a></b>
+      
+      
+      
+      
+      
+      <a href="/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/">FPSDEMO-jMonkeyEngin …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-chat-jme-oscontrib/">chat-jme</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-simplessrshader-oscontrib/">SimpleSSRShader</a>
+      
+      
+      
+      <a href="/posts/generated/jmephonon-jmephonon-oscontrib/">jmePhonon</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-igui-oscontrib/">jme-igui</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-effekseernative-oscontrib/">jme-effekseerNative</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/">jme-shader-Occlusion …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/">jme3-bullet-vhacd</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-ddswriter-oscontrib/">DDSWriter</a>
+      
+      
+</nav></header>
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <h1 id="effekseer-native-for-jme">Effekseer Native for JME</h1>
+<p>This is a library that uses <a href="https://github.com/effekseer/EffekseerForMultiLanguages">EffekseerForMultiLanguages</a> to load and render effects made with Effekseer in jme.</p>
+<p>Supported platforms:</p>
+<ul>
+<li>Windows 64bit</li>
+<li>Linux 64bit</li>
+</ul>
+<p>Missing features:</p>
+<ul>
+<li>Sounds</li>
+</ul>
+<h2 id="gradle-coordinates-github-packages">Gradle coordinates (github packages)</h2>
+<pre><code class="language-gradle">plugins {
+    id "io.github.0ffz.github-packages" version "1.2.1"
+}
+
+repositories {
+    maven githubPackage.invoke("riccardobl")
+}
+
+dependencies {
+    implementation 'wf.frk:jme-effekseer-native:0.4'
+}
+</code></pre>
+<h2 id="usage---managed-rendering">Usage - Managed Rendering</h2>
+<p>For infos regarding version to version upgrade see <a href="https://github.com/riccardobl/jme-effekseerNative/blob/master/docs/UPGRADE.md">docs/UPGRADE.md</a></p>
+<pre><code class="language-java">// Add a filter post processor to your viewPort
+// optional:
+//   if the FilterPostProcessor is created, EffekseerRenderer will attach itself as a filter
+//   otherwise it will be attached as a scene processor.
+//   Note: if a FilterPostProcessor is used in the viewport, EffekseerRenderer must be called before 
+//         attaching any other filter, becoming defacto the first filter to be attached to the FilterPostProcessor
+FilterPostProcessor fpp=new FilterPostProcessor(assetManager);
+viewPort.addProcessor(fpp);
+
+// Add Effekseer Renderer
+EffekseerRenderer effekseerRenderer=EffekseerRenderer.addToViewPort(stateManager, viewPort, assetManager, settings.isGammaCorrection());
+        
+// Load an effect
+EffekseerEmitterControl effekt=new EffekseerEmitterControl(assetManager,"effekts/Pierre/Lightning.efkefc");
+
+// Set a driver (optional)
+effekt.setDriver(
+    new EffekseerEmissionDriverGeneric()
+        .shape(new EffekseerPointFollowingSpatialShape())
+        .spawner(new EffekseerGenericSpawner().loop(true).delay(1f,2f, 1f).maxInstances(1000))
+        .dynamicInputSupplier(new EffekseerGenericDynamicInputSupplier().set(0,10f).set(1,11f))
+);
+
+// Attach to a spatial
+Node n=new Node();
+n.addControl(effekt);
+
+rootNode.attachChild(n);
+</code></pre>
+<h2 id="advanced-usage---manual-rendering">Advanced Usage - Manual Rendering</h2>
+<p>This is intended to be used on custom render pipelines or offscreen rendering</p>
+<pre><code class="language-java">// Init Effekseer
+boolean isSRGB=true;
+Effekseer.init(assetManager,isSRGB);
+
+// Update logic: This needs to be called in your update loop (once per frame)
+Effekseer.update( tpf);
+
+// --- Render scene 1
+// Select the scene to render
+Effekseer.beginRender(root1);
+
+// Render
+Effekseer.render(
+    Renderer gl, /* The opengl renderer */
+    Camera cam, /* The scene camera */
+    FrameBuffer target, /* The render target */
+    Texture2D color, /* The current scene, used for distortions  (null to disable distortions) */
+    Texture2D depth, /* The depth of the current scene, used for soft particles (null to disable soft particles) */
+    boolean isOrthographic /* true if rendering in orthographic mode */
+);
+
+// End the render
+Effekseer.endRender();
+
+// --- Render scene 2
+// Select the scene to render
+Effekseer.beginRender(root2);
+
+// Render
+Effekseer.render(
+    Renderer gl, /* The opengl renderer */
+    Camera cam, /* The scene camera */
+    FrameBuffer target, /* The render target */
+    Texture2D color, /* The current scene, used for distortions  (null to disable distortions) */
+    Texture2D depth, /* The depth of the current scene, used for soft particles (null to disable soft particles) */
+    boolean isOrthographic /* true if rendering in orthographic mode */
+);
+
+// End the render
+Effekseer.endRender();
+</code></pre>
+<p>Note: opengl cannot read and write on the same buffer, this means that depth and colors that come from the same target framebuffer have to be copied.
+The following helper utility can be used to do it in a reasonably fast way:</p>
+<pre><code class="language-java">FrameBufferCopy copiedFb=EffekseerUtils.copyFrameBuffer(
+    AssetManager am, /* the asset manager */
+    RenderManager rm, /* the render manager */
+    FrameBuffer source, /* source */
+    int width, /* width */
+    int height, /* height */
+    boolean copyColor, /* true to copy the color buffer */
+    boolean colorTarget, /* which target to copy (0=first) */
+    boolean copyDepth /* true to copy the depth buffer*/
+);
+</code></pre>
+<h2 id="limitations-with-particles-on-the-gui">Limitations with particles on the GUI</h2>
+<p>There is an issue with depth sorting when using <em>Managed Rendering</em> to render inside the SimpleApplication's guiViewPort: the particles will always be rendered on top. Finding a generic workaround for this issue is pretty complex due to the way the engine handles the guiViewPort. A possible solution is to use <em>Advanced Usage - Manual Rendering</em> to render a special root node containing only "gui particles" on top of the main framebuffer using an appropriate Camera.</p>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/riccardobl/jme-effekseerNative" target="_blank"><i class="fab fa-github"></i> Github page</a>
+             </nav>
+
+
+    <time datetime="2023-02-01 15:24:08 &#43;0000 UTC">01 February 2023</time>
+
+<nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="effekseer" href="/tags/effekseer/">#effekseer</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+    
+        <a class="particles" href="/tags/particles/">#particles</a>
+    
+
+    
+        <a class="other" href="/tags/other/">#other</a>
+    
+
+</nav>
+      
+
+      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>

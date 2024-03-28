@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | jmePhonon</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.p5img.js.png" type="image/x-icon" />
+  
+
+  
+
+</head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+<header > 
+<t><a id="siteTitle" href="/"> RBLB</a></t>
+<span id="bio">
+I'm Riccardo Balbo, this is my personal website, mostly related to gamedev. 
+<br />
+<br />
+Feel free to get in touch for anything within the limit of common sense. 
+</span>
+    <nav class="socials">
+
+
+    
+    <a class="social youtube" href="https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw" target="_blank"  title="Youtube link" rel="noopener noreferrer" aria-label="follow on Youtube——Opens in a new window">
+    </a>
+     
+
+
+    
+    <a class="social github" href="https://github.com/riccardobl" target="_blank" title="Github link" rel="noopener noreferrer" aria-label="follow on Github——Opens in a new window">
+    </a> 
+    
+
+    
+
+
+    
+    <a class="social twitter"  target="_blank" href="https://twitter.com/i/user/1260924338632564739"   title="Twitter link" rel="noopener noreferrer"  >
+    </a> 
+    
+
+    
+    <a class="social email" href="javascript:alert('riccardo0blb@gmail.com')"   title="Email" rel="noopener noreferrer">
+    </a> 
+    
+
+
+</nav>
+
+<nav class="vmenu">
+    <div class="toggleContent"></div>
+    <b><a href="/">Home</a></b>
+    <a href="/tags/devlog">Devlog</a>
+
+      
+      
+      
+      
+      
+       <a href="/posts/anser/">Anser</a>
+      
+      
+      
+       <a href="/posts/jmonkeyengine/">jMonkeyEngine</a>
+      
+      
+      <a rel="noopener noreferrer" href="https://github.com/riccardobl?tab=repositories" target="_blank">Opensource Repos</a>
+
+    <b><a href="/posts/jmonkeyengine/">jMonkeyEngine</a></b>
+      
+      
+      
+      
+      
+      <a href="/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/">FPSDEMO-jMonkeyEngin …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-chat-jme-oscontrib/">chat-jme</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-simplessrshader-oscontrib/">SimpleSSRShader</a>
+      
+      
+      
+      <a href="/posts/generated/jmephonon-jmephonon-oscontrib/">jmePhonon</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-igui-oscontrib/">jme-igui</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-effekseernative-oscontrib/">jme-effekseerNative</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/">jme-shader-Occlusion …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/">jme3-bullet-vhacd</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-ddswriter-oscontrib/">DDSWriter</a>
+      
+      
+</nav></header>
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <h1 id="jmephonon--steam®-audio-for-jmonkeyengine"><strong>jmePhonon</strong> : <em>Steam® Audio for jMonkeyEngine</em></h1>
+<img align="right" width="300px" src="https://media.githubusercontent.com/media/jmePhonon/jmePhonon/master/misc/logo.png">
+
+<p><a href="https://valvesoftware.github.io/steam-audio/">Steam® Audio</a> (phonon) implementation for <a href="http://jmonkeyengine.org/">jMonkeyEngine</a>.</p>
+<h2 id="supported-platforms">Supported platforms</h2>
+<ul>
+<li>Linux 64bit</li>
+<li>OSX (64bit)</li>
+<li>Windows 64bit</li>
+</ul>
+<h2 id="binaries">Binaries</h2>
+<pre><code class="language-gradle">plugins {
+    id "io.github.0ffz.github-packages" version "1.2.1"
+}
+repositories { 
+    maven githubPackage.invoke("jmePhonon")
+}
+dependencies{
+    compile(group: 'com.jme3.phonon', name: 'jme_phonon', version: VERSION, ext: 'jar', classifier: '')
+}
+</code></pre>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li>I want to use jmePhonon<ul>
+<li><a href="https://github.com/jmePhonon/jmePhonon/blob/master/docs/Usage.md">Usage guide</a></li>
+</ul>
+</li>
+<li>I want to develop jmePhonon<ul>
+<li><a href="https://github.com/jmePhonon/jmePhonon/blob/master/docs/ContributionAndDevelopment.md">Contribution &amp; Development (how to build stuff)</a></li>
+<li><a href="https://github.com/jmePhonon/jmePhonon/blob/master/docs/ImplementationDetails.md">Implementation details</a></li>
+<li><a href="https://github.com/jmePhonon/jmePhonon/blob/master/todo">Javadoc</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="license">License</h2>
+<p>The code in this repo is released under the BSD-3-Clause license, see <a href="https://github.com/jmePhonon/jmePhonon/blob/master/LICENSE.md">LICENSE.md</a> for more details.</p>
+<h2 id="legal-note">Legal note</h2>
+<p>Please ensure that you have read and understood <a href="https://github.com/jmePhonon/jmePhonon/blob/master/LICENDE.md">LICENSE.md</a> and expecially  <a href="https://github.com/jmePhonon/jmePhonon/blob/master/legal/LICENSE.SteamAudio.md">legal/LICENSE.SteamAudio.md</a>.</p>
+<p>This code uses Steam® Audio SDK, that is a closed source library licensed under the <a href="https://github.com/jmePhonon/jmePhonon/blob/master/legal/LICENSE.SteamAudio.md">VALVE CORPORATION STEAM® AUDIO SDK LICENSE</a>.</p>
+<p><em>Steam® is a trademark or registered trademark of Valve Corporation in the United States of America and elsewhere</em></p>
+<p><em>Steam® Audio, Copyright 2017 – 2018, Valve Corp. All rights reserved.</em></p>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/jmePhonon/jmePhonon" target="_blank"><i class="fab fa-github"></i> Github page</a>
+             </nav>
+
+
+    <time datetime="2023-02-17 20:15:06 &#43;0000 UTC">17 February 2023</time>
+
+<nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+    
+        <a class="spatial-audio" href="/tags/spatial-audio/">#spatial-audio</a>
+    
+
+    
+        <a class="other" href="/tags/other/">#other</a>
+    
+
+</nav>
+      
+
+      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>

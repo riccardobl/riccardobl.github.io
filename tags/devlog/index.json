@@ -1,0 +1,399 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"/tags/devlog/page/2/index.json",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"/images/generated/preview/4d17952dded62894fc9f6f62fab57eb00cbbad21.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-02-18 15:31:43 +0000 UTC",
+        
+        "url":"/posts/generated/9e1294ef6292857e558eaa2bf379c3ef76548414b50fbe9e688c8a73f7a20158-devlog-img/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "screenshot"
+        
+              , 
+             "devlog"
+        
+              , 
+             "media"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/generated/preview/be572303f1c51cd3a8d0076dd6a8f5b5023c13df.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-02-18 15:25:37 +0000 UTC",
+        
+        "url":"/posts/generated/f836c5c8f0f94863963d0d74420ea8cd273e56a155e8ced2a50d2ff3959d29b7-devlog-img/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "screenshot"
+        
+              , 
+             "devlog"
+        
+              , 
+             "media"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/generated/preview/a51771ab751392207bab4e406da5d15676e5f970.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-12-12 22:00:00 +0000 UTC",
+        
+        "url":"/posts/generated/3005bfdb18026c6426a4c0760af4991c7c16b03e0166137772dcc65afaf92d2c-devlog-img/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "screenshot"
+        
+              , 
+             "devlog"
+        
+              , 
+             "media"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"https://www.youtube-nocookie.com/embed/2ADbFA6vbcE" ,
+        
+
+        "date":"2020-10-13 19:33:21 +0000 UTC",
+        
+        "url":"/posts/generated/2adbfa6vbce-devlog-yt/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "video"
+        
+              , 
+             "media"
+        
+              , 
+             "devlog"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/generated/preview/7bd23e97915663d6072447f8f824b39954640bc3.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-10-11 19:01:04 +0000 UTC",
+        
+        "url":"/posts/generated/f353cbb5ac606a7cb6405fdffcac2042aa9a5e76a768d6faa0a03cbd06402b93-devlog-img/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "screenshot"
+        
+              , 
+             "devlog"
+        
+              , 
+             "media"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/generated/preview/25898443175d2d787884bfda0a4a8fdaf606776a.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-10-11 19:00:54 +0000 UTC",
+        
+        "url":"/posts/generated/82fe1bd5f123a7baceb13226f923808348bc44aceb5d4c106aa3ac0654e39977-devlog-img/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "screenshot"
+        
+              , 
+             "devlog"
+        
+              , 
+             "media"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/generated/preview/27134e611e43d2eee304ac11b6878b660490d334.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-10-11 19:00:46 +0000 UTC",
+        
+        "url":"/posts/generated/520977d47bb89d041b1e5e71aa12ac2b321a4cbc5623ce8d09526070aca8ab05-devlog-img/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "screenshot"
+        
+              , 
+             "devlog"
+        
+              , 
+             "media"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"https://www.youtube-nocookie.com/embed/48f-wYo8M1A" ,
+        
+
+        "date":"2020-09-23 20:50:06 +0000 UTC",
+        
+        "url":"/posts/generated/48f-wyo8m1a-devlog-yt/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "video"
+        
+              , 
+             "media"
+        
+              , 
+             "devlog"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"https://www.youtube-nocookie.com/embed/FnxvTNlPo4I" ,
+        
+
+        "date":"2020-09-11 13:44:19 +0000 UTC",
+        
+        "url":"/posts/generated/fnxvtnlpo4i-devlog-yt/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "video"
+        
+              , 
+             "media"
+        
+              , 
+             "devlog"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

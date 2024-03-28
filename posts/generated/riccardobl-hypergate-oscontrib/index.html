@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | hypergate</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.p5img.js.png" type="image/x-icon" />
+  
+
+  
+
+</head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+<header > 
+<t><a id="siteTitle" href="/"> RBLB</a></t>
+<span id="bio">
+I'm Riccardo Balbo, this is my personal website, mostly related to gamedev. 
+<br />
+<br />
+Feel free to get in touch for anything within the limit of common sense. 
+</span>
+    <nav class="socials">
+
+
+    
+    <a class="social youtube" href="https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw" target="_blank"  title="Youtube link" rel="noopener noreferrer" aria-label="follow on Youtube——Opens in a new window">
+    </a>
+     
+
+
+    
+    <a class="social github" href="https://github.com/riccardobl" target="_blank" title="Github link" rel="noopener noreferrer" aria-label="follow on Github——Opens in a new window">
+    </a> 
+    
+
+    
+
+
+    
+    <a class="social twitter"  target="_blank" href="https://twitter.com/i/user/1260924338632564739"   title="Twitter link" rel="noopener noreferrer"  >
+    </a> 
+    
+
+    
+    <a class="social email" href="javascript:alert('riccardo0blb@gmail.com')"   title="Email" rel="noopener noreferrer">
+    </a> 
+    
+
+
+</nav>
+
+<nav class="vmenu">
+    <div class="toggleContent"></div>
+    <b><a href="/">Home</a></b>
+    <a href="/tags/devlog">Devlog</a>
+
+      
+      
+      
+      
+      
+       <a href="/posts/anser/">Anser</a>
+      
+      
+      
+       <a href="/posts/jmonkeyengine/">jMonkeyEngine</a>
+      
+      
+      <a rel="noopener noreferrer" href="https://github.com/riccardobl?tab=repositories" target="_blank">Opensource Repos</a>
+
+    <b><a href="/posts/jmonkeyengine/">jMonkeyEngine</a></b>
+      
+      
+      
+      
+      
+      <a href="/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/">FPSDEMO-jMonkeyEngin …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-chat-jme-oscontrib/">chat-jme</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-simplessrshader-oscontrib/">SimpleSSRShader</a>
+      
+      
+      
+      <a href="/posts/generated/jmephonon-jmephonon-oscontrib/">jmePhonon</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-igui-oscontrib/">jme-igui</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-effekseernative-oscontrib/">jme-effekseerNative</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/">jme-shader-Occlusion …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/">jme3-bullet-vhacd</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-ddswriter-oscontrib/">DDSWriter</a>
+      
+      
+</nav></header>
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <h1 id="hypergate">Hypergate</h1>
+<p>Hypergate is a zero-configuration, peer-to-peer encrypted tunnel that enables easy communication between Docker containers and physical machines located anywhere, even behind NAT. </p>
+<p>It consists of three main components: </p>
+<ul>
+<li><strong>Service Providers</strong>, which make local services available to the network</li>
+<li><strong>Gateways</strong>, which serve as entrypoints to the network and direct connections to the appropriate Service Provider</li>
+<li><strong>Hypergate Network</strong>, a virtual network that connects Service Providers and Gateways, represented by a secret key that contains all the information needed to establish a Hyperswarm connection.</li>
+</ul>
+<p>An hypergate network can have multiple Gateways and Service Providers, even on the same machines. </p>
+<p><strong>If you want to tl;dr directly to the examples, just jump to <a href="https://github.com/riccardobl/hypergate/blob/master/#example-1-one-provider-one-gateway-with-docker">Example: Providers-Gateways</a> or  <a href="https://github.com/riccardobl/hypergate/blob/master/#example-2-docker-virtual-network">Example: Docker Network</a></strong></p>
+<h1 id="usage-and-short-explanation">Usage and Short explanation</h1>
+<p>There are two main ways to use Hypergate: </p>
+<ul>
+<li><p><strong>Providers-Gateways logic</strong>: This can be done using Docker containers with the help of the hypergate-manager helper script, which will build one provider container and one gateway container for the host machine.
+Alternatively, it can be done manually by calling hypergate-cli.js or the hypergate executable within the container or physical machine. In this configuration, there is usually a public-facing gateway that exposes static ports to the internet, linking to underlying services hosted elsewhere.</p>
+</li>
+<li><p><strong>Docker virtual network</strong>: This is done using the hypergate-manager helper script and combines Service Providers, Gateways, and a Docker user-defined bridge network that virtually spans across multiple machines. (kinda like an overlay network)</p>
+</li>
+</ul>
+<p>Both ways can be used together and side-by-side.</p>
+<p>The only things you need to get started are:</p>
+<ul>
+<li><p>If you want to use Hypergate with docker:</p>
+<ul>
+<li><a href="https://www.docker.com/">Docker</a></li>
+<li><a href="https://github.com/riccardobl/hypergate/blob/master/docker/hypergate-manager">hypergate-manager</a> helper script</li>
+<li><a href="https://stedolan.github.io/jq/">jq</a> required by hypergate-manager to parse json data from docker (it is available in most package managers, eg. <code>apt install jq</code> on ubuntu)</li>
+</ul>
+</li>
+<li><p>If you want to use Hypergate without docker:</p>
+<ul>
+<li><a href="https://nodejs.org/en/">NodeJS</a> </li>
+<li>The "hypergate" command line utility from this repo installed with npm (<code>npm i https://github.com/riccardobl/hypergate.git</code>)</li>
+</ul>
+<p>  or </p>
+<ul>
+<li>The "hypergate" executable downloaded from the <a href="https://github.com/riccardobl/hypergate/releases">release page</a>. This is a self contained app image that contains the nodejs runtime environment, so you don't need to install nodejs separately. <em>(Works only on x86_64 linux machines)</em></li>
+</ul>
+</li>
+</ul>
+<h1 id="service-providers-gateways">Service Providers-Gateways</h1>
+<table>
+<thead>
+<tr>
+<th>One Provider, One Gateway configuration</th>
+<th>Many Providers, Many Gateways configuration</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/riccardobl/hypergate/blob/master/static/gateway-provider.jpg" target="blank"><img src="https://raw.githubusercontent.com/riccardobl/hypergate/master/static/gateway-provider.jpg"></a></td>
+<td><a href="https://github.com/riccardobl/hypergate/blob/master/static/multi-gateway-provider.jpg" target="blank"><img src="https://raw.githubusercontent.com/riccardobl/hypergate/master/static/multi-gateway-provider.jpg"> </a></td>
+</tr>
+</tbody></table>
+<p>Service Providers are authoritative and are responsible for informing the Gateways of the services they expose by updating their routing table. Gateways are expected to always trust them.
+Service Providers advertise their exposed services by specifying ports or providing aliases, both of which are called "gates." </p>
+<p>Ports have this layout: PORT/protocol (e.g. 8080/tcp). 
+Aliases are just strings that can be used to identify a service (e.g. "web1"), they also can end with a protocol such as /tcp or /udp.
+It is possible to specify a port for an alias (e.g. "web1:8080/tcp"), if no port is specified, the gateway will assign a random one.</p>
+<p>Gateways maintain a routing table of expiring routes that link each gate to a list of Service Providers that declare to have the service associated with it. Gateways have the option to select which gates to expose. </p>
+<p>If multiple Service Providers advertise a service on the same gate, the Gateways use round-robin selection to pick the next online one for each connection.</p>
+<p>You can have as many providers and gateways you want for each hypergate network.</p>
+<p><em>It is crucial to protect the Hypergate Network secret as it can be used to reconfigure the entire network by a rogue Service Provider. 
+It is recommended to use multiple Hypergate Networks to isolate services if different levels of trust are required.</em></p>
+<h1 id="docker-virtual-network">Docker virtual network</h1>
+<table>
+<thead>
+<tr>
+<th>Docker virtual network</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/riccardobl/hypergate/blob/master/static/gateway-provider.jpg" target="blank"> <img src="https://raw.githubusercontent.com/riccardobl/hypergate/master/static/virtual-network.jpg" width="300px"> </a></td>
+</tr>
+</tbody></table>
+<p>The <strong>Hypergate Manager</strong> seamlessly connects all containers on the same network by utilizing <strong>service providers</strong>, <strong>gateways,</strong> and <strong>Docker's user-defined bridge</strong> networks, eliminating the need for complex configuration or port redirects. Utilizing the power of Hyperswarm, Hypergate creates P2P connections through NATs using hole-punching techniques, even for containers that would otherwise be inaccessible. All connections are automatically encrypted for added security.</p>
+<p>This is an abstraction on top of the <strong>Providers-Gateways</strong> logic.</p>
+<h1 id="examples">Examples</h1>
+<h2 id="example-1-one-provider-one-gateway-with-docker">Example 1: One Provider, One Gateway with Docker</h2>
+<p>In this example we will create a gateway on MACHINE1 that exposes services on MACHINE2.
+We will use docker containers and the helper script hypergate-manager, however the same can be done manually by calling hypergate-cli.js or the hypergate executable within the container or physical machine.</p>
+<h3 id="create-hypergate-network-secret">Create Hypergate Network Secret</h3>
+<p>First we need the network secret, this is a random  32-byte hex string that will be used to identify the network. It is shared between all the machines that will be part of the network.
+One quick way to generate it securely is by using openssl or the hypergate-manager helper script.</p>
+<pre><code class="language-bash">openssl rand -hex 32
+# or
+hypergate-manager utils newSecret 
+# Result: aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648
+</code></pre>
+<h3 id="machine-1-install-hypergate-manager">Machine 1: Install hypergate-manager</h3>
+<pre><code class="language-bash">curl "https://raw.githubusercontent.com/riccardobl/hypergate/master/docker/hypergate-manager" -o /usr/local/bin/hypergate-manager
+chmod +x /usr/local/bin/hypergate-manager
+</code></pre>
+<h3 id="machine-1-join-the-hypergate-network">Machine 1: Join the hypergate network</h3>
+<p>This will create a local gateway and local provider container to interface with hypergate</p>
+<pre><code class="language-bash">hypergate-manager utils install aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648
+</code></pre>
+<h3 id="machine-1-run-the-services">Machine 1: Run the services</h3>
+<p>We will run two simple http servers both listing on port 8080 internally, using the busybox image.</p>
+<pre><code class="language-bash">docker run -d --rm --name=web1 busybox httpd -p 0.0.0.0:8080 -f -h /var/www
+docker exec web1 sh -c "echo web1 &gt; /var/www/index.html"
+
+docker run -d --rm --name=web2 busybox httpd -p 0.0.0.0:8080 -f -h /var/www
+docker exec web2 sh -c "echo web2 &gt; /var/www/index.html"
+</code></pre>
+<p><em>Note: The two containers do not expose any port, the gateway on Machine 2 will expose them.</em></p>
+<h3 id="machine-1-register-the-services-with-the-provider">Machine 1: Register the services with the provider</h3>
+<p>Now we will register the two services on gate 8080/tcp (that listents on port 8080 on protocol tcp) and gate 8081/tcp, that connect to the port 8080 of the two containers.
+The syntax is </p>
+<pre><code class="language-bash">hypergate-manager provider connect &lt;secret&gt; &lt;container&gt; &lt;containerPort&gt; &lt;gate&gt;
+</code></pre>
+<p>That becomes:</p>
+<pre><code class="language-bash">hypergate-manager provider connect aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 web1 8080/tcp 8080/tcp
+
+ hypergate-manager provider connect aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 web2 8080/tcp 8081/tcp
+</code></pre>
+<h3 id="machine-2-install-hypergate-manager">Machine 2: Install hypergate-manager</h3>
+<pre><code class="language-bash">curl "https://raw.githubusercontent.com/riccardobl/hypergate/master/docker/hypergate-manager" -o /usr/local/bin/hypergate-manager
+chmod +x /usr/local/bin/hypergate-manager
+</code></pre>
+<h3 id="machine-2-join-the-hypergate-network">Machine 2: Join the hypergate network</h3>
+<p>We join the hypergate network on the second machine, using the same secret</p>
+<pre><code class="language-bash">hypergate-manager utils install aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648
+</code></pre>
+<h3 id="machine-2-expose-the-services-with-the-gateway">Machine 2: Expose the services with the gateway</h3>
+<p>We will expose the two services on the gateway, this can be done in two ways:</p>
+<p><strong>By exposing the gates manually</strong></p>
+<p>This will expose the gate 8080/tcp and 8081/tcp by listening on their respective ports: 8080 and 8081 on the protocol tcp</p>
+<pre><code class="language-bash">hypergate-manager gateway expose aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 8080/tcp
+
+hypergate-manager gateway expose aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 8081/tcp
+</code></pre>
+<p>This is especially useful if you want to expose only some gates on the gateway, eg. for a multiple gateway configuration where from each gateway you want to make only a subset of the services available.</p>
+<p><strong>By exposing all the gates manually</strong>
+This will expose all the gates on the gateway, in addition it will close all the gates that are not registered anymore</p>
+<pre><code class="language-bash">hypergate-manager gateway expose aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 auto
+</code></pre>
+<p>This command can be called periodically to keep the gateway up to date with the registered services, using a cronjob or a systemd timer.</p>
+<p><em>Note: the gateways and providers take some time to find each others, depending on the network conditions, so you might need to wait or call this command a few times before the services are accessible.</em></p>
+<h3 id="machine-2-test-the-services">Machine 2: Test the services</h3>
+<p>We can now connect to IP_MACHINE2:8080 and IP_MACHINE2:8081 to access the two services.</p>
+<h2 id="example-2-docker-virtual-network">Example 2: Docker Virtual Network</h2>
+<p>This example is much easier than the previous one, as it hides all the provider-gateway logic behind a docker bridge network. The idea is that hypergate-manager connects the services by aliases to the hypergate network and for each of them creates and synchronizes a set of gateways and providers that are connected to a docker bridge network using said aliases as the container aliases, in this way the services are accessible by their aliases for any container connected to the network.</p>
+<p>In this example we will host a caddy reverse proxy connected to a wordpress container on MACHINE 1 that use mysql on MACHINE 2 that is also accessible from a phpmyadmin container on the same machine.</p>
+<p>All containers will be linked using aliases that end with .hyper, eg. mysql.hyper</p>
+<h3 id="create-hypergate-network-secret-1">Create Hypergate Network Secret</h3>
+<p>First we need the network secret, this is a random  32-byte hex string that will be used to identify the network. It is shared between all the machines that will be part of the network.
+One quick way to generate it securely is by using openssl or the hypergate-manager helper script.</p>
+<pre><code class="language-bash">openssl rand -hex 32
+# or
+hypergate-manager utils newSecret 
+# Result: aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648
+</code></pre>
+<h3 id="machine-2-install-hypergate-manager-1">Machine 2: Install hypergate-manager</h3>
+<pre><code class="language-bash">curl "https://raw.githubusercontent.com/riccardobl/hypergate/master/docker/hypergate-manager" -o /usr/local/bin/hypergate-manager
+chmod +x /usr/local/bin/hypergate-manager
+</code></pre>
+<h3 id="machine-2-join-the-hypergate-network-1">Machine 2: Join the hypergate network</h3>
+<p>This will create a local gateway and local provider container to interface with hypergate</p>
+<pre><code class="language-bash">hypergate-manager utils install aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648
+</code></pre>
+<h3 id="machine-2-create-the-docker-overlay-network">Machine 2: Create the docker overlay network</h3>
+<p>We will create a network called overlay, that will bridge the hypergate network.</p>
+<pre><code class="language-bash">hypergate-manager network create aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 overlay
+</code></pre>
+<h3 id="machine-2-create-the-containers">Machine 2: Create the containers</h3>
+<pre><code class="language-bash">docker run --restart=always --name test-mysql -eMYSQL_ROOT_HOST=% -eMYSQL_DATABASE=wp -e MYSQL_ROOT_PASSWORD=secretpassword -d mysql
+
+docker run --restart=always --name test-phpmyadmin -d -e PMA_HOST=mysql.hyper -p 3307:80 phpmyadmin
+</code></pre>
+<h3 id="machine-2-connect-the-containers">Machine 2: Connect the containers</h3>
+<pre><code class="language-bash"># Note: syntax is hypergate-manager network connect &lt;secret&gt; &lt;network&gt; &lt;container&gt; &lt;containerPort&gt; &lt;alias&gt;
+hypergate-manager network connect aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 overlay test-mysql 3306/tcp mysql.hyper
+
+hypergate-manager network connect aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 overlay test-phpmyadmin 80/tcp phpmyadmin.hyper
+</code></pre>
+<h3 id="machine-1-install-hypergate-manager-1">Machine 1: Install hypergate-manager</h3>
+<pre><code class="language-bash">curl "https://raw.githubusercontent.com/riccardobl/hypergate/master/docker/hypergate-manager" -o /usr/local/bin/hypergate-manager
+chmod +x /usr/local/bin/hypergate-manager
+</code></pre>
+<h3 id="machine-1-join-the-hypergate-network-1">Machine 1: Join the hypergate network</h3>
+<p>This will create a local gateway and local provider container to interface with hypergate</p>
+<pre><code class="language-bash">hypergate-manager utils install aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648
+</code></pre>
+<h3 id="machine-1-create-the-docker-overlay-network">Machine 1: Create the docker overlay network</h3>
+<p>Same as machine 2, this is the network that will bridge to the hypergate network.</p>
+<pre><code class="language-bash">hypergate-manager network create aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 overlay
+</code></pre>
+<h3 id="machine-1-create-the-containers">Machine 1: Create the containers</h3>
+<pre><code class="language-bash">docker run --restart=always  -eWORDPRESS_DB_NAME="wp" -e WORDPRESS_DB_PASSWORD=secretpassword -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_HOST=mysql.hyper:3306 --name test-wordpress -d wordpress
+
+echo "
+:80
+reverse_proxy  wordpress.hyper:80
+ " &gt; /tmp/Caddyfile
+docker run  --restart=always  --name test-reverse-proxy -d -p 80:80 -v /tmp/Caddyfile:/etc/caddy/Caddyfile  caddy
+</code></pre>
+<h3 id="machine-1-connect-the-containers">Machine 1: Connect the containers</h3>
+<pre><code class="language-bash">hypergate-manager network connect aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 overlay test-wordpress 80/tcp wordpress.hyper
+
+hypergate-manager network connect aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 overlay test-reverse-proxy 80/tcp reverse.hyper
+</code></pre>
+<h3 id="machine-1-expose-the-remote-containers">Machine 1: Expose the remote containers</h3>
+<p>Now we need to sync the network and expose the remote containers, this can be done manually by calling the expose with the specified alias or automatically (preferred) by calling expose with the auto parameter.</p>
+<pre><code class="language-bash">hypergate-manager network expose aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 overlay auto
+</code></pre>
+<p>Similar to when using the provider-gateway logic, the gateways and providers take some time to find each others, so you might need to wait or call this command a few times before the services are accessible.</p>
+<p><em>It is advised to add this command to a cronjob or a systemd timer to keep the network up to date.</em></p>
+<h3 id="machine-2-expose-the-remote-containers">Machine 2: Expose the remote containers</h3>
+<p>Same but  on machine 2</p>
+<pre><code class="language-bash">hypergate-manager network expose aae6437614e28a2f87b7ccacc73332c343fdfe9cf974dcdee4f19611a78f6648 overlay auto
+</code></pre>
+<h3 id="test-the-services">Test the services</h3>
+<p>We should be able to access the wordpress site on <a href="http://IP_MACHINE1:80">http://IP_MACHINE1:80</a> and the phpmyadmin on <a href="http://IP_MACHINE2:3307">http://IP_MACHINE2:3307</a></p>
+<h1 id="license-and-warranty">License and Warranty</h1>
+<p>This is an experimental free software, there is no warranty. You are free to use, modify and redistribute it under certain conditions. </p>
+<p>See the <a href="https://github.com/riccardobl/hypergate/blob/master/LICENSE">LICENSE</a> file for details.</p>
+<p>This is an experimental software, it might or might not be production ready or even work as expected. </p>
+<p>Use it at your own discretion.</p>
+<h1 id="similar-projects">Similar projects</h1>
+<p>Other projects related to sharing services with hyperswarm</p>
+<ul>
+<li><a href="https://github.com/bitfinexcom/hypertele">hypertele</a> :  A swiss-knife proxy powered by Hyperswarm DHT </li>
+<li><a href="https://github.com/ryanramage/hyperseaport">hyperseaport</a> :  A p2p service registry </li>
+<li><a href="https://github.com/mafintosh/hyperssh">hyperssh</a> :  Run SSH over hyperswarm! </li>
+<li><a href="https://github.com/mafintosh/hyperbeam">hyperbeam</a> :  A 1-1 end-to-end encrypted internet pipe powered by Hyperswarm</li>
+</ul>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/riccardobl/hypergate" target="_blank"><i class="fab fa-github"></i> Github page</a>
+             </nav>
+
+
+    <time datetime="2024-02-05 08:58:13 &#43;0000 UTC">05 February 2024</time>
+
+<nav class="tags">
+
+    
+        <a class="javascript" href="/tags/javascript/">#javascript</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="docker" href="/tags/docker/">#docker</a>
+    
+
+    
+        <a class="holepunch" href="/tags/holepunch/">#holepunch</a>
+    
+
+    
+        <a class="holepunching" href="/tags/holepunching/">#holepunching</a>
+    
+
+    
+        <a class="hyperswarm" href="/tags/hyperswarm/">#hyperswarm</a>
+    
+
+    
+        <a class="overlay-network" href="/tags/overlay-network/">#overlay-network</a>
+    
+
+    
+        <a class="p2p" href="/tags/p2p/">#p2p</a>
+    
+
+    
+        <a class="bsd-3-clause" href="/tags/bsd-3-clause/">#bsd-3-clause</a>
+    
+
+</nav>
+      
+
+      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>
