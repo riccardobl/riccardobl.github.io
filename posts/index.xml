@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on RBLB</title>
+    <link>/posts/</link>
+    <description>Recent content in Blog on RBLB</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Jun 2024 15:08:20 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>jme-igui</title>
+      <link>/posts/generated/riccardobl-jme-igui-oscontrib/</link>
+      <pubDate>Thu, 27 Jun 2024 15:08:20 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-jme-igui-oscontrib/</guid>
+      <description>A minimalistic immediate gui for jmonkeyengine</description>
+    </item>
+    
+    <item>
+      <title>FPSDEMO-jMonkeyEngine</title>
+      <link>/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/</link>
+      <pubDate>Sat, 20 Apr 2024 10:18:57 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/</guid>
+      <description>An FPS demo made with jMonkeyEngine</description>
+    </item>
+    
+    <item>
+      <title>JCubemapAssembler</title>
+      <link>/posts/generated/riccardobl-jcubemapassembler-oscontrib/</link>
+      <pubDate>Thu, 14 Mar 2024 21:51:30 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-jcubemapassembler-oscontrib/</guid>
+      <description>JCubemapAssembler is a java application that can be used to assemble six separate face images into a single cubemap and export it as a dds file.</description>
+    </item>
+    
+    <item>
+      <title>screencapture-shop-larabiosa-it-2024-02-18-16_30_30.png</title>
+      <link>/posts/generated/9e1294ef6292857e558eaa2bf379c3ef76548414b50fbe9e688c8a73f7a20158-devlog-img/</link>
+      <pubDate>Sun, 18 Feb 2024 15:31:43 +0000</pubDate>
+      
+      <guid>/posts/generated/9e1294ef6292857e558eaa2bf379c3ef76548414b50fbe9e688c8a73f7a20158-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wine.png</title>
+      <link>/posts/generated/f836c5c8f0f94863963d0d74420ea8cd273e56a155e8ced2a50d2ff3959d29b7-devlog-img/</link>
+      <pubDate>Sun, 18 Feb 2024 15:25:37 +0000</pubDate>
+      
+      <guid>/posts/generated/f836c5c8f0f94863963d0d74420ea8cd273e56a155e8ced2a50d2ff3959d29b7-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hypergate</title>
+      <link>/posts/generated/riccardobl-hypergate-oscontrib/</link>
+      <pubDate>Mon, 05 Feb 2024 08:58:13 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-hypergate-oscontrib/</guid>
+      <description>Hypergate is a zero-configuration, peer-to-peer encrypted tunnel that enables easy communication between Docker containers and/or physical machines located anywhere, even behind NAT.</description>
+    </item>
+    
+    <item>
+      <title>fleeingpenguin</title>
+      <link>/posts/generated/riccardobl-fleeingpenguin-oscontrib/</link>
+      <pubDate>Thu, 25 Jan 2024 00:13:45 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-fleeingpenguin-oscontrib/</guid>
+      <description>A small game made with p5js+webgl</description>
+    </item>
+    
+    <item>
+      <title>Anser</title>
+      <link>/posts/anser/</link>
+      <pubDate>Wed, 24 Jan 2024 01:55:31 +0000</pubDate>
+      
+      <guid>/posts/anser/</guid>
+      <description>A liquid companion for Alby</description>
+    </item>
+    
+    <item>
+      <title>chat-jme</title>
+      <link>/posts/generated/riccardobl-chat-jme-oscontrib/</link>
+      <pubDate>Sat, 25 Nov 2023 07:10:39 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-chat-jme-oscontrib/</guid>
+      <description>An AI assistant for jMonkeyEngine and related projects.</description>
+    </item>
+    
+    <item>
+      <title>SimpleSSRShader</title>
+      <link>/posts/generated/riccardobl-simplessrshader-oscontrib/</link>
+      <pubDate>Sat, 12 Aug 2023 03:29:05 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-simplessrshader-oscontrib/</guid>
+      <description>Just some barebone Screen space reflections shader</description>
+    </item>
+    
+    <item>
+      <title>blender_effekseer_addon</title>
+      <link>/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/</link>
+      <pubDate>Thu, 06 Jul 2023 22:24:26 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/</guid>
+      <description>Blender 3.3  addon that renders effekseer effects in blender&amp;rsquo;s viewport.</description>
+    </item>
+    
+    <item>
+      <title>jmePhonon</title>
+      <link>/posts/generated/jmephonon-jmephonon-oscontrib/</link>
+      <pubDate>Fri, 17 Feb 2023 20:15:06 +0000</pubDate>
+      
+      <guid>/posts/generated/jmephonon-jmephonon-oscontrib/</guid>
+      <description>Steam Audio (phonon) implementation for jMonkeyEngine.</description>
+    </item>
+    
+    <item>
+      <title>jme-effekseerNative</title>
+      <link>/posts/generated/riccardobl-jme-effekseernative-oscontrib/</link>
+      <pubDate>Wed, 01 Feb 2023 15:24:08 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-jme-effekseernative-oscontrib/</guid>
+      <description>This is a library that uses EffekseerForMultiLanguages to load and render effects made with Effekseer in jme.</description>
+    </item>
+    
+    <item>
+      <title>jme-shader-OcclusionParallaxMapping</title>
+      <link>/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/</link>
+      <pubDate>Fri, 16 Sep 2022 15:10:57 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/</guid>
+      <description>OcclusionParallaxMapping for jMonkeyEngine</description>
+    </item>
+    
+    <item>
+      <title>v-hacd-java-bindings</title>
+      <link>/posts/generated/riccardobl-v-hacd-java-bindings-oscontrib/</link>
+      <pubDate>Fri, 01 Jul 2022 15:46:55 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-v-hacd-java-bindings-oscontrib/</guid>
+      <description>Java bindings for V-HACD (&lt;a href=&#34;https://github.com/kmammou/v-hacd&#34;&gt;https://github.com/kmammou/v-hacd&lt;/a&gt;)</description>
+    </item>
+    
+    <item>
+      <title>jme3-bullet-vhacd</title>
+      <link>/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/</link>
+      <pubDate>Fri, 04 Feb 2022 05:51:54 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/</guid>
+      <description>This is a library that uses java bindings for Khaled Mamou&amp;rsquo;s V-HACD to decompose concave meshes into hull-shapes in jmonkey engine.</description>
+    </item>
+    
+    <item>
+      <title>DDSWriter</title>
+      <link>/posts/generated/riccardobl-ddswriter-oscontrib/</link>
+      <pubDate>Mon, 05 Apr 2021 10:39:49 +0000</pubDate>
+      
+      <guid>/posts/generated/riccardobl-ddswriter-oscontrib/</guid>
+      <description>DDSWriter is a command-line utility and java library to write compressed and uncompressed DDS.</description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-12-13 00-00-00 jMonkeyEngine-new-website.png</title>
+      <link>/posts/generated/3005bfdb18026c6426a4c0760af4991c7c16b03e0166137772dcc65afaf92d2c-devlog-img/</link>
+      <pubDate>Sat, 12 Dec 2020 22:00:00 +0000</pubDate>
+      
+      <guid>/posts/generated/3005bfdb18026c6426a4c0760af4991c7c16b03e0166137772dcc65afaf92d2c-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An immediate gui for jMonkeyEngine: demo</title>
+      <link>/posts/generated/2adbfa6vbce-devlog-yt/</link>
+      <pubDate>Tue, 13 Oct 2020 19:33:21 +0000</pubDate>
+      
+      <guid>/posts/generated/2adbfa6vbce-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-10-11 21-01-04.jpg</title>
+      <link>/posts/generated/f353cbb5ac606a7cb6405fdffcac2042aa9a5e76a768d6faa0a03cbd06402b93-devlog-img/</link>
+      <pubDate>Sun, 11 Oct 2020 19:01:04 +0000</pubDate>
+      
+      <guid>/posts/generated/f353cbb5ac606a7cb6405fdffcac2042aa9a5e76a768d6faa0a03cbd06402b93-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-10-11 21-00-54.jpg</title>
+      <link>/posts/generated/82fe1bd5f123a7baceb13226f923808348bc44aceb5d4c106aa3ac0654e39977-devlog-img/</link>
+      <pubDate>Sun, 11 Oct 2020 19:00:54 +0000</pubDate>
+      
+      <guid>/posts/generated/82fe1bd5f123a7baceb13226f923808348bc44aceb5d4c106aa3ac0654e39977-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-10-11 21-00-46.jpg</title>
+      <link>/posts/generated/520977d47bb89d041b1e5e71aa12ac2b321a4cbc5623ce8d09526070aca8ab05-devlog-img/</link>
+      <pubDate>Sun, 11 Oct 2020 19:00:46 +0000</pubDate>
+      
+      <guid>/posts/generated/520977d47bb89d041b1e5e71aa12ac2b321a4cbc5623ce8d09526070aca8ab05-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Effekseer rendering in Blender (Addon WiP)</title>
+      <link>/posts/generated/48f-wyo8m1a-devlog-yt/</link>
+      <pubDate>Wed, 23 Sep 2020 20:50:06 +0000</pubDate>
+      
+      <guid>/posts/generated/48f-wyo8m1a-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Effekseer fire - 2020 09 11 15 39 15</title>
+      <link>/posts/generated/fnxvtnlpo4i-devlog-yt/</link>
+      <pubDate>Fri, 11 Sep 2020 13:44:19 +0000</pubDate>
+      
+      <guid>/posts/generated/fnxvtnlpo4i-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jMonkeyEngine</title>
+      <link>/posts/jmonkeyengine/</link>
+      <pubDate>Fri, 28 Aug 2020 01:55:31 +0000</pubDate>
+      
+      <guid>/posts/jmonkeyengine/</guid>
+      <description>jMonkeyEngine is an OpenGL+Java 3d game engine to which i contribute as core developer.</description>
+    </item>
+    
+    <item>
+      <title>Fleeing Penguin</title>
+      <link>/posts/fleeingpenguin/</link>
+      <pubDate>Sun, 28 Jun 2020 01:55:31 +0000</pubDate>
+      
+      <guid>/posts/fleeingpenguin/</guid>
+      <description>A small 2d game made in p5js and webgl</description>
+    </item>
+    
+    <item>
+      <title>Pong (?)</title>
+      <link>/posts/pong/</link>
+      <pubDate>Sun, 28 Jun 2020 01:55:31 +0000</pubDate>
+      
+      <guid>/posts/pong/</guid>
+      <description>An overly complex raytraced pong game.</description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-05-25 17-44-18.png</title>
+      <link>/posts/generated/9f14a82c6f4f5eaf903a007e0c826d549f72800b639ed224c14562719eca2e31-devlog-img/</link>
+      <pubDate>Mon, 25 May 2020 15:44:18 +0000</pubDate>
+      
+      <guid>/posts/generated/9f14a82c6f4f5eaf903a007e0c826d549f72800b639ed224c14562719eca2e31-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-05-25 17-44-00.png</title>
+      <link>/posts/generated/07ed8401665f082073231af1f6953772a8009641f857e3bd3e3c96f4bf36603c-devlog-img/</link>
+      <pubDate>Mon, 25 May 2020 15:44:00 +0000</pubDate>
+      
+      <guid>/posts/generated/07ed8401665f082073231af1f6953772a8009641f857e3bd3e3c96f4bf36603c-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-05-25 17-43-53.png</title>
+      <link>/posts/generated/00473a68fa5b866fd62518e89e50ea82cccc48dd1435d376740a610bb079f2f4-devlog-img/</link>
+      <pubDate>Mon, 25 May 2020 15:43:53 +0000</pubDate>
+      
+      <guid>/posts/generated/00473a68fa5b866fd62518e89e50ea82cccc48dd1435d376740a610bb079f2f4-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-05-24 19-23-25.png</title>
+      <link>/posts/generated/d398ad52a83902e2723d61024b9e3eeee7ff0febb5f9df0e94eaff692a24d3df-devlog-img/</link>
+      <pubDate>Sun, 24 May 2020 17:23:25 +0000</pubDate>
+      
+      <guid>/posts/generated/d398ad52a83902e2723d61024b9e3eeee7ff0febb5f9df0e94eaff692a24d3df-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-05-23 23-06-20.png</title>
+      <link>/posts/generated/35558f6f633d5cf268d289249ca3fc508935c5d500606c1ae1d5cb69980eb152-devlog-img/</link>
+      <pubDate>Sat, 23 May 2020 21:06:20 +0000</pubDate>
+      
+      <guid>/posts/generated/35558f6f633d5cf268d289249ca3fc508935c5d500606c1ae1d5cb69980eb152-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-05-20 15-35-40.png</title>
+      <link>/posts/generated/9e4525c7dd69709d551d18fcccae76d17ade57babf4364b0841b4c2c8dcdc087-devlog-img/</link>
+      <pubDate>Wed, 20 May 2020 13:35:40 +0000</pubDate>
+      
+      <guid>/posts/generated/9e4525c7dd69709d551d18fcccae76d17ade57babf4364b0841b4c2c8dcdc087-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-05-20 13-00-21.png</title>
+      <link>/posts/generated/b55748c6ccf2a80972398177f060c204b272b4f2dd49c441be2678694fad2b96-devlog-img/</link>
+      <pubDate>Wed, 20 May 2020 11:00:21 +0000</pubDate>
+      
+      <guid>/posts/generated/b55748c6ccf2a80972398177f060c204b272b4f2dd49c441be2678694fad2b96-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pong(?)</title>
+      <link>/posts/generated/wdjbzw-shadertoy/</link>
+      <pubDate>Mon, 18 May 2020 18:11:12 +0000</pubDate>
+      
+      <guid>/posts/generated/wdjbzw-shadertoy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-05-01 13-21-24.png</title>
+      <link>/posts/generated/d880e1c2418983356b41b9a213f68ae4c356f3ebd148e0cdf977273d327875f8-devlog-img/</link>
+      <pubDate>Fri, 01 May 2020 11:21:24 +0000</pubDate>
+      
+      <guid>/posts/generated/d880e1c2418983356b41b9a213f68ae4c356f3ebd148e0cdf977273d327875f8-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-05-01 13-21-16.png</title>
+      <link>/posts/generated/3bb073a3fa6f632973455022b04cb36ffa678c6a7aba79e31561b4c26aace87f-devlog-img/</link>
+      <pubDate>Fri, 01 May 2020 11:21:16 +0000</pubDate>
+      
+      <guid>/posts/generated/3bb073a3fa6f632973455022b04cb36ffa678c6a7aba79e31561b4c26aace87f-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2020-03-24 11-42-51.png</title>
+      <link>/posts/generated/a53bd9f1cda72f6a911e12e0105fcdaa1c13f23c8cb34f7a114880e8a4bb73da-devlog-img/</link>
+      <pubDate>Tue, 24 Mar 2020 09:42:51 +0000</pubDate>
+      
+      <guid>/posts/generated/a53bd9f1cda72f6a911e12e0105fcdaa1c13f23c8cb34f7a114880e8a4bb73da-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chromium Embedded Framework (cef) for jMonkeyEngine (wip)</title>
+      <link>/posts/generated/c4qjrkelcla-devlog-yt/</link>
+      <pubDate>Mon, 18 Nov 2019 19:51:21 +0000</pubDate>
+      
+      <guid>/posts/generated/c4qjrkelcla-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-10-18 20-26-38.jpg</title>
+      <link>/posts/generated/32f1f22ad80282c89acbbc2ad6a3b3f1b3e6f7aff20392efefcaadd0f2f1dd6f-devlog-img/</link>
+      <pubDate>Fri, 18 Oct 2019 18:26:38 +0000</pubDate>
+      
+      <guid>/posts/generated/32f1f22ad80282c89acbbc2ad6a3b3f1b3e6f7aff20392efefcaadd0f2f1dd6f-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-10-17 22-46-18.png</title>
+      <link>/posts/generated/2f4aee298ef509e1ff85377d6592453b6dc8d186f83002ac530aa042b9e13631-devlog-img/</link>
+      <pubDate>Thu, 17 Oct 2019 20:46:18 +0000</pubDate>
+      
+      <guid>/posts/generated/2f4aee298ef509e1ff85377d6592453b6dc8d186f83002ac530aa042b9e13631-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-07-12 14-46-26.png</title>
+      <link>/posts/generated/98a00dc539b10619667a683018a0e84426e690b057813205dc049f9688fa401d-devlog-img/</link>
+      <pubDate>Fri, 12 Jul 2019 12:46:26 +0000</pubDate>
+      
+      <guid>/posts/generated/98a00dc539b10619667a683018a0e84426e690b057813205dc049f9688fa401d-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-06-08 17-49-54.png</title>
+      <link>/posts/generated/2005f5e2fc6bb8e5e7467bd7f5d7b0e3fd666c4ad4fda5de8b0f0a2c6699107c-devlog-img/</link>
+      <pubDate>Sat, 08 Jun 2019 15:49:54 +0000</pubDate>
+      
+      <guid>/posts/generated/2005f5e2fc6bb8e5e7467bd7f5d7b0e3fd666c4ad4fda5de8b0f0a2c6699107c-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-06-08 00-23-06.png</title>
+      <link>/posts/generated/be024586039c5a7ea144b26ab8901fa627d715c2573786bf06c2ba99a4961fd7-devlog-img/</link>
+      <pubDate>Fri, 07 Jun 2019 22:23:06 +0000</pubDate>
+      
+      <guid>/posts/generated/be024586039c5a7ea144b26ab8901fa627d715c2573786bf06c2ba99a4961fd7-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2019 06 04 23 49 14</title>
+      <link>/posts/generated/quacsrxijrm-devlog-yt/</link>
+      <pubDate>Tue, 04 Jun 2019 21:56:25 +0000</pubDate>
+      
+      <guid>/posts/generated/quacsrxijrm-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-06-04 17-07-03.png</title>
+      <link>/posts/generated/257c5d89890a3354307e8b621189686a4c8bbc6a0c0a0a1add9f4e00e5a0c732-devlog-img/</link>
+      <pubDate>Tue, 04 Jun 2019 15:07:03 +0000</pubDate>
+      
+      <guid>/posts/generated/257c5d89890a3354307e8b621189686a4c8bbc6a0c0a0a1add9f4e00e5a0c732-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-05-28 11-34-09.png</title>
+      <link>/posts/generated/415278f05eb596b5315ea5841f3835240cce931c6060e012a836c418509aa3a3-devlog-img/</link>
+      <pubDate>Tue, 28 May 2019 09:34:09 +0000</pubDate>
+      
+      <guid>/posts/generated/415278f05eb596b5315ea5841f3835240cce931c6060e012a836c418509aa3a3-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-05-25 14-53-00.png</title>
+      <link>/posts/generated/e10154812fb3bab68bd527fb9939682a474e2e418ea58eebd5799b711e90b46c-devlog-img/</link>
+      <pubDate>Sat, 25 May 2019 12:53:00 +0000</pubDate>
+      
+      <guid>/posts/generated/e10154812fb3bab68bd527fb9939682a474e2e418ea58eebd5799b711e90b46c-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2019 05 06 00 05 59</title>
+      <link>/posts/generated/npfxhbu6xlk-devlog-yt/</link>
+      <pubDate>Sun, 05 May 2019 22:08:27 +0000</pubDate>
+      
+      <guid>/posts/generated/npfxhbu6xlk-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-04-22 21-52-33.jpg</title>
+      <link>/posts/generated/997cdf61cfbd62f6ee20c4a60ce434f9d03a9d45f35183c225592b989b7a3655-devlog-img/</link>
+      <pubDate>Mon, 22 Apr 2019 19:52:33 +0000</pubDate>
+      
+      <guid>/posts/generated/997cdf61cfbd62f6ee20c4a60ce434f9d03a9d45f35183c225592b989b7a3655-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grass2 mkv</title>
+      <link>/posts/generated/crnldzyov5k-devlog-yt/</link>
+      <pubDate>Fri, 19 Apr 2019 22:28:34 +0000</pubDate>
+      
+      <guid>/posts/generated/crnldzyov5k-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>1 million particles. Transform Feedback implemented in jme instancing  - 2019 03 31 03 00 39</title>
+      <link>/posts/generated/5sjfsooafzc-devlog-yt/</link>
+      <pubDate>Fri, 19 Apr 2019 22:24:54 +0000</pubDate>
+      
+      <guid>/posts/generated/5sjfsooafzc-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-02-20 12-08-12.jpg</title>
+      <link>/posts/generated/07fd79d8b484f36dd2ebb77b4389269598795e05ef1bf68357031407810847e2-devlog-img/</link>
+      <pubDate>Wed, 20 Feb 2019 10:08:12 +0000</pubDate>
+      
+      <guid>/posts/generated/07fd79d8b484f36dd2ebb77b4389269598795e05ef1bf68357031407810847e2-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-01-31 15-40-40.jpg</title>
+      <link>/posts/generated/682d95103f2dd3456ccdb0ee9b8cad68874a4489fb9cf6e3c896e7161df1474a-devlog-img/</link>
+      <pubDate>Thu, 31 Jan 2019 13:40:40 +0000</pubDate>
+      
+      <guid>/posts/generated/682d95103f2dd3456ccdb0ee9b8cad68874a4489fb9cf6e3c896e7161df1474a-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2019-01-31 15-34-21.jpg</title>
+      <link>/posts/generated/16130034d3967a6a69fa5090d0c1df9ad041d7ccf8d9feea581c5a212bbde6c3-devlog-img/</link>
+      <pubDate>Thu, 31 Jan 2019 13:34:21 +0000</pubDate>
+      
+      <guid>/posts/generated/16130034d3967a6a69fa5090d0c1df9ad041d7ccf8d9feea581c5a212bbde6c3-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2018 12 31 00 45 54 wtf</title>
+      <link>/posts/generated/4ovwtydssyy-devlog-yt/</link>
+      <pubDate>Sun, 30 Dec 2018 23:47:47 +0000</pubDate>
+      
+      <guid>/posts/generated/4ovwtydssyy-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2018-12-22 13-37-38.png</title>
+      <link>/posts/generated/dc8d033fb37bfe9f19e8adaa43e5589e82cc7ff76b9b5eb5841e26fdd9d420e6-devlog-img/</link>
+      <pubDate>Sat, 22 Dec 2018 11:37:38 +0000</pubDate>
+      
+      <guid>/posts/generated/dc8d033fb37bfe9f19e8adaa43e5589e82cc7ff76b9b5eb5841e26fdd9d420e6-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2018-12-19 16-25-44.png</title>
+      <link>/posts/generated/d3776645ca0ca8f8cbbd5164e0a341ecc1e5d47f59e4b7ed5ca51e1ab5ec58b1-devlog-img/</link>
+      <pubDate>Wed, 19 Dec 2018 14:25:44 +0000</pubDate>
+      
+      <guid>/posts/generated/d3776645ca0ca8f8cbbd5164e0a341ecc1e5d47f59e4b7ed5ca51e1ab5ec58b1-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steam Audio implementation for jMonkeyEngine (WiP2)</title>
+      <link>/posts/generated/r2aze3k6wr8-devlog-yt/</link>
+      <pubDate>Tue, 18 Dec 2018 18:02:49 +0000</pubDate>
+      
+      <guid>/posts/generated/r2aze3k6wr8-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshot from 2018-12-09 17-09-12.jpg</title>
+      <link>/posts/generated/b4a5060a84f8f16ca993e6de51cd9226cf76543b41bcfdb836755e2e6900646b-devlog-img/</link>
+      <pubDate>Sun, 09 Dec 2018 15:09:12 +0000</pubDate>
+      
+      <guid>/posts/generated/b4a5060a84f8f16ca993e6de51cd9226cf76543b41bcfdb836755e2e6900646b-devlog-img/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steam Audio implementation for jMonkeyEngine (WiP)</title>
+      <link>/posts/generated/kwykoo5rptu-devlog-yt/</link>
+      <pubDate>Fri, 21 Sep 2018 12:14:30 +0000</pubDate>
+      
+      <guid>/posts/generated/kwykoo5rptu-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jMonkeyEngine: 8x300 brick tower - Comparing WiP detached physics update with other modes.</title>
+      <link>/posts/generated/81ehssejmly-devlog-yt/</link>
+      <pubDate>Fri, 24 Aug 2018 23:52:49 +0000</pubDate>
+      
+      <guid>/posts/generated/81ehssejmly-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WiP Instanced Particles: 180 000  spherical particles.</title>
+      <link>/posts/generated/x-pny2jnyqu-devlog-yt/</link>
+      <pubDate>Mon, 23 Jul 2018 20:37:35 +0000</pubDate>
+      
+      <guid>/posts/generated/x-pny2jnyqu-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WiP Instanced Particles: 1800 animated monkey particles.</title>
+      <link>/posts/generated/w4tsrkxq91c-devlog-yt/</link>
+      <pubDate>Mon, 23 Jul 2018 20:37:32 +0000</pubDate>
+      
+      <guid>/posts/generated/w4tsrkxq91c-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WiP Instanced Particles:  physics.</title>
+      <link>/posts/generated/u6mszhu3loc-devlog-yt/</link>
+      <pubDate>Mon, 23 Jul 2018 20:37:29 +0000</pubDate>
+      
+      <guid>/posts/generated/u6mszhu3loc-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High performance real time deformation in GLSL &amp;amp; JMEV2</title>
+      <link>/posts/generated/h3k_wst33bi-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:56:50 +0000</pubDate>
+      
+      <guid>/posts/generated/h3k_wst33bi-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High performance real time deformations with GLSL &amp;amp; JME</title>
+      <link>/posts/generated/abey0teu8_e-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:51:45 +0000</pubDate>
+      
+      <guid>/posts/generated/abey0teu8_e-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Water Test</title>
+      <link>/posts/generated/ceyrajw2i90-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:31:17 +0000</pubDate>
+      
+      <guid>/posts/generated/ceyrajw2i90-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lightning Test</title>
+      <link>/posts/generated/vl7r3qfblpk-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:28:39 +0000</pubDate>
+      
+      <guid>/posts/generated/vl7r3qfblpk-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>V HACD bindings for JME</title>
+      <link>/posts/generated/lc-sm5ftgk0-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:28:12 +0000</pubDate>
+      
+      <guid>/posts/generated/lc-sm5ftgk0-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xbufphy</title>
+      <link>/posts/generated/b-l-mh4hr9m-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:25:26 +0000</pubDate>
+      
+      <guid>/posts/generated/b-l-mh4hr9m-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test anim1</title>
+      <link>/posts/generated/6ica0yevmne-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:21:03 +0000</pubDate>
+      
+      <guid>/posts/generated/6ica0yevmne-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graphics glitch effect in GLSL</title>
+      <link>/posts/generated/1vpchreisy8-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:20:47 +0000</pubDate>
+      
+      <guid>/posts/generated/1vpchreisy8-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GLSL Screenspace energy sphere</title>
+      <link>/posts/generated/dik7_fqvkhc-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:13:24 +0000</pubDate>
+      
+      <guid>/posts/generated/dik7_fqvkhc-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Live Link Substance Painter   JMonkeyEngine</title>
+      <link>/posts/generated/yp-bgwxt_fy-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:13:20 +0000</pubDate>
+      
+      <guid>/posts/generated/yp-bgwxt_fy-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sandstorm effect with raytracing and 3d perlin noise in GLSL</title>
+      <link>/posts/generated/ewiihbyurvw-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:13:07 +0000</pubDate>
+      
+      <guid>/posts/generated/ewiihbyurvw-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Seamless texture painting in 3d environment</title>
+      <link>/posts/generated/91_f9u0f9mq-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:05:40 +0000</pubDate>
+      
+      <guid>/posts/generated/91_f9u0f9mq-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Texture painting 3d environment</title>
+      <link>/posts/generated/u-zainqopay-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:03:04 +0000</pubDate>
+      
+      <guid>/posts/generated/u-zainqopay-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real time mesh slicing</title>
+      <link>/posts/generated/jzkwn56jlzq-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:02:02 +0000</pubDate>
+      
+      <guid>/posts/generated/jzkwn56jlzq-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jCubemap Assembler</title>
+      <link>/posts/generated/nwdgftlkn7c-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:01:55 +0000</pubDate>
+      
+      <guid>/posts/generated/nwdgftlkn7c-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JMonkey &#43; OpenCL 1 000 000 3d Particles</title>
+      <link>/posts/generated/zdscdu5j4wu-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:00:48 +0000</pubDate>
+      
+      <guid>/posts/generated/zdscdu5j4wu-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Voxel Terrain WIP2</title>
+      <link>/posts/generated/ovo2sbm4pzw-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 13:00:48 +0000</pubDate>
+      
+      <guid>/posts/generated/ovo2sbm4pzw-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Voxel terrain WIP</title>
+      <link>/posts/generated/2pos7vjplog-devlog-yt/</link>
+      <pubDate>Tue, 29 May 2018 12:55:10 +0000</pubDate>
+      
+      <guid>/posts/generated/2pos7vjplog-devlog-yt/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
