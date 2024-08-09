@@ -1,0 +1,480 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"/tags/opensource-contrib/page/2/index.json",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-08-05 23:48:44 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/",
+
+        
+        "title":"blender_effekseer_addon",
+        
+
+        
+        
+        "summary":"Blender 3.3  addon that renders effekseer effects in blender's viewport.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "blender"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "particles"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-07-31 07:00:00 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-nostrduino-oscontrib/",
+
+        
+        "title":"nostrduino",
+        
+
+        
+        
+        "summary":"A nostr-tools inspired library for Arduino (and other) microcontrollers. With NWC support",
+    
+        
+
+        "tags":[
+        
+             
+             "C++"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "arduino"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "esp32"
+        
+              , 
+             "lightning"
+        
+              , 
+             "nostr"
+        
+              , 
+             "nwc"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-07-17 06:07:56 +0000 UTC",
+        
+        "url":"/posts/generated/jmephonon-jmephonon-oscontrib/",
+
+        
+        "title":"jmePhonon",
+        
+
+        
+        
+        "summary":"Steam Audio (phonon) implementation for jMonkeyEngine. ",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "spatial-audio"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-06-27 15:08:20 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-igui-oscontrib/",
+
+        
+        "title":"jme-igui",
+        
+
+        
+        
+        "summary":"A minimalistic immediate gui for jmonkeyengine",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gui"
+        
+              , 
+             "imediate"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "ui"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-04-20 10:18:57 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/",
+
+        
+        "title":"FPSDEMO-jMonkeyEngine",
+        
+
+        
+        
+        "summary":"An FPS demo made with jMonkeyEngine",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "demo"
+        
+              , 
+             "fps"
+        
+              , 
+             "game"
+        
+              , 
+             "hacktoberfest"
+        
+              , 
+             "jmonkeyengine"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-03-14 21:51:30 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jcubemapassembler-oscontrib/",
+
+        
+        "title":"JCubemapAssembler",
+        
+
+        
+        
+        "summary":"JCubemapAssembler is a java application that can be used to assemble six separate face images into a single cubemap and export it as a dds file. ",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "cubemap"
+        
+              , 
+             "dds"
+        
+              , 
+             "java"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-02-05 08:58:13 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-hypergate-oscontrib/",
+
+        
+        "title":"hypergate",
+        
+
+        
+        
+        "summary":"Hypergate is a zero-configuration, peer-to-peer encrypted tunnel that enables easy communication between Docker containers and/or physical machines located anywhere, even behind NAT.",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "docker"
+        
+              , 
+             "holepunch"
+        
+              , 
+             "holepunching"
+        
+              , 
+             "hyperswarm"
+        
+              , 
+             "overlay-network"
+        
+              , 
+             "p2p"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-01-25 00:13:45 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fleeingpenguin-oscontrib/",
+
+        
+        "title":"fleeingpenguin",
+        
+
+        
+        
+        "summary":"A small game made with p5js+webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "game"
+        
+              , 
+             "p5js"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2023-11-25 07:10:39 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-chat-jme-oscontrib/",
+
+        
+        "title":"chat-jme",
+        
+
+        
+        
+        "summary":"An AI assistant for jMonkeyEngine and related projects.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "ai"
+        
+              , 
+             "gpt"
+        
+              , 
+             "gpt3"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "langchain"
+        
+              , 
+             "openai"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB </title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.p5img.js.png" type="image/x-icon" />
+  
+
+  
+
+</head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+<header > 
+<t><a id="siteTitle" href="/"> RBLB</a></t>
+<span id="bio">
+I'm Riccardo Balbo, this is my personal website, mostly related to gamedev. 
+<br />
+<br />
+Feel free to get in touch for anything within the limit of common sense. 
+</span>
+    <nav class="socials">
+
+
+    
+    <a class="social youtube" href="https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw" target="_blank"  title="Youtube link" rel="noopener noreferrer" aria-label="follow on Youtube——Opens in a new window">
+    </a>
+     
+
+
+    
+    <a class="social github" href="https://github.com/riccardobl" target="_blank" title="Github link" rel="noopener noreferrer" aria-label="follow on Github——Opens in a new window">
+    </a> 
+    
+
+    
+
+
+    
+    <a class="social twitter"  target="_blank" href="https://twitter.com/i/user/1260924338632564739"   title="Twitter link" rel="noopener noreferrer"  >
+    </a> 
+    
+
+    
+    <a class="social email" href="javascript:alert('riccardo0blb@gmail.com')"   title="Email" rel="noopener noreferrer">
+    </a> 
+    
+
+
+</nav>
+
+<nav class="vmenu">
+    <div class="toggleContent"></div>
+    <b><a href="/">Home</a></b>
+    <a href="/tags/devlog">Devlog</a>
+
+      
+      
+      
+      
+      
+       <a href="/posts/anser/">Anser</a>
+      
+      
+      
+       <a href="/posts/jmonkeyengine/">jMonkeyEngine</a>
+      
+      
+      <a rel="noopener noreferrer" href="https://github.com/riccardobl?tab=repositories" target="_blank">Opensource Repos</a>
+
+    <b><a href="/posts/jmonkeyengine/">jMonkeyEngine</a></b>
+      
+      
+      
+      
+      
+      <a href="/posts/generated/jmephonon-jmephonon-oscontrib/">jmePhonon</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-igui-oscontrib/">jme-igui</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/">FPSDEMO-jMonkeyEngin …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-chat-jme-oscontrib/">chat-jme</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-simplessrshader-oscontrib/">SimpleSSRShader</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-effekseernative-oscontrib/">jme-effekseerNative</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/">jme-shader-Occlusion …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/">jme3-bullet-vhacd</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-ddswriter-oscontrib/">DDSWriter</a>
+      
+      
+</nav></header>
+<main>  
+
+      
+<hr />
+
+
+<section  class="list showcase ">
+    
+    
+    
+    
+<article  
+
+onclick="document.location='\/posts\/anser\/';"
+
+style="  background-image:url(' /images/anser.webp');  '" 
+class=' cover '
+>
+
+        
+
+        
+         <h2> <a href="/posts/anser/">Anser</a> </h2> 
+        
+        <p>
+        
+        A liquid companion for Alby
+        
+          </p>
+          <time datetime="2024-01-24 01:55:31 &#43;0000 UTC">24 January 2024</time>
+        <nav class="tags">
+
+    
+        <a class="bitcoin" href="/tags/bitcoin/">#bitcoin</a>
+    
+
+    
+        <a class="javascript" href="/tags/javascript/">#javascript</a>
+    
+
+    
+        <a class="html" href="/tags/html/">#html</a>
+    
+
+    
+        <a class="css" href="/tags/css/">#css</a>
+    
+
+    
+        <a class="liquid" href="/tags/liquid/">#liquid</a>
+    
+
+    
+        <a class="alby" href="/tags/alby/">#alby</a>
+    
+
+    
+        <a class="pwa" href="/tags/pwa/">#pwa</a>
+    
+
+    
+        <a class="webapp" href="/tags/webapp/">#webapp</a>
+    
+
+    
+        <a class="highlighted" href="/tags/highlighted/">#highlighted</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/jmonkeyengine\/';"
+
+style="  background-image:url(' images/jmonkeyengine.webp');  '" 
+class=' cover '
+>
+
+        
+
+        
+         <h2> <a href="/posts/jmonkeyengine/">jMonkeyEngine</a> </h2> 
+        
+        <p>
+        
+        jMonkeyEngine is an OpenGL+Java 3d game engine to which i contribute as core developer.
+        
+          </p>
+          <time datetime="2020-08-28 01:55:31 &#43;0000 UTC">28 August 2020</time>
+        <nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="gamedev" href="/tags/gamedev/">#gamedev</a>
+    
+
+    
+        <a class="highlighted" href="/tags/highlighted/">#highlighted</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+</section>      
+
+<hr />
+
+
+    <h1>DevLog</h1>
+    <h2>A fine collection of EVERYTHING. A sneak peek at things in the making.</h2>
+
+    <section class="list">
+        
+        
+        
+        
+<article  
+
+onclick="document.location='\/posts\/generated\/9e1294ef6292857e558eaa2bf379c3ef76548414b50fbe9e688c8a73f7a20158-devlog-img\/';"
+
+style="  background-image:url(' /images/generated/preview/4d17952dded62894fc9f6f62fab57eb00cbbad21.webp');  '" 
+class=' cover '
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/9e1294ef6292857e558eaa2bf379c3ef76548414b50fbe9e688c8a73f7a20158-devlog-img/"> </a> </h2>
+        
+        <p>
+        
+         
+        
+          </p>
+          <time datetime="2024-02-18 15:31:43 &#43;0000 UTC">18 February 2024</time>
+        <nav class="tags">
+
+    
+        <a class="screenshot" href="/tags/screenshot/">#screenshot</a>
+    
+
+    
+        <a class="devlog" href="/tags/devlog/">#devlog</a>
+    
+
+    
+        <a class="media" href="/tags/media/">#media</a>
+    
+
+    
+        <a class="misc" href="/tags/misc/">#misc</a>
+    
+
+</nav>
+      
+
+      </article>
+        
+        
+<article  
+
+onclick="document.location='\/posts\/generated\/f836c5c8f0f94863963d0d74420ea8cd273e56a155e8ced2a50d2ff3959d29b7-devlog-img\/';"
+
+style="  background-image:url(' /images/generated/preview/be572303f1c51cd3a8d0076dd6a8f5b5023c13df.webp');  '" 
+class=' cover '
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/f836c5c8f0f94863963d0d74420ea8cd273e56a155e8ced2a50d2ff3959d29b7-devlog-img/"> </a> </h2>
+        
+        <p>
+        
+         
+        
+          </p>
+          <time datetime="2024-02-18 15:25:37 &#43;0000 UTC">18 February 2024</time>
+        <nav class="tags">
+
+    
+        <a class="screenshot" href="/tags/screenshot/">#screenshot</a>
+    
+
+    
+        <a class="devlog" href="/tags/devlog/">#devlog</a>
+    
+
+    
+        <a class="media" href="/tags/media/">#media</a>
+    
+
+    
+        <a class="misc" href="/tags/misc/">#misc</a>
+    
+
+</nav>
+      
+
+      </article>
+        
+        
+<article  
+
+onclick="document.location='\/posts\/generated\/3005bfdb18026c6426a4c0760af4991c7c16b03e0166137772dcc65afaf92d2c-devlog-img\/';"
+
+style="  background-image:url(' /images/generated/preview/bee6ffeb3381dc29134d2796527abf5bd03546af.webp');  '" 
+class=' cover '
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/3005bfdb18026c6426a4c0760af4991c7c16b03e0166137772dcc65afaf92d2c-devlog-img/"> </a> </h2>
+        
+        <p>
+        
+         
+        
+          </p>
+          <time datetime="2020-12-12 22:00:00 &#43;0000 UTC">12 December 2020</time>
+        <nav class="tags">
+
+    
+        <a class="screenshot" href="/tags/screenshot/">#screenshot</a>
+    
+
+    
+        <a class="devlog" href="/tags/devlog/">#devlog</a>
+    
+
+    
+        <a class="media" href="/tags/media/">#media</a>
+    
+
+    
+        <a class="misc" href="/tags/misc/">#misc</a>
+    
+
+</nav>
+      
+
+      </article>
+        
+        
+<article  
+
+onclick="document.location='\/posts\/generated\/2adbfa6vbce-devlog-yt\/';"
+
+style="  '" 
+class=' cover  interactive '
+>
+
+        
+          <iframe  src="https://www.youtube-nocookie.com/embed/2ADbFA6vbcE" frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" a
+          llowfullscreen></iframe>
+        
+
+        
+        <h2> <a href="/posts/generated/2adbfa6vbce-devlog-yt/"> </a> </h2>
+        
+        <p>
+        
+         
+        
+          </p>
+          <time datetime="2020-10-13 19:33:21 &#43;0000 UTC">13 October 2020</time>
+        <nav class="tags">
+
+    
+        <a class="video" href="/tags/video/">#video</a>
+    
+
+    
+        <a class="media" href="/tags/media/">#media</a>
+    
+
+    
+        <a class="devlog" href="/tags/devlog/">#devlog</a>
+    
+
+    
+        <a class="misc" href="/tags/misc/">#misc</a>
+    
+
+</nav>
+      
+
+      </article>
+        
+        
+<article  
+
+onclick="document.location='\/posts\/generated\/f353cbb5ac606a7cb6405fdffcac2042aa9a5e76a768d6faa0a03cbd06402b93-devlog-img\/';"
+
+style="  background-image:url(' /images/generated/preview/cb09f89f01970e346d84ecc8111c6c858ae67a73.webp');  '" 
+class=' cover '
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/f353cbb5ac606a7cb6405fdffcac2042aa9a5e76a768d6faa0a03cbd06402b93-devlog-img/"> </a> </h2>
+        
+        <p>
+        
+         
+        
+          </p>
+          <time datetime="2020-10-11 19:01:04 &#43;0000 UTC">11 October 2020</time>
+        <nav class="tags">
+
+    
+        <a class="screenshot" href="/tags/screenshot/">#screenshot</a>
+    
+
+    
+        <a class="devlog" href="/tags/devlog/">#devlog</a>
+    
+
+    
+        <a class="media" href="/tags/media/">#media</a>
+    
+
+    
+        <a class="misc" href="/tags/misc/">#misc</a>
+    
+
+</nav>
+      
+
+      </article>
+        
+        
+<article  
+
+onclick="document.location='\/posts\/generated\/82fe1bd5f123a7baceb13226f923808348bc44aceb5d4c106aa3ac0654e39977-devlog-img\/';"
+
+style="  background-image:url(' /images/generated/preview/518819c8ac6f3e9299f51e2ebd1e4e50c0e9e471.webp');  '" 
+class=' cover '
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/82fe1bd5f123a7baceb13226f923808348bc44aceb5d4c106aa3ac0654e39977-devlog-img/"> </a> </h2>
+        
+        <p>
+        
+         
+        
+          </p>
+          <time datetime="2020-10-11 19:00:54 &#43;0000 UTC">11 October 2020</time>
+        <nav class="tags">
+
+    
+        <a class="screenshot" href="/tags/screenshot/">#screenshot</a>
+    
+
+    
+        <a class="devlog" href="/tags/devlog/">#devlog</a>
+    
+
+    
+        <a class="media" href="/tags/media/">#media</a>
+    
+
+    
+        <a class="misc" href="/tags/misc/">#misc</a>
+    
+
+</nav>
+      
+
+      </article>
+        
+        
+<article  
+
+onclick="document.location='\/posts\/generated\/520977d47bb89d041b1e5e71aa12ac2b321a4cbc5623ce8d09526070aca8ab05-devlog-img\/';"
+
+style="  background-image:url(' /images/generated/preview/bd38b5713d0fc83607b9fed5f2b7bb9441d85481.webp');  '" 
+class=' cover '
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/520977d47bb89d041b1e5e71aa12ac2b321a4cbc5623ce8d09526070aca8ab05-devlog-img/"> </a> </h2>
+        
+        <p>
+        
+         
+        
+          </p>
+          <time datetime="2020-10-11 19:00:46 &#43;0000 UTC">11 October 2020</time>
+        <nav class="tags">
+
+    
+        <a class="screenshot" href="/tags/screenshot/">#screenshot</a>
+    
+
+    
+        <a class="devlog" href="/tags/devlog/">#devlog</a>
+    
+
+    
+        <a class="media" href="/tags/media/">#media</a>
+    
+
+    
+        <a class="misc" href="/tags/misc/">#misc</a>
+    
+
+</nav>
+      
+
+      </article>
+        
+        
+<article  
+
+onclick="document.location='\/posts\/generated\/48f-wyo8m1a-devlog-yt\/';"
+
+style="  '" 
+class=' cover  interactive '
+>
+
+        
+          <iframe  src="https://www.youtube-nocookie.com/embed/48f-wYo8M1A" frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" a
+          llowfullscreen></iframe>
+        
+
+        
+        <h2> <a href="/posts/generated/48f-wyo8m1a-devlog-yt/"> </a> </h2>
+        
+        <p>
+        
+         
+        
+          </p>
+          <time datetime="2020-09-23 20:50:06 &#43;0000 UTC">23 September 2020</time>
+        <nav class="tags">
+
+    
+        <a class="video" href="/tags/video/">#video</a>
+    
+
+    
+        <a class="media" href="/tags/media/">#media</a>
+    
+
+    
+        <a class="devlog" href="/tags/devlog/">#devlog</a>
+    
+
+    
+        <a class="misc" href="/tags/misc/">#misc</a>
+    
+
+</nav>
+      
+
+      </article>
+        
+        
+<article  
+
+onclick="document.location='\/posts\/generated\/fnxvtnlpo4i-devlog-yt\/';"
+
+style="  '" 
+class=' cover  interactive '
+>
+
+        
+          <iframe  src="https://www.youtube-nocookie.com/embed/FnxvTNlPo4I" frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" a
+          llowfullscreen></iframe>
+        
+
+        
+        <h2> <a href="/posts/generated/fnxvtnlpo4i-devlog-yt/"> </a> </h2>
+        
+        <p>
+        
+         
+        
+          </p>
+          <time datetime="2020-09-11 13:44:19 &#43;0000 UTC">11 September 2020</time>
+        <nav class="tags">
+
+    
+        <a class="video" href="/tags/video/">#video</a>
+    
+
+    
+        <a class="media" href="/tags/media/">#media</a>
+    
+
+    
+        <a class="devlog" href="/tags/devlog/">#devlog</a>
+    
+
+    
+        <a class="misc" href="/tags/misc/">#misc</a>
+    
+
+</nav>
+      
+
+      </article>
+        
+    </section>
+
+    <h3>
+        
+        <a href="/tags/devlog/">See more...</a>
+        
+    </h3>
+      
+
+<hr />
+
+<h1>Opensource</h1>
+<h2>I create and contribute to opensource projects</h2>
+<section class="list showcase ">
+
+    
+
+    
+    
+    
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-jcubemapassembler-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-jcubemapassembler-oscontrib/">JCubemapAssembler</a> </h2>
+        
+        <p>
+        
+        JCubemapAssembler is a java application that can be used to assemble six separate face images into a single cubemap and export it as a dds file. 
+        
+          </p>
+          <time datetime="2024-03-14 21:51:30 &#43;0000 UTC">14 March 2024</time>
+        <nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="cubemap" href="/tags/cubemap/">#cubemap</a>
+    
+
+    
+        <a class="dds" href="/tags/dds/">#dds</a>
+    
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="unlicense" href="/tags/unlicense/">#unlicense</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-ddswriter-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-ddswriter-oscontrib/">DDSWriter</a> </h2>
+        
+        <p>
+        
+        DDSWriter is a command-line utility and java library to write compressed and uncompressed DDS.
+        
+          </p>
+          <time datetime="2021-04-05 10:39:49 &#43;0000 UTC">05 April 2021</time>
+        <nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="compression" href="/tags/compression/">#compression</a>
+    
+
+    
+        <a class="dds" href="/tags/dds/">#dds</a>
+    
+
+    
+        <a class="dxt" href="/tags/dxt/">#dxt</a>
+    
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+    
+        <a class="mipmaps" href="/tags/mipmaps/">#mipmaps</a>
+    
+
+    
+        <a class="rgtc" href="/tags/rgtc/">#rgtc</a>
+    
+
+    
+        <a class="s3tc" href="/tags/s3tc/">#s3tc</a>
+    
+
+    
+        <a class="mit" href="/tags/mit/">#mit</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-jme-effekseernative-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-jme-effekseernative-oscontrib/">jme-effekseerNative</a> </h2>
+        
+        <p>
+        
+        This is a library that uses EffekseerForMultiLanguages to load and render effects made with Effekseer in jme.
+        
+          </p>
+          <time datetime="2023-02-01 15:24:08 &#43;0000 UTC">01 February 2023</time>
+        <nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="effekseer" href="/tags/effekseer/">#effekseer</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+    
+        <a class="particles" href="/tags/particles/">#particles</a>
+    
+
+    
+        <a class="other" href="/tags/other/">#other</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-blender_effekseer_addon-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/">blender_effekseer_addon</a> </h2>
+        
+        <p>
+        
+        Blender 3.3  addon that renders effekseer effects in blender&#39;s viewport.
+        
+          </p>
+          <time datetime="2024-08-05 23:48:44 &#43;0000 UTC">05 August 2024</time>
+        <nav class="tags">
+
+    
+        <a class="Python" href="/tags/python/">#Python</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="blender" href="/tags/blender/">#blender</a>
+    
+
+    
+        <a class="effekseer" href="/tags/effekseer/">#effekseer</a>
+    
+
+    
+        <a class="gamedev" href="/tags/gamedev/">#gamedev</a>
+    
+
+    
+        <a class="particles" href="/tags/particles/">#particles</a>
+    
+
+    
+        <a class="bsd-3-clause" href="/tags/bsd-3-clause/">#bsd-3-clause</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-v-hacd-java-bindings-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-v-hacd-java-bindings-oscontrib/">v-hacd-java-bindings</a> </h2>
+        
+        <p>
+        
+        Java bindings for V-HACD (https://github.com/kmammou/v-hacd)
+        
+          </p>
+          <time datetime="2022-07-01 15:46:55 &#43;0000 UTC">01 July 2022</time>
+        <nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="bullet" href="/tags/bullet/">#bullet</a>
+    
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="java-bindings" href="/tags/java-bindings/">#java-bindings</a>
+    
+
+    
+        <a class="jna" href="/tags/jna/">#jna</a>
+    
+
+    
+        <a class="vhacd" href="/tags/vhacd/">#vhacd</a>
+    
+
+    
+        <a class="other" href="/tags/other/">#other</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-simplessrshader-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-simplessrshader-oscontrib/">SimpleSSRShader</a> </h2>
+        
+        <p>
+        
+        Just some barebone Screen space reflections shader
+        
+          </p>
+          <time datetime="2023-08-12 03:29:05 &#43;0000 UTC">12 August 2023</time>
+        <nav class="tags">
+
+    
+        <a class="glsl" href="/tags/glsl/">#glsl</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="glsl" href="/tags/glsl/">#glsl</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+    
+        <a class="shader" href="/tags/shader/">#shader</a>
+    
+
+    
+        <a class="ssr" href="/tags/ssr/">#ssr</a>
+    
+
+    
+        <a class="bsd-3-clause" href="/tags/bsd-3-clause/">#bsd-3-clause</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-hypergate-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-hypergate-oscontrib/">hypergate</a> </h2>
+        
+        <p>
+        
+        Hypergate is a zero-configuration, peer-to-peer encrypted tunnel that enables easy communication between Docker containers and/or physical machines located anywhere, even behind NAT.
+        
+          </p>
+          <time datetime="2024-02-05 08:58:13 &#43;0000 UTC">05 February 2024</time>
+        <nav class="tags">
+
+    
+        <a class="javascript" href="/tags/javascript/">#javascript</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="docker" href="/tags/docker/">#docker</a>
+    
+
+    
+        <a class="holepunch" href="/tags/holepunch/">#holepunch</a>
+    
+
+    
+        <a class="holepunching" href="/tags/holepunching/">#holepunching</a>
+    
+
+    
+        <a class="hyperswarm" href="/tags/hyperswarm/">#hyperswarm</a>
+    
+
+    
+        <a class="overlay-network" href="/tags/overlay-network/">#overlay-network</a>
+    
+
+    
+        <a class="p2p" href="/tags/p2p/">#p2p</a>
+    
+
+    
+        <a class="bsd-3-clause" href="/tags/bsd-3-clause/">#bsd-3-clause</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-fpsdemo-jmonkeyengine-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/">FPSDEMO-jMonkeyEngine</a> </h2>
+        
+        <p>
+        
+        An FPS demo made with jMonkeyEngine
+        
+          </p>
+          <time datetime="2024-04-20 10:18:57 &#43;0000 UTC">20 April 2024</time>
+        <nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="demo" href="/tags/demo/">#demo</a>
+    
+
+    
+        <a class="fps" href="/tags/fps/">#fps</a>
+    
+
+    
+        <a class="game" href="/tags/game/">#game</a>
+    
+
+    
+        <a class="hacktoberfest" href="/tags/hacktoberfest/">#hacktoberfest</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-chat-jme-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-chat-jme-oscontrib/">chat-jme</a> </h2>
+        
+        <p>
+        
+        An AI assistant for jMonkeyEngine and related projects.
+        
+          </p>
+          <time datetime="2023-11-25 07:10:39 &#43;0000 UTC">25 November 2023</time>
+        <nav class="tags">
+
+    
+        <a class="Python" href="/tags/python/">#Python</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="ai" href="/tags/ai/">#ai</a>
+    
+
+    
+        <a class="gpt" href="/tags/gpt/">#gpt</a>
+    
+
+    
+        <a class="gpt3" href="/tags/gpt3/">#gpt3</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+    
+        <a class="langchain" href="/tags/langchain/">#langchain</a>
+    
+
+    
+        <a class="openai" href="/tags/openai/">#openai</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-nostrduino-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-nostrduino-oscontrib/">nostrduino</a> </h2>
+        
+        <p>
+        
+        A nostr-tools inspired library for Arduino (and other) microcontrollers. With NWC support
+        
+          </p>
+          <time datetime="2024-07-31 07:00:00 &#43;0000 UTC">31 July 2024</time>
+        <nav class="tags">
+
+    
+        <a class="C&#43;&#43;" href="/tags/c&#43;&#43;/">#C&#43;&#43;</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="arduino" href="/tags/arduino/">#arduino</a>
+    
+
+    
+        <a class="bitcoin" href="/tags/bitcoin/">#bitcoin</a>
+    
+
+    
+        <a class="esp32" href="/tags/esp32/">#esp32</a>
+    
+
+    
+        <a class="lightning" href="/tags/lightning/">#lightning</a>
+    
+
+    
+        <a class="nostr" href="/tags/nostr/">#nostr</a>
+    
+
+    
+        <a class="nwc" href="/tags/nwc/">#nwc</a>
+    
+
+    
+        <a class="other" href="/tags/other/">#other</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/">jme-shader-OcclusionParallaxMapping</a> </h2>
+        
+        <p>
+        
+        OcclusionParallaxMapping for jMonkeyEngine
+        
+          </p>
+          <time datetime="2022-09-16 15:10:57 &#43;0000 UTC">16 September 2022</time>
+        <nav class="tags">
+
+    
+        <a class="glsl" href="/tags/glsl/">#glsl</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="glsl" href="/tags/glsl/">#glsl</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+    
+        <a class="occlusion" href="/tags/occlusion/">#occlusion</a>
+    
+
+    
+        <a class="parallax" href="/tags/parallax/">#parallax</a>
+    
+
+    
+        <a class="shader" href="/tags/shader/">#shader</a>
+    
+
+    
+        <a class="unlicense" href="/tags/unlicense/">#unlicense</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-fleeingpenguin-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-fleeingpenguin-oscontrib/">fleeingpenguin</a> </h2>
+        
+        <p>
+        
+        A small game made with p5js+webgl
+        
+          </p>
+          <time datetime="2024-01-25 00:13:45 &#43;0000 UTC">25 January 2024</time>
+        <nav class="tags">
+
+    
+        <a class="javascript" href="/tags/javascript/">#javascript</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="game" href="/tags/game/">#game</a>
+    
+
+    
+        <a class="p5js" href="/tags/p5js/">#p5js</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-jme-igui-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-jme-igui-oscontrib/">jme-igui</a> </h2>
+        
+        <p>
+        
+        A minimalistic immediate gui for jmonkeyengine
+        
+          </p>
+          <time datetime="2024-06-27 15:08:20 &#43;0000 UTC">27 June 2024</time>
+        <nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="gui" href="/tags/gui/">#gui</a>
+    
+
+    
+        <a class="imediate" href="/tags/imediate/">#imediate</a>
+    
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+    
+        <a class="ui" href="/tags/ui/">#ui</a>
+    
+
+    
+        <a class="unlicense" href="/tags/unlicense/">#unlicense</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/jmephonon-jmephonon-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/jmephonon-jmephonon-oscontrib/">jmePhonon</a> </h2>
+        
+        <p>
+        
+        Steam Audio (phonon) implementation for jMonkeyEngine. 
+        
+          </p>
+          <time datetime="2024-07-17 06:07:56 &#43;0000 UTC">17 July 2024</time>
+        <nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+
+    
+        <a class="spatial-audio" href="/tags/spatial-audio/">#spatial-audio</a>
+    
+
+    
+        <a class="other" href="/tags/other/">#other</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/jmonkeyengine\/';"
+
+style="  background-image:url(' images/jmonkeyengine.webp');  '" 
+class=' cover '
+>
+
+        
+
+        
+         <h2> <a href="/posts/jmonkeyengine/">jMonkeyEngine</a> </h2> 
+        
+        <p>
+        
+        jMonkeyEngine is an OpenGL+Java 3d game engine to which i contribute as core developer.
+        
+          </p>
+          <time datetime="2020-08-28 01:55:31 &#43;0000 UTC">28 August 2020</time>
+        <nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="gamedev" href="/tags/gamedev/">#gamedev</a>
+    
+
+    
+        <a class="highlighted" href="/tags/highlighted/">#highlighted</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+    
+<article  
+
+onclick="document.location='\/posts\/generated\/riccardobl-jme3-bullet-vhacd-oscontrib\/';"
+
+style="  '" 
+class=''
+>
+
+        
+
+        
+        <h2> <a href="/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/">jme3-bullet-vhacd</a> </h2>
+        
+        <p>
+        
+        This is a library that uses java bindings for Khaled Mamou&#39;s V-HACD to decompose concave meshes into hull-shapes in jmonkey engine.
+        
+          </p>
+          <time datetime="2022-02-04 05:51:54 &#43;0000 UTC">04 February 2022</time>
+        <nav class="tags">
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="bullet" href="/tags/bullet/">#bullet</a>
+    
+
+    
+        <a class="Java" href="/tags/java/">#Java</a>
+    
+
+    
+        <a class="jmonkeyengine3" href="/tags/jmonkeyengine3/">#jmonkeyengine3</a>
+    
+
+    
+        <a class="vhacd" href="/tags/vhacd/">#vhacd</a>
+    
+
+    
+        <a class="other" href="/tags/other/">#other</a>
+    
+
+</nav>
+      
+
+      </article>
+    
+
+</section>
+<h3>
+    <a target="__blank" href="https://github.com/riccardobl">See more...</a>
+</h3>      
+<hr />
+
+<h1>Skills</h1>
+<h2>List of things i know and use</h2>
+<section class="icons">
+
+    <article >
+        <h2>
+            <a href="https://en.wikipedia.org/wiki/OpenGL" target="_blank" rel="noopener noreferrer nofollow" >OpenGL</a>
+             and 
+             <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank" rel="noopener noreferrer nofollow" >GLSL</a></h2>
+        <i class="icon opengl"></i>
+
+    </article>
+
+    <article >
+
+        <h2> <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank" rel="noopener noreferrer nofollow" >Java</a> and
+            <a href="https://en.wikipedia.org/wiki/Java_Native_Interface" target="_blank" rel="noopener noreferrer nofollow" >JNI</a>
+            
+            </h2>
+        <i class="fab fa-java"></i>
+  
+    </article>
+
+    <article>
+        <h2>       <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank" rel="noopener noreferrer nofollow" >Bash</a> and 
+                <a href="https://en.wikipedia.org/wiki/Linux" target="_blank" rel="noopener noreferrer nofollow" >Linux</a></h2>
+        <i class="fab fa-linux"></i>
+
+    </article>
+
+    <article >
+        <h2><a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noopener noreferrer nofollow" >C </a>/ 
+            <a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener noreferrer nofollow" >C++</a></h2>
+        <i class="icon c"></i>
+     
+    </article>
+
+
+
+    <article >
+        <h2><a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank" rel="noopener noreferrer nofollow" >Docker</a></h2>
+        <i class="fab fa-docker"></i>
+
+    </article>
+
+    <article>
+        <h2><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener noreferrer nofollow" >Javascript</a></h2>
+        <i class="fab fa-js-square"></i>
+   
+    </article>
+
+    <article >
+        <h2><a href="https://en.wikipedia.org/wiki/Node.js" target="_blank" rel="noopener noreferrer nofollow" >NodeJS</a></h2>
+        <i class="fab fa-node"></i>
+
+    </article>
+
+
+
+
+    <article >
+        <h2><a href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener noreferrer nofollow" >HTML</a>(5)</h2>
+        <div>
+            <i class="fab fa-html5"></i>
+        </div>
+  
+    </article>
+
+    <article>
+        <h2> <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noopener noreferrer nofollow" >CSS</a>(3)</h2>
+        <div>
+            <i class="fab fa-css3-alt"></i>
+        </div>
+      
+    </article>
+
+    <article>
+        <h2><a href="https://en.wikipedia.org/wiki/MySQL" target="_blank" rel="noopener noreferrer nofollow" >MySQL</a></h2>
+        <i class="fas fa-database"></i>
+    
+    </article>
+
+    <article >
+        <h2><a href="https://en.wikipedia.org/wiki/PHP" target="_blank" rel="noopener noreferrer nofollow" >PHP</a></h2>
+        <i class="fab fa-php"></i>
+
+    </article>
+
+
+
+    <article >
+        <h2><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener noreferrer nofollow" >Python</a></h2>
+        <i class="fab fa-python"></i>
+
+    </article>
+
+    <article >
+        <h2><a href="https://www.blender.org/" target="_blank" rel="noopener noreferrer nofollow" >Blender</a></h2>
+        <i class="icon blender"></i>
+
+ 
+    </article>
+
+    <article>
+        <h2><a href="https://en.wikipedia.org/wiki/Git" target="_blank" rel="noopener noreferrer nofollow" >Git</a></h2>
+        <i class="fab fa-git-alt"></i>
+
+    </article>
+    
+      <article >
+        <h2><a href="https://p5js.org/" target="_blank" rel="noopener noreferrer nofollow" >P5js</a></h2>
+        <i class="icon p5js"></i>
+
+     
+    </article>
+    <article >
+        <h2><a href="https://en.wikipedia.org/wiki/JMonkeyEngine" target="_blank" rel="noopener noreferrer nofollow" >jMonkeyEngine</a></h2>
+        <i class="icon jme"></i>
+
+ 
+    </article>      
+
+
+</main>
+ 
+</body>
+
+</html>

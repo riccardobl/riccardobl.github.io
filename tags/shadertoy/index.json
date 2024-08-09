@@ -1,0 +1,108 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"/images/pong.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/pong/",
+
+        
+        "title":"Pong (?)",
+        
+
+        
+        
+        "summary":"An overly complex raytraced pong game.",
+    
+        
+
+        "tags":[
+        
+             
+             "shadertoy"
+        
+              , 
+             "glsl"
+        
+              , 
+             "game"
+        
+              , 
+             "gamedev"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/generated/preview/181d7fa9124359c3c496df7d70dc609cfe9c2ec7.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-05-18 18:11:12 +0000 UTC",
+        
+        "url":"/posts/generated/wdjbzw-shadertoy/",
+
+        
+        "title":" ",
+        
+
+        
+        
+        "summary":" ",
+    
+        
+
+        "tags":[
+        
+             
+             "shadertoy"
+        
+              , 
+             "game"
+        
+              , 
+             "devlog"
+        
+              , 
+             "media"
+        
+              , 
+             "misc"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

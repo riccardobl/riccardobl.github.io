@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | nostrduino</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.p5img.js.png" type="image/x-icon" />
+  
+
+  
+
+</head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+<header > 
+<t><a id="siteTitle" href="/"> RBLB</a></t>
+<span id="bio">
+I'm Riccardo Balbo, this is my personal website, mostly related to gamedev. 
+<br />
+<br />
+Feel free to get in touch for anything within the limit of common sense. 
+</span>
+    <nav class="socials">
+
+
+    
+    <a class="social youtube" href="https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw" target="_blank"  title="Youtube link" rel="noopener noreferrer" aria-label="follow on Youtube——Opens in a new window">
+    </a>
+     
+
+
+    
+    <a class="social github" href="https://github.com/riccardobl" target="_blank" title="Github link" rel="noopener noreferrer" aria-label="follow on Github——Opens in a new window">
+    </a> 
+    
+
+    
+
+
+    
+    <a class="social twitter"  target="_blank" href="https://twitter.com/i/user/1260924338632564739"   title="Twitter link" rel="noopener noreferrer"  >
+    </a> 
+    
+
+    
+    <a class="social email" href="javascript:alert('riccardo0blb@gmail.com')"   title="Email" rel="noopener noreferrer">
+    </a> 
+    
+
+
+</nav>
+
+<nav class="vmenu">
+    <div class="toggleContent"></div>
+    <b><a href="/">Home</a></b>
+    <a href="/tags/devlog">Devlog</a>
+
+      
+      
+      
+      
+      
+       <a href="/posts/anser/">Anser</a>
+      
+      
+      
+       <a href="/posts/jmonkeyengine/">jMonkeyEngine</a>
+      
+      
+      <a rel="noopener noreferrer" href="https://github.com/riccardobl?tab=repositories" target="_blank">Opensource Repos</a>
+
+    <b><a href="/posts/jmonkeyengine/">jMonkeyEngine</a></b>
+      
+      
+      
+      
+      
+      <a href="/posts/generated/jmephonon-jmephonon-oscontrib/">jmePhonon</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-igui-oscontrib/">jme-igui</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/">FPSDEMO-jMonkeyEngin …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-chat-jme-oscontrib/">chat-jme</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-simplessrshader-oscontrib/">SimpleSSRShader</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-effekseernative-oscontrib/">jme-effekseerNative</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/">jme-shader-Occlusion …</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/">jme3-bullet-vhacd</a>
+      
+      
+      
+      <a href="/posts/generated/riccardobl-ddswriter-oscontrib/">DDSWriter</a>
+      
+      
+</nav></header>
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <h1 id="nostrduino">Nostrduino</h1>
+<p>A <a href="https://github.com/nbd-wtf/nostr-tools">nostr-tools</a> inspired library for Arduino (and others).</p>
+<p>This was created using <a href="https://github.com/lnbits/arduino-nostr">arduino-nostr</a> as starting point, most of the code was rewritten and the library was expanded to include more features.</p>
+<h2 id="compatibility">Compatibility</h2>
+<p>This library is compatible with esp32 based boards out of the box.
+But it can be ported to other boards by reimplementing the platform specific code in the <code>src/esp32</code>.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><a href="https://github.com/nostr-protocol/nips/blob/master/01.md">Nip01</a> : Basic protocol flow</li>
+<li><a href="https://github.com/nostr-protocol/nips/blob/master/04.md">Nip04</a> : Encrypted messages</li>
+<li><a href="https://github.com/nostr-protocol/nips/blob/master/47.md">Nip47</a> : Nostr Wallet Connect</li>
+<li><a href="https://lightningaddress.com/">(bonus) Lightning Address</a> : Can request invoices from lightning addresses</li>
+<li><a href="https://github.com/riccardobl/nostrduino/blob/master/src/services/NWC.h">NWC managed service</a> : A managed service to interact with NWC</li>
+</ul>
+<h2 id="philosophy">Philosophy</h2>
+<p>This library is built with a DIY philosophy in mind, similar to nostr-tools, this library provides helpers to create, sign and verify messages and to use some of the NIPs features (see the <code>src/Nip*</code> files).</p>
+<p>In addition to that, the library provides some "managed" services (in <code>src/services</code> folder) that you can use in your sketches without worrying about the details and complexity of the nostr protocol.</p>
+<h2 id="installation">Installation</h2>
+<p>Check the <a href="https://registry.platformio.org/libraries/rblb/Nostrduino/installation">platformio registry page</a> for instructions.</p>
+<h3 id="esp32-dependencies">ESP32 dependencies</h3>
+<p>This library depends on the following additional libraries for the esp32 platform:</p>
+<ul>
+<li>WebSockets@^2.4.1</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>See the example scripts in <code>examples/</code> for simple examples of how to use this library.</p>
+<h2 id="development">Development</h2>
+<h3 id="setting-up-the-build-environment">Setting up the build environment</h3>
+<pre><code class="language-bash"># create venv
+python3 -m venv venv
+# activate venv
+source venv/bin/activate
+# install platformio
+pip install platformio
+</code></pre>
+<h3 id="compiling-tests">Compiling Tests</h3>
+<h4 id="test-nip01">Test NIP01</h4>
+<p>Edit <code>examples/ESP32TestNip01/ESP32TestNip01.cpp</code> and set the <code>WIFI_SSID</code>,  <code>WIFI_PASS</code> and <code>WIFI_CHANNEL</code>.</p>
+<p>Then compile with:</p>
+<pre><code>pio run -e ESP32TestNip01
+</code></pre>
+<h3 id="test-nip04">Test NIP04</h3>
+<p>Compile with:</p>
+<pre><code>pio run -e ESP32TestNip04
+</code></pre>
+<h3 id="test-nwc">Test NWC</h3>
+<p>Edit <code>examples/ESP32TestNWC/ESP32TestNWC.cpp</code> and set the <code>WIFI_SSID</code>,  <code>WIFI_PASS</code> , <code>WIFI_CHANNEL</code> and <code>NWC_URL</code>.
+NB: you can get a nwc url from <a href="https://nwc.getalby.com/">https://nwc.getalby.com/</a> or <a href="https://app.mutinywallet.com/settings/connections">https://app.mutinywallet.com/settings/connections</a>.</p>
+<p>Then compile with:</p>
+<pre><code>pio run -e ESP32TestNWC
+</code></pre>
+<h3 id="running-tests">Running tests</h3>
+<p>You can upload the compiled tests to your ESP32 with:</p>
+<pre><code>pio run -e TEST_NAME -t upload
+</code></pre>
+<p>or use an emulator like <a href="https://wokwi.com/">wokwi</a>.</p>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/riccardobl/nostrduino" target="_blank"><i class="fab fa-github"></i> Github page</a>
+            
+                <a rel="noopener noreferrer" href="http://rblb.it/nostrduino/" target="_blank">
+                <i class="fas fa-home"></i> Homepage</a>
+                 </nav>
+
+
+    <time datetime="2024-07-31 07:00:00 &#43;0000 UTC">31 July 2024</time>
+
+<nav class="tags">
+
+    
+        <a class="C&#43;&#43;" href="/tags/c&#43;&#43;/">#C&#43;&#43;</a>
+    
+
+    
+        <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+
+    
+        <a class="arduino" href="/tags/arduino/">#arduino</a>
+    
+
+    
+        <a class="bitcoin" href="/tags/bitcoin/">#bitcoin</a>
+    
+
+    
+        <a class="esp32" href="/tags/esp32/">#esp32</a>
+    
+
+    
+        <a class="lightning" href="/tags/lightning/">#lightning</a>
+    
+
+    
+        <a class="nostr" href="/tags/nostr/">#nostr</a>
+    
+
+    
+        <a class="nwc" href="/tags/nwc/">#nwc</a>
+    
+
+    
+        <a class="other" href="/tags/other/">#other</a>
+    
+
+</nav>
+      
+
+      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>
