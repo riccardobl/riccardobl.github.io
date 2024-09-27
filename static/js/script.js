@@ -135,6 +135,43 @@ function handleImageZoom() {
             overlay.addEventListener('mouseleave', function () {
                 isPanning = false;
             });
+
+            // Handle panning with touch
+            overlay.addEventListener('touchstart', function (event) {
+                if (event.touches.length === 1) {
+                    isPanning = true;
+                    startX = event.touches[0].clientX;
+                    startY = event.touches[0].clientY;
+                    // Set initial background position based on touch position
+                    if (!overlay.style.backgroundPositionX) {
+                        overlay.style.backgroundPositionX = `${startX}px`;
+                        overlay.style.backgroundPositionY = `${startY}px`;
+                    }
+                    originX = parseInt(overlay.style.backgroundPositionX || 0);
+                    originY = parseInt(overlay.style.backgroundPositionY || 0);
+                    moved = false; // Reset moved flag on touchstart
+                }
+            });
+
+            overlay.addEventListener('touchmove', function (event) {
+                if (isPanning && event.touches.length === 1) {
+                    const deltaX = event.touches[0].clientX - startX;
+                    const deltaY = event.touches[0].clientY - startY;
+                    if (Math.abs(deltaX) > moveThreshold || Math.abs(deltaY) > moveThreshold) {
+                        moved = true; // Set moved flag if movement exceeds threshold
+                    }
+                    overlay.style.backgroundPositionX = `${originX + deltaX}px`;
+                    overlay.style.backgroundPositionY = `${originY + deltaY}px`;
+                }
+            });
+
+            overlay.addEventListener('touchend', function () {
+                isPanning = false;
+            });
+
+            overlay.addEventListener('touchcancel', function () {
+                isPanning = false;
+            });
         });
     });
 }
