@@ -167,7 +167,7 @@ header #board {
 
 article h1 {
     /* padding-top:2rem; */
-    border-bottom: 0.1rem dotted var(--highlightFg);
+    border-bottom: 2px dotted var(--highlightFg);
 }
 
 article h1,
@@ -1151,7 +1151,7 @@ a.social.youtube:before {
 
 pre {
     overflow: auto;
-    border: 0.1rem dotted var(--highlightFg);
+    border: 2px dotted var(--highlightFg);
     border-radius: 0.5rem;
     padding: 1rem !important;
     background: var(--background);
@@ -1275,7 +1275,7 @@ article nav {}
 article nav>a {
     display: block;
     margin: 0.5rem;
-    border: 0.1rem dotted var(--highlightFg);
+    border: 2px dotted var(--highlightFg);
     padding: 1rem;
     border-radius: 0.6rem;
     text-align: left;
@@ -1283,7 +1283,7 @@ article nav>a {
 }
 
 article nav>a:hover {
-    border: 0.1rem dotted var(--highlightFg);
+    border: 2px dotted var(--highlightFg);
     background-color: var(--highlightFg);
     color: var(--background);
     text-decoration: none;
@@ -1676,7 +1676,7 @@ icons icon#revolutBtn span:first-child {
 error {
     color: rgb(238, 97, 97);
     font-size: 0.8rem;
-    border: 1px dotted rgb(238, 97, 97);
+    border: 2px dotted rgb(238, 97, 97);
     border-radius: 0.5rem;
     padding: 0.5rem;
     margin-top: 0.5rem;
@@ -1694,4 +1694,10 @@ pre.pgpkey {
 
 .center {
     text-align: center;
+}
+
+article img {
+    border-radius: 0.5rem;
+    border: 2px dotted var(--highlightFg);
+    margin:1rem;
 }
