@@ -14,7 +14,7 @@ ignoreErrors = ["error-output-taxonomy"]
 [params]
   avatar="https://github.com/riccardobl.png"
   avatarCache="/images/avatar.webp"
-  favicon = "favicon.p5img.js.png"
+  favicon = "favicon.png"
   description = ""
   youtube = "https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw"
   github = "https://github.com/riccardobl"
