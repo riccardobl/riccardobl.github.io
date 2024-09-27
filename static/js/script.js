@@ -33,40 +33,114 @@ function autoSticky(el){
     setSticky(el,dd>boardDistanceFromTop);
 }
 
+
+function handleImageZoom() {
+    const images = document.querySelectorAll("article img");
+
+    images.forEach((img) => {
+        img.addEventListener("click", function () {
+            // Create the fullscreen overlay div
+            const overlay = document.createElement('div');
+            overlay.classList.add('fullscreen-overlay');
+            overlay.style.backgroundImage = `url(${img.src})`;
+
+            // Create the close button
+            const closeButton = document.createElement('button');
+            closeButton.classList.add('close-button');
+            closeButton.innerText = 'X';
+            closeButton.addEventListener('click', function () {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                }
+                overlay.remove();
+            });
+
+
+
+            // Append the close button to the overlay
+            overlay.appendChild(closeButton);
+
+            // Append the overlay to the body
+            document.body.appendChild(overlay);
+
+            // Show the overlay
+            overlay.style.display = 'block';
+
+            // Request fullscreen for the overlay
+            if (overlay.requestFullscreen) {
+                overlay.requestFullscreen();
+            } else if (overlay.mozRequestFullScreen) { // Firefox
+                overlay.mozRequestFullScreen();
+            } else if (overlay.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                overlay.webkitRequestFullscreen();
+            } else if (overlay.msRequestFullscreen) { // IE/Edge
+                overlay.msRequestFullscreen();
+            }
+
+            let scale = 1;
+            let isPanning = false;
+            let startX = 0;
+            let startY = 0;
+            let originX = 0;
+            let originY = 0;
+            let moved = false;
+            const moveThreshold = 10; // Threshold for detecting movement
+
+            // Handle zooming on click
+            overlay.addEventListener('click', function (event) {
+                if (event.target !== closeButton && !moved) {
+                    if (scale === 1) {
+                        scale = 1.5;
+                    } else if (scale === 1.5) {
+                        scale = 2;
+                    } else {
+                        scale = 1;
+                    }
+                    overlay.style.backgroundSize = `${scale * 100}%`;
+                }
+                moved = false; // Reset moved flag after click
+            });
+
+            // Handle panning
+            overlay.addEventListener('mousedown', function (event) {
+                isPanning = true;
+                startX = event.clientX;
+                startY = event.clientY;
+                // Set initial background position based on mouse position
+                if (!overlay.style.backgroundPositionX) {
+                    overlay.style.backgroundPositionX = `${startX}px`;
+                    overlay.style.backgroundPositionY = `${startY}px`;
+                }
+                originX = parseInt(overlay.style.backgroundPositionX || 0);
+                originY = parseInt(overlay.style.backgroundPositionY || 0);
+                moved = false; // Reset moved flag on mousedown
+            });
+
+            overlay.addEventListener('mousemove', function (event) {
+                if (isPanning) {
+                    const deltaX = event.clientX - startX;
+                    const deltaY = event.clientY - startY;
+                    if (Math.abs(deltaX) > moveThreshold || Math.abs(deltaY) > moveThreshold) {
+                        moved = true; // Set moved flag if movement exceeds threshold
+                    }
+                    overlay.style.backgroundPositionX = `${originX + deltaX}px`;
+                    overlay.style.backgroundPositionY = `${originY + deltaY}px`;
+                }
+            });
+
+            overlay.addEventListener('mouseup', function () {
+                isPanning = false;
+            });
+
+            overlay.addEventListener('mouseleave', function () {
+                isPanning = false;
+            });
+        });
+    });
+}
+
 async function main(){
-    // const board=document.getElementById("board");
-    // if(board){
-    //     window.addEventListener("resize",function(){
-    //         setSticky(board,false);
-    //         autoSticky(board);   
-    //     })
-        
-    //     window.addEventListener("scroll",function(){
-    //         autoSticky(board);   
-    //     });
-
-    //     for(const el of board.children){
-    //         const togglerEl=document.createElement("div");
-    //         togglerEl.classList.add("toggler");
-    //         togglerEl.classList.add("material-symbols-outlined");
-    //         togglerEl.innerHTML="unfold_more";
-    //         const title=el.querySelector("h2");
-    //         if(title){
-    //             title.prepend(togglerEl);
-    //         }else{
-    //             el.prepend(togglerEl);
-    //         }
-
-    //         (title?title:togglerEl).addEventListener("click",function(){
-    //             el.classList.toggle("toggled");
-    //              if(togglerEl.innerHTML=="unfold_more"){
-    //                 togglerEl.innerHTML="unfold_less";
-    //             }else{
-    //                 togglerEl.innerHTML="unfold_more";
-    //             }
-    //         });
-    //     }
-    // }
+    handleImageZoom();
     const toTop=document.getElementById("toTop");
     if(toTop){
         window.addEventListener("resize",function(){
