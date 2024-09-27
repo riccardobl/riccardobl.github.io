@@ -10,6 +10,7 @@
 #  ############ ############ ############ 
 
 set -x
+export NO_P5RENDER="1"
 if [ "$IMAGE" = "" ];
 then
     export IMAGE="riccardoblb/buildenvs:hugo"

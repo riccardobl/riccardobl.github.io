@@ -3,8 +3,8 @@
 {{ if not .Params.youtubevideo }}
 onclick="document.location='{{ .RelPermalink }}';"
 {{end}}
-style=" {{ if .Params.cover }} background-image:url(' {{ .Params.cover }}'); {{end}} '" 
-class='{{ if  (or (isset .Params "cover") (isset .Params "ytcover")) }} cover {{ end }}{{ if   (isset .Params "ytcover") }} interactive {{ end }}'
+style=" {{ if .Params.cover }}    background-position: top center; background-image:url(' {{ .Params.cover }}'); {{end}} '" 
+class='hoverDeScale {{ if  (or (isset .Params "cover") (isset .Params "ytcover")) }} cover {{ end }}{{ if   (isset .Params "ytcover") }} interactive {{ end }}'
 >
 
         {{ if .Params.ytcover }}

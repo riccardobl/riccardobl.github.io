@@ -1,0 +1,21 @@
+
+<pre class="pgpkey" id="gpgkey"></pre>
+<button id="gpgkeycopy">Copy PGP key</button>
+<script>
+    async function loadGPGKey() {
+        fetch("{{ .Site.Params.pgpPubKey }}")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('gpgkey').innerText = data;
+                document.getElementById('gpgkeycopy').addEventListener('click', () => {
+                    navigator.clipboard.writeText(data).then(() => {
+                        alert('copied to clipboard');
+                    }, (err) => {
+                        alert('Failed to copy to clipboard '+ err);
+                    });
+                });
+            });
+        
+    }
+    loadGPGKey();
+</script>

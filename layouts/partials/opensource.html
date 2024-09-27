@@ -1,17 +1,36 @@
-<h1>Opensource</h1>
-<h2>I create and contribute to opensource projects</h2>
-<section class="list showcase ">
-
-    
-
-    {{ $paginator := .Paginator }}
-    {{ $filter := slice "opensource-contrib" }}
-    {{ $pages := (where  .Site.Pages  "Params.tags"  "intersect" $filter )}}
-    {{ range $pages | shuffle  }}
-    {{ partial "articlePreview.html" . }}
-    {{ end }}
-
+<section class="opensource">
+    <h1 id="opensource">Open Source</h1>
+    <p>
+        I develop and contribute to open source projects. 
+        <br>
+        <sub>
+        <a class="github-link" target="_blank" href="https://github.com/riccardobl">
+           See my GitHub profile for more.
+        </a>
+        </sub>
+        
+    </p>
+    <p>
+        <sub>
+            If you appreciate my open source work and would like to support future projects, you can <a href="/zap">offer me a
+                coffee</a>
+        
+        </sub>
+    </p>
+   
+    <section class="list showcase">
+        {{ $paginator := .Paginator }}
+        {{ $filter := slice "opensource-contrib" }}
+        {{ $pages := (where  .Site.Pages  "Params.tags"  "intersect" $filter )}}
+        {{ range $pages | shuffle | first 9 }}
+        {{ partial "articlePreview.html" . }}
+        {{ end }}
+    </section>
+    <h3>
+        <sub>
+            <a class="github-link" target="_blank" href="https://github.com/riccardobl">
+                See more...
+            </a>
+        </sub>
+    </h3>
 </section>
-<h3>
-    <a target="__blank" href="https://github.com/riccardobl">See more...</a>
-</h3>

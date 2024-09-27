@@ -1,8 +1,0 @@
-
-<section  class="list showcase ">
-    {{ $filter := slice "highlighted" }}
-    {{ $pages := (where  .Site.Pages  "Params.tags"  "intersect" $filter )}}
-    {{ range first 3 $pages  }}
-    {{ partial "articlePreview.html" . }}
-    {{ end }}
-</section>

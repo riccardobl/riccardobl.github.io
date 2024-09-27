@@ -1,0 +1,19 @@
+<section class="webdesigner">
+    <h1 id="web">Some of my works</h1>
+    <p>
+        I develop custom web applications, software and websites.
+        <br>
+        <!-- <sub>
+            Here are some of my works, for more information or to request a quote, please contact me.
+        </sub> -->
+    </p>
+    <section class="list showcase">
+        {{ $paginator := .Paginator }}
+        {{ $filter := slice "highlighted" }}
+        {{ $pages := (where .Site.Pages "Params.tags" "intersect" $filter )}}
+        {{ range $pages | shuffle  }}
+        {{ partial "articlePreview.html" . }}
+        {{ end }}
+    </section>
+
+</section>

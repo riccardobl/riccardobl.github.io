@@ -22,116 +22,8 @@ on:
     branches:
       - project
 jobs:
-  buildUtterancesFrontend:
-    if: false
-    runs-on: ubuntu-latest   
-    steps:
-      - name: Clone repo
-        run: |
-          git clone --depth 1 https://github.com/riccardobl-mirrors/utterances.git .
-      - name: Prepare
-        run: |
-          sed -i 's/parcel build/parcel build --no-minify/g' package.json
-          yarn install
-      - name: Configure
-        run: |
-          set -o xtrace
-          echo "export const UTTERANCES_API = '${{ secrets.CLOUDFLARE_WORKER_URL }}'; " > src/utterances-api.ts
-          escaped_siteurl=$(echo "${{ secrets.SITE_URL }}" | sed 's/\./\\\./g')
-          doubleescaped_siteurl=$(echo "${escaped_siteurl}" | sed 's/\\/\\\\\\/g' | sed 's#/#\\\\/#g' )
-          sed -i "s|https://utteranc\\.es|$escaped_siteurl|g" src/client.ts
-          sed -i "s|http://localhost:4000|$escaped_siteurl|g" src/client.ts
-          sed -i "s|https:\\\\/\\\\/utteranc\\\\\.es|$doubleescaped_siteurl|g" src/client.ts
-          sed -i "s|https://utteranc\\.es|$escaped_siteurl|g"  src/configuration-component.ts 
-          sed -i "s|https://utteranc\\.es|$escaped_siteurl|g"   src/index.html          
-          echo "{\"origins\":[\"${{ secrets.SITE_URL }}\"]}" > utterances.json   
-          cp -Rf src/stylesheets/themes/photon-dark src/stylesheets/themes/custom
-          echo '$gray-000: #0c0c0d; 
-          $gray-100: #0c0c0d;
-          $gray-200: #2a2a2e;
-          $gray-300: #38383d;
-          $gray-400: #4a4a4f;
-          $gray-600: #737373;
-          $gray-700: #b1b1b3;
-          $bg-white: darken($gray-200, 3%);
-          $bg-gray: $gray-200;
-          $bg-gray-light: darken($bg-gray, 5%);
-          $border-gray: $gray-300;
-          $border-gray-dark: $border-gray;
-          $text-gray: #d3d3d3;
-          $text-gray-dark: #d3d3d3;
-          $text-blue: #a7d129;
-          $bg-blue-light: #2c2c2c;
-          $black-fade-15: rgba(#fff, 0.15);
-          $black-fade-30: rgba(#fff, 0.3);
-          $button-normal: #2c2c2c;
-          $button-hover: #2c2c2c;
-          $button-pressed: #2c2c2c' > src/stylesheets/themes/custom/variables.scss
-      - name: Build
-        run: |
-          yarn build
-          rm dist/CNAME || true
-          rm dist/browserconfig.*
-          rm -R dist/icons
-          rm dist/favicon-*
-          rm dist/index.html
-      - name: Upload dist
-        uses: actions/upload-artifact@master
-        with:
-          name: utterances-frontend
-          path: dist 
-
-
-  buildUtterancesBackend:
-    if: false
-    runs-on: ubuntu-latest   
-    steps: 
-    - name: Clone repo
-      run: |
-        git clone --depth 1 https://github.com/riccardobl-mirrors/utterances-oauth.git .
-    - name: Prepare
-      run: |
-       sed -i 's/parcel build/parcel build --no-minify/g' package.json
-        yarn install
-    - name: Configure
-      run: |
-        echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" > .env
-        echo "CLIENT_ID=${{ secrets.CLIENT_ID }}" >> .env
-        echo "CLIENT_SECRET=${{ secrets.CLIENT_SECRET }}" >> .env
-        echo "STATE_PASSWORD=${{ secrets.STATE_PASSWORD }}" >> .env
-        echo "ORIGINS=${{ secrets.SITE_URL }}" >> .env
-    - name: Build
-      run: |
-        yarn build
-    - name: Deploy
-      run: |
-        curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_USER_ID }}/workers/scripts/${{ secrets.CLOUDFLARE_WORKER_NAME }}" \
-        -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
-        -H "Content-Type: application/javascript" \
-        --data @dist/index.js
-
-  preBuild:
-    runs-on:  ubuntu-latest
-    steps:
-    - name: Clone repo
-      run: |
-          git config --global user.name "GithubActions"
-          git config --global user.email "actions@robot.frk.wf"
-          git clone --single-branch  --depth 1 --recurse-submodules  --branch project https://github.com/${GITHUB_REPOSITORY}.git project
-    - name: Render p5js images
-      run: |
-          cd project
-          chmod 777 -Rf .
-          # HEADLESS=1 ./renderp5js.sh
-    - name: Upload project
-      uses: actions/upload-artifact@master
-      with:
-        name: project
-        path: ./project
-  
   build:
     runs-on: ubuntu-latest   
-    needs: [preBuild]
     container:
       image: riccardoblb/buildenvs:hugo
     env:
@@ -149,11 +41,12 @@ jobs:
       DROPBOX_APIKEY: ${{ secrets.DROPBOX_APIKEY }}
 
     steps: 
-    - name: Get project
-      uses: actions/download-artifact@master
-      with:
-        name:  project
-        path: ./project
+    - name: Clone repo
+      run: |
+          git config --global user.name "GithubActions"
+          git config --global user.email "actions@robot.frk.wf"
+          git clone --single-branch  --depth 1 --recurse-submodules  --branch project https://github.com/${GITHUB_REPOSITORY}.git project
+
     - name: Prepare dist dir
       run: |
           git config --global user.name "GithubActions"
@@ -162,12 +55,8 @@ jobs:
           cd generated
           git reset --hard `git rev-list --max-parents=0 HEAD`
           cd ..
-    - name: Get utterances frontend
-      if: false
-      uses: actions/download-artifact@master
-      with:
-        name:  utterances-frontend
-        path: generated/
+
+
     - name: Build
       run: |
         cd project
@@ -175,6 +64,7 @@ jobs:
         NO_P5RENDER=1 NO_CONTAINER=1 HEADLESS=1 ./make.sh         
         mkdir -p public
         echo "1" > public/.nojekyll
+
     - name: Deploy   
       shell: bash  
       run: |

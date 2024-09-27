@@ -1,0 +1,105 @@
+<script>
+    /*
+
+    echo '{"message":"abc","amount":109}' | gpg --clearsign  --local-user="955068E8BC68BBFF6A1634E819F07DE6BB855778" | base64 | jq -s -R -r @uri
+
+    */
+    async function loadZapdata(){
+        window.zapData = {
+            lightning: "{{ .Site.Params.lightningAddress }}",
+            lightningSmallAmountAddress: "{{ .Site.Params.lightningSmallAmountAddress }}" || "{{ .Site.Params.lightningAddress }}",
+            lightningSmallAmountMax: Number("{{ .Site.Params.lightningSmallAmountMax }}" || "1000"),
+            liquid: "{{ .Site.Params.liquidAddress }}",
+            revtag: "{{ .Site.Params.revtag }}",
+            btc: "{{ .Site.Params.bitcoinAddress }}",
+            for: "",
+            coffeeCost: "{{ .Site.Params.coffeeCost }}",
+            invoiceMode: undefined,
+            amount: 0,
+            network: "{{ .Site.Params.zapDefaultNet }}",
+        };
+        const url = new URL(window.location.href);
+        const searchParams = new URLSearchParams(url.search);
+
+        let invoice= searchParams.get('invoice');
+        if(invoice){
+            // base 64 decode
+            invoice=atob(invoice);
+            // verify message pgp
+            let pubKey=await fetch("{{ .Site.Params.pgpPubKey }}").then(r=>r.text());
+            console.log("Load pub key {{ .Site.Params.pgpPubKey }}", pubKey);
+            pubKey = await openpgp.readKey({ armoredKey: pubKey.trim()});
+
+            
+            console.log("Load invoice");
+            
+            const invoiceMsg = await openpgp.readCleartextMessage({
+                cleartextMessage: invoice // parse armored message
+            });
+
+            console.log("Verify invoice",invoiceMsg);
+
+            const verification = await openpgp.verify({
+                message: invoiceMsg,
+                verificationKeys: pubKey
+            });
+            console.log("Done", verification);
+            const { verified, keyID } =  await verification.signatures[0];
+            if(verified){
+                invoice=invoiceMsg.text;
+                invoice=JSON.parse(invoice);
+                window.zapData.invoiceMode=true;
+            }else{
+                window.zapData.invoiceMode = false;
+                invoice=null;
+                window.zapData.error="Invalid invoice signature";
+            }
+        }else{
+            window.zapData.invoiceMode = false;
+        }
+
+        const setV=(k,kv,type="safeString")=>{
+            let v;
+            if(invoice && invoice[k]){                
+                v=invoice[k];
+            }else if(searchParams.has(k)){
+                v=searchParams.get(k);
+            }
+            
+            if(v){
+                if(type==="int"){
+                    v=parseInt(v+"");
+                }else if(type=="bool"){
+                    v=v==="true";            
+                }else{
+                    v=v+"";
+                    v=v.replace(/[^a-zA-Z0-9]/g, ' ');
+                }
+                window.zapData[kv] = v;
+            }
+        };
+
+        setV('for',"for");
+        setV('altCurrency', "altCurrency", "safeString");    
+        setV('amount', "amount", "int");
+        setV('message', "message", "safeString");
+
+        if(!window.zapData.amount){
+            window.zapData.amount=window.zapData.unit;
+        }
+
+        if(!window.zapData.for && !window.zapData.invoiceMode){
+            window.zapData.for="{{ .Site.Params.zapDefaultReason }}"
+        }
+
+        if(!window.zapData.altCurrency){
+            window.zapData.altCurrency=window.zapData.invoiceMode?"USD":"kfe";
+        }
+
+        if(window.onZapReady){
+            window.onZapReady(window.zapData);
+        }
+    }
+    loadZapdata();
+
+</script>

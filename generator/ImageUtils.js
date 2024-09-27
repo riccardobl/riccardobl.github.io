@@ -17,7 +17,6 @@ const ImageUtils={
 
     getOptimizedBuffer:async function(url,scale,format){
         if(!scale)scale=Settings.OPTIMIZED_IMAGE_MAX_SIZE;
-        if(!scale)scale=Settings.IMAGE_PREVIEWS_MAX_SIZE;
         if(!format)format=Settings.OPTIMIZED_IMAGE_FORMAT;
         if(!format)format=Settings.IMAGE_PREVIEWS_FORMAT;
         let res=await fetch(url);

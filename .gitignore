@@ -8,3 +8,5 @@ resources/
 static/images/devlog/auto/
 *.p5img.js.png
 static/images/avatar.webp
+exstyle.css
+.hugo_build.lock

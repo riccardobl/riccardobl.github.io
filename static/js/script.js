@@ -1,4 +1,92 @@
 
+function setSticky(el,v){
+    if(v){ 
+        let d=el.getBoundingClientRect().top+window.scrollY;
+        let boardDistanceFromTop=Number(el.getAttribute("sticky-r-base-pos")||d);
+
+        el.setAttribute("sticky-r-base-pos",boardDistanceFromTop);
+
+        if(!el.getAttribute("sticky-r-width")){
+            el.setAttribute("sticky-r-width",el.style.width);
+        }
+        if(!el.getAttribute("sticky-r-height")){
+            el.setAttribute("sticky-r-height",el.style.height);
+        }
+        el.style.width=el.clientWidth+"px";
+        el.style.height=el.clientHeight+"px";
+        
+        el.classList.add("sticky");
+    }else{
+        el.classList.remove("sticky");
+        el.style.width=el.getAttribute("sticky-r-width");
+        el.style.height=el.getAttribute("sticky-r-height");
+        el.removeAttribute("sticky-r-width");
+        el.removeAttribute("sticky-r-height");
+        el.removeAttribute("sticky-r-base-pos");
+    }
+}
+
+function autoSticky(el){
+    let d=el.getBoundingClientRect().top+window.scrollY;
+    let dd=window.scrollY;
+    let boardDistanceFromTop=Number(el.getAttribute("sticky-r-base-pos")||d);
+    setSticky(el,dd>boardDistanceFromTop);
+}
+
+async function main(){
+    // const board=document.getElementById("board");
+    // if(board){
+    //     window.addEventListener("resize",function(){
+    //         setSticky(board,false);
+    //         autoSticky(board);   
+    //     })
+        
+    //     window.addEventListener("scroll",function(){
+    //         autoSticky(board);   
+    //     });
+
+    //     for(const el of board.children){
+    //         const togglerEl=document.createElement("div");
+    //         togglerEl.classList.add("toggler");
+    //         togglerEl.classList.add("material-symbols-outlined");
+    //         togglerEl.innerHTML="unfold_more";
+    //         const title=el.querySelector("h2");
+    //         if(title){
+    //             title.prepend(togglerEl);
+    //         }else{
+    //             el.prepend(togglerEl);
+    //         }
+
+    //         (title?title:togglerEl).addEventListener("click",function(){
+    //             el.classList.toggle("toggled");
+    //              if(togglerEl.innerHTML=="unfold_more"){
+    //                 togglerEl.innerHTML="unfold_less";
+    //             }else{
+    //                 togglerEl.innerHTML="unfold_more";
+    //             }
+    //         });
+    //     }
+    // }
+    const toTop=document.getElementById("toTop");
+    if(toTop){
+        window.addEventListener("resize",function(){
+            setSticky(toTop,false);
+            autoSticky(toTop);   
+        })
+        
+        window.addEventListener("scroll",function(){
+            autoSticky(toTop);   
+        });
+
+        toTop.addEventListener("click",function(){
+            // smooth scroll
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
 window.addEventListener("load", function () {
     const toggleContent = document.querySelectorAll(".toggleContent");
     toggleContent.forEach((el) => {
@@ -17,6 +105,7 @@ window.addEventListener("load", function () {
         });
 
     });
+    main();
 });
 
 

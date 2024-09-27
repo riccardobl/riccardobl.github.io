@@ -19,11 +19,22 @@ ignoreErrors = ["error-output-taxonomy"]
   youtube = "https://www.youtube.com/channel/UCh_H0NPkra9GZU_KFC5eVbw"
   github = "https://github.com/riccardobl"
   header = "/images/header.webp"
-  email="riccardo0blb@gmail.com"
+  email="c@rblb.it"
   twitter="i/user/1260924338632564739"
   custom_css = ["/css/style.css"]
   custom_js=["/js/script.js"]
   discord_user="rblb#9882"
+  revtag="/revtag.jpg"
+  lightningAddress="zap@rblb.it"
+  lightningSmallAmountAddress="rblb@blink.sv"
+  lightningSmallAmountMax=2100
+  liquidAddress="VJLAHvECLkNcafF2JoBZaPy3Xy6AzWJhn6PNbqzBZHZMNdjTmZYfrtiyvoivhr7inwnNbbvFJH8swFD8"
+  bitcoinAddress="bc1qr2jc865yp089mr3tyd3jk65w0k6stx4j6t5qrj"
+  coffeeCost=1700
+  zapDefaultReason="rblb"
+  zapNeedInvoiceSignature=false
+  pgpPubKey="/gpg_pub_riccardoblb.asc"
+  zapDefaultNet="lightning"
 
 [taxonomies]
   tag = "tags"
