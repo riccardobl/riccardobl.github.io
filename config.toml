@@ -10,6 +10,7 @@ ignoreErrors = ["error-output-taxonomy"]
   changefreq = "monthly"
   priority = 0.5
   filename = "sitemap.xml"
+  exclude = ["taxonomy", "taxonomyTerm"]
 
 [params]
   avatar="https://github.com/riccardobl.png"

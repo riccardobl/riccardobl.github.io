@@ -13,7 +13,8 @@ module.exports=class Article {
             tags:[],
             draft:false,
             type:"posts",
-            layout:"post"
+            layout:"post",
+            robots: "noindex"
             // summary:"",
             // summarytitle:""
         };
