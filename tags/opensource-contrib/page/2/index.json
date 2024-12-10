@@ -1,0 +1,378 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"/tags/opensource-contrib/index.json",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-01-25 00:13:45 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fleeingpenguin-oscontrib/",
+
+        
+        "title":"fleeingpenguin",
+        
+
+        
+        
+        "summary":"A small game made with p5js+webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "game"
+        
+              , 
+             "p5js"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2023-11-25 07:10:39 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-chat-jme-oscontrib/",
+
+        
+        "title":"chat-jme",
+        
+
+        
+        
+        "summary":"An AI assistant for jMonkeyEngine and related projects.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "ai"
+        
+              , 
+             "gpt"
+        
+              , 
+             "gpt3"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "langchain"
+        
+              , 
+             "openai"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2023-08-12 03:29:05 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-simplessrshader-oscontrib/",
+
+        
+        "title":"SimpleSSRShader",
+        
+
+        
+        
+        "summary":"Just some barebone Screen space reflections shader",
+    
+        
+
+        "tags":[
+        
+             
+             "GLSL"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "glsl"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "shader"
+        
+              , 
+             "ssr"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2023-02-01 15:24:08 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-effekseernative-oscontrib/",
+
+        
+        "title":"jme-effekseerNative",
+        
+
+        
+        
+        "summary":"This is a library that uses EffekseerForMultiLanguages to load and render effects made with Effekseer in jme.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "particles"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2022-09-16 15:10:57 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/",
+
+        
+        "title":"jme-shader-OcclusionParallaxMapping",
+        
+
+        
+        
+        "summary":"OcclusionParallaxMapping for jMonkeyEngine",
+    
+        
+
+        "tags":[
+        
+             
+             "GLSL"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "glsl"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "occlusion"
+        
+              , 
+             "parallax"
+        
+              , 
+             "shader"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2021-04-05 10:39:49 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-ddswriter-oscontrib/",
+
+        
+        "title":"DDSWriter",
+        
+
+        
+        
+        "summary":"DDSWriter is a command-line utility and java library to write compressed and uncompressed DDS.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "compression"
+        
+              , 
+             "dds"
+        
+              , 
+             "dxt"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "mipmaps"
+        
+              , 
+             "rgtc"
+        
+              , 
+             "s3tc"
+        
+              , 
+             "mit"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"images/jmonkeyengine.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-08-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/jmonkeyengine/",
+
+        
+        "title":"jMonkeyEngine",
+        
+
+        
+        
+        "summary":"jMonkeyEngine is an OpenGL+Java 3d game engine to which i contributed as core developer.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "highlighted"
+        
+              , 
+             "software"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
