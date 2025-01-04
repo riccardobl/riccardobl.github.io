@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-us" translate="no" >
+
+<head>
+  <script src="/js/openpgp.js"></script>
+  <script src="/js/lnurl-pay.js"></script>
+  <script src="/js/qrcode.js"></script>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | lncd</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+  <link rel="stylesheet" href="/css/mobile.css"/><meta name="robots" content="noindex"></head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+   
+<fakheader>
+    <div id="rblb"></div> 
+
+</fakheader>
+<header >
+<div>
+    <div id="rblb"></div> 
+</div>
+<div id="board">
+    <div>
+        <p>
+            I am Riccard Balbo, a freelance developer.
+            <br> I develop full stack web applications, software, iot and more.
+            <br>
+            Feel free to contact me for a quote or for more information.
+            
+            
+            
+
+                <piva>P.IVA 05607610283</piva>
+
+        </p>
+
+    </div>
+
+  
+
+</div>
+
+<div>
+    <nav id="rblb">
+        <a href="/"><span class="material-symbols-outlined">home</span> Home</a>
+        
+        <a href="/contacts"><span class="material-symbols-outlined">mail</span> Get in touch</a>
+    </nav>
+</div>
+
+</header>
+ 
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <h1 id="lncdaemonized">LNC<em>Daemonized</em></h1>
+<p>This is a Golang daemon that exposes lnc methods through a REST-like API, serving as a server-side alternative to lnc-web.</p>
+<p>Currently, it supports only the <code>lnrpc.Lightning methods</code> and <code>checkPerms</code>.
+Additional methods can be easily registered in <code>lncd.go</code>.</p>
+<p>Lifecycle of LNC connections is managed. Connections are reused whenever possible and are automatically terminated after a period of inactivity.</p>
+<p>Configuration options can be specified via environment variables (all are optional):</p>
+<table>
+<thead>
+<tr>
+<th>Environment Variable</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>LNCD_TIMEOUT</code></td>
+<td><code>5m</code></td>
+<td>Timeout duration for connections.</td>
+</tr>
+<tr>
+<td><code>LNCD_LIMIT_ACTIVE_CONNECTIONS</code></td>
+<td><code>210</code></td>
+<td>Maximum number of active connections allowed.</td>
+</tr>
+<tr>
+<td><code>LNCD_STATS_INTERVAL</code></td>
+<td><code>1m</code></td>
+<td>Interval for logging connection pool statistics.</td>
+</tr>
+<tr>
+<td><code>LNCD_DEBUG</code></td>
+<td><code>false</code></td>
+<td>Flag to enable or disable debug logging.</td>
+</tr>
+<tr>
+<td><code>LNCD_PORT</code></td>
+<td><code>7167</code></td>
+<td>Port on which the  server listens.</td>
+</tr>
+<tr>
+<td><code>LNCD_HOST</code></td>
+<td><code>0.0.0.0</code></td>
+<td>Host address on which the server listens.</td>
+</tr>
+<tr>
+<td><code>LNCD_TLS_CERT_PATH</code></td>
+<td><code>""</code></td>
+<td>Path to the TLS certificate file (empty to disable TLS).</td>
+</tr>
+<tr>
+<td><code>LNCD_TLS_KEY_PATH</code></td>
+<td><code>""</code></td>
+<td>Path to the TLS key file (empty to disable TLS).</td>
+</tr>
+<tr>
+<td><code>LNCD_AUTH_TOKEN</code></td>
+<td><code>""</code></td>
+<td>Bearer token required to access the server (empty to disable authentication).</td>
+</tr>
+<tr>
+<td><code>LNCD_DEV_UNSAFE_LOG</code></td>
+<td><code>false</code></td>
+<td>Enable or disable logging of sensitive data.</td>
+</tr>
+<tr>
+<td><code>LNCD_HEALTHCHECK_SERVICE_PORT</code></td>
+<td><code>7168</code></td>
+<td>Additional healthcheck service port.</td>
+</tr>
+<tr>
+<td><code>LNCD_HEALTHCHECK_SERVICE_HOST</code></td>
+<td><code>127.0.0.1</code></td>
+<td>Additional healthcheck service host.</td>
+</tr>
+</tbody></table>
+<p>If LNCD_HEALTHCHECK_SERVICE_PORT and LNCD_HEALTHCHECK_SERVICE_HOST are set, an additional unauthenticated and unencrypted healthcheck endpoint will be listening on the specified port and host.</p>
+<h2 id="intended-scope">Intended scope</h2>
+<p>This was developed to serve as the backend for stacker.news' LNC receive attachments. 
+It has only been tested with the <code>lnrpc.Lightning.AddInvoice</code> method, so if you plan to use this as a general-purpose LNC connector, ensure you test and review it accurately.</p>
+<h2 id="usage-example">Usage example</h2>
+<p>You can test the commands below using the web ui at <a href="http://localhost:7167/">http://localhost:7167/</a> or by sending POST requests to <a href="http://localhost:7167/rpc">http://localhost:7167/rpc</a></p>
+<pre><code>POST /rpc
+{
+    "Connection":{
+        "Mailbox": "mailbox.terminal.lightning.today:443",
+        "PairingPhrase": "...."        
+    },
+    "Method": "checkPerms"
+    "Payload": "[\"lnrpc.Lightning.AddInvoice\", \"lnrpc.Lightning.SendPaymentSync\"]" 
+}
+
+RESPONSE 
+{
+  "Connection": {
+    "Mailbox": "mailbox.terminal.lightning.today:443",
+    "PairingPhrase": "...",
+    "LocalKey": "...", // put this back into the next request to reuse the same pairing phrase
+    "RemoteKey": "...", // put this back into the next request to reuse the same pairing phrase
+    "Status": "Connected"
+  },
+  "Result": "[true,false]"
+}
+</code></pre>
+<pre><code>POST /rpc
+{
+    "Connection":{
+        "Mailbox": "mailbox.terminal.lightning.today:443",
+        "PairingPhrase": "...."        
+    },
+    "Method": "lnrpc.Lightning.AddInvoice"
+    "Payload": "{\"memo\":\"test\",\"valueMsat\":1000}"
+}
+
+
+RESPONSE
+{
+  "Connection": {
+    "Mailbox": "mailbox.terminal.lightning.today:443",
+    "PairingPhrase": "...",
+    "LocalKey": "...", // put this back into the next request to reuse the same pairing phrase
+    "RemoteKey": "...", // put this back into the next request to reuse the same pairing phrase
+    "Status": "Connected"
+  },
+  "Result": "{\"r_hash\":\"xx\", \"payment_request\":\"xx\", \"add_index\":\"x\", \"payment_addr\":\"xx\"}"
+}
+
+</code></pre>
+<h2 id="endpoints">Endpoints</h2>
+<ul>
+<li>POST <a href="http://localhost:7167/rpc">http://localhost:7167/rpc</a> : Send a request and get a response from the LNC server.</li>
+<li>GET <a href="http://localhost:7167/">http://localhost:7167/</a> : Web UI to test the /rpc endpoint.</li>
+<li>GET <a href="http://localhost:7167/health">http://localhost:7167/health</a> : Health check endpoint.</li>
+<li>GET <a href="http://localhost:7168/health">http://localhost:7168/health</a> : Unauthenticated health check endpoint (if enabled).</li>
+</ul>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/riccardobl/lncd" target="_blank"><i class="fab fa-github"></i> Github page</a>
+             </nav>
+
+
+    <time datetime="2025-01-03 11:30:30 &#43;0000 UTC">03 January 2025</time>
+
+<nav class="tags">
+    
+    
+    
+    <a class="Go" href="/tags/go/">#Go</a>
+    
+    
+    
+    
+    <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+    
+    
+    
+    <a class="lightning" href="/tags/lightning/">#lightning</a>
+    
+    
+    
+    
+    <a class="lnc" href="/tags/lnc/">#lnc</a>
+    
+    
+    
+    
+    <a class="bsd-3-clause" href="/tags/bsd-3-clause/">#bsd-3-clause</a>
+    
+    
+</nav>      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>
