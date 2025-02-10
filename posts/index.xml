@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on RBLB</title>
+    <link>/posts/</link>
+    <description>Recent content in Blog on RBLB</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Jan 2024 01:55:31 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anser</title>
+      <link>/posts/anser/</link>
+      <pubDate>Wed, 24 Jan 2024 01:55:31 +0000</pubDate>
+      
+      <guid>/posts/anser/</guid>
+      <description>A liquid companion for Alby</description>
+    </item>
+    
+    <item>
+      <title>jMonkeyEngine Library</title>
+      <link>/posts/library.jmonkeyengine.org/</link>
+      <pubDate>Tue, 28 Jun 2022 01:55:31 +0000</pubDate>
+      
+      <guid>/posts/library.jmonkeyengine.org/</guid>
+      <description>A library for user-submitted content for the jMonkeyEngine community</description>
+    </item>
+    
+    <item>
+      <title>jMonkeyEngine Homepage</title>
+      <link>/posts/jmonkeyengine.org/</link>
+      <pubDate>Mon, 28 Jun 2021 01:55:31 +0000</pubDate>
+      
+      <guid>/posts/jmonkeyengine.org/</guid>
+      <description>The homepage of jMonkeyEngine</description>
+    </item>
+    
+    <item>
+      <title>jMonkeyEngine</title>
+      <link>/posts/jmonkeyengine/</link>
+      <pubDate>Fri, 28 Aug 2020 01:55:31 +0000</pubDate>
+      
+      <guid>/posts/jmonkeyengine/</guid>
+      <description>jMonkeyEngine is an OpenGL+Java 3d game engine to which i contributed as core developer.</description>
+    </item>
+    
+    <item>
+      <title>Fleeing Penguin</title>
+      <link>/posts/fleeingpenguin/</link>
+      <pubDate>Sun, 28 Jun 2020 01:55:31 +0000</pubDate>
+      
+      <guid>/posts/fleeingpenguin/</guid>
+      <description>A small 2d game made in p5js and webgl</description>
+    </item>
+    
+    <item>
+      <title>Pong (?)</title>
+      <link>/posts/pong/</link>
+      <pubDate>Sun, 28 Jun 2020 01:55:31 +0000</pubDate>
+      
+      <guid>/posts/pong/</guid>
+      <description>An overly complex raytraced pong game.</description>
+    </item>
+    
+    <item>
+      <title>Shop - La Rabiosa</title>
+      <link>/posts/shop.larabiosa.it/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/shop.larabiosa.it/</guid>
+      <description>The e-commerce for La Rabiosa wine maker</description>
+    </item>
+    
+    <item>
+      <title>StickersAi</title>
+      <link>/posts/stickersai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/stickersai/</guid>
+      <description>AI for stickers generation</description>
+    </item>
+    
+  </channel>
+</rss>
