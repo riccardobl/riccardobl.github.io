@@ -1,0 +1,156 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"/images/fpenguin.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/fleeingpenguin/",
+
+        
+        "title":"Fleeing Penguin",
+        
+
+        
+        
+        "summary":"A small 2d game made in p5js and webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "p5js"
+        
+              , 
+             "webgl"
+        
+              , 
+             "game"
+        
+              , 
+             "devlog"
+        
+              , 
+             "gamedev"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/pong.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/pong/",
+
+        
+        "title":"Pong (?)",
+        
+
+        
+        
+        "summary":"An overly complex raytraced pong game.",
+    
+        
+
+        "tags":[
+        
+             
+             "shadertoy"
+        
+              , 
+             "glsl"
+        
+              , 
+             "game"
+        
+              , 
+             "devlog"
+        
+              , 
+             "gamedev"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/app/stickersai.art/cover.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"0001-01-01 00:00:00 +0000 UTC",
+        
+        "url":"/posts/stickersai/",
+
+        
+        "title":"StickersAi",
+        
+
+        
+        
+        "summary":"AI for stickers generation",
+    
+        
+
+        "tags":[
+        
+             
+             "AI"
+        
+              , 
+             "android"
+        
+              , 
+             "webapp"
+        
+              , 
+             "devlog"
+        
+              , 
+             "machinelearning"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

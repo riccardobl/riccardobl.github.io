@@ -1,0 +1,123 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-02-02 16:47:00 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-nostr-rtc-oscontrib/",
+
+        
+        "title":"nostr-rtc",
+        
+
+        
+        
+        "summary":"p2p over webrtc and nostr signaling",
+    
+        
+
+        "tags":[
+        
+             
+             "TypeScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "nostr"
+        
+              , 
+             "p2p"
+        
+              , 
+             "webrtc"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-12-13 17:04:41 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-nostrduino-oscontrib/",
+
+        
+        "title":"nostrduino",
+        
+
+        
+        
+        "summary":"A nostr-tools inspired library for Arduino (and other) microcontrollers. With NWC support",
+    
+        
+
+        "tags":[
+        
+             
+             "C++"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "arduino"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "esp32"
+        
+              , 
+             "lightning"
+        
+              , 
+             "nostr"
+        
+              , 
+             "nwc"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
