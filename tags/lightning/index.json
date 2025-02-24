@@ -1,0 +1,123 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-02-18 02:18:11 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-nostrduino-oscontrib/",
+
+        
+        "title":"nostrduino",
+        
+
+        
+        
+        "summary":"A nostr-tools inspired library for Arduino (and other) microcontrollers. With NWC support",
+    
+        
+
+        "tags":[
+        
+             
+             "C++"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "arduino"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "esp32"
+        
+              , 
+             "lightning"
+        
+              , 
+             "nostr"
+        
+              , 
+             "nwc"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-01-03 11:30:30 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-lncd-oscontrib/",
+
+        
+        "title":"lncd",
+        
+
+        
+        
+        "summary":"LNC daemonized, A Golang daemon that exposes lnc methods through a REST-like API, serving as a server-side alternative to lnc-web.",
+    
+        
+
+        "tags":[
+        
+             
+             "Go"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "lightning"
+        
+              , 
+             "lnc"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
