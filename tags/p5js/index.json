@@ -1,0 +1,108 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-01-25 00:13:45 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fleeingpenguin-oscontrib/",
+
+        
+        "title":"fleeingpenguin",
+        
+
+        
+        
+        "summary":"A small game made with p5js+webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "game"
+        
+              , 
+             "p5js"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/fpenguin.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/fleeingpenguin/",
+
+        
+        "title":"Fleeing Penguin",
+        
+
+        
+        
+        "summary":"A small 2d game made in p5js and webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "p5js"
+        
+              , 
+             "webgl"
+        
+              , 
+             "game"
+        
+              , 
+             "devlog"
+        
+              , 
+             "gamedev"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
