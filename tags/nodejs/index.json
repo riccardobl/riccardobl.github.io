@@ -1,0 +1,66 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"/images/library.jmonkeyengine.org/cover.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2022-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/library.jmonkeyengine.org/",
+
+        
+        "title":"jMonkeyEngine Library",
+        
+
+        
+        
+        "summary":"A library for user-submitted content for the jMonkeyEngine community",
+    
+        
+
+        "tags":[
+        
+             
+             "highlighted"
+        
+              , 
+             "hugo"
+        
+              , 
+             "nodejs"
+        
+              , 
+             "store"
+        
+              , 
+             "html"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
