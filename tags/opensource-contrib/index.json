@@ -1,0 +1,474 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"/tags/opensource-contrib/page/2/index.json",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-05-07 08:23:41 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-nostr-rtc-oscontrib/",
+
+        
+        "title":"nostr-rtc",
+        
+
+        
+        
+        "summary":"p2p over webrtc and nostr signaling",
+    
+        
+
+        "tags":[
+        
+             
+             "TypeScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "nostr"
+        
+              , 
+             "p2p"
+        
+              , 
+             "webrtc"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-04-15 16:06:13 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-hypergate-oscontrib/",
+
+        
+        "title":"hypergate",
+        
+
+        
+        
+        "summary":"Hypergate is a zero-configuration, peer-to-peer encrypted tunnel that enables easy communication between Docker containers and/or physical machines located anywhere, even behind NAT.",
+    
+        
+
+        "tags":[
+        
+             
+             "TypeScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "docker"
+        
+              , 
+             "holepunch"
+        
+              , 
+             "holepunching"
+        
+              , 
+             "hyperswarm"
+        
+              , 
+             "overlay-network"
+        
+              , 
+             "p2p"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-04-12 02:28:03 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-nostrduino-oscontrib/",
+
+        
+        "title":"nostrduino",
+        
+
+        
+        
+        "summary":"A nostr-tools inspired library for Arduino (and other) microcontrollers. With NWC support",
+    
+        
+
+        "tags":[
+        
+             
+             "C++"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "arduino"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "esp32"
+        
+              , 
+             "lightning"
+        
+              , 
+             "nostr"
+        
+              , 
+             "nwc"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-02-14 18:33:23 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/",
+
+        
+        "title":"blender_effekseer_addon",
+        
+
+        
+        
+        "summary":"Blender 3.3  addon that renders effekseer effects in blender's viewport.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "blender"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "particles"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-02-08 05:39:44 +0000 UTC",
+        
+        "url":"/posts/generated/jmephonon-jmephonon-oscontrib/",
+
+        
+        "title":"jmePhonon",
+        
+
+        
+        
+        "summary":"Steam Audio (phonon) implementation for jMonkeyEngine. ",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "spatial-audio"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-02-01 06:19:29 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-effekseernative-oscontrib/",
+
+        
+        "title":"jme-effekseerNative",
+        
+
+        
+        
+        "summary":"This is a library that uses EffekseerForMultiLanguages to load and render effects made with Effekseer in jme.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "particles"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-01-03 11:30:30 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-lncd-oscontrib/",
+
+        
+        "title":"lncd",
+        
+
+        
+        
+        "summary":"LNC daemonized, A Golang daemon that exposes lnc methods through a REST-like API, serving as a server-side alternative to lnc-web.",
+    
+        
+
+        "tags":[
+        
+             
+             "Go"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "lightning"
+        
+              , 
+             "lnc"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-12-25 05:38:03 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/",
+
+        
+        "title":"FPSDEMO-jMonkeyEngine",
+        
+
+        
+        
+        "summary":"An FPS demo made with jMonkeyEngine",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "demo"
+        
+              , 
+             "fps"
+        
+              , 
+             "game"
+        
+              , 
+             "hacktoberfest"
+        
+              , 
+             "jmonkeyengine"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-11-24 05:00:32 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-v-hacd-java-bindings-oscontrib/",
+
+        
+        "title":"v-hacd-java-bindings",
+        
+
+        
+        
+        "summary":"Java bindings for V-HACD (https://github.com/kmammou/v-hacd)",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "bullet"
+        
+              , 
+             "java"
+        
+              , 
+             "java-bindings"
+        
+              , 
+             "jna"
+        
+              , 
+             "vhacd"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
