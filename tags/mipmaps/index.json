@@ -1,0 +1,84 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-05-21 02:55:52 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-ddswriter-oscontrib/",
+
+        
+        "title":"DDSWriter",
+        
+
+        
+        
+        "summary":"DDSWriter is a command-line utility and java library to write compressed and uncompressed DDS.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "compression"
+        
+              , 
+             "dds"
+        
+              , 
+             "dxt"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "mipmaps"
+        
+              , 
+             "rgtc"
+        
+              , 
+             "s3tc"
+        
+              , 
+             "mit"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
