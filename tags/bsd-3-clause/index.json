@@ -1,0 +1,225 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-05-21 02:55:25 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-simplessrshader-oscontrib/",
+
+        
+        "title":"SimpleSSRShader",
+        
+
+        
+        
+        "summary":"Just some barebone Screen space reflections shader",
+    
+        
+
+        "tags":[
+        
+             
+             "GLSL"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "glsl"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "shader"
+        
+              , 
+             "ssr"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-04-15 16:06:13 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-hypergate-oscontrib/",
+
+        
+        "title":"hypergate",
+        
+
+        
+        
+        "summary":"Hypergate is a zero-configuration, peer-to-peer encrypted tunnel that enables easy communication between Docker containers and/or physical machines located anywhere, even behind NAT.",
+    
+        
+
+        "tags":[
+        
+             
+             "TypeScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "docker"
+        
+              , 
+             "holepunch"
+        
+              , 
+             "holepunching"
+        
+              , 
+             "hyperswarm"
+        
+              , 
+             "overlay-network"
+        
+              , 
+             "p2p"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-02-14 18:33:23 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/",
+
+        
+        "title":"blender_effekseer_addon",
+        
+
+        
+        
+        "summary":"Blender 3.3  addon that renders effekseer effects in blender's viewport.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "blender"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "particles"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-01-03 11:30:30 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-lncd-oscontrib/",
+
+        
+        "title":"lncd",
+        
+
+        
+        
+        "summary":"LNC daemonized, A Golang daemon that exposes lnc methods through a REST-like API, serving as a server-side alternative to lnc-web.",
+    
+        
+
+        "tags":[
+        
+             
+             "Go"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "lightning"
+        
+              , 
+             "lnc"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
