@@ -1,0 +1,84 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"/images/anser.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-01-24 01:55:31 +0000 UTC",
+        
+        "url":"/posts/anser/",
+
+        
+        "title":"Anser",
+        
+
+        
+        
+        "summary":"A liquid companion for Alby",
+    
+        
+
+        "tags":[
+        
+             
+             "highlighted"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "javascript"
+        
+              , 
+             "html"
+        
+              , 
+             "css"
+        
+              , 
+             "liquid"
+        
+              , 
+             "alby"
+        
+              , 
+             "pwa"
+        
+              , 
+             "webapp"
+        
+              , 
+             "highlighted"
+        
+              , 
+             "html"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
