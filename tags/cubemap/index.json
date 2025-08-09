@@ -1,0 +1,69 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-03-14 21:51:30 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jcubemapassembler-oscontrib/",
+
+        
+        "title":"JCubemapAssembler",
+        
+
+        
+        
+        "summary":"JCubemapAssembler is a java application that can be used to assemble six separate face images into a single cubemap and export it as a dds file. ",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "cubemap"
+        
+              , 
+             "dds"
+        
+              , 
+             "java"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
