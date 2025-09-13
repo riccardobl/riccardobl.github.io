@@ -1,0 +1,180 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-01-25 00:13:45 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fleeingpenguin-oscontrib/",
+
+        
+        "title":"fleeingpenguin",
+        
+
+        
+        
+        "summary":"A small game made with p5js+webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "game"
+        
+              , 
+             "p5js"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/anser.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-01-24 01:55:31 +0000 UTC",
+        
+        "url":"/posts/anser/",
+
+        
+        "title":"Anser",
+        
+
+        
+        
+        "summary":"A liquid companion for Alby",
+    
+        
+
+        "tags":[
+        
+             
+             "highlighted"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "javascript"
+        
+              , 
+             "html"
+        
+              , 
+             "css"
+        
+              , 
+             "liquid"
+        
+              , 
+             "alby"
+        
+              , 
+             "pwa"
+        
+              , 
+             "webapp"
+        
+              , 
+             "highlighted"
+        
+              , 
+             "html"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/shop.larabiosa.it/cover.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"0001-01-01 00:00:00 +0000 UTC",
+        
+        "url":"/posts/shop.larabiosa.it/",
+
+        
+        "title":"Shop - La Rabiosa",
+        
+
+        
+        
+        "summary":"The e-commerce for La Rabiosa wine maker",
+    
+        
+
+        "tags":[
+        
+             
+             "highlighted"
+        
+              , 
+             "serverless"
+        
+              , 
+             "ecommerce"
+        
+              , 
+             "stripe"
+        
+              , 
+             "python"
+        
+              , 
+             "javascript"
+        
+              , 
+             "googleshopping"
+        
+              , 
+             "html"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
