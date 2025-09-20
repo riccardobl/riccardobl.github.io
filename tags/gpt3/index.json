@@ -1,0 +1,75 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-05-21 02:55:07 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-chat-jme-oscontrib/",
+
+        
+        "title":"chat-jme",
+        
+
+        
+        
+        "summary":"An AI assistant for jMonkeyEngine and related projects.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "ai"
+        
+              , 
+             "gpt"
+        
+              , 
+             "gpt3"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "langchain"
+        
+              , 
+             "openai"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

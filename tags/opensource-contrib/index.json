@@ -1,0 +1,507 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"/tags/opensource-contrib/page/2/index.json",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-09-16 14:25:44 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-hypergate-oscontrib/",
+
+        
+        "title":"hypergate",
+        
+
+        
+        
+        "summary":"Hypergate is a zero-configuration, peer-to-peer encrypted tunnel that enables easy communication between Docker containers and/or physical machines located anywhere, even behind NAT.",
+    
+        
+
+        "tags":[
+        
+             
+             "TypeScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "docker"
+        
+              , 
+             "holepunch"
+        
+              , 
+             "holepunching"
+        
+              , 
+             "hyperswarm"
+        
+              , 
+             "overlay-network"
+        
+              , 
+             "p2p"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-09-13 08:52:56 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-effekseernative-oscontrib/",
+
+        
+        "title":"jme-effekseerNative",
+        
+
+        
+        
+        "summary":"This is a library that uses EffekseerForMultiLanguages to load and render effects made with Effekseer in jme.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "particles"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-09-01 06:52:32 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-nostrduino-oscontrib/",
+
+        
+        "title":"nostrduino",
+        
+
+        
+        
+        "summary":"A nostr-tools inspired library for Arduino (and other) microcontrollers. With NWC support",
+    
+        
+
+        "tags":[
+        
+             
+             "C++"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "arduino"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "esp32"
+        
+              , 
+             "lightning"
+        
+              , 
+             "nostr"
+        
+              , 
+             "nwc"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-08-24 01:49:06 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fpsdemo-jmonkeyengine-oscontrib/",
+
+        
+        "title":"FPSDEMO-jMonkeyEngine",
+        
+
+        
+        
+        "summary":"An FPS demo made with jMonkeyEngine",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "demo"
+        
+              , 
+             "fps"
+        
+              , 
+             "game"
+        
+              , 
+             "hacktoberfest"
+        
+              , 
+             "jmonkeyengine"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-07-11 22:49:38 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/",
+
+        
+        "title":"blender_effekseer_addon",
+        
+
+        
+        
+        "summary":"Blender 3.3  addon that renders effekseer effects in blender's viewport.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "blender"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "particles"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-05-21 02:56:32 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/",
+
+        
+        "title":"jme-shader-OcclusionParallaxMapping",
+        
+
+        
+        
+        "summary":"OcclusionParallaxMapping for jMonkeyEngine",
+    
+        
+
+        "tags":[
+        
+             
+             "GLSL"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "glsl"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "occlusion"
+        
+              , 
+             "parallax"
+        
+              , 
+             "shader"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-05-21 02:55:52 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-ddswriter-oscontrib/",
+
+        
+        "title":"DDSWriter",
+        
+
+        
+        
+        "summary":"DDSWriter is a command-line utility and java library to write compressed and uncompressed DDS.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "compression"
+        
+              , 
+             "dds"
+        
+              , 
+             "dxt"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "mipmaps"
+        
+              , 
+             "rgtc"
+        
+              , 
+             "s3tc"
+        
+              , 
+             "mit"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-05-21 02:55:25 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-simplessrshader-oscontrib/",
+
+        
+        "title":"SimpleSSRShader",
+        
+
+        
+        
+        "summary":"Just some barebone Screen space reflections shader",
+    
+        
+
+        "tags":[
+        
+             
+             "GLSL"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "glsl"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "shader"
+        
+              , 
+             "ssr"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-05-21 02:55:09 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-igui-oscontrib/",
+
+        
+        "title":"jme-igui",
+        
+
+        
+        
+        "summary":"A minimalistic immediate gui for jmonkeyengine",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gui"
+        
+              , 
+             "imediate"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "ui"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
