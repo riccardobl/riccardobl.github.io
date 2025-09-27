@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-us" translate="no" >
+
+<head>
+  <script src="/js/openpgp.js"></script>
+  <script src="/js/lnurl-pay.js"></script>
+  <script src="/js/qrcode.js"></script>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | nostrduino</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+  <link rel="stylesheet" href="/css/mobile.css"/><meta name="robots" content="noindex"></head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+   
+<fakheader>
+    <div id="rblb"></div> 
+
+</fakheader>
+<header >
+<div>
+    <div id="rblb"></div> 
+</div>
+<div id="board">
+    <div>
+        <p>
+            I am Riccardo Balbo, a freelance developer.
+            <br> I develop full stack web applications, software, iot and more.
+            <br>
+            Feel free to contact me for a quote or for more information.
+            
+            
+            
+
+                <piva>P.IVA 05607610283</piva>
+
+        </p>
+
+    </div>
+
+  
+
+</div>
+
+<div>
+    <nav id="rblb">
+        <a href="/"><span class="material-symbols-outlined">home</span> Home</a>
+        
+        <a href="/contacts"><span class="material-symbols-outlined">mail</span> Get in touch</a>
+    </nav>
+</div>
+
+</header>
+ 
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <h1 id="nostrduino">Nostrduino</h1>
+<p>A <a href="https://github.com/nbd-wtf/nostr-tools">nostr-tools</a> inspired library for Arduino (and others).</p>
+<p>This was created using <a href="https://github.com/lnbits/arduino-nostr">arduino-nostr</a> as starting point, most of the code was rewritten and the library was expanded to include more features.</p>
+<h2 id="compatibility">Compatibility</h2>
+<p>This library is compatible with esp32 based boards out of the box.
+But it can be ported to other boards by reimplementing the platform specific code in the <code>src/esp32</code>.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><a href="https://github.com/nostr-protocol/nips/blob/master/01.md">Nip01</a> : Basic protocol flow</li>
+<li><a href="https://github.com/nostr-protocol/nips/blob/master/04.md">Nip04</a> : Encrypted messages</li>
+<li><a href="https://github.com/nostr-protocol/nips/blob/master/47.md">Nip47</a> : Nostr Wallet Connect</li>
+<li><a href="https://lightningaddress.com/">(bonus) Lightning Address</a> : Can request invoices from lightning addresses</li>
+<li><a href="https://github.com/riccardobl/nostrduino/blob/master/src/services/NWC.h">NWC managed service</a> : A managed service to interact with NWC</li>
+</ul>
+<h2 id="philosophy">Philosophy</h2>
+<p>This library is built with a DIY philosophy in mind, similar to nostr-tools, this library provides helpers to create, sign and verify messages and to use some of the NIPs features (see the <code>src/Nip*</code> files).</p>
+<p>In addition to that, the library provides some "managed" services (in <code>src/services</code> folder) that you can use in your sketches without worrying about the details and complexity of the nostr protocol.</p>
+<h2 id="installation">Installation</h2>
+<p>Check the <a href="https://registry.platformio.org/libraries/rblb/Nostrduino/installation">platformio registry page</a> for instructions.</p>
+<h3 id="esp32-dependencies">ESP32 dependencies</h3>
+<p>This library depends on the following additional libraries for the esp32 platform:</p>
+<ul>
+<li>ArduinoJson (&gt;=7.1.0)</li>
+<li>uBitcoin (&gt;=0.2.0)</li>
+<li>WebSockets (&gt;=2.4.1)</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>See the example scripts in <code>examples/</code> for simple examples of how to use this library.</p>
+<h2 id="development">Development</h2>
+<h3 id="setting-up-the-build-environment">Setting up the build environment</h3>
+<pre><code class="language-bash"># create venv
+python3 -m venv venv
+# activate venv
+source venv/bin/activate
+# install platformio
+pip install platformio
+</code></pre>
+<h3 id="compiling-tests">Compiling Tests</h3>
+<h4 id="test-nip01">Test NIP01</h4>
+<p>Edit <code>examples/ESP32TestNip01/ESP32TestNip01.cpp</code> and set the <code>WIFI_SSID</code>,  <code>WIFI_PASS</code> and <code>WIFI_CHANNEL</code>.</p>
+<p>Then compile with:</p>
+<pre><code>pio run -e ESP32TestNip01
+</code></pre>
+<h3 id="test-nip04">Test NIP04</h3>
+<p>Compile with:</p>
+<pre><code>pio run -e ESP32TestNip04
+</code></pre>
+<h3 id="test-nwc">Test NWC</h3>
+<p>Edit <code>examples/ESP32TestNWC/ESP32TestNWC.cpp</code> and set the <code>WIFI_SSID</code>,  <code>WIFI_PASS</code> , <code>WIFI_CHANNEL</code> and <code>NWC_URL</code>.
+NB: you can get a nwc url from <a href="https://nwc.getalby.com/">https://nwc.getalby.com/</a> or <a href="https://app.mutinywallet.com/settings/connections">https://app.mutinywallet.com/settings/connections</a>.</p>
+<p>Then compile with:</p>
+<pre><code>pio run -e ESP32TestNWC
+</code></pre>
+<h3 id="running-tests">Running tests</h3>
+<p>You can upload the compiled tests to your ESP32 with:</p>
+<pre><code>pio run -e TEST_NAME -t upload
+</code></pre>
+<p>or use an emulator like <a href="https://wokwi.com/">wokwi</a>.</p>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/riccardobl/nostrduino" target="_blank"><i class="fab fa-github"></i> Github page</a>
+            
+                <a rel="noopener noreferrer" href="http://rblb.it/nostrduino/" target="_blank">
+                <i class="fas fa-home"></i> Homepage</a>
+                 </nav>
+
+
+    <time datetime="2025-09-01 06:52:32 &#43;0000 UTC">01 September 2025</time>
+
+<nav class="tags">
+    
+    
+    
+    <a class="C&#43;&#43;" href="/tags/c&#43;&#43;/">#C&#43;&#43;</a>
+    
+    
+    
+    
+    <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+    
+    
+    
+    <a class="arduino" href="/tags/arduino/">#arduino</a>
+    
+    
+    
+    
+    <a class="bitcoin" href="/tags/bitcoin/">#bitcoin</a>
+    
+    
+    
+    
+    <a class="esp32" href="/tags/esp32/">#esp32</a>
+    
+    
+    
+    
+    <a class="lightning" href="/tags/lightning/">#lightning</a>
+    
+    
+    
+    
+    <a class="nostr" href="/tags/nostr/">#nostr</a>
+    
+    
+    
+    
+    <a class="nwc" href="/tags/nwc/">#nwc</a>
+    
+    
+    
+    
+    <a class="other" href="/tags/other/">#other</a>
+    
+    
+</nav>      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>
