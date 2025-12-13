@@ -1,0 +1,66 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"/images/pong.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/pong/",
+
+        
+        "title":"Pong (?)",
+        
+
+        
+        
+        "summary":"An overly complex raytraced pong game.",
+    
+        
+
+        "tags":[
+        
+             
+             "shadertoy"
+        
+              , 
+             "glsl"
+        
+              , 
+             "game"
+        
+              , 
+             "devlog"
+        
+              , 
+             "gamedev"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
