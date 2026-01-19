@@ -1,0 +1,72 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-12-09 13:40:47 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/",
+
+        
+        "title":"blender_effekseer_addon",
+        
+
+        
+        
+        "summary":"Blender 3.3  addon that renders effekseer effects in blender's viewport.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "blender"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "particles"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
