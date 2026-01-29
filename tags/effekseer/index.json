@@ -1,0 +1,120 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2026-01-27 06:04:39 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/",
+
+        
+        "title":"blender_effekseer_addon",
+        
+
+        
+        
+        "summary":"Blender 3.3  addon that renders effekseer effects in blender's viewport.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "blender"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "particles"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-10-11 04:12:18 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-effekseernative-oscontrib/",
+
+        
+        "title":"jme-effekseerNative",
+        
+
+        
+        
+        "summary":"This is a library that uses EffekseerForMultiLanguages to load and render effects made with Effekseer in jme.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "particles"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
