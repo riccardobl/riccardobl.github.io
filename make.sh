@@ -88,7 +88,7 @@ then
     then
         ./renderp5js.sh
     fi
-    $RUNTIME run  -v"$PWD:$PWD" $ENV_FILE $RUN_AS -w $PWD $ARGS --rm $IMAGE bash -c  "$CMD"
+    $RUNTIME run  -u=$userUID:$groupUID --userns=keep-id -v"$PWD:/workspace/:z" $ENV_FILE $RUN_AS -w  /workspace/ $ARGS --rm $IMAGE bash -c  "$CMD"
 else
     eval "$CMD"
 fi

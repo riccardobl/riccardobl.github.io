@@ -1729,3 +1729,15 @@ article img {
     font-size: 16px;
     z-index: 10000;
 }
+
+h1,h2,h3{
+      text-align: left;
+}
+
+a i{
+    padding-right:1rem;
+}
+
+body > main {
+    max-width:1700px;
+}
