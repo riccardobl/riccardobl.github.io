@@ -1,0 +1,78 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2026-02-21 22:17:50 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-hypergate-oscontrib/",
+
+        
+        "title":"hypergate",
+        
+
+        
+        
+        "summary":"Hypergate is a zero-configuration, peer-to-peer encrypted tunnel that enables easy communication between Docker containers and/or physical machines located anywhere, even behind NAT.",
+    
+        
+
+        "tags":[
+        
+             
+             "TypeScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "docker"
+        
+              , 
+             "holepunch"
+        
+              , 
+             "holepunching"
+        
+              , 
+             "hyperswarm"
+        
+              , 
+             "overlay-network"
+        
+              , 
+             "p2p"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

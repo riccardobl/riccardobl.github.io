@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en-us" translate="no" >
+
+<head>
+  <script src="/js/openpgp.js"></script>
+  <script src="/js/lnurl-pay.js"></script>
+  <script src="/js/qrcode.js"></script>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | Zap</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+  <link rel="stylesheet" href="/css/mobile.css"/></head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+   
+<fakheader>
+    <div id="rblb"></div> 
+
+</fakheader>
+<header >
+<div>
+    <div id="rblb"></div> 
+</div>
+<div id="board">
+    <div>
+        <p>
+            I am Riccardo Balbo, a freelance developer.
+            <br> I develop full stack web applications, software, iot and more.
+            <br>
+            Feel free to contact me for a quote or for more information.
+            
+            
+            
+
+                <piva>P.IVA 05607610283</piva>
+
+        </p>
+
+    </div>
+
+  
+
+</div>
+
+<div>
+    <nav id="rblb">
+        <a href="/"><span class="material-symbols-outlined">home</span> Home</a>
+        
+        <a href="/contacts"><span class="material-symbols-outlined">mail</span> Get in touch</a>
+    </nav>
+</div>
+
+</header>
+ 
+<main> 
+
+<section class="full responsiveWidth">
+
+<article>
+        <h1 >
+           
+            <a href="/zap/">Zap</a></h1>
+            <div class="content">
+                <span>
+                
+
+
+
+<form id="zapform"  class="simpleform">
+  
+    <inputcnt>
+        <label for="sats">Amount (in sats): </label><input   autocomplete="off" min=0 name="sats" type="number" placeholder="Sats"> <symbol for="sats">⚡</symbol>
+    </inputcnt>
+    <span id="swapCurrency" class="center clickable material-symbols-outlined">
+        swap_vert
+    </span>
+    <inputcnt class="disabled">
+        <label for="fiat">Amount: </label><input  autocomplete="off" min=0 name="fiat" type="number" placeholder=""> <symbol for="fiat"></symbol>
+    </inputcnt>
+
+
+
+    <inputcnt>
+        <label for="message">Message: </label><input autocomplete="off" name="message" type="text"
+            placeholder="Message (optional)">
+    </inputcnt>
+
+    <icons>
+        <icon id="btcBtn" class="clickable">
+            <span>₿</span>
+            <span>Bitcoin on-chain</span>
+        </icon>
+        <icon  id="lnBtn" class="clickable selected">
+            <span>⚡</span>
+            <span>Bitcoin Lightning</span>
+        </icon>
+        <icon id="lqBtn" class="clickable">
+            <span>💧</span>
+            <span>Bitcoin Liquid</span>
+        </icon>
+        <icon id="revolutBtn" class="clickable">
+            <span>R</span>
+            <span>Revolut (fiat)</span>
+        </icon>
+    </icons>
+
+
+    <inputcnt>
+        <input type="submit" value="Generate invoice">
+    </inputcnt>
+    <div id="loadingInvoice" class="center">
+        <span class="fa fa-spinner fa-spin"></span>
+    </div>
+    <error class="hidden">
+    
+    </error>
+    <div id="invoice">
+
+    </div>
+
+</form>
+
+<script>
+
+    const rootEl=document.querySelector("main article");
+    const h1= rootEl.querySelector("h1");
+
+    const zapformEl=rootEl.querySelector("#zapform");
+    const swapCurrencyEl=zapformEl.querySelector("#swapCurrency");
+
+    const satsInputEl=zapformEl.querySelector("input[name='sats']");
+    const fiatInputEl=zapformEl.querySelector("input[name='fiat']");
+    const fiatSymbolEl=zapformEl.querySelector("symbol[for='fiat']");
+    const fiatLabelEl=zapformEl.querySelector("label[for='fiat']");
+    const messageEl=zapformEl.querySelector("input[name='message']");
+
+    const submitEl=zapformEl.querySelector("input[type='submit']");
+    const btcBtnEl=zapformEl.querySelector("#btcBtn");
+    const lnBtnEl=zapformEl.querySelector("#lnBtn");
+    const lqBtnEl=zapformEl.querySelector("#lqBtn");
+    const revolutBtnEl = zapformEl.querySelector("#revolutBtn");
+    const invoiceErrorEl = zapformEl.querySelector("error");
+    // const donationEl = zapformEl.querySelector("#donation");
+
+
+    const invoiceEl=zapformEl.querySelector("#invoice");
+
+    const prepareInvoice=async (zapData)=>{
+        try{
+            // if(zapData.invoiceMode){
+            //     donationEl.classList.add("hidden");
+            // }else{
+            //     donationEl.classList.remove("hidden");
+            // }
+            invoiceEl.innerHTML = "";
+            zapformEl.classList.add("loading");
+            invoiceErrorEl.classList.add("hidden");
+            let payAction=undefined;
+            let invoice;
+            let invoiceAddr;
+            let invoiceHtml;
+            let verificationAction=undefined;
+            let invoiceInfo = undefined;
+            if(zapData.network=="btc"||zapData.network=="liquid"){
+                let addr = zapData.network == "btc" ? zapData.btc : zapData.liquid;
+                let btcUrl = zapData.network == "btc" ? zapData.btc : zapData.liquid;
+                if(zapData.amount){
+                    if(btcUrl.indexOf("?")!=-1)
+                        btcUrl +="&amount="+zapData.amount;
+                    else
+                        btcUrl +="?amount="+zapData.amount;
+                }
+                if(btcUrl.indexOf(":")==-1) {
+                    if(zapData.network=="btc") btcUrl ="bitcoin:"+ btcUrl;
+                    else btcUrl ="liquidnetwork:"+ btcUrl;
+                }
+                invoice= btcUrl;
+                invoiceAddr= addr;
+
+            }else if(zapData.network=="lightning"){
+                const lightningAddress = zapData.amount < zapData.lightningSmallAmountMax ? zapData.lightningSmallAmountAddress : zapData.lightning;
+                const invoiceData=await LnurlPay.requestInvoice({
+                    lnUrlOrAddress: lightningAddress,
+                    tokens: zapData.amount,
+                    memo: zapData.for+": "+zapData.message 
+                });
+                invoiceAddr= lightningAddress;
+                invoice= invoiceData.invoice;          
+                if(invoiceData.rawData && invoiceData.rawData.verify){
+                    verificationAction=async ()=>{
+                        try{
+                            const verificationData=await fetch(invoiceData.rawData.verify).then(r=>r.json());
+                            return verificationData.settled;
+                        }catch(e){
+                            console.error("Verification failed",e);
+                        }
+                        return false;
+                    }
+                }
+                payAction=async ()=>{
+                    if (typeof window.webln == 'undefined') {
+                        console.log("Open deep link")
+                        window.location.href = "lightning:" + invoiceData.invoice;
+                    } else {
+                        if (!await window.webln.isEnabled()) {
+                            await window.webln.enable();
+                        }
+                        console.log("Pay invoice", lninvoice);
+                        await window.webln.sendPayment(invoiceData.invoice);
+                    }
+                }
+            } else if (zapData.network == "revolut") {
+            invoiceInfo = "Please send any amount to the revtag";
+                invoice = '';
+                if (zapData.revtag.startsWith("/")){ // image
+                    invoiceHtml = `<p style='display:flex;align-items:center;'>revtag: @<img src="${zapData.revtag}" alt="Revolut revtag"></p>`;
+                } else {
+                    invoiceHtml = "<p style='display:flex;align-items:center;'>revtag: @" + zapData.revtag+"</p>";
+                }           
+
+            } else{
+                alert("Unsupported network");
+                return;
+            }
+
+            const makeCopyable=(el)=>{
+                el.classList.add("clickable");
+                el.addEventListener("click",()=>{
+                    el.querySelector("input").select();
+                    document.execCommand("copy");
+                    alert("Copied to clipboard");
+                });
+            }
+
+
+            invoiceEl.innerHTML = "";
+
+            const qrCodeEl = document.createElement("div");
+            qrCodeEl.classList.add("qrcode");
+            invoiceEl.appendChild(qrCodeEl);
+
+            const invoiceCntEl = document.createElement("div");
+            invoiceCntEl.id = "lninvoice";
+            invoiceEl.appendChild(invoiceCntEl);
+
+            const invoiceAddrEl = document.createElement("inputcnt");
+            invoiceAddrEl.innerHTML = invoiceHtml ? invoiceHtml : `
+                <label>Address: 
+                </label><input  readonly autocomplete="off" type="text" value="${invoiceAddr}">
+                <span class=" material-symbols-outlined">content_copy</span> 
+            `;
+            makeCopyable(invoiceAddrEl);
+            invoiceCntEl.appendChild(invoiceAddrEl);
+
+            if(invoice){
+                const invoiceEl = document.createElement("inputcnt");
+                invoiceEl.classList.add("clickable");
+                invoiceEl.innerHTML = `
+                    <label>Invoice: </label>
+                    <input  readonly autocomplete="off" type="text" value="${invoice}">
+                    <span class=" material-symbols-outlined">content_copy</span>    
+                `;    
+                makeCopyable(invoiceEl);
+                invoiceCntEl.appendChild(invoiceEl); 
+            }
+
+
+            const statusEl=document.createElement("sub");
+            statusEl.classList.add("status");
+            invoiceCntEl.appendChild(statusEl);
+
+            if(window.verifyZap){
+                clearInterval(window.verifyZap);
+            }
+            if(verificationAction){
+                statusEl.innerHTML="Waiting for payment...";
+                window.verifyZap=setInterval(async ()=>{
+                    if(await verificationAction()){
+                        status.innerHTML="Payment received!";
+                        status.classList.add("success");
+                        clearInterval(window.verifyZap);
+                    }
+                },1000);
+                
+            }else{
+                statusEl.innerHTML= invoiceInfo ? invoiceInfo : "Please pay the invoice with your wallet.";
+            }
+
+            
+
+            if(payAction){
+                const payBtnEl = document.createElement("button");
+                payBtnEl.innerHTML = `<span class="icon">⚡</span> <span>Pay with Wallet</span>`;
+                payBtnEl.addEventListener("click", async (ev) => {
+                    ev.preventDefault();
+                    payAction();
+                });
+                const buttonCntEl = document.createElement("div");
+                buttonCntEl.appendChild(payBtnEl);
+                invoiceCntEl.appendChild(buttonCntEl);
+            }
+
+            if(invoice || invoiceAddr){
+                
+                new QRCode(qrCodeEl, {
+                    text: invoice||invoiceAddr,
+                    width: 256,
+                    height: 256,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.M
+                });
+            } else {
+                qrCodeEl.remove();
+
+            }
+
+        }catch(e){
+            console.error("Error",e);
+            invoiceErrorEl.innerText=e+"";
+            invoiceErrorEl.classList.remove("hidden");
+        }finally{
+            zapformEl.classList.remove("loading");
+
+        }
+    }
+
+    
+    window.onZapReady=(zapData)=>{
+        const populateZapData=(zapData)=>{
+            zapData.amount=satsInputEl.value;
+            zapData.message=messageEl.value;
+        };
+
+        submitEl.addEventListener("click",(ev)=>{
+            ev.preventDefault();
+            zapData.requestInvoice=true;
+            populateZapData(zapData);
+            prepareInvoice(zapData);
+        });
+
+        btcBtnEl.addEventListener("click",()=>{
+            btcBtnEl.classList.add("selected");
+            lnBtnEl.classList.remove("selected");
+            lqBtnEl.classList.remove("selected");
+            revolutBtnEl.classList.remove("selected");
+            zapData.network="btc";
+            populateZapData(zapData);
+            if(zapData.requestInvoice) prepareInvoice(zapData);
+        });
+
+        lnBtnEl.addEventListener("click",()=>{
+            btcBtnEl.classList.remove("selected");
+            lnBtnEl.classList.add("selected");
+            lqBtnEl.classList.remove("selected");
+            revolutBtnEl.classList.remove("selected");
+            zapData.network="lightning";
+            populateZapData(zapData);
+            if (zapData.requestInvoice) prepareInvoice(zapData);
+        });
+
+        lqBtnEl.addEventListener("click",()=>{
+            btcBtnEl.classList.remove("selected");
+            lnBtnEl.classList.remove("selected");
+            lqBtnEl.classList.add("selected");
+            revolutBtnEl.classList.remove("selected");
+            zapData.network="liquid";
+            populateZapData(zapData);
+            if (zapData.requestInvoice) prepareInvoice(zapData);
+        });
+
+        revolutBtnEl.addEventListener("click", () => {
+            btcBtnEl.classList.remove("selected");
+            lnBtnEl.classList.remove("selected");
+            lqBtnEl.classList.remove("selected");
+            revolutBtnEl.classList.add("selected");
+            zapData.network = "revolut";
+            populateZapData(zapData);
+            if (zapData.requestInvoice) prepareInvoice(zapData);
+        });
+
+
+
+        console.log("Load zapdata",zapData);
+        let fiatRate;
+
+        if(zapData.altCurrency=="USD"){
+            fiatLabelEl.innerText = "Amount (in USD): ";
+            fiatSymbolEl.innerText="$";
+            fiatRate = 1;
+            fiatInputEl.step = 0.50;
+        }else if(zapData.altCurrency=="EUR"){
+            fiatLabelEl.innerText = "Amount (in EUR): ";
+            fiatSymbolEl.innerText="€";
+            fiatRate = 1;
+            fiatInputEl.step = 0.50;
+        }else{
+            fiatLabelEl.innerText = "Amount (in coffee cups): ";
+            fiatSymbolEl.innerText = "☕";
+            fiatRate = zapData.coffeeCost;
+        }
+
+        satsInputEl.value = window.zapData.amount||window.zapData.coffeeCost;
+
+        if(!zapData.invoiceMode){
+            h1.innerHTML = "Zap"+(window.zapData.for?": ":"") + window.zapData.for;
+        }else{
+            h1.innerHTML = "Invoice" + (window.zapData.for ? ": " : "") + window.zapData.for;
+            if(window.zapData.amount)satsInputEl.parentElement.classList.add("disabled");
+        }    
+
+        if(zapData.message){
+            messageEl.value=zapData.message;
+            messageEl.setAttribute("readonly", true);
+            messageEl.parentElement.classList.add("disabled");
+        }
+
+   
+
+        // for each children
+        let i=0;
+        for(const child of zapformEl.children){
+            child.style.order=i++;
+        }
+
+        swapCurrencyEl.addEventListener("click",()=>{
+            const satsParent= satsInputEl.parentElement;
+            const fiatParent =fiatInputEl.parentElement;
+            const o1 = satsParent.style.order;
+        
+            const o2 = fiatParent.style.order;
+            
+            
+            fiatParent.style.order=o1;
+            satsParent.style.order=o2;
+            
+            if(o1<o2){
+                satsParent.classList.add("disabled");
+                fiatParent.classList.remove("disabled");
+
+                fiatInputEl.removeAttribute("readonly");
+                fiatInputEl.removeAttribute("disabled");
+                satsInputEl.setAttribute("disabled", true);
+                satsInputEl.setAttribute("readonly", true);
+
+            }else{
+                satsParent.classList.remove("disabled"),
+                fiatParent.classList.add("disabled")
+               
+                satsInputEl.removeAttribute("readonly");
+                satsInputEl.removeAttribute("disabled");
+                fiatInputEl.setAttribute("disabled", true);
+                fiatInputEl.setAttribute("readonly", true);
+            }
+        });
+
+
+
+        let invoiceAutoUpdater=undefined;
+        satsInputEl.addEventListener("input",()=>{
+            fiatInputEl.value=Math.floor(satsInputEl.value/fiatRate*100)/100;
+            if(invoiceAutoUpdater)clearTimeout(invoiceAutoUpdater);
+            invoiceAutoUpdater=setTimeout(()=>{
+                if(zapData.requestInvoice) submitEl.click();
+            },1000);
+        });
+        fiatInputEl.addEventListener("input",()=>{
+            satsInputEl.value=Math.floor(fiatInputEl.value*fiatRate);
+            if (invoiceAutoUpdater) clearTimeout(invoiceAutoUpdater);
+            invoiceAutoUpdater=setTimeout(() => {
+                if (zapData.requestInvoice) submitEl.click();
+            }, 1000);
+        });
+
+        fiatInputEl.value=Math.floor(satsInputEl.value/fiatRate);
+    
+    }
+</script>
+<script>
+    
+
+    async function loadZapdata(){
+        window.zapData = {
+            lightning: "zap@rblb.it",
+            lightningSmallAmountAddress: "rblb@blink.sv" || "zap@rblb.it",
+            lightningSmallAmountMax: Number("2100" || "1000"),
+            liquid: "VJLAHvECLkNcafF2JoBZaPy3Xy6AzWJhn6PNbqzBZHZMNdjTmZYfrtiyvoivhr7inwnNbbvFJH8swFD8",
+            revtag: "\/revtag.jpg",
+            btc: "bc1qr2jc865yp089mr3tyd3jk65w0k6stx4j6t5qrj",
+            for: "",
+            coffeeCost: "1700",
+            invoiceMode: undefined,
+            amount: 0,
+            network: "lightning",
+        };
+        const url = new URL(window.location.href);
+        const searchParams = new URLSearchParams(url.search);
+
+        let invoice= searchParams.get('invoice');
+        if(invoice){
+            
+            invoice=atob(invoice);
+            
+            let pubKey=await fetch("\/gpg_pub_riccardoblb.asc").then(r=>r.text());
+            console.log("Load pub key \/gpg_pub_riccardoblb.asc", pubKey);
+            pubKey = await openpgp.readKey({ armoredKey: pubKey.trim()});
+
+            
+            console.log("Load invoice");
+            
+            const invoiceMsg = await openpgp.readCleartextMessage({
+                cleartextMessage: invoice 
+            });
+
+            console.log("Verify invoice",invoiceMsg);
+
+            const verification = await openpgp.verify({
+                message: invoiceMsg,
+                verificationKeys: pubKey
+            });
+            console.log("Done", verification);
+            const { verified, keyID } =  await verification.signatures[0];
+            if(verified){
+                invoice=invoiceMsg.text;
+                invoice=JSON.parse(invoice);
+                window.zapData.invoiceMode=true;
+            }else{
+                window.zapData.invoiceMode = false;
+                invoice=null;
+                window.zapData.error="Invalid invoice signature";
+            }
+        }else{
+            window.zapData.invoiceMode = false;
+        }
+
+        const setV=(k,kv,type="safeString")=>{
+            let v;
+            if(invoice && invoice[k]){                
+                v=invoice[k];
+            }else if(searchParams.has(k)){
+                v=searchParams.get(k);
+            }
+            
+            if(v){
+                if(type==="int"){
+                    v=parseInt(v+"");
+                }else if(type=="bool"){
+                    v=v==="true";            
+                }else{
+                    v=v+"";
+                    v=v.replace(/[^a-zA-Z0-9]/g, ' ');
+                }
+                window.zapData[kv] = v;
+            }
+        };
+
+        setV('for',"for");
+        setV('altCurrency', "altCurrency", "safeString");    
+        setV('amount', "amount", "int");
+        setV('message', "message", "safeString");
+
+        if(!window.zapData.amount){
+            window.zapData.amount=window.zapData.unit;
+        }
+
+        if(!window.zapData.for && !window.zapData.invoiceMode){
+            window.zapData.for="rblb"
+        }
+
+        if(!window.zapData.altCurrency){
+            window.zapData.altCurrency=window.zapData.invoiceMode?"USD":"kfe";
+        }
+
+        if(window.onZapReady){
+            window.onZapReady(window.zapData);
+        }
+    }
+    loadZapdata();
+
+</script>
+                </span>              
+            </div>
+
+
+
+    </article>
+</section>
+
+
+</main>
+ 
+</body>
+
+</html>

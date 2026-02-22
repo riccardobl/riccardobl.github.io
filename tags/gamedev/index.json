@@ -1,0 +1,258 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2026-01-27 06:04:39 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/",
+
+        
+        "title":"blender_effekseer_addon",
+        
+
+        
+        
+        "summary":"Blender 3.3  addon that renders effekseer effects in blender's viewport.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "blender"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "particles"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"images/jmonkeyengine.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-08-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/jmonkeyengine/",
+
+        
+        "title":"jMonkeyEngine",
+        
+
+        
+        
+        "summary":"jMonkeyEngine is an OpenGL+Java 3d game engine to which i contributed as core developer.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "highlighted"
+        
+              , 
+             "software"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"images/nge.jpg",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-08-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/nge/",
+
+        
+        "title":"Nostr Game Engine",
+        
+
+        
+        
+        "summary":"A game engine and framework for building games and applications integrated with the Nostr ecosystem",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "nostr"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "highlighted"
+        
+              , 
+             "software"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/fpenguin.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/fleeingpenguin/",
+
+        
+        "title":"Fleeing Penguin",
+        
+
+        
+        
+        "summary":"A small 2d game made in p5js and webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "p5js"
+        
+              , 
+             "webgl"
+        
+              , 
+             "game"
+        
+              , 
+             "devlog"
+        
+              , 
+             "gamedev"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/pong.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/pong/",
+
+        
+        "title":"Pong (?)",
+        
+
+        
+        
+        "summary":"An overly complex raytraced pong game.",
+    
+        
+
+        "tags":[
+        
+             
+             "shadertoy"
+        
+              , 
+             "glsl"
+        
+              , 
+             "game"
+        
+              , 
+             "devlog"
+        
+              , 
+             "gamedev"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

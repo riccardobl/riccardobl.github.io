@@ -1,0 +1,75 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"/images/shop.larabiosa.it/cover.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"0001-01-01 00:00:00 +0000 UTC",
+        
+        "url":"/posts/shop.larabiosa.it/",
+
+        
+        "title":"Shop - La Rabiosa",
+        
+
+        
+        
+        "summary":"The e-commerce for La Rabiosa wine maker",
+    
+        
+
+        "tags":[
+        
+             
+             "highlighted"
+        
+              , 
+             "serverless"
+        
+              , 
+             "ecommerce"
+        
+              , 
+             "stripe"
+        
+              , 
+             "python"
+        
+              , 
+             "javascript"
+        
+              , 
+             "googleshopping"
+        
+              , 
+             "html"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-us" translate="no" >
+
+<head>
+  <script src="/js/openpgp.js"></script>
+  <script src="/js/lnurl-pay.js"></script>
+  <script src="/js/qrcode.js"></script>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | jme-igui</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+  <link rel="stylesheet" href="/css/mobile.css"/><meta name="robots" content="noindex"></head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+   
+<fakheader>
+    <div id="rblb"></div> 
+
+</fakheader>
+<header >
+<div>
+    <div id="rblb"></div> 
+</div>
+<div id="board">
+    <div>
+        <p>
+            I am Riccardo Balbo, a freelance developer.
+            <br> I develop full stack web applications, software, iot and more.
+            <br>
+            Feel free to contact me for a quote or for more information.
+            
+            
+            
+
+                <piva>P.IVA 05607610283</piva>
+
+        </p>
+
+    </div>
+
+  
+
+</div>
+
+<div>
+    <nav id="rblb">
+        <a href="/"><span class="material-symbols-outlined">home</span> Home</a>
+        
+        <a href="/contacts"><span class="material-symbols-outlined">mail</span> Get in touch</a>
+    </nav>
+</div>
+
+</header>
+ 
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <h1 id="jme-igui">jme-IGUI</h1>
+<p>IGUI is a minimalistic immediate gui for <a href="https://jmonkeyengine.org">jMonkeyEngine</a>. It is built around Picture and BitmapText classes.</p>
+<p>It can only draw text and images, <del>no input handling whatsoever</del> with very basic input handling and i think i will keep it this way, since this is intended only for very simple usecase (ie. debugging or simple apps) for which more sophisticated ui libraries, such as <a href="https://github.com/jMonkeyEngine-Contributions/Lemur">Lemur</a> or <a href="https://wiki.jmonkeyengine.org/docs/3.3/core/gui/nifty_gui.html">Nifty Gui</a>, would be overkill.</p>
+<p>This is an immediate UI, you don't need to worry about keeping references, updating states etc...  you can just call the methods whenever you want as long as you are inside the update loop, what you define will be rendered for exactly 1 frame. You want to render the exact same thing again in the next frame? Just run the same code again.</p>
+<p>If something really never changes for a long time, you can use the image() and text() methods that accept a <code>boolean persistent</code> arg. In this case the generated component will live forever until you call <code>.destroy()</code> on it.</p>
+<p>That's all. Usage example in <a href="https://github.com/riccardobl/jme-igui/blob/master/src/test/java/IGuiTest.java">src/test/java/IGuiTest.java</a>.</p>
+<h2 id="jitpack-coordinates">Jitpack coordinates</h2>
+<pre><code class="language-gradle">plugins {
+    id "io.github.0ffz.github-packages" version "1.2.1"
+}
+
+repositories {
+    maven githubPackage.invoke("riccardobl")
+}
+
+dependencies {
+    implementation 'wf.frk:jme-igui:$VERSION'
+}
+</code></pre>
+<hr>
+<p><img src="https://raw.githubusercontent.com/riccardobl/jme-igui/master/media/img1.jpg" alt="img1"></p>
+<p><img src="https://raw.githubusercontent.com/riccardobl/jme-igui/master/media/img2.jpg" alt="img2"></p>
+<p><img src="https://raw.githubusercontent.com/riccardobl/jme-igui/master/media/img3.jpg" alt="img3"></p>
+<p><img src="https://raw.githubusercontent.com/riccardobl/jme-igui/master/media/img4.jpg" alt="img4"></p>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/riccardobl/jme-igui" target="_blank"><i class="fab fa-github"></i> Github page</a>
+            
+                <a rel="noopener noreferrer" href="https://library.jmonkeyengine.org/#!entry=16283%2Fjme-igui" target="_blank">
+                <i class="fas fa-home"></i> Homepage</a>
+                 </nav>
+
+
+    <time datetime="2025-10-11 04:29:25 &#43;0000 UTC">11 October 2025</time>
+
+<nav class="tags">
+    
+    
+    
+    <a class="Java" href="/tags/java/">#Java</a>
+    
+    
+    
+    
+    <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+    
+    
+    
+    <a class="gui" href="/tags/gui/">#gui</a>
+    
+    
+    
+    
+    <a class="imediate" href="/tags/imediate/">#imediate</a>
+    
+    
+    
+    
+    <a class="Java" href="/tags/java/">#Java</a>
+    
+    
+    
+    
+    <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+    
+    
+    
+    <a class="ui" href="/tags/ui/">#ui</a>
+    
+    
+    
+    
+    <a class="unlicense" href="/tags/unlicense/">#unlicense</a>
+    
+    
+</nav>      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>

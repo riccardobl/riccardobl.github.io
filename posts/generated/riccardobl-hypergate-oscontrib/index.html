@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-us" translate="no" >
+
+<head>
+  <script src="/js/openpgp.js"></script>
+  <script src="/js/lnurl-pay.js"></script>
+  <script src="/js/qrcode.js"></script>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | hypergate</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+  <link rel="stylesheet" href="/css/mobile.css"/><meta name="robots" content="noindex"></head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+   
+<fakheader>
+    <div id="rblb"></div> 
+
+</fakheader>
+<header >
+<div>
+    <div id="rblb"></div> 
+</div>
+<div id="board">
+    <div>
+        <p>
+            I am Riccardo Balbo, a freelance developer.
+            <br> I develop full stack web applications, software, iot and more.
+            <br>
+            Feel free to contact me for a quote or for more information.
+            
+            
+            
+
+                <piva>P.IVA 05607610283</piva>
+
+        </p>
+
+    </div>
+
+  
+
+</div>
+
+<div>
+    <nav id="rblb">
+        <a href="/"><span class="material-symbols-outlined">home</span> Home</a>
+        
+        <a href="/contacts"><span class="material-symbols-outlined">mail</span> Get in touch</a>
+    </nav>
+</div>
+
+</header>
+ 
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <h1 id="hypergate">Hypergate</h1>
+<p><strong>Hypergate</strong> is a zero-configuration, peer-to-peer encrypted tunnel that enables seamless communication between Docker containers and physical machines across any location, even those behind NAT.</p>
+<h2 id="components">Components</h2>
+<p>Hypergate comprises three primary components:</p>
+<ul>
+<li><strong>Service Providers</strong>: Make local services accessible to the network.</li>
+<li><strong>Gateways</strong>: Act as entry points, connecting to the appropriate Service Provider.</li>
+<li><strong>Hypergate Router</strong>: A virtual router connecting Service Providers and Gateways via a secret key that establishes a Hyperswarm connection.</li>
+</ul>
+<p>Multiple Gateways and Service Providers can coexist on the same or different machines.</p>
+<p>➡️ <strong>Quick Start</strong>: Jump to <a href="https://github.com/riccardobl/hypergate/blob/master/#example-1-one-provider-one-gateway-with-docker">Example: Providers-Gateways</a> or <a href="https://github.com/riccardobl/hypergate/blob/master/#example-2-docker-virtual-network">Example: Docker Network</a> for quick examples.</p>
+<hr>
+<h1 id="usage-overview">Usage Overview</h1>
+<p>Hypergate supports several usage modes:</p>
+<ul>
+<li><strong>Docker Bridge Network</strong>: Bridges Docker networks across hosts, enabling container communication as if on the same machine.</li>
+<li><strong>Docker Gateway</strong>: Exposes Docker containers to the internet, bypassing NAT or firewall limitations.</li>
+<li><strong>Generic Gateway or Reverse Proxy</strong>: Exposes machine services behind NAT/firewall to the internet.</li>
+<li><strong>P2P VPN</strong>: Connects machines behind NAT/firewalls for direct interaction, such as gaming.</li>
+</ul>
+<p>Combine these modes for complex configurations tailored to specific use cases.</p>
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+<li><p>To use <strong>Hypergate</strong> with Docker:</p>
+<ul>
+<li><a href="https://www.docker.com/">Docker</a> must be installed.</li>
+</ul>
+</li>
+<li><p>To use <strong>Hypergate</strong> without Docker:</p>
+<ul>
+<li>Download the "hypergate" executable from the <a href="https://github.com/riccardobl/hypergate/releases">release page</a> <em>(for x86_64 Linux)</em>.</li>
+<li>Or, clone the repository and run:<pre><code class="language-bash">npm i
+npm run build
+npm run start
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="network-configuration">Network Configuration</h1>
+<h3 id="one-provider-one-gateway-vs-multiple-providers-multiple-gateways">One Provider, One Gateway vs. Multiple Providers, Multiple Gateways</h3>
+<table>
+<thead>
+<tr>
+<th>Single Provider &amp; Gateway</th>
+<th>Multiple Providers &amp; Gateways</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://raw.githubusercontent.com/riccardobl/hypergate/master/static/gateway-provider.jpg" alt="Single Provider and Gateway"></td>
+<td><img src="https://raw.githubusercontent.com/riccardobl/hypergate/master/static/multi-gateway-provider.jpg" alt="Multiple Providers and Gateways"></td>
+</tr>
+</tbody></table>
+<p>In Hypergate, Service Providers are authoritative, updating Gateway routing tables to expose services. If multiple Providers compete for the same port, a round-robin method selects the next available Provider.</p>
+<p>⚠️ <strong>Security Tip</strong>: Protect the Hypergate Router secret carefully to avoid unauthorized network reconfigurations. Use multiple routers to isolate services if different trust levels are needed.</p>
+<hr>
+<h1 id="docker-virtual-network">Docker Virtual Network</h1>
+<table>
+<thead>
+<tr>
+<th>Docker Virtual Network</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://raw.githubusercontent.com/riccardobl/hypergate/master/static/virtual-network.jpg" alt="Docker Virtual Network"></td>
+</tr>
+</tbody></table>
+<p><strong>Hypergate</strong> simplifies container networking, allowing containers in the same Hypergate network to communicate without complex configurations or port mappings. It leverages Hyperswarm for P2P connections, enabling NAT traversal through hole-punching techniques, with all connections automatically encrypted.</p>
+<p>Containers using the <code>EXPOSE</code> directive in Dockerfiles are automatically configured. Alternatively, specify ports with the <code>hypergate.EXPOSE</code> label in the <code>docker run</code> command.</p>
+<h3 id="custom-docker-labels">Custom Docker Labels</h3>
+<ul>
+<li><code>hypergate.EXCLUDE="true|false"</code>: Exclude a container from announcements by the Service Provider.</li>
+<li><code>hypergate.EXPOSE="port[:public port][/protocol]"</code>: CSV list of ports to expose. Protocol defaults to TCP if omitted.</li>
+<li><code>hypergate.UNEXPOSE="port[/protocol]"</code>: CSV list of exposed port to ignore. Only ports exposed by the Dockerfile EXPOSE directive are affected by this label. If <code>*</code> is used, all ports exposed by the Dockerfile are ignored.</li>
+</ul>
+<hr>
+<h1 id="examples">Examples</h1>
+<h2 id="example-1-exposing-an-http-server-behind-nat">Example 1: Exposing an HTTP Server Behind NAT</h2>
+<p>This example exposes an HTTP server on MACHINE1 using a Service Provider and a Gateway on MACHINE2.</p>
+<h3 id="steps">Steps:</h3>
+<ol>
+<li><p><strong>Start HTTP Service on MACHINE1</strong></p>
+<pre><code class="language-bash">mkdir -p /tmp/www-test
+cd /tmp/www-test
+echo "Hello World" &gt; index.html
+busybox httpd -p 8080 -f .
+</code></pre>
+</li>
+<li><p><strong>Create the Router</strong></p>
+<pre><code class="language-bash">$ hypergate --new
+</code></pre>
+</li>
+<li><p><strong>Start Service Provider on MACHINE1</strong></p>
+<pre><code class="language-bash">$ hypergate --router &lt;router-key&gt; --provider services/http.json
+</code></pre>
+</li>
+<li><p><strong>Start Gateway on MACHINE2</strong></p>
+<pre><code class="language-bash">$ hypergate --router &lt;router-key&gt; --listen 0.0.0.0 --gateway
+</code></pre>
+<p> <strong>Note</strong>: By default, the gateway will expose all services announced to the router. This behavior is generally desirable, but in some cases, you may want to limit exposure to specific services—such as if you have competing services on the same port or have concerns about provider trust. To achieve this, pass the same service definition used by the provider to the gateway, ensuring only that service is exposed:</p>
+<pre><code class="language-bash">$ hypergate --router &lt;router-key&gt; --listen 0.0.0.0 --gateway services/http.json
+</code></pre>
+</li>
+</ol>
+<p><strong>Test</strong>: Connect to MACHINE2:8080 to view the "Hello World" page from MACHINE1.</p>
+<hr>
+<h2 id="example-2-bridging-a-docker-network-with-gateway-creation">Example 2: Bridging a Docker Network with Gateway Creation</h2>
+<p>This example bridges networks across MACHINE1, MACHINE2, and MACHINE3, where:</p>
+<ul>
+<li>MACHINE1 hosts a MariaDB instance.</li>
+<li>MACHINE2 hosts phpMyAdmin connecting to MariaDB.</li>
+<li>MACHINE3 exposes phpMyAdmin publicly.</li>
+</ul>
+<h3 id="steps-1">Steps:</h3>
+<ol>
+<li><p><strong>Create Router Key</strong></p>
+<pre><code class="language-bash">$ docker run -it --rm hypergate --new
+</code></pre>
+</li>
+<li><p><strong>Start Service Provider on MACHINE1</strong></p>
+<pre><code class="language-bash">$ docker run -it --rm -u root --name="hypergate-sp-machine1" -v /var/run/docker.sock:/var/run/docker.sock hypergate --router &lt;router-key&gt; --docker --provider --network hypergatenet
+</code></pre>
+</li>
+<li><p><strong>Start MariaDB on MACHINE1 and connect to the network</strong></p>
+<pre><code class="language-bash">docker run -d --rm --name test-mysql -eMYSQL_ROOT_HOST=% -eMYSQL_DATABASE=wp -e MYSQL_ROOT_PASSWORD=secretpassword --label hypergate.EXPOSE=3306 mysql
+
+docker network connect hypergatenet test-mysql --alias mysql.hyper
+</code></pre>
+</li>
+<li><p><strong>Start Gateway on MACHINE2</strong></p>
+<pre><code class="language-bash">docker run -it --rm -u root --name="hypergate-gw-machine2" -v /var/run/docker.sock:/var/run/docker.sock hypergate --router &lt;router-key&gt; --docker --gateway --listen 0.0.0.0 --network hypergatenet
+</code></pre>
+</li>
+<li><p><strong>Start Service Provider on MACHINE2</strong></p>
+<pre><code class="language-bash">docker run -it --rm -u root --name="hypergate-sp-machine2" -v /var/run/docker.sock:/var/run/docker.sock hypergate --router &lt;router-key&gt; --docker --provider --network hypergatenet
+</code></pre>
+</li>
+<li><p><strong>Start phpMyAdmin on MACHINE2 and connect to the network</strong></p>
+<pre><code class="language-bash">docker run --rm --name test-phpmyadmin -d -e PMA_HOST=mysql.hyper --label hypergate.EXPOSE=80 phpmyadmin
+docker network connect hypergatenet test-phpmyadmin --alias phpmyadmin.hyper
+</code></pre>
+</li>
+<li><p><strong>Start Gateway on MACHINE3</strong></p>
+<pre><code class="language-bash">docker run -it --rm -u root --name="hypergate-gw-machine3" -v /var/run/docker.sock:/var/run/docker.sock -p 8080:80 hypergate --router &lt;router-key&gt; --docker --gateway --listen 0.0.0.0 --network hypergatenet --exposeOnlyServices phpmyadmin.hyper
+</code></pre>
+</li>
+</ol>
+<p><strong>Test</strong>: Access phpMyAdmin by connecting to MACHINE3:8080.</p>
+<h1 id="license-and-warranty">License and Warranty</h1>
+<p>This is an experimental free software, there is no warranty. You are free to use, modify and redistribute it under certain conditions. </p>
+<p>See the <a href="https://github.com/riccardobl/hypergate/blob/master/LICENSE">LICENSE</a> file for details.</p>
+<p>This is an experimental software, it might or might not be production ready or even work as expected. </p>
+<p>Use it at your own discretion.</p>
+<h1 id="similar-projects">Similar projects</h1>
+<p>Other projects related to sharing services with hyperswarm</p>
+<ul>
+<li><a href="https://github.com/bitfinexcom/hypertele">hypertele</a> :  A swiss-knife proxy powered by Hyperswarm DHT </li>
+<li><a href="https://github.com/ryanramage/hyperseaport">hyperseaport</a> :  A p2p service registry </li>
+<li><a href="https://github.com/mafintosh/hyperssh">hyperssh</a> :  Run SSH over hyperswarm! </li>
+<li><a href="https://github.com/mafintosh/hyperbeam">hyperbeam</a> :  A 1-1 end-to-end encrypted internet pipe powered by Hyperswarm</li>
+</ul>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/riccardobl/hypergate" target="_blank"><i class="fab fa-github"></i> Github page</a>
+             </nav>
+
+
+    <time datetime="2026-02-21 22:17:50 &#43;0000 UTC">21 February 2026</time>
+
+<nav class="tags">
+    
+    
+    
+    <a class="TypeScript" href="/tags/typescript/">#TypeScript</a>
+    
+    
+    
+    
+    <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+    
+    
+    
+    <a class="docker" href="/tags/docker/">#docker</a>
+    
+    
+    
+    
+    <a class="holepunch" href="/tags/holepunch/">#holepunch</a>
+    
+    
+    
+    
+    <a class="holepunching" href="/tags/holepunching/">#holepunching</a>
+    
+    
+    
+    
+    <a class="hyperswarm" href="/tags/hyperswarm/">#hyperswarm</a>
+    
+    
+    
+    
+    <a class="overlay-network" href="/tags/overlay-network/">#overlay-network</a>
+    
+    
+    
+    
+    <a class="p2p" href="/tags/p2p/">#p2p</a>
+    
+    
+    
+    
+    <a class="bsd-3-clause" href="/tags/bsd-3-clause/">#bsd-3-clause</a>
+    
+    
+</nav>      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>

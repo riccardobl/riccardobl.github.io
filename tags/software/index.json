@@ -1,0 +1,117 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"images/jmonkeyengine.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-08-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/jmonkeyengine/",
+
+        
+        "title":"jMonkeyEngine",
+        
+
+        
+        
+        "summary":"jMonkeyEngine is an OpenGL+Java 3d game engine to which i contributed as core developer.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "highlighted"
+        
+              , 
+             "software"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"images/nge.jpg",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-08-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/nge/",
+
+        
+        "title":"Nostr Game Engine",
+        
+
+        
+        
+        "summary":"A game engine and framework for building games and applications integrated with the Nostr ecosystem",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "nostr"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "highlighted"
+        
+              , 
+             "software"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

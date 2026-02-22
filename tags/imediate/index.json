@@ -1,0 +1,75 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-10-11 04:29:25 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-igui-oscontrib/",
+
+        
+        "title":"jme-igui",
+        
+
+        
+        
+        "summary":"A minimalistic immediate gui for jmonkeyengine",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gui"
+        
+              , 
+             "imediate"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "ui"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

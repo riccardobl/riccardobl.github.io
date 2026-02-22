@@ -1,0 +1,171 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-10-11 05:58:15 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme-shader-occlusionparallaxmapping-oscontrib/",
+
+        
+        "title":"jme-shader-OcclusionParallaxMapping",
+        
+
+        
+        
+        "summary":"OcclusionParallaxMapping for jMonkeyEngine",
+    
+        
+
+        "tags":[
+        
+             
+             "GLSL"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "glsl"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "occlusion"
+        
+              , 
+             "parallax"
+        
+              , 
+             "shader"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-10-11 05:58:15 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-simplessrshader-oscontrib/",
+
+        
+        "title":"SimpleSSRShader",
+        
+
+        
+        
+        "summary":"Just some barebone Screen space reflections shader",
+    
+        
+
+        "tags":[
+        
+             
+             "GLSL"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "glsl"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "shader"
+        
+              , 
+             "ssr"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"/images/pong.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/pong/",
+
+        
+        "title":"Pong (?)",
+        
+
+        
+        
+        "summary":"An overly complex raytraced pong game.",
+    
+        
+
+        "tags":[
+        
+             
+             "shadertoy"
+        
+              , 
+             "glsl"
+        
+              , 
+             "game"
+        
+              , 
+             "devlog"
+        
+              , 
+             "gamedev"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

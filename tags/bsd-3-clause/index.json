@@ -1,0 +1,180 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2026-02-21 22:17:50 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-hypergate-oscontrib/",
+
+        
+        "title":"hypergate",
+        
+
+        
+        
+        "summary":"Hypergate is a zero-configuration, peer-to-peer encrypted tunnel that enables easy communication between Docker containers and/or physical machines located anywhere, even behind NAT.",
+    
+        
+
+        "tags":[
+        
+             
+             "TypeScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "docker"
+        
+              , 
+             "holepunch"
+        
+              , 
+             "holepunching"
+        
+              , 
+             "hyperswarm"
+        
+              , 
+             "overlay-network"
+        
+              , 
+             "p2p"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2026-01-27 06:04:39 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-blender_effekseer_addon-oscontrib/",
+
+        
+        "title":"blender_effekseer_addon",
+        
+
+        
+        
+        "summary":"Blender 3.3  addon that renders effekseer effects in blender's viewport.",
+    
+        
+
+        "tags":[
+        
+             
+             "Python"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "blender"
+        
+              , 
+             "effekseer"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "particles"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-10-11 05:58:15 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-simplessrshader-oscontrib/",
+
+        
+        "title":"SimpleSSRShader",
+        
+
+        
+        
+        "summary":"Just some barebone Screen space reflections shader",
+    
+        
+
+        "tags":[
+        
+             
+             "GLSL"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "glsl"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "shader"
+        
+              , 
+             "ssr"
+        
+              , 
+             "bsd-3-clause"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

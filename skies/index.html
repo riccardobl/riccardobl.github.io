@@ -1,0 +1,177 @@
+<html>
+
+<head>
+    <title>SkyTest</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uevent@2/browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/adapters/cubemap.js"></script>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(32, 32, 32);
+            color:rgb(124, 124, 124);
+            width:100vw;
+            height:100vh;
+        }
+        #skies{
+            flex-wrap: wrap;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        #viewer{
+            margin:auto;
+        }
+
+        figure{
+            cursor: pointer;
+            display: inline-block;
+            margin:0vw;
+        }
+        figure img{
+            width: 25vw;
+            height:25vw;
+            max-width:15em;
+            max-height:15em;
+
+        }
+        figcaption{
+            background:black;
+            
+            font-weight: bold;
+            width:100%;
+
+            
+            
+
+        }
+        #viewer{
+            max-width:80vw;
+            max-height:100vh;
+        }
+        #viewer.fullscreen{
+            width:100vw;
+            height:100vh;
+            max-width:100vw;
+            max-height:100vh;
+            margin:0;
+            padding:0;
+            position:fixed;
+            top:0;
+            left:0;
+        }
+    </style>
+    <script>
+        var SKY_ID=1;
+        async function exists(resource){
+            try{
+                let res = await fetch(resource, { method: 'HEAD' });
+                return res.ok;
+            }catch(e){
+                return false;
+            }
+        }
+
+        async function loadSky(SKY_ID,fullscreen){
+            const skyPath=`./sky${SKY_ID}`
+            const action = async (fullscreen) => {
+                const isCube = await exists(`${skyPath}/px.png`);
+                const viewerContainer = document.querySelector('#viewer');
+                viewerContainer.innerHTML = "";
+
+                let viewer;
+                if (isCube) {
+                    viewer = new PhotoSphereViewer.Viewer({
+                        container: viewerContainer,
+                        adapter: PhotoSphereViewer.CubemapAdapter,
+                        panorama: {
+                            left: `${skyPath}/px.png`,
+                            front: `${skyPath}/nz.png`,
+                            right: `${skyPath}/nx.png`,
+                            back: `${skyPath}/pz.png`,
+                            top: `${skyPath}/ny.png`,
+                            bottom: `${skyPath}/py.png`,
+                        },
+                    });
+                } else {
+                    viewer = new PhotoSphereViewer.Viewer({
+                        container: viewerContainer,
+                        panorama: `${skyPath}/env.png`,
+                    });
+                }
+                
+                
+                if (fullscreen) viewerContainer.classList.add("fullscreen");
+                else viewerContainer.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+            };
+
+            if (fullscreen) {
+                await action(fullscreen);
+                setTimeout(()=>{
+                    window.dispatchEvent(new Event('resize'));
+                },100);
+            } else {
+                const previews = [`${skyPath}/preview.png`, `${skyPath}/env.png`, `${skyPath}/pz.png`];
+                for (let preview of previews) {
+                    if (await exists(preview)) {
+                        const container = document.querySelector("#skies");
+                        const previewEl = document.createElement("img");
+                        previewEl.src = preview;
+                        const caption = document.createElement("figcaption");
+                        caption.innerText = `Sky ${SKY_ID}`;
+                        const figureEl = document.createElement("figure");
+                        figureEl.appendChild(previewEl);
+                        figureEl.appendChild(caption);
+                        container.appendChild(figureEl);
+                        previewEl.addEventListener("click", ()=>action());
+                        break;
+
+                    }
+
+                }
+            }          
+        }
+
+        async function loadSkies(){
+            if(SKY_ID<32){
+                await loadSky(SKY_ID);
+                SKY_ID++;
+                setTimeout(loadSkies,100);
+            }
+
+        }
+
+        function main(){
+            const container=document.querySelector("#skies");
+            container.innerHTML="";
+            const hash = window.location.hash?window.location.hash.substring(1):"";
+            if(hash!=""){
+                loadSky(hash,true);
+            }else{
+                loadSkies();
+            }
+        }
+
+
+        
+        document.addEventListener("DOMContentLoaded", main);
+
+
+    </script>
+</head>
+
+<body >
+    <h1>AI generated and AI augmented envmaps</h1>
+    <h2>Just testing some stuff...</h2>
+    <h3>Click to open...</h3>
+    <div id="skies"></div>
+    <div id="viewer" ></div>
+
+    
+
+</body>
+
+</html>
