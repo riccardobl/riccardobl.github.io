@@ -1,0 +1,432 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"/tags/opensource-contrib/index.json",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-10-11 03:45:17 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-ddswriter-oscontrib/",
+
+        
+        "title":"DDSWriter",
+        
+
+        
+        
+        "summary":"DDSWriter is a command-line utility and java library to write compressed and uncompressed DDS.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "compression"
+        
+              , 
+             "dds"
+        
+              , 
+             "dxt"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine"
+        
+              , 
+             "mipmaps"
+        
+              , 
+             "rgtc"
+        
+              , 
+             "s3tc"
+        
+              , 
+             "mit"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2025-09-01 06:52:32 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-nostrduino-oscontrib/",
+
+        
+        "title":"nostrduino",
+        
+
+        
+        
+        "summary":"A nostr-tools inspired library for Arduino (and other) microcontrollers. With NWC support",
+    
+        
+
+        "tags":[
+        
+             
+             "C++"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "arduino"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "esp32"
+        
+              , 
+             "lightning"
+        
+              , 
+             "nostr"
+        
+              , 
+             "nwc"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-11-24 05:00:32 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-v-hacd-java-bindings-oscontrib/",
+
+        
+        "title":"v-hacd-java-bindings",
+        
+
+        
+        
+        "summary":"Java bindings for V-HACD (https://github.com/kmammou/v-hacd)",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "bullet"
+        
+              , 
+             "java"
+        
+              , 
+             "java-bindings"
+        
+              , 
+             "jna"
+        
+              , 
+             "vhacd"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-09-04 06:54:18 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/",
+
+        
+        "title":"jme3-bullet-vhacd",
+        
+
+        
+        
+        "summary":"This is a library that uses java bindings for Khaled Mamou's V-HACD to decompose concave meshes into hull-shapes in jmonkey engine.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "bullet"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine3"
+        
+              , 
+             "vhacd"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-03-14 21:51:30 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jcubemapassembler-oscontrib/",
+
+        
+        "title":"JCubemapAssembler",
+        
+
+        
+        
+        "summary":"JCubemapAssembler is a java application that can be used to assemble six separate face images into a single cubemap and export it as a dds file. ",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "cubemap"
+        
+              , 
+             "dds"
+        
+              , 
+             "java"
+        
+              , 
+             "unlicense"
+        
+        ]
+
+    }
+
+     , 
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-01-25 00:13:45 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-fleeingpenguin-oscontrib/",
+
+        
+        "title":"fleeingpenguin",
+        
+
+        
+        
+        "summary":"A small game made with p5js+webgl",
+    
+        
+
+        "tags":[
+        
+             
+             "JavaScript"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "game"
+        
+              , 
+             "p5js"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"images/jmonkeyengine.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-08-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/jmonkeyengine/",
+
+        
+        "title":"jMonkeyEngine",
+        
+
+        
+        
+        "summary":"jMonkeyEngine is an OpenGL+Java 3d game engine to which i contributed as core developer.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "highlighted"
+        
+              , 
+             "software"
+        
+        ]
+
+    }
+
+     , 
+    {
+         
+        "cover":"images/nge.jpg",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2020-08-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/nge/",
+
+        
+        "title":"Nostr Game Engine",
+        
+
+        
+        
+        "summary":"A game engine and framework for building games and applications integrated with the Nostr ecosystem",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "gamedev"
+        
+              , 
+             "nostr"
+        
+              , 
+             "bitcoin"
+        
+              , 
+             "highlighted"
+        
+              , 
+             "software"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}
