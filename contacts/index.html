@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us" translate="no" >
+
+<head>
+  <script src="/js/openpgp.js"></script>
+  <script src="/js/lnurl-pay.js"></script>
+  <script src="/js/qrcode.js"></script>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | Contacts</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+  <link rel="stylesheet" href="/css/mobile.css"/></head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+   
+<fakheader>
+    <div id="rblb"></div> 
+
+</fakheader>
+<header >
+<div>
+    <div id="rblb"></div> 
+</div>
+<div id="board">
+    <div>
+        <p>
+            I am Riccardo Balbo, a freelance developer.
+            <br> I develop full stack web applications, software, iot and more.
+            <br>
+            Feel free to contact me for a quote or for more information.
+            
+            
+            
+
+                <piva>P.IVA 05607610283</piva>
+
+        </p>
+
+    </div>
+
+  
+
+</div>
+
+<div>
+    <nav id="rblb">
+        <a href="/"><span class="material-symbols-outlined">home</span> Home</a>
+        
+        <a href="/contacts"><span class="material-symbols-outlined">mail</span> Get in touch</a>
+    </nav>
+</div>
+
+</header>
+ 
+<main> 
+
+<section class="full responsiveWidth">
+
+<article>
+        <h1 >
+           
+            <a href="/contacts/">Contacts</a></h1>
+            <div class="content">
+                <span>
+                
+<p>
+    You can contact me via
+    <ul>
+        <li>email: <a href="mailto:c@rblb.it">c@rblb.it</a> <i class="fa fa-envelope" aria-hidden="true"></i></li>
+        <li>discord: <a>@rblb</a></li>
+        <li>nostr: <a href="https://primal.net/p/npub1klt4m7gsqtx0e5erq9snquk8g2sw79mwm6kjau02nufnny99pcysd4kr0p">npub1klt4m7gsqtx0e5erq9snquk8g2sw79mwm6kjau02nufnny99pcysd4kr0p</a></li>
+        <li>signal: <a href="https://signal.me/#eu/4gYXaNX6la0xALjD8AUM7D4rmDOXfis_zDhYmSgnKGx_fJZaHXlCO5-yw874seAe">rblb.07</a></li>
+        <li>telegram: <a href="https://t.me/rblb0">@rblb0</a></li>
+    </ul> 
+</p>
+
+<p>
+    
+    <a href="">9550 68E8 BC68 BBFF 6A16 34E8 19F0 7DE6 BB85 5778</a>
+    
+    <pre class="pgpkey" id="gpgkey"></pre>
+    <button id="gpgkeycopy">Copy PGP key</button>
+    
+    
+    <script>
+        async function loadGPGKey() {
+            fetch("\/gpg_pub_riccardoblb.asc")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('gpgkey').innerText = data;
+                    document.getElementById('gpgkeycopy').addEventListener('click', () => {
+                        navigator.clipboard.writeText(data).then(() => {
+                            alert('copied to clipboard');
+                        }, (err) => {
+                            alert('Failed to copy to clipboard '+ err);
+                        });
+                    });
+                });
+            
+        }
+        loadGPGKey();
+    </script>   
+     
+</p>
+
+<!-- 
+<form action="/api/contact" method="POST" class="simpleform">
+    <inputcnt>
+        <label for="name">Name: </label><input name="name" type="text" placeholder="Name">
+    </inputcnt>
+    <inputcnt>
+        <label for="email">Email: </label><input name="email" type="text" placeholder="Email">
+    </inputcnt>
+    <inputcnt>
+        <label for="subject">Message subject: </label><input name="subject" type="text" placeholder="Message subject">
+    </inputcnt>
+    <inputcnt>
+
+        <textarea name="message" placeholder="Message"></textarea>
+    </inputcnt>
+    <inputcnt>
+        <input type="submit" value="Send">
+    </inputcnt>
+</form> -->
+                </span>              
+            </div>
+
+
+
+    </article>
+</section>
+
+
+</main>
+ 
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"/images/jmonkeyengine.org/cover.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2021-06-28 01:55:31 +0000 UTC",
+        
+        "url":"/posts/jmonkeyengine.org/",
+
+        
+        "title":"jMonkeyEngine Homepage",
+        
+
+        
+        
+        "summary":"The homepage of jMonkeyEngine",
+    
+        
+
+        "tags":[
+        
+             
+             "highlighted"
+        
+              , 
+             "hugo"
+        
+              , 
+             "staticsite"
+        
+              , 
+             "html"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

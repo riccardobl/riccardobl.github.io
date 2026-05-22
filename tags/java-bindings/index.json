@@ -1,0 +1,75 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-11-24 05:00:32 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-v-hacd-java-bindings-oscontrib/",
+
+        
+        "title":"v-hacd-java-bindings",
+        
+
+        
+        
+        "summary":"Java bindings for V-HACD (https://github.com/kmammou/v-hacd)",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "bullet"
+        
+              , 
+             "java"
+        
+              , 
+             "java-bindings"
+        
+              , 
+             "jna"
+        
+              , 
+             "vhacd"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

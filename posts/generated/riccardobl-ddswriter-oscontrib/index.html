@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-us" translate="no" >
+
+<head>
+  <script src="/js/openpgp.js"></script>
+  <script src="/js/lnurl-pay.js"></script>
+  <script src="/js/qrcode.js"></script>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | DDSWriter</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+  <link rel="stylesheet" href="/css/mobile.css"/><meta name="robots" content="noindex"></head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+   
+<fakheader>
+    <div id="rblb"></div> 
+
+</fakheader>
+<header >
+<div>
+    <div id="rblb"></div> 
+</div>
+<div id="board">
+    <div>
+        <p>
+            I am Riccardo Balbo, a freelance developer.
+            <br> I develop full stack web applications, software, iot and more.
+            <br>
+            Feel free to contact me for a quote or for more information.
+            
+            
+            
+
+                <piva>P.IVA 05607610283</piva>
+
+        </p>
+
+    </div>
+
+  
+
+</div>
+
+<div>
+    <nav id="rblb">
+        <a href="/"><span class="material-symbols-outlined">home</span> Home</a>
+        
+        <a href="/contacts"><span class="material-symbols-outlined">mail</span> Get in touch</a>
+    </nav>
+</div>
+
+</header>
+ 
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+
+
+
+
+    <p><a href="https://travis-ci.org/riccardobl/DDSWriter"><img src="https://travis-ci.org/riccardobl/DDSWriter.svg?branch=master" alt="Build Status"></a> </p>
+<h1 id="ddswriter">DDSWriter</h1>
+<p>DDSWriter is a command-line utility and java library to write DDS. 
+It supports extensions with the use of delegates and CLI modules.</p>
+<p>A delegate is a class to which is delegated the task to write the header and the body of the DDS, a CLI module is an extension for the CLI interface.</p>
+<h2 id="the-java-library">The Java library</h2>
+<h4 id="requirements">Requirements</h4>
+<pre><code class="language-gradle">def jme_version = "v3.1"
+def jme_group =  "com.github.jMonkeyEngine.jmonkeyengine"
+
+repositories {
+    mavenCentral()    
+    maven { url 'https://jitpack.io' }
+}
+dependencies {
+    compile "${jme_group}:jme3-core:${jme_version}"
+    compile "${jme_group}:jme3-desktop:${jme_version}"
+}
+</code></pre>
+<h4 id="library">Library</h4>
+<pre><code class="language-gradle">def version = "1.0"
+
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile "com.github.riccardobl.DDSWriter:dds_writer:$version"
+}
+</code></pre>
+<h4 id="usage">Usage</h4>
+<pre><code class="language-java">com.jme3.texture.Texture tx=...; // Texture loaded with jmonkey
+OutputStream fo=...; 
+ Map&lt;String,String&gt; options=...; // Options for ddswriter and for the delegates
+Collection&lt;DDSDelegate&gt; delegates=...; // List of delegate (needs at least one) 
+DDSWriter.write(tx,options,delegates,fo);
+</code></pre>
+<h4 id="options">Options</h4>
+<p><code>gen-mipmaps</code> = <code>true</code>/<code>false</code> - Enable/Disable mipmap generation</p>
+<p><code>debug</code> = <code>true</code>/<code>false</code> - Enable/Disable debug info</p>
+<p><code>format</code> - Output format. (See delegates for available formats) </p>
+<h2 id="the-command-line">The Command line</h2>
+<pre><code>Usage: &lt;CMD&gt; --in path/file.png --out path/out.dds [options]
+Options: 
+   --in &lt;FILE&gt;: Input file
+   --out &lt;FILE.dds&gt;: Output file
+   --format: Output format. Default: ARGB8 (uncompressed)
+   --gen-mipmaps: Generate mipmaps
+   --exit: Exit interactive console
+   --debug: Show debug informations
+Input formats:
+   jpg,bmp,png,tga,dds
+Output formats:
+   ARGB8,RGB8,RGB565
+</code></pre>
+<p>To use one or more delegates in CLI, they must be added to the classpath. 
+--help will be updated to show informations related to the delegate.</p>
+<h2 id="delegates">Delegates</h2>
+<h3 id="generic-uncompressed">Generic (uncompressed)</h3>
+<p>Delegate that provides the following uncompressed formats:  <em>RGB8</em> <em>ARGB9</em> <em>RGB565</em></p>
+<p><code>ddswriter.delegates.GenericDelegate delegate=new ddswriter.delegates.GenericDelegate();</code></p>
+<h4 id="gradle-depencency">Gradle depencency</h4>
+<p>None: included in dds writer</p>
+<h3 id="lwjgl2-s3tc-dxt-compression">LWJGL2 S3TC (DXT compression)</h3>
+<p>Delegate that provides S3tc (DXT) compression, it requires graphical drivers that support such compression and works only in an LWJGL2 context.</p>
+<p>This delegate adds the formats <em>S3TC_DXT1</em>,<em>S3TC_DXT2</em>,<em>S3TC_DXT5</em>.</p>
+<pre><code class="language-java">ddswriter.delegates.lwjgl2_s3tc.S3TC_LWJGL2CompressionDelegate delegate=new ddswriter.delegates.lwjgl2_s3tc.S3TC_LWJGL2CompressionDelegate();
+</code></pre>
+<h4 id="gradle-depencency-1">Gradle depencency</h4>
+<pre><code class="language-gradle">compile 'com.github.riccardobl.DDSWriter:dds_writer__s3tc_lwjgl2_delegate:$version'
+</code></pre>
+<h3 id="lwjgl2-rgtc-ati-compression">LWJGL2 RGTC (ATI compression)</h3>
+<p>Delegate that provides RGTC (ATI) compression, it requires graphical drivers that support such compression and works only in an LWJGL2 context.</p>
+<p>This delegate adds the formats <em>`RGTC1</em>,<em>RGTC2</em>.</p>
+<pre><code class="language-java">ddswriter.delegates.lwjgl2_rgtc.RGTC_LWJGL2CompressionDelegate delegate=new ddswriter.delegates.lwjgl2_rgtc.RGTC_LWJGL2CompressionDelegate();
+</code></pre>
+<h4 id="gradle-depencency-2">Gradle depencency</h4>
+<pre><code class="language-gradle">compile 'com.github.riccardobl.DDSWriter:dds_writer__rgtc_lwjgl2_delegate:$version'
+</code></pre>
+<h2 id="usage-examples">Usage examples</h2>
+<h4 id="cli-with-s3tc-delegator">CLI with s3tc delegator</h4>
+<pre><code>java -cp "dds_writer__cli-fat-1.0.jar:dds_writer__s3tc_ati_lwjgl2_delegate-fat-1.0.jar"  ddswriter.cli.CLI109 --help
+</code></pre>
+<h2 id="write-a-delegate">Write a delegate</h2>
+<p>TODO</p>
+<h2 id="write-a-cli-module">Write a CLI module</h2>
+<p>TODO</p>
+<p><a href="https://github.com/riccardobl/DDSWriter/blob/master/TODO.md">TODO LIST</a></p>
+
+            <nav  class="h">
+               <a rel="noopener noreferrer" href="https://github.com/riccardobl/DDSWriter" target="_blank"><i class="fab fa-github"></i> Github page</a>
+            
+                <a rel="noopener noreferrer" href="https://jmonkeystore.com/431158ae-adc8-421f-bd7d-dd1dc419c612" target="_blank">
+                <i class="fas fa-home"></i> Homepage</a>
+                 </nav>
+
+
+    <time datetime="2025-10-11 03:45:17 &#43;0000 UTC">11 October 2025</time>
+
+<nav class="tags">
+    
+    
+    
+    <a class="Java" href="/tags/java/">#Java</a>
+    
+    
+    
+    
+    <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+    
+    
+    
+    <a class="compression" href="/tags/compression/">#compression</a>
+    
+    
+    
+    
+    <a class="dds" href="/tags/dds/">#dds</a>
+    
+    
+    
+    
+    <a class="dxt" href="/tags/dxt/">#dxt</a>
+    
+    
+    
+    
+    <a class="Java" href="/tags/java/">#Java</a>
+    
+    
+    
+    
+    <a class="jmonkeyengine" href="/tags/jmonkeyengine/">#jmonkeyengine</a>
+    
+    
+    
+    
+    <a class="mipmaps" href="/tags/mipmaps/">#mipmaps</a>
+    
+    
+    
+    
+    <a class="rgtc" href="/tags/rgtc/">#rgtc</a>
+    
+    
+    
+    
+    <a class="s3tc" href="/tags/s3tc/">#s3tc</a>
+    
+    
+    
+    
+    <a class="mit" href="/tags/mit/">#mit</a>
+    
+    
+</nav>      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>

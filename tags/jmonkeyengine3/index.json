@@ -1,0 +1,72 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+        
+        "cover":"",        
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"2024-09-04 06:54:18 +0000 UTC",
+        
+        "url":"/posts/generated/riccardobl-jme3-bullet-vhacd-oscontrib/",
+
+        
+        "title":"jme3-bullet-vhacd",
+        
+
+        
+        
+        "summary":"This is a library that uses java bindings for Khaled Mamou's V-HACD to decompose concave meshes into hull-shapes in jmonkey engine.",
+    
+        
+
+        "tags":[
+        
+             
+             "Java"
+        
+              , 
+             "opensource-contrib"
+        
+              , 
+             "bullet"
+        
+              , 
+             "java"
+        
+              , 
+             "jmonkeyengine3"
+        
+              , 
+             "vhacd"
+        
+              , 
+             "other"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

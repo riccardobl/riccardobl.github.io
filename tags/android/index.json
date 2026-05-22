@@ -1,0 +1,66 @@
+{
+    "response":"articles",
+    
+
+
+
+    "prev":"",
+
+
+    "next":"",
+
+
+
+"articles":[
+
+    
+    {
+         
+        "cover":"/images/app/stickersai.art/cover.webp",
+        
+
+        
+        "ytcover":"",
+        
+
+        "date":"0001-01-01 00:00:00 +0000 UTC",
+        
+        "url":"/posts/stickersai/",
+
+        
+        "title":"StickersAi",
+        
+
+        
+        
+        "summary":"AI for stickers generation",
+    
+        
+
+        "tags":[
+        
+             
+             "AI"
+        
+              , 
+             "android"
+        
+              , 
+             "webapp"
+        
+              , 
+             "devlog"
+        
+              , 
+             "machinelearning"
+        
+        ]
+
+    }
+
+
+]
+
+
+
+}

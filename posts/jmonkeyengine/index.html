@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us" translate="no" >
+
+<head>
+  <script src="/js/openpgp.js"></script>
+  <script src="/js/lnurl-pay.js"></script>
+  <script src="/js/qrcode.js"></script>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB  | jMonkeyEngine</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+  <link rel="stylesheet" href="/css/mobile.css"/></head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+   
+<fakheader>
+    <div id="rblb"></div> 
+
+</fakheader>
+<header >
+<div>
+    <div id="rblb"></div> 
+</div>
+<div id="board">
+    <div>
+        <p>
+            I am Riccardo Balbo, a freelance developer.
+            <br> I develop full stack web applications, software, iot and more.
+            <br>
+            Feel free to contact me for a quote or for more information.
+            
+            
+            
+
+                <piva>P.IVA 05607610283</piva>
+
+        </p>
+
+    </div>
+
+  
+
+</div>
+
+<div>
+    <nav id="rblb">
+        <a href="/"><span class="material-symbols-outlined">home</span> Home</a>
+        
+        <a href="/contacts"><span class="material-symbols-outlined">mail</span> Get in touch</a>
+    </nav>
+</div>
+
+</header>
+ 
+<main> 
+<section class="full">
+   
+    <article >
+
+    
+    <h1>
+        jMonkeyEngine
+    </h1>
+    
+
+
+
+
+    
+
+<p >
+    I am a core developer of the jMonkeyEngine project.
+    <br />
+    jMonkeyEngine is an OpenGL 3-D game engine for Java developers. It’s open-source, cross-platform, and cutting-edge.
+    <br />
+    The engine is used by several commercial game studios and computer-science courses.  More infos below at the official links.
+
+</p>
+
+<table class="fancy">
+   
+    <tr>
+        <th>Type: </th>
+        <td><a href="/tags/gamedev">Game Engine</a></td>
+    </tr>
+    <tr>
+        <th>Language: </th>
+        <td><a href="/tags/java">Java</a>, <a href="/tags/c">C</a>, <a href="/tags/glsl">GLSL</a></td>
+    </tr>
+    <tr>
+        <th>Link: </th>
+        <td><a href="https://jmonkeyengine.org">jmonkeyengine.org</a></td>
+    </tr>
+     
+
+</table>
+<hr />
+<nav  class="h">
+    <a rel="noopener noreferrer" href="https://jmonkeyengine.org/" target="_blank"><i class="fas fa-home"></i> Home</a>
+    <a rel="noopener noreferrer" href="https://github.com/jMonkeyEngine/jmonkeyengine" target="_blank"><i class="fab fa-github"></i> Github Page</a>
+</nav>
+<hr />
+
+<p >
+    <img width="100%" src="https://i.imgur.com/nF8WOW6.jpg" />
+    </p>
+<p>
+<h2 >My JME plugins  </h2>
+<nav id="jmeplg">
+    
+</nav>
+</p>
+
+<script>
+    function fetchPlugins(tag){
+        const pluginsUrl="/tags/"+tag+"/index.json";
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                const resp=JSON.parse(this.responseText);
+                const c=document.querySelector("#jmeplg");
+                for(let i in resp.articles){
+                    const article=resp.articles[i];
+                    const a=document.createElement("a");
+                    a.classList.add("button");
+                    a.setAttribute("href",article.url);
+                    a.innerHTML="<h2>"+article.title+"</h2>"+article.summary;
+                
+                    c.appendChild(a);
+                }
+            }
+        };
+        xhttp.open("GET", pluginsUrl, true);
+        xhttp.send();
+    }
+    fetchPlugins("jmonkeyengine");
+    fetchPlugins("jmonkeyengine3");
+    
+</script>
+
+
+    <time datetime="2020-08-28 01:55:31 &#43;0000 UTC">28 August 2020</time>
+
+<nav class="tags">
+    
+    
+    
+    <a class="Java" href="/tags/java/">#Java</a>
+    
+    
+    
+    
+    <a class="opensource-contrib" href="/tags/opensource-contrib/">#opensource-contrib</a>
+    
+    
+    
+    
+    <a class="gamedev" href="/tags/gamedev/">#gamedev</a>
+    
+    
+    
+    
+    <a class="highlighted" href="/tags/highlighted/">#highlighted</a>
+    
+    
+    
+    
+    <a class="software" href="/tags/software/">#software</a>
+    
+    
+</nav>      
+
+</article>      
+
+</section>
+
+</main>
+ 
+</body>
+
+</html>
