@@ -10,6 +10,7 @@ disableKinds = ["taxonomy", "term"]
   filename = "sitemap.xml"
 
 [params]
+  locale = "en-US"
   avatar="https://github.com/riccardobl.png"
   avatarCache="/images/avatar.webp"
   favicon = "favicon.png"
