@@ -40,10 +40,12 @@ html {
     position: absolute;
     top: 0;
     left: 0;
+    touch-action: manipulation;
 }
 
 * {
     box-sizing: border-box;
+    touch-action: manipulation;
 }
 
 body {
@@ -1091,6 +1093,7 @@ header {
     gap: 0.8rem;
     overflow-x: auto;
     overflow-y: hidden;
+    overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
@@ -1283,6 +1286,7 @@ header {
     gap: 0.75rem;
     overflow-x: auto;
     overflow-y: hidden;
+    overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     padding: 0.2rem;
@@ -1425,6 +1429,12 @@ section.list .github-project-card:hover {
 
 .rail-control i {
     pointer-events: none;
+}
+
+.rail-control:disabled,
+.rail-control[aria-disabled="true"] {
+    cursor: default;
+    opacity: 0.45;
 }
 
 .soft-actions,

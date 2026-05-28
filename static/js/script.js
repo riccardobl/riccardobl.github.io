@@ -212,22 +212,65 @@ function setupRails() {
             return Math.max(1, Math.round(rail.clientWidth / step));
         };
 
-        const scrollByPage = (direction) => {
-            const amount = getCardStep() * getVisibleCardCount();
-            rail.scrollBy({
-                left: amount * direction,
-                behavior: "smooth"
-            });
+        const getMaxLeft = () => Math.max(0, rail.scrollWidth - rail.clientWidth);
+
+        const updateRailControls = () => {
+            const maxLeft = getMaxLeft();
+            const atStart = rail.scrollLeft <= 2;
+            const atEnd = rail.scrollLeft >= maxLeft - 2;
+            prev.disabled = atStart;
+            next.disabled = atEnd;
+            prev.setAttribute("aria-disabled", atStart ? "true" : "false");
+            next.setAttribute("aria-disabled", atEnd ? "true" : "false");
         };
 
+        const scrollByPage = (direction) => {
+            const amount = getCardStep() * getVisibleCardCount();
+            const maxLeft = getMaxLeft();
+            const targetLeft = Math.min(maxLeft, Math.max(0, rail.scrollLeft + (amount * direction)));
+            if (Math.abs(targetLeft - rail.scrollLeft) <= 2) {
+                updateRailControls();
+                return;
+            }
+            rail.scrollTo({
+                left: targetLeft,
+                behavior: "smooth"
+            });
+            window.setTimeout(updateRailControls, 350);
+        };
+
+        rail.addEventListener("scroll", updateRailControls, { passive: true });
+        window.addEventListener("resize", updateRailControls);
         prev.addEventListener("click", () => scrollByPage(-1));
         next.addEventListener("click", () => scrollByPage(1));
+        updateRailControls();
+    });
+}
+
+function preventDoubleTapZoom() {
+    let lastTouchEnd = 0;
+    document.addEventListener("touchend", (event) => {
+        const target = event.target;
+        if (target && target.closest && target.closest("input, textarea, select")) return;
+
+        const now = Date.now();
+        if (now - lastTouchEnd <= 320) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, { passive: false });
+
+    document.addEventListener("dblclick", (event) => {
+        const target = event.target;
+        if (target && target.closest && target.closest("input, textarea, select")) return;
+        event.preventDefault();
     });
 }
 
 async function main(){
     handleImageZoom();
     setupRails();
+    preventDoubleTapZoom();
     const toTop=document.getElementById("toTop");
     if(toTop){
         window.addEventListener("resize",function(){

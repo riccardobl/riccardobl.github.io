@@ -387,9 +387,14 @@
 }
 
 @media only screen and (max-width: 520px) {
+    h1 {
+        font-size: clamp(2rem, 11.2vw, 2.72rem);
+        line-height: 1.08;
+    }
+
     body>main {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
         padding-top: 0.75rem;
     }
 
@@ -468,8 +473,11 @@
     .opensource > h1,
     .skills > h1,
     .contact-strip > h1 {
+        font-size: clamp(2.15rem, 11.5vw, 2.65rem);
         margin-top: 2.8rem;
         margin-bottom: 0.8rem;
+        max-width: none;
+        white-space: nowrap;
     }
 
     .case-studies > h1 {
@@ -521,7 +529,7 @@
 
     .soft-actions,
     .contact-strip nav {
-        gap: 0.55rem;
+        gap: 0.45rem;
         justify-content: flex-start;
     }
 
@@ -529,12 +537,13 @@
     .contact-strip nav a {
         box-sizing: border-box;
         flex: 0 1 auto;
-        gap: 0.5rem;
+        font-size: 0.95rem;
+        gap: 0.4rem;
         justify-content: center;
         line-height: 1;
-        min-height: 2.9rem;
+        min-height: 2.55rem;
         min-width: 0;
-        padding: 0.72rem 1.05rem;
+        padding: 0.62rem 0.78rem;
         text-align: center;
         width: auto;
     }
@@ -549,5 +558,90 @@
 
     section.skills section.icons {
         grid-template-columns: 1fr;
+    }
+
+    section.full.responsiveWidth {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+
+    section.full.responsiveWidth article {
+        padding: 0.75rem;
+    }
+
+    section.full.responsiveWidth article > h1 {
+        font-size: clamp(2rem, 10.8vw, 2.55rem);
+        line-height: 1.08;
+        margin-bottom: 1rem;
+        white-space: nowrap;
+    }
+
+    .standalone-page,
+    .support-form,
+    .page-lead {
+        max-width: none;
+        width: 100%;
+    }
+
+    .page-lead {
+        font-size: 0.98rem;
+        line-height: 1.48;
+        margin-bottom: 1rem;
+    }
+
+    .support-form inputcnt {
+        padding: 0.62rem 0.68rem;
+    }
+
+    .support-form icons {
+        gap: 0.45rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 0.8rem 0;
+    }
+
+    .support-form icons icon {
+        padding: 0.68rem 0.48rem;
+    }
+
+    .contact-method {
+        min-height: 5.8rem;
+        padding: 0.8rem;
+    }
+
+    .contact-method.primary {
+        min-height: 5.4rem;
+    }
+
+    .pgp-panel {
+        margin-top: 0.95rem;
+        padding-top: 0.95rem;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .case-studies > h1,
+    .opensource > h1,
+    .skills > h1,
+    .contact-strip > h1 {
+        font-size: clamp(1.92rem, 10.5vw, 2.35rem);
+    }
+
+    .soft-actions a,
+    .contact-strip nav a {
+        font-size: 0.82rem;
+        gap: 0.28rem;
+        padding-left: 0.48rem;
+        padding-right: 0.48rem;
+    }
+
+    .soft-actions,
+    .contact-strip nav {
+        gap: 0.28rem;
+    }
+
+    .soft-actions a i,
+    .contact-strip nav a i {
+        flex-basis: 0.85rem;
+        width: 0.85rem;
     }
 }
