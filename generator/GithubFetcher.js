@@ -1,12 +1,15 @@
 const Fs = require("fs");
 const Path = require("path");
 const fetch = require("node-fetch");
-const Article=require("./Article.js");
 const Settings = require("./Settings.js");
 
-const marked = require("marked");
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+const DEFAULT_IGNORED_LANGUAGES = [
+    "C#",
+    "Dockerfile",
+    "Jupyter Notebook",
+    "Makefile",
+    "WebAssembly"
+];
 
 module.exports=class GithubFetcher {
     constructor(){
@@ -35,67 +38,23 @@ module.exports=class GithubFetcher {
         return json;
     }
 
-    async guessAndGet(root, filename, extensions) {
-        const get = async function (root, filename, extension, mode) {
-            switch (mode) {
-                case 2:
-                    filename = filename.toLowerCase();
-                    extension = extension.toLowerCase();
-                    break;
-                case 1:
-                    filename = filename.toUpperCase();
-                    extension = extension.toUpperCase();
-                    break;
-                case 0:
-                    filename = filename.toUpperCase();
-                    extension = extension.toLowerCase();
-                    break;
-                case 3:
-                    filename = filename.toLowerCase();
-                    filename = filename.charAt(0).toUpperCase() + filename.slice(1);
-                    extension = extension.toLowerCase();
-                    break;
-            }
-    
-            let url = root + "/" + filename;
-            if (extension != "") url += "." + extension;
-            const res = await fetch(url, {
-                headers: {
-                    "User-Agent":"riccardobl-site-generator"
-                }
-            });
-            if (!res.ok) {
-                return null;
-            }
-            return [await res.text(), extension.toLowerCase()];
-        }
-    
-        for (let i in extensions) {
-            const ext = extensions[i];
-            for (let j = 0; j < 4; j++) {
-                const res = await get(root, filename, ext, j);
-                if (res) {
-                    console.log("Found", filename + "." + ext)
-                    return res;
-                }
-            }
-        }
-        return null;
-    }
-
     getConfig() {
         const cfg = (((Settings.config || {}).params || {}).githubShowcase || {});
         const owners = Array.isArray(cfg.owners) ? cfg.owners : [];
         const repos = Array.isArray(cfg.repos) ? cfg.repos : [];
         const starredBy = cfg.starredBy || owners[0] || "";
+        const ignoredLanguages = Array.isArray(cfg.ignoredLanguages)
+            ? cfg.ignoredLanguages
+            : DEFAULT_IGNORED_LANGUAGES;
         if (owners.length || repos.length) {
-            return { owners, repos, starredBy };
+            return { owners, repos, starredBy, ignoredLanguages };
         }
 
         return {
             owners: Settings.GITHUB_ACCOUNTS.split(",").map((s) => s.trim()).filter(Boolean),
             repos: [],
-            starredBy: ""
+            starredBy: "",
+            ignoredLanguages
         };
     }
 
@@ -151,7 +110,20 @@ module.exports=class GithubFetcher {
         return false;
     }
 
+    getIgnoredLanguages() {
+        return new Set(this.getConfig().ignoredLanguages || []);
+    }
+
+    filterLanguages(languages) {
+        const ignoredLanguages = this.getIgnoredLanguages();
+        return (languages || []).filter((language) => language && !ignoredLanguages.has(language));
+    }
+
     normalizeRepo(repo) {
+        const detectedLanguages = Array.isArray(repo.detectedLanguages) && repo.detectedLanguages.length
+            ? repo.detectedLanguages
+            : (repo.language ? [repo.language] : []);
+        const languages = this.filterLanguages(detectedLanguages);
         return {
             fullName: repo.full_name,
             name: repo.name,
@@ -159,10 +131,8 @@ module.exports=class GithubFetcher {
             description: repo.description || "",
             stars: repo.stargazers_count || 0,
             forks: repo.forks_count || 0,
-            language: repo.language || "",
-            languages: Array.isArray(repo.detectedLanguages) && repo.detectedLanguages.length
-                ? repo.detectedLanguages
-                : (repo.language ? [repo.language] : []),
+            language: this.filterLanguages([repo.language])[0] || "",
+            languages,
             topics: Array.isArray(repo.topics) ? repo.topics : [],
             license: repo.license && repo.license.key ? repo.license.key : "",
             url: repo.html_url,
@@ -239,6 +209,32 @@ module.exports=class GithubFetcher {
         );
     }
 
+    filterCachedData(data) {
+        const repositories = (data.repositories || []).map((repo) => {
+            const languages = this.filterLanguages(repo.languages || []);
+            return {
+                ...repo,
+                language: this.filterLanguages([repo.language])[0] || languages[0] || "",
+                languages
+            };
+        });
+        const sourceLanguages = Array.isArray(data.languages) && data.languages.length
+            ? data.languages
+            : repositories.flatMap((repo) => repo.languages || []);
+        const languages = Array.from(new Set(this.filterLanguages(sourceLanguages))).sort();
+        return {
+            ...data,
+            totalLanguages: languages.length,
+            languages,
+            repositories
+        };
+    }
+
+    rewriteCachedData(cachePath) {
+        const data = JSON.parse(Fs.readFileSync(cachePath, "utf8"));
+        Fs.writeFileSync(cachePath, JSON.stringify(this.filterCachedData(data), null, 2));
+    }
+
     async fetch(){
         let result = null;
         try {
@@ -247,103 +243,12 @@ module.exports=class GithubFetcher {
             const cachePath = Path.join(Settings.ROOTDIR, "data/github_projects.json");
             if (Fs.existsSync(cachePath)) {
                 console.warn("GitHub fetch failed, keeping cached project data: " + err.message);
+                this.rewriteCachedData(cachePath);
                 return;
             }
             throw err;
         }
         const repos = result.repos;
         this.writeData(repos, result.allProjectRepos);
-
-        for (let i in repos) {
-            const repo = repos[i];
-            console.log("Parse", repo.full_name);
-    
-            const topics=Array.isArray(repo.topics) ? repo.topics : [];
-            const rawUrl = repo.html_url.replace("https://github.com/", "https://raw.githubusercontent.com/") + "/" + repo.default_branch;
-            const prettyUrl = repo.html_url + "/blob/" + repo.default_branch;
-        
-            var firstImg=null;
-            let readme = await this.guessAndGet(rawUrl, "README", ["md", "txt", "html", ""]);
-            if (readme) {
-        
-              if (readme[1] == "md") readme[0] = marked.parse(readme[0]);
-        
-              const dom = JSDOM.fragment("<div>" + readme[0] + "</div>");
-              dom.querySelectorAll("a").forEach(function (el) {
-                let href = el.getAttribute("href");
-                if (!href) return;
-                if (href.indexOf("://") == -1) {
-                  href = prettyUrl + "/" + href;
-                  el.setAttribute("href", href);
-                }
-              });
-              dom.querySelectorAll("img").forEach(function (el) {
-                let src = el.getAttribute("src");
-                if (!src) return;
-                if (src.indexOf("://") == -1) {
-                  src = rawUrl + "/" + src;
-                  el.setAttribute("src", src);
-                }
-                if(!firstImg&&
-                    // exclude badges
-                    !src.startsWith("https://api.travis-ci.org/") 
-                    &&!src.startsWith("https://camo.githubusercontent.com/")    
-                    &&src.indexOf("badge.svg")==-1
-                )firstImg=src;
-              });
-              firstImg=null;// todo
-              readme[0] = dom.firstChild.innerHTML;
-        
-           
-              
-              readme= readme[0];
-            }
-            const tags=[];
-            const languages = Array.isArray(repo.detectedLanguages) && repo.detectedLanguages.length
-                ? repo.detectedLanguages
-                : (repo.language ? [repo.language] : []);
-            for (const language of languages) {
-                if (language) tags.push(language);
-            }
-            tags.push("opensource-contrib");
-            for(let i in topics){
-                if (topics[i]) tags.push( topics[i] );
-            }
-            if (repo.license && repo.license.key) tags.push(repo.license.key );
-            const options={
-                title:repo.full_name,
-                hidetitle:true,
-                summarytitle:repo.full_name,
-                date:new Date(repo.updated_at),
-                summary:repo.description,
-                tags:tags
-            };
-            if(firstImg)options.cover=firstImg;
-            options.githubFullName = repo.full_name;
-            options.githubOwner = repo.owner && repo.owner.login;
-            options.githubRepo = repo.name;
-            options.githubUrl = repo.html_url;
-            options.githubStars = repo.stargazers_count || 0;
-            options.githubForks = repo.forks_count || 0;
-            options.githubHomepage = repo.homepage || "";
-
-            
-            const article=new Article(options);
-            let body=(readme || "")+`
-            <nav  class="h">
-               <a rel="noopener noreferrer" href="`+repo.html_url+ `" target="_blank"><i class="fab fa-github"></i> GitHub page</a>
-            `;
-            if(repo.homepage){
-                body+=`
-                <a rel="noopener noreferrer" href="`+repo.homepage+ `" target="_blank">
-                <i class="fas fa-home"></i> Homepage</a>
-                `;
-            }
-            body+=` </nav>`;
-            article.setBody(body);
-
-            article.write(repo.full_name.replace("/", "-"),"oscontrib");
-        }
-
     }
 }

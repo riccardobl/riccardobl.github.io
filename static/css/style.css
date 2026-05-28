@@ -16,7 +16,6 @@
     --background2: rgb(34, 34, 34);
     --background3: rgb(36, 0, 30);
     --visitedLink: #6d881b;
-    --twitter: #1DA1F2;
 }
 
 .material-symbols-outlined {
@@ -509,11 +508,6 @@ body>header>p {
     padding: 0;
 }
 
-/* 
-header nav.socials {
-    margin-top:1rem;
-} */
-
 nav.vmenu {
     margin-top: 1rem;
     display: flex;
@@ -612,17 +606,6 @@ section.list article {
 }
 
 
-
-section.pagination {
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: var(--highlightFg);
-}
-
-section.pagination a {
-    color: var(--highlightFg);
-}
 
 section.list {
     display: block;
@@ -978,28 +961,6 @@ section.list article {
 }
 
 
-section.list article nav.tags .twitter {
-    all: unset;
-    position: absolute;
-    right: 1.01rem;
-    top: 0rem;
-    display: block;
-    visibility: hidden;
-}
-
-section.list article nav.tags .twitter:after {
-    content: '\f099';
-    font-family: 'Font Awesome 5 Brands';
-    font-weight: bold;
-    font-size: 1.5rem;
-
-    display: block;
-    color: var(--highlightFg);
-    z-index: 999;
-    visibility: visible;
-
-}
-
 section.list article:first-child {
     margin-left: 0;
 }
@@ -1014,192 +975,10 @@ section.list article:last-child {
 
 
 
-section article .cover {
-    width: 100%;
-    height: 100vh;
-    background-size: contain;
-}
-
-section.list article .cover {
-    height: 100%;
-
-    background-size: cover;
-}
-
 section.list article:hover {
     animation: scale 0.5s ease-in-out;
     z-index: 9999;
 }
-
-nav.tags {
-    text-shadow: none !important;
-    text-shadow: unset;
-    text-transform: uppercase;
-    display: block;
-
-}
-
-
-nav.tags>a,
-nav.tags>a:visited,
-nav.tags>a:hover {
-    background-color: var(--highlightFg);
-    color: var(--background2) !important;
-    padding: 0.3rem;
-    margin: 0.2rem;
-
-    border-radius: 0.3rem;
-    border: 0.1rem dashed var(--background2);
-    z-index: 10;
-    display: inline-block;
-}
-
-main>nav.tags {
-    margin: 4rem;
-    margin-top: 0.5rem;
-
-}
-
-section>article>nav.tags {
-    text-align: right;
-    align-self: flex-end;
-
-}
-
-section article>time {
-    align-self: flex-end;
-    text-align: right;
-    width: 100%;
-    display: inline-block;
-    margin-top: auto;
-}
-
-
-
-section.list article>nav>a {
-    pointer-events: none;
-    text-decoration: none;
-    display: none;
-}
-
-section.list article>nav>a:first-child {
-    display: inline-block;
-}
-
-/* section.list.compact article > nav{
-    margin-top:auto;
-
-} */
-
-
-
-
-
-
-/* section.list.compact .meta{
-    display:none;
-} */
-
-
-
-
-
-
-
-
-
-
-
-/* Read more link inside the article*/
-section article .readMore {
-    font-size: 1.01rem;
-}
-
-/* Article's meta data*/
-section article .meta {
-    margin-top: auto;
-}
-
-
-
-/* Social links*/
-a.social {
-    font-weight: normal;
-    font-size: 2rem;
-    display: inline-block;
-    font-family: 'Font Awesome 5 Brands';
-    font-weight: normal;
-    margin: 0.2rem;
-}
-
-a.social:before {
-    display: inline-block;
-}
-
-a.social.discord:before {
-    content: "\f392";
-}
-
-a.social.twitter:before {
-    content: "\f081";
-}
-
-a.social.email:before {
-    content: "\f199";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-weight: bold;
-
-}
-
-a.social.github:before {
-    content: "\f092";
-}
-
-a.social.youtube:before {
-    content: "\f431";
-}
-
-.cover {
-
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    user-select: none;
-
-    color: var(--foreground2) !important;
-
-}
-
-.cover iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}
-
-.cover.interactive time,
-.cover.interactive nav {
-    transition: 0.5s opacity;
-}
-
-.cover.interactive:hover time,
-.cover.interactive:hover nav {
-    opacity: 0;
-    pointer-events: none;
-}
-
-
-.author-avatar {
-    float: left;
-    margin-right: 10px;
-    border-radius: 5em;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 10rem;
-}
-
-
 
 .hljs {
     background: none !important;
@@ -1620,10 +1399,6 @@ section.list .github-project-card:hover {
     color: var(--foreground);
 }
 
-.github-project-card nav.tags {
-    margin-top: 0.75rem;
-}
-
 .rail-control {
     width: 2.7rem;
     min-width: 2.7rem;
@@ -1948,117 +1723,6 @@ article img {
     max-width: 100%;
 }
 
-article nav {}
-
-
-article nav>a {
-    display: block;
-    margin: 0.5rem;
-    border: 2px dotted var(--highlightFg);
-    padding: 1rem;
-    border-radius: 0.6rem;
-    text-align: left;
-    text-shadow: none;
-}
-
-article nav>a:hover {
-    border: 2px dotted var(--highlightFg);
-    background-color: var(--highlightFg);
-    color: var(--background);
-    text-decoration: none;
-}
-
-article nav>a>h2 {
-    display: block;
-    color: inherit;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 1rem;
-    word-wrap: break-word;
-}
-
-article nav.h {
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-auto-flow: column;
-}
-
-
-
-
-section.tweetlist article.tweet:hover {
-    background-color: rgba(0, 0, 0, 255);
-
-}
-
-section.tweetlist article.tweet {
-    background-color: var(--background2);
-    box-shadow: 0 0 0.3rem 0.04rem var(--background2);
-    border-radius: 10vw;
-
-    padding: 0rem;
-
-    font-size: 0.8rem;
-    display: flex;
-    flex-direction: row;
-
-    height: 4rem;
-
-    position: relative;
-    cursor: pointer;
-
-    align-items: center;
-    overflow: hidden;
-
-
-}
-
-section.tweetlist article:hover .cover {
-    opacity: 1;
-
-}
-
-section.tweetlist .cover {
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 10vw;
-    opacity: 0.07;
-    transition: 2s opacity;
-}
-
-
-section.tweetlist a {
-    all: unset;
-}
-
-section.tweetlist article.tweet .twitterLogo::before {
-    display: block;
-    content: '\f099';
-    font-family: 'Font Awesome 5 Brands';
-    font-weight: bold;
-    font-size: 3rem;
-    padding: 1rem;
-    text-align: left;
-    font-style: normal;
-    color: var(--twitter);
-}
-
-section.tweetlist article.tweet .twitterLogo {}
-
-section.tweetlist article.tweet p {
-    overflow: hidden;
-    white-space: normal;
-    margin-right: 1rem;
-    z-index: 2;
-    max-height: 3.5rem;
-    padding-bottom: 0.5rem;
-
-}
-
 nav a {
     display: flex;
     flex-direction: row;
@@ -2068,128 +1732,6 @@ nav a {
 nav a .material-symbols-outlined {
     margin-right: 0.4rem;
     font-size: 140%;
-}
-
-
-#toTop {
-    font-size: 8vh !important;
-    z-index: 999;
-    font-weight: bold;
-    /* position: fixed; */
-    bottom: 1rem;
-    left: 1rem;
-    text-align: left;
-    opacity: 0;
-}
-
-#toTop:not(.sticky) {
-    top: 0;
-    left: 0;
-}
-
-#toTop.sticky {
-    display: block;
-    opacity: 1;
-    position: fixed;
-}
-
-
-article {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-
-}
-
-article h1 {
-    width: 100%;
-    margin-bottom: 2rem;
-}
-
-table.fancy {
-    background-color: var(--background);
-
-
-    border-spacing: 0rem;
-    width: 100%;
-
-}
-
-table.fancy tr {
-    box-shadow: 0 0 0.3rem 0.04rem var(--backgroun2);
-    border-radius: 4px;
-
-}
-
-table.fancy tr:nth-child(odd) {
-    background-color: var(--background2);
-
-}
-
-table.fancy td,
-table.fancy th {
-
-    padding: 1rem;
-}
-
-table.fancy tr td:last-child {
-    text-align: right;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
-    grid-gap: 1rem;
-    grid-auto-flow: dense;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-
-}
-
-.gallery>*:nth-child(odd) {}
-
-.gallery>* {
-    border-radius: 4px;
-    text-align: center;
-    margin: auto;
-    /* margin-top:0; */
-    max-height: 1024px;
-
-    /* box-shadow: 0 0 0.3rem 0.04rem  var(--highlightFg); */
-    filter: drop-shadow(0 0 0.3rem var(--highlightFg));
-}
-
-
-
-section.list article.cover {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-section.list article.cover>* {
-    padding: 0.5rem;
-    text-align: center;
-    width: 100%;
-    background-color: var(--background);
-    opacity: 0.9;
-    transition: opacity 2s;
-
-}
-
-section.list article.cover:hover>* {
-    opacity: 0.1;
-}
-
-section.list article.cover>time,
-section.list article.cover>.tags {
-    display: none;
-}
-
-section.list article.cover>p {
-    margin: 0;
-    margin-top: auto;
-    font-size:0.9rem;
 }
 
 

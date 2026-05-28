@@ -1,4 +1,0 @@
-{
-    "response":"articles",
-    {{ partial "articlesList.json" . }}
-}

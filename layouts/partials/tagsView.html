@@ -1,8 +1,0 @@
-<nav class="tags">
-    {{ range .Params.tags }}
-    {{ $tag := printf "tags/%s" (urlize .) }}
-    {{ with $.Site.GetPage "taxonomyTerm" $tag }}
-    <a class="{{ .Title }}" href="{{ .RelPermalink }}">#{{ .Title }}</a>
-    {{ end }}
-    {{ end }}
-</nav>

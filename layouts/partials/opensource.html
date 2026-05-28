@@ -16,7 +16,7 @@
             <strong>{{ .totalProjectCount | default .projectCount }}</strong>
             <span>open source projects</span>
         </div>
-        <div>
+        <div title="{{ delimit .languages ", " }}">
             <i class="fas fa-code"></i>
             <strong>{{ .totalLanguages }}</strong>
             <span>languages used</span>
