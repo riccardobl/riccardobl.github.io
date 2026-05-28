@@ -14,6 +14,10 @@ module.exports=class GithubFetcher {
         }
     }
 
+    shouldFailOnFetchError() {
+        return process.env.CI === "true" || process.env.STRICT_GITHUB_FETCH === "1";
+    }
+
     async fetchJson(url) {
         console.log("Fetch", url);
         const res = await fetch(url, { headers: this.headers });
@@ -28,6 +32,32 @@ module.exports=class GithubFetcher {
             throw new Error("GitHub request failed for " + url + ": " + (json.message || res.statusText));
         }
         return json;
+    }
+
+    async fetchGraphql(query, variables) {
+        console.log("Fetch https://api.github.com/graphql");
+        const res = await fetch("https://api.github.com/graphql", {
+            method: "POST",
+            headers: {
+                ...this.headers,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ query, variables })
+        });
+        const body = await res.text();
+        let json = null;
+        try {
+            json = JSON.parse(body);
+        } catch (err) {
+            throw new Error("Invalid GitHub GraphQL response: " + body.slice(0, 200));
+        }
+        if (!res.ok || (Array.isArray(json.errors) && json.errors.length)) {
+            const message = Array.isArray(json.errors) && json.errors.length
+                ? json.errors.map((error) => error.message).join("; ")
+                : (json.message || res.statusText);
+            throw new Error("GitHub GraphQL request failed: " + message);
+        }
+        return json.data;
     }
 
     getConfig() {
@@ -87,6 +117,40 @@ module.exports=class GithubFetcher {
         return starred;
     }
 
+    async fetchContributionStats(username) {
+        if (!username) return null;
+
+        const to = new Date();
+        const from = new Date(to);
+        from.setFullYear(from.getFullYear() - 1);
+
+        const data = await this.fetchGraphql(`
+            query($login: String!, $from: DateTime!, $to: DateTime!) {
+                user(login: $login) {
+                    contributionsCollection(from: $from, to: $to) {
+                        contributionCalendar {
+                            totalContributions
+                        }
+                    }
+                }
+            }
+        `, {
+            login: username,
+            from: from.toISOString(),
+            to: to.toISOString()
+        });
+
+        if (!data || !data.user) {
+            throw new Error("GitHub user not found for contribution stats: " + username);
+        }
+
+        return {
+            totalContributionsLastYear: data.user.contributionsCollection.contributionCalendar.totalContributions || 0,
+            contributionsFrom: from.toISOString(),
+            contributionsTo: to.toISOString()
+        };
+    }
+
     shouldInclude(repo, explicit, starredByUser) {
         if (!repo || repo.private || repo.disabled) return false;
         if (repo.fork && !starredByUser) return false;
@@ -134,6 +198,7 @@ module.exports=class GithubFetcher {
         const byFullName = new Map();
         const allRepos = new Map();
         const starredRepos = await this.fetchStarredBy(cfg.starredBy);
+        const contributionStats = await this.fetchContributionStats(cfg.starredBy);
         for (const owner of cfg.owners) {
             const ownerRepos = await this.fetchOwner(owner);
             for (const item of ownerRepos) {
@@ -167,10 +232,10 @@ module.exports=class GithubFetcher {
         for (const repo of allProjectRepos) {
             repo.detectedLanguages = await this.fetchLanguages(repo);
         }
-        return { repos, allProjectRepos };
+        return { repos, allProjectRepos, contributionStats };
     }
 
-    writeData(repos, allProjectRepos) {
+    writeData(repos, allProjectRepos, contributionStats) {
         const normalized = repos.map((repo) => this.normalizeRepo(repo));
         const normalizedAllRepos = (allProjectRepos || repos).map((repo) => this.normalizeRepo(repo));
         const languages = Array.from(new Set(normalizedAllRepos.flatMap((repo) => repo.languages || []))).sort();
@@ -181,6 +246,7 @@ module.exports=class GithubFetcher {
             totalStars: normalizedAllRepos.reduce((sum, repo) => sum + repo.stars, 0),
             totalLanguages: languages.length,
             languages,
+            ...(contributionStats || {}),
             repositories: normalized
         };
 
@@ -192,9 +258,54 @@ module.exports=class GithubFetcher {
         );
     }
 
+    unavailableData(error) {
+        const cachePath = Path.join(Settings.ROOTDIR, "data/github_projects.json");
+        let data = {
+            generatedAt: new Date().toJSON(),
+            projectCount: 0,
+            totalProjectCount: 0,
+            totalStars: null,
+            totalLanguages: null,
+            totalContributionsLastYear: null,
+            languages: [],
+            repositories: []
+        };
+        if (Fs.existsSync(cachePath)) {
+            data = JSON.parse(Fs.readFileSync(cachePath, "utf8"));
+        }
+        return {
+            ...data,
+            generatedAt: new Date().toJSON(),
+            githubStatsUnavailable: true,
+            githubStatsError: error.message,
+            totalStars: null,
+            totalLanguages: null,
+            totalContributionsLastYear: null
+        };
+    }
+
+    writeUnavailableData(error) {
+        const dataDir = Path.join(Settings.ROOTDIR, "data");
+        Fs.mkdirSync(dataDir, { recursive: true });
+        Fs.writeFileSync(
+            Path.join(dataDir, "github_projects.json"),
+            JSON.stringify(this.unavailableData(error), null, 2)
+        );
+    }
+
     async fetch(){
-        const result = await this.collectRepositories();
+        let result = null;
+        try {
+            result = await this.collectRepositories();
+        } catch (err) {
+            if (this.shouldFailOnFetchError()) {
+                throw err;
+            }
+            console.warn("GitHub fetch failed, writing local placeholder data: " + err.message);
+            this.writeUnavailableData(err);
+            return;
+        }
         const repos = result.repos;
-        this.writeData(repos, result.allProjectRepos);
+        this.writeData(repos, result.allProjectRepos, result.contributionStats);
     }
 }

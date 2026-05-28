@@ -5,10 +5,12 @@
     </p>
 
     {{ with hugo.Data.github_projects }}
+    {{ $statsUnavailable := .githubStatsUnavailable }}
+    {{ $statsTitle := cond $statsUnavailable (.githubStatsError | default "GitHub data not loaded") "" }}
     <section class="github-stats">
-        <div>
+        <div {{ with $statsTitle }}title="{{ . }}"{{ end }}>
             <i class="fas fa-star"></i>
-            <strong>{{ partial "humanNumber.html" .totalStars }}</strong>
+            <strong>{{ if $statsUnavailable }}?{{ else }}{{ partial "humanNumber.html" .totalStars }}{{ end }}</strong>
             <span>GitHub stars</span>
         </div>
         <div>
@@ -16,10 +18,15 @@
             <strong>{{ .totalProjectCount | default .projectCount }}</strong>
             <span>open source projects</span>
         </div>
-        <div title="{{ delimit .languages ", " }}">
+        <div title="{{ if $statsUnavailable }}{{ $statsTitle }}{{ else }}{{ delimit .languages ", " }}{{ end }}">
             <i class="fas fa-code"></i>
-            <strong>{{ .totalLanguages }}</strong>
+            <strong>{{ if $statsUnavailable }}?{{ else }}{{ .totalLanguages }}{{ end }}</strong>
             <span>languages used</span>
+        </div>
+        <div {{ with $statsTitle }}title="{{ . }}"{{ end }}>
+            <i class="fas fa-code-branch"></i>
+            <strong>{{ if $statsUnavailable }}?{{ else }}{{ partial "humanNumber.html" .totalContributionsLastYear }}{{ end }}</strong>
+            <span>contributions last year</span>
         </div>
     </section>
     {{ end }}
