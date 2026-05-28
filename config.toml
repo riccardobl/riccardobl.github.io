@@ -35,7 +35,7 @@ disableKinds = ["taxonomy", "term"]
     owners = ["riccardobl", "NostrGameEngine", "jmePhonon"]
     repos = ["jMonkeyEngine/jmonkeyengine", "lnbits/nwcprovider"]
     starredBy = "riccardobl"
-    ignoredLanguages = ["C#", "Dockerfile", "Jupyter Notebook", "Makefile", "Ruby", "Swift", "WebAssembly", "Rust", "Go"]
+    ignoredLanguages = ["C#", "Dockerfile", "Jupyter Notebook", "Makefile", "Ruby", "Swift", "WebAssembly", "Rust", "Go", "Blade", "CMake", "CUE", "Jinja", "Jsonnet", "Just", "M4", "Meson", "CUDA", "Metal", "Nix", "Procfile", "Puppet", "R", "QML", "SWIG", "Scala", "Slash", "Smarty", "TeX", "XSLT"]
 
   [[params.featuredProjects]]
     title = "jMonkeyEngine"
