@@ -1,0 +1,28 @@
+{{ $href := .url }}
+{{ $isPersonal := eq .owner "riccardobl" }}
+<article
+    onclick="window.open('{{ $href }}', '_blank', 'noopener,noreferrer');"
+    class="github-project-card{{ if $isPersonal }} personal-project-card{{ end }}"
+>
+    <h2 class="github-repo-title">
+        <a href="{{ $href }}" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            {{ if not $isPersonal }}
+            <span class="github-owner">{{ .owner }}</span>
+            {{ end }}
+            <span class="github-repo-line"><span class="github-repo">{{ .name }}</span></span>
+        </a>
+    </h2>
+
+    <p>{{ .description | default "Open source repository." | truncate 200 }}</p>
+
+    {{ $chips := slice }}
+    {{ range .languages }}{{ $chips = $chips | append . }}{{ end }}
+    {{ range .topics }}{{ $chips = $chips | append . }}{{ end }}
+    {{ if gt (len $chips) 0 }}
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        {{ range $chips }}
+        <span>{{ . }}</span>
+        {{ end }}
+    </nav>
+    {{ end }}
+</article>

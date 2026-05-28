@@ -176,8 +176,58 @@ function handleImageZoom() {
     });
 }
 
+function setupRails() {
+    const wraps = document.querySelectorAll(".opensource-rail-wrap, .featured-rail-wrap");
+    wraps.forEach((wrap) => {
+        const rail = wrap.querySelector(".opensource-rail, .featured-rail");
+        const prev = wrap.querySelector(".rail-prev");
+        const next = wrap.querySelector(".rail-next");
+        if (!rail || !prev || !next) return;
+
+        const getCardStep = () => {
+            const cards = Array.from(rail.querySelectorAll("article"));
+            if (cards.length > 1) {
+                return Math.abs(cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left);
+            }
+
+            const card = cards[0];
+            if (!card) return rail.clientWidth * 0.85;
+
+            const styles = window.getComputedStyle(rail);
+            const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+            return card.getBoundingClientRect().width + gap;
+        };
+
+        const getVisibleCardCount = () => {
+            const cards = Array.from(rail.querySelectorAll("article"));
+            const railRect = rail.getBoundingClientRect();
+            const visibleCards = cards.filter((card) => {
+                const rect = card.getBoundingClientRect();
+                return rect.left >= railRect.left - 2 && rect.right <= railRect.right + 2;
+            });
+
+            if (visibleCards.length > 0) return visibleCards.length;
+
+            const step = getCardStep();
+            return Math.max(1, Math.round(rail.clientWidth / step));
+        };
+
+        const scrollByPage = (direction) => {
+            const amount = getCardStep() * getVisibleCardCount();
+            rail.scrollBy({
+                left: amount * direction,
+                behavior: "smooth"
+            });
+        };
+
+        prev.addEventListener("click", () => scrollByPage(-1));
+        next.addEventListener("click", () => scrollByPage(1));
+    });
+}
+
 async function main(){
     handleImageZoom();
+    setupRails();
     const toTop=document.getElementById("toTop");
     if(toTop){
         window.addEventListener("resize",function(){

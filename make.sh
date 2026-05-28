@@ -1,94 +1,34 @@
 #!/bin/bash
-#  ############ ############ ############
-#   Usage:
-#   with defaults:
-#          ./make.sh
-#          ./make.sh server
-#   or:
-#          ARGS="-it" IMAGE="riccardoblb/buildenvs:hugo" RUNTIME="docker" ./make.sh          
-#          PORT="1313" ARGS="-it" IMAGE="riccardoblb/buildenvs:hugo" RUNTIME="docker" ./make.sh   server
-#  ############ ############ ############ 
+# Usage:
+#   ./make.sh
+#   ./make.sh server
+#   PORT=1313 ./make.sh server
 
+set -euo pipefail
 set -x
-export NO_P5RENDER="1"
-if [ "$IMAGE" = "" ];
-then
-    export IMAGE="riccardoblb/buildenvs:hugo"
+
+if [ -f ".local-env" ]; then
+    set -a
+    . ./.local-env
+    set +a
 fi
 
-userUID=`id -u`
-groupUID=`id -g`
-
-if [ "$CMD" = "" ];
-then
-    export CMD="hugo $@"
+if [ "${SKIP_PREGEN:-}" = "" ]; then
+    npm --prefix generator --verbose install
+    node generator/main.js
 fi
 
-if [ "$SKIP_PREGEN" = "" ];
-then
-    export CMD="(cd generator&&npm --verbose install&&cd ..)&&(node generator/main.js)&&$CMD"
+if [ "${NO_P5RENDER:-1}" = "" ]; then
+    ./renderp5js.sh
 fi
 
-if [ "$ARGS" = "" ];
-then
-    if [ "$HEADLESS" = "" ];
-    then
-        export ARGS="$ARGS -it"
+cmd=(hugo "$@")
+
+if [ "${1:-}" = "server" ]; then
+    cmd+=(--bind "${BIND:-0.0.0.0}")
+    if [ "${PORT:-}" != "" ]; then
+        cmd+=(--port "$PORT")
     fi
 fi
 
-if [ "$RUNTIME" = "" ];
-then
-    if [ "`which podman`" != "" ];then  
-        export RUNTIME="podman"
-    else
-        export RUNTIME="docker"
-        if [ "$SUDO_USER" != "" ];
-        then
-            userUID=`id -u $SUDO_USER`
-            groupUID=`id -g $SUDO_USER`
-        fi
-        ARGS="$ARGS -u=$userUID:$groupUID"
-    fi
-fi
-
-
-if [ "$PORT" = "" ];
-then
-    if [ "$1"  = "server" ];
-    then
-        export PORT="1313"
-    fi
-fi
-
-if [ "$PORT" != "" ];
-then
-    export ARGS="$ARGS -p$PORT:1313"
-fi
-
-if [ "$1"  = "server" ];
-then
-    export CMD="$CMD --bind 0.0.0.0"    
-fi
-
-ENV_FILE=""
-if [ -f ".local-env" ];
-then
-    if [ "$NO_CONTAINER" != "" ];
-    then    
-          export $(cat .local-env | xargs)
-    fi
-    ENV_FILE="--env-file=.local-env"
-fi
-
-set -x
-if [ "$NO_CONTAINER" = "" ];
-then
-    if [ "$NO_P5RENDER" = "" ];
-    then
-        ./renderp5js.sh
-    fi
-    $RUNTIME run  -u=$userUID:$groupUID --userns=keep-id -v"$PWD:/workspace/:z" $ENV_FILE $RUN_AS -w  /workspace/ $ARGS --rm $IMAGE bash -c  "$CMD"
-else
-    eval "$CMD"
-fi
+exec "${cmd[@]}"

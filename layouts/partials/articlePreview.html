@@ -1,7 +1,12 @@
-
+{{ $cardHref := .RelPermalink }}
+{{ if .Params.externalUrl }}
+  {{ $cardHref = .Params.externalUrl }}
+{{ else if .Params.githubUrl }}
+  {{ $cardHref = .Params.githubUrl }}
+{{ end }}
 <article  
 {{ if not .Params.youtubevideo }}
-onclick="document.location='{{ .RelPermalink }}';"
+onclick="window.open('{{ $cardHref }}', '_blank', 'noopener,noreferrer');"
 {{end}}
 style=" {{ if .Params.cover }}    background-position: top center; background-image:url(' {{ .Params.cover }}'); {{end}} '" 
 class='hoverDeScale {{ if  (or (isset .Params "cover") (isset .Params "ytcover")) }} cover {{ end }}{{ if   (isset .Params "ytcover") }} interactive {{ end }}'
@@ -13,17 +18,23 @@ class='hoverDeScale {{ if  (or (isset .Params "cover") (isset .Params "ytcover")
           llowfullscreen></iframe>
         {{ end }}
 
-        {{ if .Params.summarytitle }}
-        <h2> <a href="{{ .RelPermalink }}">{{ .Params.summarytitle }}</a> </h2>
+        {{ if and .Params.githubOwner .Params.githubRepo }}
+        <h2 class="github-repo-title">
+          <a href="{{ $cardHref }}" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            <span class="github-owner">{{ .Params.githubOwner }}</span><span class="github-slash">/</span><span class="github-repo">{{ .Params.githubRepo }}</span>
+          </a>
+        </h2>
+        {{ else if .Params.summarytitle }}
+        <h2> <a href="{{ $cardHref }}" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">{{ .Params.summarytitle }}</a> </h2>
         {{ else }}
-        {{ if .Title }} <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2> {{ end }}
+        {{ if .Title }} <h2> <a href="{{ $cardHref }}" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">{{ .Title }}</a> </h2> {{ end }}
         {{ end }}
         <p>
         {{ if .Params.summary }}
         {{ .Params.summary | truncate 200}}
         {{ else }}
         {{ .Summary | plainify | safeHTML }} {{ if .Truncated }} … 
-        <a class="readMore" href="{{ .RelPermalink }}">Read
+        <a class="readMore" href="{{ .RelPermalink }}" target="_blank" rel="noopener noreferrer">Read
             More... </a> {{ end }}
             {{ end }}
           </p>

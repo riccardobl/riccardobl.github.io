@@ -1,0 +1,18 @@
+{{ $href := .Site.Params.github }}
+<article
+    onclick="window.open('{{ $href }}', '_blank', 'noopener,noreferrer');"
+    class="github-project-card github-more-card"
+>
+    <h2 class="github-repo-title">
+        <a href="{{ $href }}" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            <span class="github-owner">My GitHub</span>
+            <span class="github-repo-line"><span class="github-repo">See more projects</span></span>
+        </a>
+    </h2>
+
+    <p>Browse the rest of my repositories, experiments, libraries and contributions on my GitHub profile.</p>
+
+    <nav class="repo-meta" aria-label="More projects">
+        <span><i class="fab fa-github"></i> See my GitHub</span>
+    </nav>
+</article>

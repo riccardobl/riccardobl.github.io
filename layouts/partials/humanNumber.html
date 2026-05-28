@@ -1,0 +1,8 @@
+{{ $n := float . }}
+{{ if ge $n 1000000.0 }}
+    {{ replace (printf "%.1fM" (div $n 1000000.0)) ".0M" "M" }}
+{{ else if ge $n 1000.0 }}
+    {{ replace (printf "%.1fK" (div $n 1000.0)) ".0K" "K" }}
+{{ else }}
+    {{ printf "%.0f" $n }}
+{{ end }}

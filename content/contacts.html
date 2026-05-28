@@ -1,26 +1,50 @@
 ---
 menu: "main"
-title: "Contacts"
+title: "Get in touch"
 type: "default"
 disable_nav: true
 layout: "plain_layout"
 ---
 
-<p>
-    You can contact me via
-    <ul>
-        <li>email: {{< email>}} <i class="fa fa-envelope" aria-hidden="true"></i></li>
-        <li>discord: <a>@rblb</a></li>
-        <li>nostr: <a href="https://primal.net/p/npub1klt4m7gsqtx0e5erq9snquk8g2sw79mwm6kjau02nufnny99pcysd4kr0p">npub1klt4m7gsqtx0e5erq9snquk8g2sw79mwm6kjau02nufnny99pcysd4kr0p</a></li>
-        <li>signal: <a href="https://signal.me/#eu/4gYXaNX6la0xALjD8AUM7D4rmDOXfis_zDhYmSgnKGx_fJZaHXlCO5-yw874seAe">rblb.07</a></li>
-        <li>telegram: <a href="https://t.me/rblb0">@rblb0</a></li>
-    </ul> 
-</p>
+<section class="contact-page standalone-page">
+    <p class="page-lead">
+        For open source work, graphics, backend integrations, Nostr/Bitcoin projects, or anything that needs careful prototyping, the easiest way to reach me is email.
+    </p>
 
-<p>
-    {{< pgpkey>}}   
-     
-</p>
+    <section class="contact-methods">
+        <div class="contact-method primary">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <span>Email</span>
+            <strong>{{< email>}}</strong>
+        </div>
+        <a class="contact-method" href="https://primal.net/p/npub1klt4m7gsqtx0e5erq9snquk8g2sw79mwm6kjau02nufnny99pcysd4kr0p" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-bolt" aria-hidden="true"></i>
+            <span>Nostr</span>
+            <strong>npub1klt4m7...d4kr0p</strong>
+        </a>
+        <a class="contact-method" href="https://signal.me/#eu/4gYXaNX6la0xALjD8AUM7D4rmDOXfis_zDhYmSgnKGx_fJZaHXlCO5-yw874seAe" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-comment" aria-hidden="true"></i>
+            <span>Signal</span>
+            <strong>rblb.07</strong>
+        </a>
+        <a class="contact-method" href="https://t.me/rblb0" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-telegram" aria-hidden="true"></i>
+            <span>Telegram</span>
+            <strong>@rblb0</strong>
+        </a>
+        <div class="contact-method">
+            <i class="fab fa-discord" aria-hidden="true"></i>
+            <span>Discord</span>
+            <strong>@rblb</strong>
+        </div>
+    </section>
+
+    <section class="pgp-panel">
+        <h2>PGP key</h2>
+        <p>Use this key if you need encrypted mail or want to verify a signed message.</p>
+        {{< pgpkey>}}
+    </section>
+</section>
 
 <!-- 
 <form action="/api/contact" method="POST" class="simpleform">

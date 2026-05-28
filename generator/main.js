@@ -6,8 +6,15 @@ const ShadertoyFetcher =require("./ShadertoyFetcher.js");
 const TwitterFetcher =require("./TwitterFetcher.js");
 const GithubFetcher =require("./GithubFetcher.js");
 const AvatarFetcher =require("./AvatarFetcher.js");
+const Fs = require("fs");
+const Path = require("path");
 
 async function main() {
+    Fs.rmSync(Path.resolve(__dirname, "../content/posts/generated"), {
+        recursive: true,
+        force: true
+    });
+
     const avatar=new AvatarFetcher();
     avatar.fetch();
 
@@ -35,7 +42,7 @@ async function main() {
     // twitter.fetch(Settings.TWITTER_COLLECTION);
 
     const github=new GithubFetcher();
-    Settings.GITHUB_ACCOUNTS.split(",").forEach((a)=>github.fetch(a));
+    await github.fetch();
 
 }
 main();

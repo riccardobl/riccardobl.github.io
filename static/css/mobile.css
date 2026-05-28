@@ -31,11 +31,30 @@
         min-width:100%!important;
     }
 
+    .opensource-rail-wrap .opensource-rail {
+        grid-auto-columns: minmax(20rem, 26rem);
+    }
+
+    .opensource-rail-wrap .opensource-rail article{
+        width:auto!important;
+        min-width:0!important;
+    }
+
        
   
 
 }
 
+
+@media only screen and (max-width: 1380px) {
+    .case-grid {
+        grid-auto-columns: calc((100% - 0.8rem) / 2);
+    }
+
+    .opensource-rail-wrap .opensource-rail {
+        grid-auto-columns: calc((100% - 0.75rem) / 2);
+    }
+}
 
 @media only screen and (max-width: 1200px){
     body > header{
@@ -53,6 +72,12 @@
         margin:0.5%;
 
         min-width:32%!important;
+    }
+
+    .opensource-rail-wrap .opensource-rail article{
+        width:auto!important;
+        min-width:0!important;
+        margin:0;
     }
    
     /* #board > *:not(.toggled){
@@ -182,6 +207,27 @@
  
 }
 @media only screen and (max-width: 780px) {
+    body>main {
+        text-align: left;
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+    }
+
+    body>main .case-studies > h1,
+    body>main .opensource > h1,
+    body>main .skills > h1,
+    body>main .contact-strip > h1,
+    body>main h2,
+    body>main h3,
+    .section-lead {
+        text-align: left;
+    }
+
+    .section-lead {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     section.list {
         flex-direction: column;;
     }
@@ -191,6 +237,124 @@
         margin-right: 0;
         width:100%!important;
         min-width:100%!important;
+    }
+
+    .github-stats {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section.full.responsiveWidth {
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+    }
+
+    section.full.responsiveWidth article > h1,
+    .page-lead {
+        text-align: left;
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-method.primary {
+        grid-column: auto;
+    }
+
+    .support-form inputcnt {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+
+    .support-form inputcnt label {
+        width: auto;
+    }
+
+    .support-form inputcnt input,
+    .support-form inputcnt textarea {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .support-form icons {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .opensource-rail-wrap {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+    }
+
+    .opensource-rail-wrap .opensource-rail {
+        grid-auto-columns: 100%;
+    }
+
+    .opensource-rail-wrap .opensource-rail article{
+        width:auto!important;
+        min-width:0!important;
+    }
+
+    .rail-control {
+        display:flex;
+        width: 2.25rem;
+        min-width: 2.25rem;
+    }
+
+    .featured-rail-wrap {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+    }
+
+    .case-grid {
+        grid-auto-columns: 100%;
+    }
+
+    section.skills p {
+        text-align: left;
+    }
+
+    section.skills section.icons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+        gap: 0.55rem;
+        justify-content: stretch;
+    }
+
+    section.skills section.icons article {
+        width: auto!important;
+        min-width: 0!important;
+        min-height: 4.7rem;
+        margin: 0;
+        padding: 0.75rem;
+        align-items: center;
+        flex-direction: row;
+        text-align: left;
+        justify-content: flex-start;
+        gap: 0.55rem;
+    }
+
+    section.skills section.icons article h2 {
+        font-size: 0.92rem;
+        line-height: 1.2;
+        min-height: 0;
+        margin: 0;
+        text-align: left;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    section.skills section.icons article i {
+        flex: 0 0 2.35rem;
+        width: 2.35rem;
+        padding: 0;
+        margin: 0;
+        min-height: 2.35rem;
+    }
+
+    section.skills section.icons article i::before {
+        width: 2.1rem;
+        height: 2.1rem;
+        font-size: 2.1rem;
     }
     body > header >*:last-child, body > header >*:first-child{
         clip-path: none;

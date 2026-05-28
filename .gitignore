@@ -8,5 +8,6 @@ resources/
 static/images/devlog/auto/
 *.p5img.js.png
 static/images/avatar.webp
+data/github_projects.json
 exstyle.css
 .hugo_build.lock

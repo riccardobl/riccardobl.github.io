@@ -1,5 +1,5 @@
 baseURL = "/"
-languageCode = "en-us"
+locale = "en-US"
 title = "RBLB"
 paginate=9
 summarylength = 20
@@ -37,6 +37,79 @@ ignoreErrors = ["error-output-taxonomy"]
   pgpPubKey="/gpg_pub_riccardoblb.asc"
   zapDefaultNet="lightning"
 
+  [params.githubShowcase]
+    owners = ["riccardobl", "NostrGameEngine"]
+    repos = ["jMonkeyEngine/jmonkeyengine", "lnbits/nwcprovider"]
+    starredBy = "riccardobl"
+
+  [[params.featuredProjects]]
+    title = "jMonkeyEngine"
+    kicker = "Game engine"
+    image = "/images/jmonkeyengine-showcase.jpg"
+    summary = "A historic 21+ year Java 3D engine project where I contribute as a core developer."
+    url = "https://jmonkeyengine.org/"
+    repo = "jMonkeyEngine/jmonkeyengine"
+
+  [[params.featuredProjects]]
+    title = "Nostr Game Engine"
+    kicker = "Game engine"
+    image = "/images/nge.jpg"
+    summary = "A Java engine and application framework for Nostr and Bitcoin-native apps."
+    url = "https://ngengine.org/"
+    repo = "NostrGameEngine/ngengine"
+
+  [[params.featuredProjects]]
+    title = "libJGLIOS"
+    kicker = "Java on iOS"
+    image = "/images/libjglios.svg"
+    imageFit = "contain"
+    summary = "An iOS support stack for Java apps with SDL3, OpenAL, OpenGL ES, ANGLE/Metal and GraalVM Native Image."
+    url = "https://github.com/NostrGameEngine/libJGLIOS"
+    repo = "NostrGameEngine/libJGLIOS"
+
+  [[params.featuredProjects]]
+    title = "Hypergate"
+    kicker = "P2P networking"
+    image = "/images/hypergate.svg"
+    imageFit = "contain"
+    summary = "A zero-configuration encrypted tunnel for connecting containers and machines across NAT."
+    url = "https://github.com/riccardobl/hypergate"
+    repo = "riccardobl/hypergate"
+
+  [[params.featuredProjects]]
+    title = "Nostr4J"
+    kicker = "Nostr library"
+    image = "/images/nostr4j.svg"
+    imageFit = "contain"
+    summary = "A Java Nostr client library with Blossom, wallets, and WebRTC over Nostr for p2p apps."
+    url = "https://github.com/NostrGameEngine/nostr4j"
+    repo = "NostrGameEngine/nostr4j"
+
+  [[params.featuredProjects]]
+    title = "Nostrduino"
+    kicker = "Embedded Nostr"
+    image = "/images/nostrduino.svg"
+    imageFit = "contain"
+    summary = "A Nostr library for Arduino and microcontrollers, including Nostr Wallet Connect support."
+    url = "https://github.com/riccardobl/nostrduino"
+    repo = "riccardobl/nostrduino"
+
+  [[params.featuredProjects]]
+    title = "NWC Provider"
+    kicker = "Wallet integration"
+    image = "/images/nwcprovider.svg"
+    imageFit = "contain"
+    summary = "An LNbits plugin that adds Nostr Wallet Connect support for wallet and payment flows."
+    url = "https://github.com/lnbits/nwcprovider"
+    repo = "lnbits/nwcprovider"
+
+  [[params.featuredProjects]]
+    title = "Shop La Rabiosa"
+    kicker = "E-commerce"
+    image = "/images/shop.larabiosa.it/feature.webp"
+    imagePosition = "top center"
+    summary = "A serverless e-commerce site built for an Italian wine producer, covering catalog, checkout and payment processor integration."
+
 [taxonomies]
   tag = "tags"
 
@@ -44,4 +117,3 @@ ignoreErrors = ["error-output-taxonomy"]
   home = ["HTML"]
   taxonomy = ["HTML","JSON"]
   term=["HTML","JSON"]
-

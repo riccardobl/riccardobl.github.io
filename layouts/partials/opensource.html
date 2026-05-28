@@ -1,36 +1,50 @@
 <section class="opensource">
-    <h1 id="opensource">Open Source</h1>
-    <p>
-        I develop and contribute to open source projects. 
-        <br>
-        <sub>
-        <a class="github-link" target="_blank" href="https://github.com/riccardobl">
-           See my GitHub profile for more.
-        </a>
-        </sub>
-        
+    <h1 id="opensource">Open source work</h1>
+    <p class="section-lead">
+        Open source projects I've built and repositories I maintain or contribute to.
     </p>
-    <p>
-        <sub>
-            If you appreciate my open source work and would like to support future projects, you can <a href="/zap">offer me a
-                coffee</a>
-        
-        </sub>
-    </p>
-   
-    <section class="list showcase">
-        {{ $paginator := .Paginator }}
-        {{ $filter := slice "opensource-contrib" }}
-        {{ $pages := (where  .Site.Pages  "Params.tags"  "intersect" $filter )}}
-        {{ range $pages | shuffle | first 9 }}
-        {{ partial "articlePreview.html" . }}
-        {{ end }}
+
+    {{ with hugo.Data.github_projects }}
+    <section class="github-stats">
+        <div>
+            <i class="fas fa-star"></i>
+            <strong>{{ partial "humanNumber.html" .totalStars }}</strong>
+            <span>GitHub stars</span>
+        </div>
+        <div>
+            <i class="fab fa-github"></i>
+            <strong>{{ .totalProjectCount | default .projectCount }}</strong>
+            <span>open source projects</span>
+        </div>
+        <div>
+            <i class="fas fa-code"></i>
+            <strong>{{ .totalLanguages }}</strong>
+            <span>languages used</span>
+        </div>
     </section>
-    <h3>
-        <sub>
-            <a class="github-link" target="_blank" href="https://github.com/riccardobl">
-                See more...
-            </a>
-        </sub>
-    </h3>
+    {{ end }}
+
+    <section class="opensource-rail-wrap">
+        <button class="rail-control rail-prev" type="button" aria-label="Previous projects">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <section class="list showcase opensource-rail">
+        {{ with hugo.Data.github_projects }}
+        {{ range .repositories | shuffle }}
+            {{ partial "githubProjectCard.html" . }}
+        {{ end }}
+        {{ end }}
+            {{ partial "githubMoreCard.html" . }}
+        </section>
+        <button class="rail-control rail-next" type="button" aria-label="Next projects">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </section>
+
+    <nav class="soft-actions">
+        <a class="github-link" target="_blank" rel="noopener noreferrer" href="{{ .Site.Params.github }}">
+            <i class="fab fa-github"></i> See my GitHub
+        </a>
+        <a href="/zap"><i class="fas fa-mug-hot"></i> Offer me a coffee</a>
+    </nav>
 </section>

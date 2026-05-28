@@ -24,12 +24,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest   
-    container:
-      image: riccardoblb/buildenvs:hugo
     env:
       SHADERTOY_USER: rblb
       YOUTUBE_CHANNEL: UCh_H0NPkra9GZU_KFC5eVbw
-      GITHUB_ACCOUNTS: riccardobl,jmePhonon,f3b
       TWITTER_COLLECTION:  ${{ secrets.TWITTER_COLLECTION }}
       DROPBOX_FOLDERS: devlog
       SHADERTOY_KEY: ${{ secrets.SHADERTOY_KEY }}
@@ -39,6 +36,7 @@ jobs:
       TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
       TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
       DROPBOX_APIKEY: ${{ secrets.DROPBOX_APIKEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps: 
     - name: Clone repo
@@ -56,12 +54,19 @@ jobs:
           git reset --hard `git rev-list --max-parents=0 HEAD`
           cd ..
 
+    - name: Install build tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y hugo
+        node --version
+        npm --version
+        hugo version
 
     - name: Build
       run: |
         cd project
         chmod +x ./make.sh
-        NO_P5RENDER=1 NO_CONTAINER=1 HEADLESS=1 ./make.sh         
+        HEADLESS=1 ./make.sh
         mkdir -p public
         echo "1" > public/.nojekyll
 

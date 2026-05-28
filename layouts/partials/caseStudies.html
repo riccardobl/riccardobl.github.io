@@ -1,0 +1,68 @@
+<section class="case-studies">
+    <h1 id="case-studies">Project highlights</h1>
+    <p class="section-lead">
+        A small selection of engines, libraries and production web work.
+    </p>
+
+    <section class="featured-rail-wrap">
+        <button class="rail-control rail-prev" type="button" aria-label="Previous featured projects">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <section class="case-grid featured-rail">
+        {{ $featuredProjects := .Site.Params.featuredProjects }}
+        {{ $pinnedProjects := where $featuredProjects "title" "Nostr Game Engine" }}
+        {{ $randomProjects := where $featuredProjects "title" "!=" "Nostr Game Engine" | shuffle }}
+        {{ range $pinnedProjects }}
+            {{ $href := .url }}
+            {{ if and (not $href) .repo }}
+                {{ $href = printf "https://github.com/%s" .repo }}
+            {{ end }}
+            {{ if $href }}
+            <a class="case-card-link" href="{{ $href }}" target="_blank" rel="noopener noreferrer">
+        {{ end }}
+        <article class="case-study">
+            {{ $fit := .imageFit | default "cover" }}
+            {{ $position := .imagePosition | default "center" }}
+            {{ with .image }}
+            <div class="case-media" style="background-image:url('{{ . }}'); background-size: {{ $fit }}; background-position: {{ $position }};"></div>
+            {{ end }}
+            <div class="case-copy">
+                <span class="case-kicker">{{ .kicker }}</span>
+                <h2>{{ .title }}</h2>
+                <p>{{ .summary }}</p>
+            </div>
+        </article>
+            {{ if $href }}
+            </a>
+            {{ end }}
+        {{ end }}
+        {{ range $randomProjects }}
+            {{ $href := .url }}
+            {{ if and (not $href) .repo }}
+                {{ $href = printf "https://github.com/%s" .repo }}
+            {{ end }}
+            {{ if $href }}
+            <a class="case-card-link" href="{{ $href }}" target="_blank" rel="noopener noreferrer">
+        {{ end }}
+        <article class="case-study">
+            {{ $fit := .imageFit | default "cover" }}
+            {{ $position := .imagePosition | default "center" }}
+            {{ with .image }}
+            <div class="case-media" style="background-image:url('{{ . }}'); background-size: {{ $fit }}; background-position: {{ $position }};"></div>
+            {{ end }}
+            <div class="case-copy">
+                <span class="case-kicker">{{ .kicker }}</span>
+                <h2>{{ .title }}</h2>
+                <p>{{ .summary }}</p>
+            </div>
+        </article>
+            {{ if $href }}
+            </a>
+            {{ end }}
+        {{ end }}
+        </section>
+        <button class="rail-control rail-next" type="button" aria-label="Next featured projects">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </section>
+</section>

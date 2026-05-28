@@ -1,15 +1,17 @@
 ---
 menu: "main"
-title: "Zap"
+title: "Offer me a coffee"
 type: "default"
 disable_nav: true
 layout: "plain_layout"
 ---
 
+<section class="support-page standalone-page">
+    <p class="page-lead">
+        If my open source work saved you time or helped your project, you can send a small thank you through Lightning, Bitcoin, Liquid, or Revolut.
+    </p>
 
-
-
-<form id="zapform"  class="simpleform">
+<form id="zapform"  class="simpleform support-form">
   
     <inputcnt>
         <label for="sats">Amount (in sats): </label><input   autocomplete="off" min=0 name="sats" type="number" placeholder="Sats"> <symbol for="sats">⚡</symbol>
@@ -62,6 +64,7 @@ layout: "plain_layout"
     </div>
 
 </form>
+</section>
 
 <script>
 
@@ -346,7 +349,7 @@ layout: "plain_layout"
         satsInputEl.value = window.zapData.amount||window.zapData.coffeeCost;
 
         if(!zapData.invoiceMode){
-            h1.innerHTML = "Zap"+(window.zapData.for?": ":"") + window.zapData.for;
+            h1.innerHTML = "Offer me a coffee";
         }else{
             h1.innerHTML = "Invoice" + (window.zapData.for ? ": " : "") + window.zapData.for;
             if(window.zapData.amount)satsInputEl.parentElement.classList.add("disabled");
