@@ -32,7 +32,7 @@ disableKinds = ["taxonomy", "term"]
   zapDefaultNet="lightning"
 
   [params.githubShowcase]
-    owners = ["riccardobl", "NostrGameEngine"]
+    owners = ["riccardobl", "NostrGameEngine", "jmePhonon"]
     repos = ["jMonkeyEngine/jmonkeyengine", "lnbits/nwcprovider"]
     starredBy = "riccardobl"
     ignoredLanguages = ["C#", "Dockerfile", "Jupyter Notebook", "Makefile", "Ruby", "Swift", "WebAssembly", "Rust", "Go"]
