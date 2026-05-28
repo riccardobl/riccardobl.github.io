@@ -249,9 +249,20 @@ function setupRails() {
 
 function preventDoubleTapZoom() {
     let lastTouchEnd = 0;
+    const shouldIgnoreTarget = (target) => target && target.closest && target.closest("input, textarea, select");
+
+    document.addEventListener("touchstart", (event) => {
+        if (shouldIgnoreTarget(event.target)) return;
+
+        const now = Date.now();
+        if (now - lastTouchEnd <= 320) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+
     document.addEventListener("touchend", (event) => {
         const target = event.target;
-        if (target && target.closest && target.closest("input, textarea, select")) return;
+        if (shouldIgnoreTarget(target)) return;
 
         const now = Date.now();
         if (now - lastTouchEnd <= 320) {
@@ -262,7 +273,7 @@ function preventDoubleTapZoom() {
 
     document.addEventListener("dblclick", (event) => {
         const target = event.target;
-        if (target && target.closest && target.closest("input, textarea, select")) return;
+        if (shouldIgnoreTarget(target)) return;
         event.preventDefault();
     });
 }

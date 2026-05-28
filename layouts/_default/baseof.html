@@ -10,7 +10,7 @@
     <script>hljs.initHighlightingOnLoad();</script>
 
   <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Params.Title }} | {{ . }}{{ end }}{{ end }}</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
   
   {{ hugo.Generator }}
   {{ range .Site.Params.custom_css }}

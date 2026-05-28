@@ -393,9 +393,13 @@
     }
 
     body>main {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
         padding-top: 0.75rem;
+    }
+
+    body>header {
+        container-type: inline-size;
     }
 
     body > header >*:last-child #rblb {
@@ -441,14 +445,15 @@
 
     body>header #board {
         box-sizing: border-box;
-        padding: 0.85rem 1rem 1.2rem 1rem;
+        padding: 0.75rem 1rem 0.85rem 1rem;
         width: 100%;
     }
 
     #board>div {
-        border-radius: 8px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-        padding: 1rem;
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
         text-align: left;
     }
 
@@ -465,6 +470,7 @@
     .opensource,
     .skills,
     .contact-strip {
+        container-type: inline-size;
         padding-left: 0;
         padding-right: 0;
     }
@@ -473,11 +479,14 @@
     .opensource > h1,
     .skills > h1,
     .contact-strip > h1 {
-        font-size: clamp(2.15rem, 11.5vw, 2.65rem);
+        font-size: clamp(1.72rem, 10.4cqw, 2rem);
+        line-height: 1.08;
         margin-top: 2.8rem;
         margin-bottom: 0.8rem;
         max-width: none;
-        white-space: nowrap;
+        overflow-wrap: normal;
+        white-space: normal;
+        word-break: normal;
     }
 
     .case-studies > h1 {
@@ -509,7 +518,11 @@
     }
 
     .case-copy {
-        padding: 0.95rem 1rem 0.35rem 1rem;
+        padding: 0.95rem 1rem 1.15rem 1rem;
+    }
+
+    .case-study p {
+        margin-bottom: 0.25rem;
     }
 
     .case-links {
@@ -523,8 +536,12 @@
 
     .github-stats div {
         min-width: 0;
-        padding: 0.9rem 1rem 0.95rem 1rem;
+        padding: 1rem 1rem 1.15rem 1rem;
         width: 100%;
+    }
+
+    .github-stats i {
+        margin-bottom: 0.9rem;
     }
 
     .soft-actions,
@@ -561,19 +578,24 @@
     }
 
     section.full.responsiveWidth {
-        padding-left: 0.25rem;
-        padding-right: 0.25rem;
+        container-type: inline-size;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     section.full.responsiveWidth article {
-        padding: 0.75rem;
+        margin: 0;
+        padding: 0.62rem;
+        width: 100%;
     }
 
     section.full.responsiveWidth article > h1 {
-        font-size: clamp(2rem, 10.8vw, 2.55rem);
+        font-size: clamp(1.65rem, 9.8cqw, 2rem);
         line-height: 1.08;
         margin-bottom: 1rem;
-        white-space: nowrap;
+        overflow-wrap: normal;
+        white-space: normal;
+        word-break: normal;
     }
 
     .standalone-page,
@@ -623,7 +645,7 @@
     .opensource > h1,
     .skills > h1,
     .contact-strip > h1 {
-        font-size: clamp(1.92rem, 10.5vw, 2.35rem);
+        font-size: clamp(1.55rem, 9.8cqw, 1.92rem);
     }
 
     .soft-actions a,
