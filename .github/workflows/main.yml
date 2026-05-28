@@ -21,6 +21,10 @@ on:
   push:
     branches:
       - project
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest   
@@ -36,7 +40,7 @@ jobs:
       TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
       TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
       DROPBOX_APIKEY: ${{ secrets.DROPBOX_APIKEY }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ github.token }}
 
     steps: 
     - name: Clone repo
@@ -63,6 +67,8 @@ jobs:
         hugo version
 
     - name: Build
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
       run: |
         cd project
         chmod +x ./make.sh
@@ -78,7 +84,7 @@ jobs:
         cd generated
         git add .
         git commit -m "Update data - `date`"        
-        header=$(echo -n "ad-m:${{ secrets.GITHUB_TOKEN }}" | base64)
+        header=$(echo -n "ad-m:${{ github.token }}" | base64)
         set +e
         (git -c http.extraheader="AUTHORIZATION: basic $header" push origin master --force )
 

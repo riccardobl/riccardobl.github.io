@@ -3,14 +3,6 @@ const Path = require("path");
 const fetch = require("node-fetch");
 const Settings = require("./Settings.js");
 
-const DEFAULT_IGNORED_LANGUAGES = [
-    "C#",
-    "Dockerfile",
-    "Jupyter Notebook",
-    "Makefile",
-    "WebAssembly"
-];
-
 module.exports=class GithubFetcher {
     constructor(){
         this.headers = {
@@ -43,9 +35,7 @@ module.exports=class GithubFetcher {
         const owners = Array.isArray(cfg.owners) ? cfg.owners : [];
         const repos = Array.isArray(cfg.repos) ? cfg.repos : [];
         const starredBy = cfg.starredBy || owners[0] || "";
-        const ignoredLanguages = Array.isArray(cfg.ignoredLanguages)
-            ? cfg.ignoredLanguages
-            : DEFAULT_IGNORED_LANGUAGES;
+        const ignoredLanguages = Array.isArray(cfg.ignoredLanguages) ? cfg.ignoredLanguages : [];
         if (owners.length || repos.length) {
             return { owners, repos, starredBy, ignoredLanguages };
         }
@@ -76,13 +66,8 @@ module.exports=class GithubFetcher {
 
     async fetchLanguages(repo) {
         if (!repo || !repo.full_name) return [];
-        try {
-            const languages = await this.fetchJson("https://api.github.com/repos/" + repo.full_name + "/languages");
-            return Object.keys(languages || {}).sort((a, b) => languages[b] - languages[a]);
-        } catch (err) {
-            console.warn("Could not fetch languages for " + repo.full_name + ": " + err.message);
-            return repo.language ? [repo.language] : [];
-        }
+        const languages = await this.fetchJson("https://api.github.com/repos/" + repo.full_name + "/languages");
+        return Object.keys(languages || {}).sort((a, b) => languages[b] - languages[a]);
     }
 
     async fetchStarredBy(username) {
@@ -120,9 +105,7 @@ module.exports=class GithubFetcher {
     }
 
     normalizeRepo(repo) {
-        const detectedLanguages = Array.isArray(repo.detectedLanguages) && repo.detectedLanguages.length
-            ? repo.detectedLanguages
-            : (repo.language ? [repo.language] : []);
+        const detectedLanguages = Array.isArray(repo.detectedLanguages) ? repo.detectedLanguages : [];
         const languages = this.filterLanguages(detectedLanguages);
         return {
             fullName: repo.full_name,
@@ -131,7 +114,7 @@ module.exports=class GithubFetcher {
             description: repo.description || "",
             stars: repo.stargazers_count || 0,
             forks: repo.forks_count || 0,
-            language: this.filterLanguages([repo.language])[0] || "",
+            language: languages[0] || "",
             languages,
             topics: Array.isArray(repo.topics) ? repo.topics : [],
             license: repo.license && repo.license.key ? repo.license.key : "",
@@ -209,45 +192,8 @@ module.exports=class GithubFetcher {
         );
     }
 
-    filterCachedData(data) {
-        const repositories = (data.repositories || []).map((repo) => {
-            const languages = this.filterLanguages(repo.languages || []);
-            return {
-                ...repo,
-                language: this.filterLanguages([repo.language])[0] || languages[0] || "",
-                languages
-            };
-        });
-        const sourceLanguages = Array.isArray(data.languages) && data.languages.length
-            ? data.languages
-            : repositories.flatMap((repo) => repo.languages || []);
-        const languages = Array.from(new Set(this.filterLanguages(sourceLanguages))).sort();
-        return {
-            ...data,
-            totalLanguages: languages.length,
-            languages,
-            repositories
-        };
-    }
-
-    rewriteCachedData(cachePath) {
-        const data = JSON.parse(Fs.readFileSync(cachePath, "utf8"));
-        Fs.writeFileSync(cachePath, JSON.stringify(this.filterCachedData(data), null, 2));
-    }
-
     async fetch(){
-        let result = null;
-        try {
-            result = await this.collectRepositories();
-        } catch (err) {
-            const cachePath = Path.join(Settings.ROOTDIR, "data/github_projects.json");
-            if (Fs.existsSync(cachePath)) {
-                console.warn("GitHub fetch failed, keeping cached project data: " + err.message);
-                this.rewriteCachedData(cachePath);
-                return;
-            }
-            throw err;
-        }
+        const result = await this.collectRepositories();
         const repos = result.repos;
         this.writeData(repos, result.allProjectRepos);
     }

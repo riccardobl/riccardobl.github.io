@@ -18,10 +18,6 @@ if [ "${SKIP_PREGEN:-}" = "" ]; then
     node generator/main.js
 fi
 
-if [ "${NO_P5RENDER:-1}" = "" ]; then
-    ./renderp5js.sh
-fi
-
 cmd=(hugo "$@")
 
 if [ "${1:-}" = "server" ]; then
