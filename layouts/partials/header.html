@@ -1,10 +1,10 @@
 <fakheader>
-    <div id="rblb"></div> 
+    <a id="rblb" class="site-logo" href="/" aria-label="Home"></a> 
 
 </fakheader>
 <header >
 <div>
-    <div id="rblb"></div> 
+    <a id="rblb" class="site-logo" href="/" aria-label="Home"></a> 
 </div>
 <div id="board">
     <div>
@@ -24,8 +24,12 @@
 
 <div>
     <nav id="rblb">
-        <a href="/"><span class="material-symbols-outlined">home</span> Home</a>
-        <a href="/contacts"><span class="material-symbols-outlined">mail</span> Get in touch</a>
+        {{ if not .IsHome }}
+        <a href="/"><span class="material-symbols-outlined" aria-hidden="true">home</span><span class="nav-label">Home</span></a>
+        {{ end }}
+        {{ if ne .RelPermalink "/contacts/" }}
+        <a href="/contacts"><span class="material-symbols-outlined" aria-hidden="true">mail</span><span class="nav-label">Get in touch</span></a>
+        {{ end }}
     </nav>
 </div>
 
