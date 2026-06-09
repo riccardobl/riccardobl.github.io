@@ -44,6 +44,46 @@
     }
 }
 
+@media only screen and (max-width: 1380px){
+    body {
+        flex-direction: column;;
+    }
+
+    body fakheader{
+        display:none;
+    }
+
+    body>header{
+        height: fit-content;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: relative;
+        width:100%;
+    }
+
+    body > header >*:last-child #rblb{
+        width: fit-content;
+    }
+
+    header nav a {
+        margin-left:0.7rem;
+        margin-right:0.7rem;
+        margin-bottom:0.4rem;
+    }
+
+   #board.sticky{
+    position: relative;
+   }
+
+   #board{
+    flex-grow: 2;
+   }
+
+   #board > div {
+    width: 100%;
+   }
+}
+
 @media only screen and (max-width: 1200px){
     body > header{
         height: fit-content;
