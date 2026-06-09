@@ -4,7 +4,7 @@
         Open source projects I've built and repositories I maintain or contribute to.
     </p>
 
-    {{ with hugo.Data.github_projects }}
+    {{ with .Site.Data.github_projects }}
     {{ $statsUnavailable := .githubStatsUnavailable }}
     {{ $statsTitle := cond $statsUnavailable (.githubStatsError | default "GitHub data not loaded") "" }}
     <section class="github-stats">
@@ -36,7 +36,7 @@
             <i class="fas fa-chevron-left"></i>
         </button>
         <section class="list showcase opensource-rail">
-        {{ with hugo.Data.github_projects }}
+        {{ with .Site.Data.github_projects }}
         {{ range .repositories | shuffle }}
             {{ partial "githubProjectCard.html" . }}
         {{ end }}
