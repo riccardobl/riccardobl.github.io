@@ -7,9 +7,14 @@ layout: "plain_layout"
 ---
 
 <section class="support-page standalone-page">
-    <p class="page-lead">
-        If my open source work saved you time or helped your project, you can send a small thank you through Lightning, Bitcoin, Liquid, or Revolut.
-    </p>
+    <div class="page-lead">
+        <p>If my open source work saved you time or helped your project, you can send a small thank you through Lightning, Bitcoin, Liquid, Revolut, or Wise.</p>
+        <div class="donation-notice">
+            <p>Donations are voluntary contributions in support of my open source projects.</p>
+            <p>They are not payments for services, consulting, support, features, priority, sponsorships, or any other benefit.</p>
+            <p>For professional work, sponsorships, or payments that require an invoice, please contact me before paying.</p>
+        </div>
+    </div>
 
 <form id="zapform"  class="simpleform support-form">
   
@@ -46,6 +51,10 @@ layout: "plain_layout"
         <icon id="revolutBtn" class="clickable">
             <span>R</span>
             <span>Revolut (fiat)</span>
+        </icon>
+        <icon id="wiseBtn" class="clickable">
+            <span>W</span>
+            <span>Wise (fiat)</span>
         </icon>
     </icons>
 
@@ -85,6 +94,7 @@ layout: "plain_layout"
     const lnBtnEl=zapformEl.querySelector("#lnBtn");
     const lqBtnEl=zapformEl.querySelector("#lqBtn");
     const revolutBtnEl = zapformEl.querySelector("#revolutBtn");
+    const wiseBtnEl = zapformEl.querySelector("#wiseBtn");
     const invoiceErrorEl = zapformEl.querySelector("error");
     // const donationEl = zapformEl.querySelector("#donation");
 
@@ -156,13 +166,21 @@ layout: "plain_layout"
                     }
                 }
             } else if (zapData.network == "revolut") {
-            invoiceInfo = "Please send any amount to the revtag";
+                invoiceInfo = "Please send any amount to the revtag";
                 invoice = '';
                 if (zapData.revtag.startsWith("/")){ // image
                     invoiceHtml = `<p style='display:flex;align-items:center;'>revtag: @<img src="${zapData.revtag}" alt="Revolut revtag"></p>`;
                 } else {
                     invoiceHtml = "<p style='display:flex;align-items:center;'>revtag: @" + zapData.revtag+"</p>";
-                }           
+                }
+            } else if (zapData.network == "wise") {
+                invoiceInfo = "Please send any amount to the wisetag";
+                invoice = '';
+                if (zapData.wisetag.startsWith("/")){ // image
+                    invoiceHtml = `<p style='display:flex;align-items:center;'>wisetag: @<img src="${zapData.wisetag}" alt="Wise wisetag"></p>`;
+                } else {
+                    invoiceHtml = "<p style='display:flex;align-items:center;'>wisetag: @" + zapData.wisetag+"</p>";
+                }
 
             } else{
                 alert("Unsupported network");
@@ -170,9 +188,11 @@ layout: "plain_layout"
             }
 
             const makeCopyable=(el)=>{
+                const inputEl = el.querySelector("input");
+                if(!inputEl) return;
                 el.classList.add("clickable");
                 el.addEventListener("click",()=>{
-                    el.querySelector("input").select();
+                    inputEl.select();
                     document.execCommand("copy");
                     alert("Copied to clipboard");
                 });
@@ -290,6 +310,7 @@ layout: "plain_layout"
             lnBtnEl.classList.remove("selected");
             lqBtnEl.classList.remove("selected");
             revolutBtnEl.classList.remove("selected");
+            wiseBtnEl.classList.remove("selected");
             zapData.network="btc";
             populateZapData(zapData);
             if(zapData.requestInvoice) prepareInvoice(zapData);
@@ -300,6 +321,7 @@ layout: "plain_layout"
             lnBtnEl.classList.add("selected");
             lqBtnEl.classList.remove("selected");
             revolutBtnEl.classList.remove("selected");
+            wiseBtnEl.classList.remove("selected");
             zapData.network="lightning";
             populateZapData(zapData);
             if (zapData.requestInvoice) prepareInvoice(zapData);
@@ -310,6 +332,7 @@ layout: "plain_layout"
             lnBtnEl.classList.remove("selected");
             lqBtnEl.classList.add("selected");
             revolutBtnEl.classList.remove("selected");
+            wiseBtnEl.classList.remove("selected");
             zapData.network="liquid";
             populateZapData(zapData);
             if (zapData.requestInvoice) prepareInvoice(zapData);
@@ -320,7 +343,19 @@ layout: "plain_layout"
             lnBtnEl.classList.remove("selected");
             lqBtnEl.classList.remove("selected");
             revolutBtnEl.classList.add("selected");
+            wiseBtnEl.classList.remove("selected");
             zapData.network = "revolut";
+            populateZapData(zapData);
+            if (zapData.requestInvoice) prepareInvoice(zapData);
+        });
+
+        wiseBtnEl.addEventListener("click", () => {
+            btcBtnEl.classList.remove("selected");
+            lnBtnEl.classList.remove("selected");
+            lqBtnEl.classList.remove("selected");
+            revolutBtnEl.classList.remove("selected");
+            wiseBtnEl.classList.add("selected");
+            zapData.network = "wise";
             populateZapData(zapData);
             if (zapData.requestInvoice) prepareInvoice(zapData);
         });

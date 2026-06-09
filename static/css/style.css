@@ -1498,12 +1498,38 @@ section.full.responsiveWidth article > h1 a {
 }
 
 .page-lead {
-    max-width: 680px;
+    max-width: 720px;
     margin: 0 auto 1.7rem auto;
     color: #e6e6e6;
     font-size: 1.08rem;
     line-height: 1.58;
     text-align: center;
+}
+
+.page-lead > p {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.donation-notice {
+    margin: 1rem auto 0 auto;
+    border: 1px solid rgba(167, 209, 41, 0.2);
+    border-left: 0.22rem solid var(--highlightFg);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    background: rgba(167, 209, 41, 0.045);
+    color: #dddddd;
+    font-size: 0.92rem;
+    line-height: 1.42;
+    text-align: left;
+}
+
+.donation-notice p {
+    margin: 0;
+}
+
+.donation-notice p + p {
+    margin-top: 0.45rem;
 }
 
 .contact-methods {
@@ -1628,7 +1654,7 @@ section.full.responsiveWidth article > h1 a {
 
 .support-form icons {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
     gap: 0.65rem;
     margin: 1rem 0;
 }
