@@ -11,7 +11,7 @@
 } */
 
 
-@media only screen and (max-width: 1300px){
+@media only screen and (max-width: 1380px){
     section.list {
         flex-direction: column;;
     }
@@ -41,10 +41,6 @@
 @media only screen and (max-width: 1380px) {
     .case-grid {
         grid-auto-columns: calc((100% - 0.8rem) / 2);
-    }
-
-    .opensource-rail-wrap .opensource-rail {
-        grid-auto-columns: calc((100% - 0.75rem) / 2);
     }
 }
 

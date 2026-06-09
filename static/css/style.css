@@ -1118,7 +1118,7 @@ header {
     scroll-snap-align: start;
 }
 
-@media only screen and (max-width: 1365px) {
+@media only screen and (max-width: 1390px) {
     .case-study {
         min-height: 26rem;
     }
