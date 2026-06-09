@@ -9,7 +9,7 @@ robots: "noindex, nofollow"
 
 <section class="support-page standalone-page">
     <div class="page-lead">
-        <p>If my open source work saved you time or helped your project, you can send a small thank you through Lightning, Bitcoin, Liquid, Revolut, or Wise.</p>
+        <p>If my open source work saved you time or helped your project, you can send a small thank you through Lightning, Bitcoin, Liquid, Revolut, Wise, or PayPal.</p>
         <div class="donation-notice">
             <p>Donations are voluntary contributions in support of my open source projects.</p>
             <p>They are not payments for services, consulting, support, features, priority, sponsorships, or any other benefit.</p>
@@ -57,6 +57,10 @@ robots: "noindex, nofollow"
             <span>W</span>
             <span>Wise (fiat)</span>
         </icon>
+        <icon id="paypalBtn" class="clickable">
+            <span><i class="fab fa-paypal" aria-hidden="true"></i></span>
+            <span>PayPal (fiat)</span>
+        </icon>
     </icons>
 
 
@@ -96,6 +100,7 @@ robots: "noindex, nofollow"
     const lqBtnEl=zapformEl.querySelector("#lqBtn");
     const revolutBtnEl = zapformEl.querySelector("#revolutBtn");
     const wiseBtnEl = zapformEl.querySelector("#wiseBtn");
+    const paypalBtnEl = zapformEl.querySelector("#paypalBtn");
     const invoiceErrorEl = zapformEl.querySelector("error");
     // const donationEl = zapformEl.querySelector("#donation");
 
@@ -118,6 +123,8 @@ robots: "noindex, nofollow"
             let invoiceHtml;
             let verificationAction=undefined;
             let invoiceInfo = undefined;
+            let payButtonIcon = "⚡";
+            let payButtonLabel = "Pay with Wallet";
             if(zapData.network=="btc"||zapData.network=="liquid"){
                 let addr = zapData.network == "btc" ? zapData.btc : zapData.liquid;
                 let btcUrl = zapData.network == "btc" ? zapData.btc : zapData.liquid;
@@ -182,6 +189,15 @@ robots: "noindex, nofollow"
                 } else {
                     invoiceHtml = "<p style='display:flex;align-items:center;'>wisetag: @" + zapData.wisetag+"</p>";
                 }
+            } else if (zapData.network == "paypal") {
+                invoiceInfo = "Please send any amount through PayPal.";
+                invoice = '';
+                invoiceAddr = zapData.paypal;
+                payButtonIcon = `<i class="fab fa-paypal" aria-hidden="true"></i>`;
+                payButtonLabel = "Open PayPal";
+                payAction = async () => {
+                    window.open(zapData.paypal, "_blank", "noopener,noreferrer");
+                };
 
             } else{
                 alert("Unsupported network");
@@ -257,7 +273,7 @@ robots: "noindex, nofollow"
 
             if(payAction){
                 const payBtnEl = document.createElement("button");
-                payBtnEl.innerHTML = `<span class="icon">⚡</span> <span>Pay with Wallet</span>`;
+                payBtnEl.innerHTML = `<span class="icon">${payButtonIcon}</span> <span>${payButtonLabel}</span>`;
                 payBtnEl.addEventListener("click", async (ev) => {
                     ev.preventDefault();
                     payAction();
@@ -312,6 +328,7 @@ robots: "noindex, nofollow"
             lqBtnEl.classList.remove("selected");
             revolutBtnEl.classList.remove("selected");
             wiseBtnEl.classList.remove("selected");
+            paypalBtnEl.classList.remove("selected");
             zapData.network="btc";
             populateZapData(zapData);
             if(zapData.requestInvoice) prepareInvoice(zapData);
@@ -323,6 +340,7 @@ robots: "noindex, nofollow"
             lqBtnEl.classList.remove("selected");
             revolutBtnEl.classList.remove("selected");
             wiseBtnEl.classList.remove("selected");
+            paypalBtnEl.classList.remove("selected");
             zapData.network="lightning";
             populateZapData(zapData);
             if (zapData.requestInvoice) prepareInvoice(zapData);
@@ -334,6 +352,7 @@ robots: "noindex, nofollow"
             lqBtnEl.classList.add("selected");
             revolutBtnEl.classList.remove("selected");
             wiseBtnEl.classList.remove("selected");
+            paypalBtnEl.classList.remove("selected");
             zapData.network="liquid";
             populateZapData(zapData);
             if (zapData.requestInvoice) prepareInvoice(zapData);
@@ -345,6 +364,7 @@ robots: "noindex, nofollow"
             lqBtnEl.classList.remove("selected");
             revolutBtnEl.classList.add("selected");
             wiseBtnEl.classList.remove("selected");
+            paypalBtnEl.classList.remove("selected");
             zapData.network = "revolut";
             populateZapData(zapData);
             if (zapData.requestInvoice) prepareInvoice(zapData);
@@ -356,7 +376,20 @@ robots: "noindex, nofollow"
             lqBtnEl.classList.remove("selected");
             revolutBtnEl.classList.remove("selected");
             wiseBtnEl.classList.add("selected");
+            paypalBtnEl.classList.remove("selected");
             zapData.network = "wise";
+            populateZapData(zapData);
+            if (zapData.requestInvoice) prepareInvoice(zapData);
+        });
+
+        paypalBtnEl.addEventListener("click", () => {
+            btcBtnEl.classList.remove("selected");
+            lnBtnEl.classList.remove("selected");
+            lqBtnEl.classList.remove("selected");
+            revolutBtnEl.classList.remove("selected");
+            wiseBtnEl.classList.remove("selected");
+            paypalBtnEl.classList.add("selected");
+            zapData.network = "paypal";
             populateZapData(zapData);
             if (zapData.requestInvoice) prepareInvoice(zapData);
         });

@@ -21,6 +21,7 @@ disableKinds = ["taxonomy", "term"]
   custom_js=["/js/script.js"]
   revtag="/revtag.jpg"
   wisetag="/wisetag.jpg"
+  paypalLink="https://paypal.me/rblb0"
   lightningAddress="rblb@aqua.net"
   lightningSmallAmountAddress="zap@rblb.it"
   lightningSmallAmountMax=21100
