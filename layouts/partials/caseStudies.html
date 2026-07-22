@@ -10,8 +10,8 @@
         </button>
         <section class="case-grid featured-rail">
         {{ $featuredProjects := .Site.Params.featuredProjects }}
-        {{ $pinnedProjects := where $featuredProjects "title" "Nostr Game Engine" }}
-        {{ $randomProjects := where $featuredProjects "title" "!=" "Nostr Game Engine" | shuffle }}
+        {{ $pinnedProjects := where $featuredProjects "title" "jMonkeyEngine" }}
+        {{ $randomProjects := where $featuredProjects "title" "!=" "jMonkeyEngine" | shuffle }}
         {{ range $pinnedProjects }}
             {{ $href := .url }}
             {{ if and (not $href) .repo }}
