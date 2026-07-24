@@ -1,1 +1,1650 @@
-hello world
+<!DOCTYPE html>
+<html lang="en-US" translate="no" >
+
+<head>
+  <script src="/js/openpgp.js"></script>
+  <script src="/js/lnurl-pay.js"></script>
+  <script src="/js/qrcode.js"></script>
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <script src="/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  <title>RBLB </title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <meta name="generator" content="Hugo 0.161.1">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <script src="/js/script.js"></script>
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+  <link rel="stylesheet" href="/css/mobile.css?v=1784866195"/></head>
+
+<body>
+  <progress onload="startCyclingProgressBar()" max=100 value=0 id="pageLoadingProgress"></progress>
+
+
+   <fakheader>
+    <a id="rblb" class="site-logo" href="/" aria-label="Home"></a> 
+
+</fakheader>
+<header >
+<div>
+    <a id="rblb" class="site-logo" href="/" aria-label="Home"></a> 
+</div>
+<div id="board">
+    <div>
+        <p>
+            I am Riccardo Balbo, a freelance developer working on game technology, graphics, backend systems, web applications and open protocols.
+            <br>
+            <br>
+            I like practical software, small teams, and projects that move from a rough idea to something people can actually use.
+        </p>
+        <piva>P.IVA 05607610283</piva>
+
+    </div>
+
+  
+
+</div>
+
+<div>
+    <nav id="rblb">
+        
+        
+        <a href="/contacts"><span class="material-symbols-outlined" aria-hidden="true">mail</span><span class="nav-label">Get in touch</span></a>
+        
+    </nav>
+</div>
+
+</header>
+ 
+<main> 
+
+<section class="case-studies">
+    <h1 id="case-studies">Project highlights</h1>
+    <p class="section-lead">
+        A small selection of engines, libraries and production web work.
+    </p>
+
+    <section class="featured-rail-wrap">
+        <button class="rail-control rail-prev" type="button" aria-label="Previous featured projects">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <section class="case-grid featured-rail">
+        
+        
+        
+        
+            
+            
+            
+            <a class="case-card-link" href="https://jmonkeyengine.org/" target="_blank" rel="noopener noreferrer">
+        
+        <article class="case-study">
+            
+            
+            
+            <div class="case-media" style="background-image:url('/images/jmonkeyengine-showcase.jpg'); background-size: cover; background-position: center;"></div>
+            
+            <div class="case-copy">
+                <span class="case-kicker">Game engine</span>
+                <h2>jMonkeyEngine</h2>
+                <p>A historic 21&#43; year Java 3D engine project where I contribute as a core developer.</p>
+            </div>
+        </article>
+            
+            </a>
+            
+        
+        
+            
+            
+            
+            <a class="case-card-link" href="https://ngengine.org/" target="_blank" rel="noopener noreferrer">
+        
+        <article class="case-study">
+            
+            
+            
+            <div class="case-media" style="background-image:url('/images/nge.jpg'); background-size: cover; background-position: center;"></div>
+            
+            <div class="case-copy">
+                <span class="case-kicker">Game engine</span>
+                <h2>Nostr Game Engine</h2>
+                <p>A Java engine and application framework for Nostr and Bitcoin-native apps.</p>
+            </div>
+        </article>
+            
+            </a>
+            
+        
+            
+            
+            
+            <a class="case-card-link" href="https://github.com/NostrGameEngine/nostr4j" target="_blank" rel="noopener noreferrer">
+        
+        <article class="case-study">
+            
+            
+            
+            <div class="case-media" style="background-image:url('/images/nostr4j.svg'); background-size: contain; background-position: center;"></div>
+            
+            <div class="case-copy">
+                <span class="case-kicker">Nostr library</span>
+                <h2>Nostr4J</h2>
+                <p>A Java Nostr client library with Blossom, wallets, and WebRTC over Nostr for p2p apps.</p>
+            </div>
+        </article>
+            
+            </a>
+            
+        
+            
+            
+            
+            <a class="case-card-link" href="https://github.com/NostrGameEngine/libJGLIOS" target="_blank" rel="noopener noreferrer">
+        
+        <article class="case-study">
+            
+            
+            
+            <div class="case-media" style="background-image:url('/images/libjglios.svg'); background-size: contain; background-position: center;"></div>
+            
+            <div class="case-copy">
+                <span class="case-kicker">Java on iOS</span>
+                <h2>libJGLIOS</h2>
+                <p>An iOS support stack for Java apps with SDL3, OpenAL, OpenGL ES, ANGLE/Metal and GraalVM Native Image.</p>
+            </div>
+        </article>
+            
+            </a>
+            
+        
+            
+            
+            
+            <a class="case-card-link" href="https://github.com/riccardobl/nostrduino" target="_blank" rel="noopener noreferrer">
+        
+        <article class="case-study">
+            
+            
+            
+            <div class="case-media" style="background-image:url('/images/nostrduino.svg'); background-size: contain; background-position: center;"></div>
+            
+            <div class="case-copy">
+                <span class="case-kicker">Embedded Nostr</span>
+                <h2>Nostrduino</h2>
+                <p>A Nostr library for Arduino and microcontrollers, including Nostr Wallet Connect support.</p>
+            </div>
+        </article>
+            
+            </a>
+            
+        
+            
+            
+            
+            <a class="case-card-link" href="https://github.com/riccardobl/hypergate" target="_blank" rel="noopener noreferrer">
+        
+        <article class="case-study">
+            
+            
+            
+            <div class="case-media" style="background-image:url('/images/hypergate.svg'); background-size: contain; background-position: center;"></div>
+            
+            <div class="case-copy">
+                <span class="case-kicker">P2P networking</span>
+                <h2>Hypergate</h2>
+                <p>A zero-configuration encrypted tunnel for connecting containers and machines across NAT.</p>
+            </div>
+        </article>
+            
+            </a>
+            
+        
+            
+            
+            
+            <a class="case-card-link" href="https://github.com/lnbits/nwcprovider" target="_blank" rel="noopener noreferrer">
+        
+        <article class="case-study">
+            
+            
+            
+            <div class="case-media" style="background-image:url('/images/nwcprovider.svg'); background-size: contain; background-position: center;"></div>
+            
+            <div class="case-copy">
+                <span class="case-kicker">Wallet integration</span>
+                <h2>NWC Provider</h2>
+                <p>An LNbits plugin that adds Nostr Wallet Connect support for wallet and payment flows.</p>
+            </div>
+        </article>
+            
+            </a>
+            
+        
+            
+            
+            
+        <article class="case-study">
+            
+            
+            
+            <div class="case-media" style="background-image:url('/images/shop.larabiosa.it/feature.webp'); background-size: cover; background-position: top center;"></div>
+            
+            <div class="case-copy">
+                <span class="case-kicker">E-commerce</span>
+                <h2>Shop La Rabiosa</h2>
+                <p>A serverless e-commerce site built for an Italian wine producer, covering catalog, checkout and payment processor integration.</p>
+            </div>
+        </article>
+            
+        
+        </section>
+        <button class="rail-control rail-next" type="button" aria-label="Next featured projects">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </section>
+</section>
+
+
+<section class="opensource">
+    <h1 id="opensource">Open source work</h1>
+    <p class="section-lead">
+        Open source projects I've built and repositories I maintain or contribute to.
+    </p>
+
+    
+    
+    
+    <section class="github-stats">
+        <div >
+            <i class="fas fa-star"></i>
+            <strong>
+
+    4.6K
+
+</strong>
+            <span>GitHub stars</span>
+        </div>
+        <div>
+            <i class="fab fa-github"></i>
+            <strong>157</strong>
+            <span>open source projects</span>
+        </div>
+        <div title="Batchfile, C, C&#43;&#43;, CSS, GLSL, Groovy, HLSL, HTML, Java, JavaScript, Kotlin, Less, Lua, Mustache, Objective-C, Objective-C&#43;&#43;, PHP, PLpgSQL, PowerShell, Protocol Buffer, Python, Rich Text Format, SCSS, Shell, Svelte, TypeScript, Vue">
+            <i class="fas fa-code"></i>
+            <strong>27</strong>
+            <span>languages used</span>
+        </div>
+        <div >
+            <i class="fas fa-code-branch"></i>
+            <strong>
+
+    2K
+
+</strong>
+            <span>contributions last year</span>
+        </div>
+    </section>
+    
+
+    <section class="opensource-rail-wrap">
+        <button class="rail-control rail-prev" type="button" aria-label="Previous projects">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <section class="list showcase opensource-rail">
+        
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/JCubemapAssembler', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/JCubemapAssembler" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">JCubemapAssembler</span></span>
+        </a>
+    </h2>
+
+    <p>JCubemapAssembler is a java application that can be used to assemble six separate face images into a single cubemap and export it as a dds file. </p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>cubemap</span>
+        
+        <span>dds</span>
+        
+        <span>java</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/ngengine', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/ngengine" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">ngengine</span></span>
+        </a>
+    </h2>
+
+    <p>A game engine and framework for building games and applications integrated with the Nostr ecosystem </p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>JavaScript</span>
+        
+        <span>GLSL</span>
+        
+        <span>Objective-C</span>
+        
+        <span>C</span>
+        
+        <span>CSS</span>
+        
+        <span>HTML</span>
+        
+        <span>Groovy</span>
+        
+        <span>Shell</span>
+        
+        <span>game-engine</span>
+        
+        <span>gamedev</span>
+        
+        <span>java</span>
+        
+        <span>nostr</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/jme-effekseerNative', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/jme-effekseerNative" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">jme-effekseerNative</span></span>
+        </a>
+    </h2>
+
+    <p>This is a library that uses EffekseerForMultiLanguages to load and render effects made with Effekseer in jme.</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>GLSL</span>
+        
+        <span>Shell</span>
+        
+        <span>effekseer</span>
+        
+        <span>jmonkeyengine</span>
+        
+        <span>particles</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/FPSDEMO-jMonkeyEngine', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/FPSDEMO-jMonkeyEngine" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">FPSDEMO-jMonkeyEngine</span></span>
+        </a>
+    </h2>
+
+    <p>An FPS demo made with jMonkeyEngine</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>demo</span>
+        
+        <span>fps</span>
+        
+        <span>game</span>
+        
+        <span>hacktoberfest</span>
+        
+        <span>jmonkeyengine</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/sea-of-nostriches-demo', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/sea-of-nostriches-demo" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">sea-of-nostriches-demo</span></span>
+        </a>
+    </h2>
+
+    <p>A tech demo for Nostr Game Engine v0.0</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>GLSL</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/bolt11', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/bolt11" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">bolt11</span></span>
+        </a>
+    </h2>
+
+    <p>Strict BOLT11 implementation for java</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/DDSWriter', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/DDSWriter" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">DDSWriter</span></span>
+        </a>
+    </h2>
+
+    <p>DDSWriter is a command-line utility and java library to write compressed and uncompressed DDS.</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>Shell</span>
+        
+        <span>C</span>
+        
+        <span>Batchfile</span>
+        
+        <span>compression</span>
+        
+        <span>dds</span>
+        
+        <span>dxt</span>
+        
+        <span>java</span>
+        
+        <span>jmonkeyengine</span>
+        
+        <span>mipmaps</span>
+        
+        <span>rgtc</span>
+        
+        <span>s3tc</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/stb-image', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/stb-image" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">stb-image</span></span>
+        </a>
+    </h2>
+
+    <p>StbImage ported to pure Java 8</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>Shell</span>
+        
+        <span>image-loader</span>
+        
+        <span>stb-image</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/anser-liquid', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/anser-liquid" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">anser-liquid</span></span>
+        </a>
+    </h2>
+
+    <p>Anser is a client-side web app that uses the Alby extension&#39;s liquid integration to provide a simple interface to the Liquid Network.</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>JavaScript</span>
+        
+        <span>Less</span>
+        
+        <span>HTML</span>
+        
+        <span>CSS</span>
+        
+        <span>Shell</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/nanosvg-chicory-java', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/nanosvg-chicory-java" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">nanosvg-chicory-java</span></span>
+        </a>
+    </h2>
+
+    <p>NanoSVG for java built from wasm + chicory</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>C</span>
+        
+        <span>HTML</span>
+        
+        <span>Shell</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/jme3-bullet-vhacd', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/jme3-bullet-vhacd" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">jme3-bullet-vhacd</span></span>
+        </a>
+    </h2>
+
+    <p>This is a library that uses java bindings for Khaled Mamou&#39;s V-HACD to decompose concave meshes into hull-shapes in jmonkey engine.</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>bullet</span>
+        
+        <span>java</span>
+        
+        <span>jmonkeyengine3</span>
+        
+        <span>vhacd</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/v-hacd-java-bindings', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/v-hacd-java-bindings" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">v-hacd-java-bindings</span></span>
+        </a>
+    </h2>
+
+    <p>Java bindings for V-HACD (https://github.com/kmammou/v-hacd)</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>C&#43;&#43;</span>
+        
+        <span>Shell</span>
+        
+        <span>HTML</span>
+        
+        <span>bullet</span>
+        
+        <span>java</span>
+        
+        <span>java-bindings</span>
+        
+        <span>jna</span>
+        
+        <span>vhacd</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/nostr4j', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/nostr4j" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">nostr4j</span></span>
+        </a>
+    </h2>
+
+    <p>Powerful Nostr client library  with NostrRTC, Blossom,  Wallets and much more.</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>JavaScript</span>
+        
+        <span>java</span>
+        
+        <span>nostr</span>
+        
+        <span>nostr-client</span>
+        
+        <span>p2p</span>
+        
+        <span>rtc</span>
+        
+        <span>webrtc</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/nostrads', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/nostrads" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">nostrads</span></span>
+        </a>
+    </h2>
+
+    <p>Ads on nostr </p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>JavaScript</span>
+        
+        <span>HTML</span>
+        
+        <span>CSS</span>
+        
+        <span>decentralized-advertising</span>
+        
+        <span>nostr</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/lnurl4j', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/lnurl4j" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">lnurl4j</span></span>
+        </a>
+    </h2>
+
+    <p>A java client library for LNURL.</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/jme-igui', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/jme-igui" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">jme-igui</span></span>
+        </a>
+    </h2>
+
+    <p>A minimalistic immediate gui for jmonkeyengine</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>gui</span>
+        
+        <span>imediate</span>
+        
+        <span>java</span>
+        
+        <span>jmonkeyengine</span>
+        
+        <span>ui</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/libJGLIOS', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/libJGLIOS" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">libJGLIOS</span></span>
+        </a>
+    </h2>
+
+    <p>Full suite to build Java 21 GLES games and applications for iOS</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Objective-C&#43;&#43;</span>
+        
+        <span>Java</span>
+        
+        <span>Groovy</span>
+        
+        <span>Shell</span>
+        
+        <span>C</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/libdatachannel-java', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/libdatachannel-java" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">libdatachannel-java</span></span>
+        </a>
+    </h2>
+
+    <p>A fork of libdatachannel C Java wrappers: libdatachannel-java intended to be used within the Nostr Game Engine codebase.</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>C&#43;&#43;</span>
+        
+        <span>C</span>
+        
+        <span>Shell</span>
+        
+        <span>JavaScript</span>
+        
+        <span>HTML</span>
+        
+        <span>CSS</span>
+        
+        <span>Python</span>
+        
+        <span>Kotlin</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/bech32', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/bech32" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">bech32</span></span>
+        </a>
+    </h2>
+
+    <p>Highly optimized implementation of Bech32 and Bech32m for Java</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/nge-platforms', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/nge-platforms" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">nge-platforms</span></span>
+        </a>
+    </h2>
+
+    <p>A collection of platform-specific code exposed through a single API (HotSpot, GraalVM, Android, TeaVM, iOS)</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>Shell</span>
+        
+        <span>JavaScript</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/sharedexecutor-js', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/sharedexecutor-js" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">sharedexecutor-js</span></span>
+        </a>
+    </h2>
+
+    <p>SharedWorker wrapper that works everywhere</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>JavaScript</span>
+        
+        <span>HTML</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/hypergate', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/hypergate" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">hypergate</span></span>
+        </a>
+    </h2>
+
+    <p>Hypergate is a zero-configuration, peer-to-peer encrypted tunnel that enables easy communication between Docker containers and/or physical machines located anywhere, even behind NAT.</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>TypeScript</span>
+        
+        <span>Shell</span>
+        
+        <span>JavaScript</span>
+        
+        <span>docker</span>
+        
+        <span>holepunch</span>
+        
+        <span>holepunching</span>
+        
+        <span>hyperswarm</span>
+        
+        <span>overlay-network</span>
+        
+        <span>p2p</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/saferalloc', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/saferalloc" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">saferalloc</span></span>
+        </a>
+    </h2>
+
+    <p>Multiplatform hardened native memory allocation bindings for Java 8+ (JNI)</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>C</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/jMonkeyEngine\/jmonkeyengine', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/jMonkeyEngine/jmonkeyengine" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">jMonkeyEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">jmonkeyengine</span></span>
+        </a>
+    </h2>
+
+    <p>A complete 3-D game development suite written in Java.</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+        <span>GLSL</span>
+        
+        <span>HTML</span>
+        
+        <span>Groovy</span>
+        
+        <span>CSS</span>
+        
+        <span>game-engine-3d</span>
+        
+        <span>hacktoberfest</span>
+        
+        <span>java</span>
+        
+        <span>jme3</span>
+        
+        <span>jmonkeyengine</span>
+        
+        <span>jmonkeyengine3</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/blender_effekseer_addon', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/blender_effekseer_addon" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">blender_effekseer_addon</span></span>
+        </a>
+    </h2>
+
+    <p>Blender 3.3  addon that renders effekseer effects in blender&#39;s viewport.</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Python</span>
+        
+        <span>blender</span>
+        
+        <span>effekseer</span>
+        
+        <span>gamedev</span>
+        
+        <span>particles</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl\/nostrduino', '_blank', 'noopener,noreferrer');"
+    class="github-project-card personal-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl/nostrduino" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-repo-line"><span class="github-repo">nostrduino</span></span>
+        </a>
+    </h2>
+
+    <p>A nostr-tools inspired library for Arduino (and other) microcontrollers. With NWC support</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>C&#43;&#43;</span>
+        
+        <span>C</span>
+        
+        <span>Python</span>
+        
+        <span>arduino</span>
+        
+        <span>bitcoin</span>
+        
+        <span>esp32</span>
+        
+        <span>lightning</span>
+        
+        <span>nostr</span>
+        
+        <span>nwc</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/lnbits\/nwcprovider', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/lnbits/nwcprovider" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">lnbits</span>
+            
+            <span class="github-repo-line"><span class="github-repo">nwcprovider</span></span>
+        </a>
+    </h2>
+
+    <p>NWC service provider for LNbits</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Python</span>
+        
+        <span>HTML</span>
+        
+        <span>JavaScript</span>
+        
+        <span>Shell</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/adcity-demo', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/adcity-demo" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">adcity-demo</span></span>
+        </a>
+    </h2>
+
+    <p> A tech demo for Nostr Game Engine v0.1  (WiP)</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+    </nav>
+    
+</article>
+
+        
+            
+
+<article
+    onclick="window.open('https:\/\/github.com\/NostrGameEngine\/nge-app-template', '_blank', 'noopener,noreferrer');"
+    class="github-project-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/NostrGameEngine/nge-app-template" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            
+            <span class="github-owner">NostrGameEngine</span>
+            
+            <span class="github-repo-line"><span class="github-repo">nge-app-template</span></span>
+        </a>
+    </h2>
+
+    <p>A template for building NGE apps</p>
+
+    
+    
+    
+    
+    <nav class="repo-meta" aria-label="Repository languages and topics">
+        
+        <span>Java</span>
+        
+    </nav>
+    
+</article>
+
+        
+        
+            
+<article
+    onclick="window.open('https:\/\/github.com\/riccardobl', '_blank', 'noopener,noreferrer');"
+    class="github-project-card github-more-card"
+>
+    <h2 class="github-repo-title">
+        <a href="https://github.com/riccardobl" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
+            <span class="github-owner">My GitHub</span>
+            <span class="github-repo-line"><span class="github-repo">See more projects</span></span>
+        </a>
+    </h2>
+
+    <p>Browse the rest of my repositories, experiments, libraries and contributions on my GitHub profile.</p>
+
+    <nav class="repo-meta" aria-label="More projects">
+        <span><i class="fab fa-github"></i> See my GitHub</span>
+    </nav>
+</article>
+
+        </section>
+        <button class="rail-control rail-next" type="button" aria-label="Next projects">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </section>
+
+    <nav class="soft-actions">
+        <a class="github-link" target="_blank" rel="noopener noreferrer" href="https://github.com/riccardobl">
+            <i class="fab fa-github"></i> See my GitHub
+        </a>
+        <a href="/zap"><i class="fas fa-mug-hot"></i> Offer me a coffee</a>
+    </nav>
+</section>
+
+
+<section class="skills">
+
+    <h1 id="skills">Skills</h1>
+    <p>
+
+        Over the years I have gained experience in various fields, including game development, 3D art and full-stack web
+        development.
+    </p>
+    <section class="icons">
+
+        <article class="hoverDeScale">
+            <h2>
+                <a href="https://en.wikipedia.org/wiki/OpenGL" target="_blank"
+                    rel="noopener noreferrer nofollow">OpenGL</a> (ES)
+                and
+                <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank"
+                    rel="noopener noreferrer nofollow">GLSL</a>
+            </h2>
+            <i class="icon opengl"></i>
+
+        </article>
+
+        <article class="hoverDeScale">
+
+            <h2> <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank"
+                    rel="noopener noreferrer nofollow">Java</a> and
+                <a href="https://en.wikipedia.org/wiki/Java_Native_Interface" target="_blank"
+                    rel="noopener noreferrer nofollow">JNI</a>
+
+            </h2>
+            <i class="fab fa-java"></i>
+
+        </article>
+
+        <article class="hoverDeScale">
+            <h2> <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank"
+                    rel="noopener noreferrer nofollow">Bash</a> and
+                <a href="https://en.wikipedia.org/wiki/Linux" target="_blank"
+                    rel="noopener noreferrer nofollow">Linux</a>
+            </h2>
+            <i class="fab fa-linux"></i>
+
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank"
+                    rel="noopener noreferrer nofollow">C </a>/
+                <a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank"
+                    rel="noopener noreferrer nofollow">C++</a>
+            </h2>
+            <i class="icon c"></i>
+
+        </article>
+
+
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank"
+                    rel="noopener noreferrer nofollow">Docker</a></h2>
+            <i class="fab fa-docker"></i>
+
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank"
+                    rel="noopener noreferrer nofollow">Javascript</a></h2>
+            <i class="fab fa-js-square"></i>
+
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/TypeScript" target="_blank"
+                    rel="noopener noreferrer nofollow">TypeScript</a></h2>
+            <i class="icon ts"></i>
+
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/Node.js" target="_blank"
+                    rel="noopener noreferrer nofollow">NodeJS</a></h2>
+            <i class="fab fa-node"></i>
+
+        </article>
+
+
+
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/HTML" target="_blank"
+                    rel="noopener noreferrer nofollow">HTML</a>(5)</h2>
+            <div>
+                <i class="fab fa-html5"></i>
+            </div>
+
+        </article>
+
+        <article class="hoverDeScale">
+            <h2> <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank"
+                    rel="noopener noreferrer nofollow">CSS</a>(3)</h2>
+            <div>
+                <i class="fab fa-css3-alt"></i>
+            </div>
+
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/MySQL" target="_blank"
+                    rel="noopener noreferrer nofollow">MySQL</a></h2>
+            <i class="fas fa-database"></i>
+        </article>
+
+   
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/PHP" target="_blank" rel="noopener noreferrer nofollow">PHP</a>
+            </h2>
+            <i class="fab fa-php"></i>
+
+        </article>
+
+
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank"
+                    rel="noopener noreferrer nofollow">Python</a></h2>
+            <i class="fab fa-python"></i>
+
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://www.blender.org/" target="_blank" rel="noopener noreferrer nofollow">Blender</a></h2>
+            <i class="icon blender"></i>
+
+
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/Git" target="_blank" rel="noopener noreferrer nofollow">Git</a>
+            </h2>
+            <i class="fab fa-git-alt"></i>
+
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://p5js.org/" target="_blank" rel="noopener noreferrer nofollow">P5js</a></h2>
+            <i class="icon p5js"></i>
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://en.wikipedia.org/wiki/JMonkeyEngine" target="_blank"
+                    rel="noopener noreferrer nofollow">jMonkeyEngine</a></h2>
+            <i class="icon jme"></i>
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://workers.cloudflare.com/" target="_blank" rel="noopener noreferrer nofollow">Cf
+                    Workers</a></h2>
+            <i class="icon cfw"></i>
+        </article>
+
+
+        <article class="hoverDeScale">
+            <h2><a href="https://www.langchain.com/" target="_blank" rel="noopener noreferrer nofollow">Langchain</a>
+            </h2>
+            <i class="icon langchain"></i>
+        </article>
+        <article class="hoverDeScale">
+            <h2><a href="https://react.dev/" target="_blank" rel="noopener noreferrer nofollow">React</a></h2>
+            <i class="fa-brands fa-react"></i>
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://www.arduino.cc/" target="_blank" rel="noopener noreferrer nofollow">Arduino</a></h2>
+            <i class="fas fa-microchip"></i>
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://nostr.com/" target="_blank" rel="noopener noreferrer nofollow">Nostr</a></h2>
+            <i class="icon nostr"></i>
+        </article>
+
+        <article class="hoverDeScale">
+            <h2><a href="https://nwc.dev/" target="_blank" rel="noopener noreferrer nofollow">Nostr Wallet Connect</a></h2>
+            <i class="icon nwc"></i>
+        </article>
+    
+        <article class="hoverDeScale">
+            <h2><a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer nofollow">PostgreSQL</a></h2>
+            <i class="fa  fa-database"></i>
+        </article>
+    </section>
+</section>
+
+
+<section class="contact-strip">
+    <h1>Contact</h1>
+    <p>
+        If you have a paid project or need focused technical help, I am available for prototypes, integrations, game technology, backend systems and open protocol work.
+    </p>
+    <nav>
+        <a href="/contacts"><i class="fas fa-envelope"></i> Get in touch</a>
+        <a href="https://github.com/riccardobl" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+    </nav>
+</section>
+
+
+</main>
+ 
+</body>
+
+</html>

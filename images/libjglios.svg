@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="libJGLIOS">
+  <rect width="1200" height="630" fill="#202020"/>
+  <rect x="58" y="52" width="1084" height="526" rx="18" fill="#232323" stroke="#a7d129" stroke-opacity=".26" stroke-width="3"/>
+  <g fill="none" stroke="#a7d129" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="410" y="98" width="380" height="434" rx="54" stroke-width="8" opacity=".78"/>
+    <path d="M546 492h108" stroke-width="7" opacity=".72"/>
+    <path d="M496 142h208" stroke-width="7" opacity=".52"/>
+    <path d="M280 244h184M280 316h184M280 388h184" stroke-width="6" opacity=".48"/>
+    <path d="M736 244h184M736 316h184M736 388h184" stroke-width="6" opacity=".48"/>
+    <path d="M356 244c30 0 48-22 78-22h34M356 316c30 0 48-22 78-22h34M356 388c30 0 48 22 78 22h34" stroke-width="5" opacity=".48"/>
+    <path d="M832 244c-30 0-48-22-78-22h-34M832 316c-30 0-48-22-78-22h-34M832 388c-30 0-48 22-78 22h-34" stroke-width="5" opacity=".48"/>
+  </g>
+  <g fill="#a7d129" opacity=".9">
+    <circle cx="600" cy="272" r="42"/>
+    <path d="M556 345c28-28 60-42 98-42 35 0 65 14 90 42v36H556z" opacity=".74"/>
+    <circle cx="310" cy="244" r="10"/>
+    <circle cx="310" cy="316" r="10"/>
+    <circle cx="310" cy="388" r="10"/>
+    <circle cx="890" cy="244" r="10"/>
+    <circle cx="890" cy="316" r="10"/>
+    <circle cx="890" cy="388" r="10"/>
+  </g>
+  <g fill="none" stroke="#d3d3d3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".58">
+    <path d="M556 224c14-30 41-45 80-45"/>
+    <path d="M634 179c5 32-8 54-40 66"/>
+    <path d="M507 298h186"/>
+    <path d="M524 405h152"/>
+  </g>
+</svg>
