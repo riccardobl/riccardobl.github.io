@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Hypergate">
+  <rect width="1200" height="630" fill="#202020"/>
+  <rect x="58" y="52" width="1084" height="526" rx="18" fill="#232323" stroke="#a7d129" stroke-opacity=".28" stroke-width="3"/>
+  <g fill="none" stroke="#a7d129" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M248 316h704" stroke-width="8" opacity=".22"/>
+    <path d="M350 210c92 0 148 106 250 106s158-106 250-106" stroke-width="9" opacity=".76"/>
+    <path d="M350 422c92 0 148-106 250-106s158 106 250 106" stroke-width="9" opacity=".76"/>
+    <path d="M486 242l-72 74 72 74" stroke-width="10" opacity=".82"/>
+    <path d="M714 242l72 74-72 74" stroke-width="10" opacity=".82"/>
+    <path d="M600 180v272" stroke-width="5" stroke-dasharray="18 18" opacity=".42"/>
+  </g>
+  <g fill="#a7d129">
+    <circle cx="248" cy="316" r="52" opacity=".92"/>
+    <circle cx="952" cy="316" r="52" opacity=".92"/>
+    <circle cx="600" cy="316" r="44" opacity=".82"/>
+  </g>
+  <g fill="#232323">
+    <circle cx="248" cy="316" r="21"/>
+    <circle cx="952" cy="316" r="21"/>
+    <circle cx="600" cy="316" r="17"/>
+  </g>
+  <g fill="none" stroke="#d3d3d3" stroke-linecap="round" stroke-linejoin="round" opacity=".62">
+    <rect x="164" y="178" width="168" height="92" rx="12" stroke-width="5"/>
+    <rect x="868" y="360" width="168" height="92" rx="12" stroke-width="5"/>
+    <path d="M190 228h116M894 410h116" stroke-width="4"/>
+    <path d="M212 482h104M884 148h104" stroke-width="5"/>
+    <path d="M232 508h64M904 174h64" stroke-width="5"/>
+  </g>
+</svg>
